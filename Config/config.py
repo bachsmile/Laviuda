@@ -254,5 +254,17 @@ pack_gold = {
             "400MXN":60000000
     } 
 }
+account = {
+    "user0":{
+        "id":"19202812"
+        "user":"vyhn0907",
+        "pass":123456      
+    },
+    "user1":{
+        "id":"19175089",
+        "user":"nguyenvy123",
+        "pass":123456      
+    }
+}
 # convertDayTimeToMili(2020, 11, 26,6,59,0)   
 # print(challengePlay[challenge["day2"]["mission"]]["data"]["gold"])
