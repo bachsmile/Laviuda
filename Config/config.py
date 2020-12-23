@@ -8,6 +8,7 @@ from poco.drivers.cocosjs import CocosJsPoco
 import json
 poco = CocosJsPoco()
 #config
+#----------------------------------------------------WC----------------------------------------------------------------------#
 #id
 # user["user0"]["user"]
 user={
@@ -214,3 +215,4 @@ dataReportConfig = {
     }
 # convertDayTimeToMili(2020, 11, 26,6,59,0)   
 # print(challengePlay[challenge["day2"]["mission"]]["data"]["gold"])
+#----------------------------------------------------WC----------------------------------------------------------------------#
