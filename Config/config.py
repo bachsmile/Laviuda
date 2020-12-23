@@ -173,13 +173,16 @@ challengePlay={
 #deal
 dealWCConfig={
     "offerWC1":{
-        "gold":16000000
+        "goldF":16000000,
+        "gold":6500000
     },
     "offerWC2":{
-        "gold":60000000
+        "goldF":60000000,
+        "gold":15000000
     },
     "offerWC1":{
-        "gold":150000000
+        "goldF":150000000,
+        "gold":30000000
     },
 }
 #dataReport
@@ -211,7 +214,8 @@ dataReportConfig = {
       "Exchange1":"Fail",
       "BtnBuyWC":"Fail",
       "GoldUpdate":"Fail",
-      "BtnDeal":"Fail"
+      "BtnDeal":"Fail",
+      "Login":"Fail"
     }
 #---------------------------------------cofig feature Vip---------------------------------------------------#
 vip_pack = {
