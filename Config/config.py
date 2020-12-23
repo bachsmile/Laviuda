@@ -8,7 +8,6 @@ from poco.drivers.cocosjs import CocosJsPoco
 import json
 poco = CocosJsPoco()
 #config
-#----------------------------------------------------WC----------------------------------------------------------------------#
 #id
 # user["user0"]["user"]
 user={
@@ -173,16 +172,13 @@ challengePlay={
 #deal
 dealWCConfig={
     "offerWC1":{
-        "goldF":16000000,
-        "gold":6500000
+        "gold":16000000
     },
     "offerWC2":{
-        "goldF":60000000,
-        "gold":15000000
+        "gold":60000000
     },
     "offerWC1":{
-        "goldF":150000000,
-        "gold":30000000
+        "gold":150000000
     },
 }
 #dataReport
@@ -214,51 +210,7 @@ dataReportConfig = {
       "Exchange1":"Fail",
       "BtnBuyWC":"Fail",
       "GoldUpdate":"Fail",
-      "BtnDeal":"Fail",
-      "Login":"Fail"
+      "BtnDeal":"Fail"
     }
-#---------------------------------------cofig feature Vip---------------------------------------------------#
-vip_pack = {
-    "vip.pack_1" : {
-        "id": 1,
-        "price":50,
-        "bonus": 0.3,
-        "dailyTribute":5,
-        "day":3
-    },
-    "vip.pack_2" : {
-        "id": 2,
-        "point":100,
-        "bonus":0.5,
-        "dailyTribute":6,
-        "day":7
-    },
-    "vip.pack_3" : {
-        "id": 3,
-        "point":300,
-        "bonus":1,
-        "dailyTribute":7,
-        "day":30
-    }
-}
-
-pack_gold = {
-    "credit_card" : {
-            "id": 1,
-            "10MXN":1000000,
-            "15MXN":1500000,
-            "30MXN":3500000,
-            "40MXN":5000000
-    },
-    "gg_play" : {
-            "id": 2,
-            "20MXN":2000000,
-            "50MXN":6500000,
-            "100MXN":15000000,
-            "200MXN":30000000,
-            "400MXN":60000000
-    } 
-}
 # convertDayTimeToMili(2020, 11, 26,6,59,0)   
 # print(challengePlay[challenge["day2"]["mission"]]["data"]["gold"])
-#----------------------------------------------------WC----------------------------------------------------------------------#
