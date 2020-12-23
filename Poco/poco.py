@@ -38,7 +38,21 @@ x=0
 
 #------------------------------------------VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
-
+class poco:
+    btn_google= poco("btnGooglePlus")
+    btn_switch= poco("btnSwitch")
+    btn_claim= poco("btnClaim")
+    btn_play= poco("btnPlay")
+    btn_facebooknormal= poco("btnFacebookNormal")
+    image_4= poco("Image_4") #input user name
+    image_4_0= poco("Image_4_0")  #input pass
+    btn_register= poco("btnRegister")
+    btn_tomorrow= poco("btnTomorrow")
+    btn_leavegame= poco("btnLeaveGame")
+    btn_daily= poco("btnDaily")
+    icon_setting= poco("iconSetting")
+    lobby_layer2= poco("bgLobbyLayer2") 
+    btn_guest= poco("btnGuest")
 #------------------------------------------DB------------------------------------------------#
 #---------------------------------------------End script--------------------------------------------------------------------#
 #---------------------------------------------Report-----------------------------------------------------#
