@@ -16,11 +16,11 @@ from poco.exceptions import PocoTargetTimeout
 
 # from Lavuavi.Config.Api import *
 #link cheat:
-from Lavuavi.Config.Api import *
+from Lavuida.Config.Api import *
 #----------------------------------------------------------#
-from Lavuavi.Config.config import *
-from Lavuavi.Report.report import *
-from Lavuavi.Img.img import *
+from Lavuida.Config.config import *
+from Lavuida.Report.report import *
+from Lavuida.Img.img import *
 #--------------End Import FILE-----------------------------#
 #--------------Connect Device------------------------------#
 
