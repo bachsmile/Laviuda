@@ -18,9 +18,9 @@ from poco.exceptions import PocoTargetTimeout
 #link cheat:
 from Lavuida.Config.Api import *
 #----------------------------------------------------------#
-from Lavuida.Config.config import *
-from Lavuida.Report.report import *
-from Lavuida.Img.img import *
+from Laviuda.Config.config import *
+from Laviuda.Report.report import *
+from Laviuda.Img.img import *
 #--------------End Import FILE-----------------------------#
 #--------------Connect Device------------------------------#
 
