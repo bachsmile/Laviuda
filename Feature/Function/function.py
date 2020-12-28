@@ -41,6 +41,24 @@ poco = CocosJsPoco()
 #Function general:----------------->
     #Login
     #CheckUpdateGold
+    #KillApp
+def killApp():
+try:
+    clear_app("com.zingplay.laviuda")
+    print('kill App')
+    return True
+except:
+    print('error kill App')
+    return False
+    #openApp
+def openApp():
+    try:
+        start_app("com.zingplay.laviuda")
+        print('open App')
+        return True
+    except:
+        print('error open App')
+        return False
 #Function DB:---------------------->
 #Function VIP:--------------------->
 #Function WC:---------------------->
