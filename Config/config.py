@@ -8,7 +8,6 @@ from poco.drivers.cocosjs import CocosJsPoco
 import json
 poco = CocosJsPoco()
 #config
-#----------------------------------------------------WC----------------------------------------------------------------------#
 #id
 # user["user0"]["user"]
 user={
@@ -173,16 +172,13 @@ challengePlay={
 #deal
 dealWCConfig={
     "offerWC1":{
-        "goldF":16000000,
-        "gold":6500000
+        "gold":16000000
     },
     "offerWC2":{
-        "goldF":60000000,
-        "gold":15000000
+        "gold":60000000
     },
     "offerWC1":{
-        "goldF":150000000,
-        "gold":30000000
+        "gold":150000000
     },
 }
 #dataReport
@@ -214,9 +210,37 @@ dataReportConfig = {
       "Exchange1":"Fail",
       "BtnBuyWC":"Fail",
       "GoldUpdate":"Fail",
-      "BtnDeal":"Fail",
-      "Login":"Fail"
+      "BtnDeal":"Fail"
     }
+<<<<<<< HEAD
+# convertDayTimeToMili(2020, 11, 26,6,59,0)   
+# print(challengePlay[challenge["day2"]["mission"]]["data"]["gold"])
+# Daily bonus ------------------------------------------------------
+DailyBonus={
+    "day1":{
+            "bonus":20000 
+    },
+    "day2":{
+            "bonus":50000
+    },
+    "day3":{
+            "bonus":80000
+    },
+    "day4":{
+            "bonus":150000
+    },
+    "day5":{
+            "bonus":160000
+    },
+    "day6":{
+            "bonus":250000
+    },
+    "day7":{
+            "bonus":400000
+    },    
+}
+# x=DailyBonus["day3"]["bonus"]
+=======
 #---------------------------------------cofig feature Vip---------------------------------------------------#
 vip_pack = {
     "vip.pack_1" : {
@@ -274,4 +298,6 @@ account = {
 # convertDayTimeToMili(2020, 11, 26,6,59,0)   
 # print(challengePlay[challenge["day2"]["mission"]]["data"]["gold"])
 #----------------------------------------------------WC----------------------------------------------------------------------#
+
+>>>>>>> d9dbc169592addba88d98510bd6e86d143e1bb62
 
