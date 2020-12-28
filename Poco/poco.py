@@ -33,6 +33,60 @@ x=0
 #------------------------------------------WC------------------------------------------------#
 
 #------------------------------------------WC------------------------------------------------#
+class poco:
+    # changeacc
+    poco("btnSwitch")
+    poco("Image_4")
+    poco("logo")
+    poco("Image_4_0")
+    poco("logo")
+    poco("btnLogin")
+    poco("btnSetting")
+    #buttn X close
+    poco("btnClose")
+    #reload
+    poco("btnPlay")
+    poco("btnLeaveGame")
+    #hide trong close avatar
+    poco("btnHide") 
+    #btn event
+    poco("btnMain")
+    #noti event
+    poco("<no-name>").offspring("layer_7")[0].child("<no-name>")[0]
+    poco(text="NOTIFICACIONES")
+    #btn cheat
+    poco(name="lbTime")
+    poco("btnCheat")
+    poco("btnAddBot")
+    poco("lbTimeServer")
+    poco("btnSendCheatPlayer")
+    #btn join in event
+    poco("btnJoin")
+    poco("btnClaim")
+    #WC lable
+    poco(text="Hoy")
+    poco(text="Día 1")
+    poco(text="Día 2")
+    poco(text="Día 3")
+    poco(text="Día 4")
+    poco(text="Día 5")
+    poco(text="Día 6")
+    poco(text="Día 7")
+    poco("lbNumTacos")
+    poco("lbProgress")
+    #gold
+    poco(name="lbGold")
+    #deal WC
+    poco("btnOfferEventTB")
+    poco("imgTruck")
+    #action game
+    poco("btnPass")
+    poco("btnKnock")
+    poco("btnExchange1")
+    poco("btnSwap")
+    poco("btnExchange5")
+    #game
+    poco("bg_table")
 #------------------------------------------VIP-----------------------------------------------#
 class poco:
     btn_vip = poco("btnVip")
