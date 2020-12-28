@@ -35,6 +35,21 @@ poco = CocosJsPoco()
 #Function general:----------------->
     #Login
     #CheckUpdateGold
+    #Report init
+def reportInit(detail,report):
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log=report.format(detail["Time"], detail["Status"], detail["Button"],current_time)
+    f = open("log.txt", 'w+')
+    f.write(log)
+    print(type(log))
+    f.close()
+#Clear report
+def clearReport():
+    report=""
+    f = open("log.txt", 'w+')
+    f.write(report)
+    f.close()
 #Function DB:---------------------->
 #Function VIP:--------------------->
 #Function WC:---------------------->
