@@ -50,6 +50,31 @@ def clearReport():
     f = open("log.txt", 'w+')
     f.write(report)
     f.close()
+def reportdailybonus():
+    detail = {
+        "Time": data["Time"],
+        "status": data["status"],
+        "button": data["button"]
+    }   # các chi tiết cần in ra ở file log
+    report = """ 
+    -----------------------------------------------------------------------------
+    
+    CASE: TESR DAILY BOMUS
+    
+            Time :{0}       Status:{1}
+            
+            Show Button:{2}
+                                                                time test: {3}
+    
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S") #log ra ngày hien tại
+    log=report.format(detail["Time"], detail["Status"], detail["Button"],current_time)
+    f = open("logDailyBonus.txt", 'w') #tạo mới file log
+    f.write(log) #viết file log 
+    print(type(log)) #in ra kiểu dữ liệu của type
+    f.close()      #kết thúc
 #Function DB:---------------------->
 #Function VIP:--------------------->
 #Function WC:---------------------->
