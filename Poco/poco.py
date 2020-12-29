@@ -35,90 +35,74 @@ x=0
 #------------------------------------------WC------------------------------------------------#
 class poco:
     # changeacc
-    poco("btnSwitch")
-    poco("Image_4")
+    btnSwitch = poco("btnSwitch")
+    inputUser = poco("Image_4")
+    logo = poco("logo")
+    inputPass = poco("Image_4_0")
     poco("logo")
-    poco("Image_4_0")
-    poco("logo")
-    poco("btnLogin")
-    poco("btnSetting")
+    btnLogin = poco("btnLogin")
+    btnSetting = poco("btnSetting")
     #buttn X close
-    poco("btnClose")
+    btnClose = poco("btnClose")
     #reload
-    poco("btnPlay")
-    poco("btnLeaveGame")
+    btnPlay = poco("btnPlay")
+    btnLeaveGame = poco("btnLeaveGame")
     #hide trong close avatar
-    poco("btnHide") 
+    btnHide = poco("btnHide") 
     #btn event
-    poco("btnMain")
+    btnMain = poco("btnMain")
     #noti event
-    poco("<no-name>").offspring("layer_7")[0].child("<no-name>")[0]
-    poco(text="NOTIFICACIONES")
+    notiSHow = poco("<no-name>").offspring("layer_7")[0].child("<no-name>")[0]
+    NOTIFICACIONES = poco(text="NOTIFICACIONES")
     #btn cheat
-    poco(name="lbTime")
-    poco("btnCheat")
-    poco("btnAddBot")
-    poco("lbTimeServer")
-    poco("btnSendCheatPlayer")
+    lbTime = poco(name="lbTime")
+    btnCheat = poco("btnCheat")
+    btnAddBot = poco("btnAddBot")
+    lbTimeServer = poco("lbTimeServer")
+    btnSendCheatPlayer = poco("btnSendCheatPlayer")
     #btn join in event
-    poco("btnJoin")
-    poco("btnClaim")
+    btnJoin = poco("btnJoin")
+    btnClaim = poco("btnClaim")
     #WC lable
-    poco(text="Hoy")
-    poco(text="Día 1")
-    poco(text="Día 2")
-    poco(text="Día 3")
-    poco(text="Día 4")
-    poco(text="Día 5")
-    poco(text="Día 6")
-    poco(text="Día 7")
-    poco("lbNumTacos")
-    poco("lbProgress")
+    lbDayCurrent = poco(text="Hoy")
+    lbDay1 = poco(text="Día 1")
+    lbDay2 = poco(text="Día 2")
+    lbDay3 = poco(text="Día 3")
+    lbDay4 = poco(text="Día 4")
+    lbDay5 = poco(text="Día 5")
+    lbDay6 = poco(text="Día 6")
+    lbDay7 = poco(text="Día 7")
+    lbNumTacos = poco("lbNumTacos")
+    lbProgress = poco("lbProgress")
     #gold
-    poco(name="lbGold")
+    lbGold = poco(name="lbGold")
     #deal WC
-    poco("btnOfferEventTB")
-    poco("imgTruck")
+    btnOfferEventTB = poco("btnOfferEventTB")
+    imgTruck = poco("imgTruck")
     #action game
-    poco("btnPass")
-    poco("btnKnock")
-    poco("btnExchange1")
-    poco("btnSwap")
-    poco("btnExchange5")
+    btnPass = poco("btnPass")
+    btnKnock = poco("btnKnock")
+    btnExchange1 = poco("btnExchange1")
+    btnSwap = poco("btnSwap")
+    btnExchange5 = poco("btnExchange5")
     #game
-    poco("bg_table")
+    bg_table = poco("bg_table")
+    #vip
+    btnVip = poco("btnVip")
+    #DB
+    iconSetting = poco("iconSetting")
+    lobbyLayer2 = poco("bgLobbyLayer2")
+    btnGuest = poco("btnGuest")
+    btnTomorrow = poco("btnTomorrow")
+    btnGooglePlus = poco("btnGooglePlus")
+    btnFacebookNormal = poco("btnFacebookNormal")
+    btnRegister = poco("btnRegister")
+    btnDaily = poco("btnDaily")
 #------------------------------------------VIP-----------------------------------------------#
-class poco:
-    btn_vip = poco("btnVip")
-    btn_play = poco("btnPlay")
-    btn_cheat = poco("btnCheat")
-    btn_add_bot = poco("btnAddBot")
-    btn_send = poco("btnSendCheatPlayer")
-    btn_setting = poco("btnSetting")
-    bg_logout = poco("bgLobbyLayer2")
-    btn_switch = poco("btnSwitch")
-    input_name = poco("Image_4")
-    input_pass = poco("Image_4_0")
-    btn_login = poco("btnLogin")
-    btn_claim = poco("btnClaim")
     
 #------------------------------------------VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
-class poco:
-    btn_google= poco("btnGooglePlus")
-    btn_switch= poco("btnSwitch")
-    btn_claim= poco("btnClaim")
-    btn_play= poco("btnPlay")
-    btn_facebooknormal= poco("btnFacebookNormal")
-    image_4= poco("Image_4") #input user name
-    image_4_0= poco("Image_4_0")  #input pass
-    btn_register= poco("btnRegister")
-    btn_tomorrow= poco("btnTomorrow")
-    btn_leavegame= poco("btnLeaveGame")
-    btn_daily= poco("btnDaily")
-    icon_setting= poco("iconSetting")
-    lobby_layer2= poco("bgLobbyLayer2") 
-    btn_guest= poco("btnGuest")
+
 #------------------------------------------DB------------------------------------------------#
 #---------------------------------------------End script--------------------------------------------------------------------#
 #---------------------------------------------Report-----------------------------------------------------#
