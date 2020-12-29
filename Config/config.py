@@ -212,7 +212,6 @@ dataReportConfig = {
       "GoldUpdate":"Fail",
       "BtnDeal":"Fail"
     }
-<<<<<<< HEAD
 # convertDayTimeToMili(2020, 11, 26,6,59,0)   
 # print(challengePlay[challenge["day2"]["mission"]]["data"]["gold"])
 # Daily bonus ------------------------------------------------------
@@ -240,7 +239,6 @@ DailyBonus={
     },    
 }
 # x=DailyBonus["day3"]["bonus"]
-=======
 #---------------------------------------cofig feature Vip---------------------------------------------------#
 vip_pack = {
     "vip.pack_1" : {
@@ -298,7 +296,5 @@ account = {
 # convertDayTimeToMili(2020, 11, 26,6,59,0)   
 # print(challengePlay[challenge["day2"]["mission"]]["data"]["gold"])
 #----------------------------------------------------WC----------------------------------------------------------------------#
-
->>>>>>> d9dbc169592addba88d98510bd6e86d143e1bb62
 
 
