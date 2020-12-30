@@ -128,7 +128,7 @@ challenge={
 challengePlay={
     "win":{
         "data":{
-                "detailMission":poco(text="Cambiar una por una "),
+                "detailMission":poco(text="Ganar "),
                 "totalX":3,
                 "tacos":4,
                 "gold":80000
@@ -136,7 +136,8 @@ challengePlay={
     },
     "final":{
         "data":{
-            "total X":4,
+            "detailMission":poco(text="Jugar "),
+            "totalX":4,
             "tacos":3,
             "gold":120000
         }    
@@ -151,14 +152,16 @@ challengePlay={
     },
     "exchange1":{
          "data":{
-            "totalX":30,
-            "tacos":4,
-            "gold":40000
+            "detailMission": poco(text="Cambiar una por una "),
+            "totalX":25,
+            "tacos":2,
+            "gold":30000
            },
     },
     "collect":{
         "data":{
-            "totalX":4,
+            "detailMission": poco(text="Coleccionar "),
+            "totalX":4, 
             "tacos":2,
             "gold":20000
         },
@@ -167,6 +170,14 @@ challengePlay={
         "data":{
             "gold":120000
         } 
+    },
+    "play":{
+        "data":{
+            "detailMission": poco(text="Jugar "),
+            "totalX":20, 
+            "tacos":6,
+            "gold":200000
+        },
     }
 }
 #deal
