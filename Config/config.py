@@ -12,25 +12,25 @@ poco = CocosJsPoco()
 # user["user0"]["user"]
 user={
     "user0":{
-        "id":"19203300",
-        "user":"bachtx0",
+        "id":"19400486",
+        "user":"user000",
         "pass":123456      
     },
     "user1":{
-        "id":"19130214",
-        "user":"bachtx1",
+        "id":"19400458",
+        "user":"user001",
         "pass":123456      
     },
     "user2":{
-        "id":19130219,
-        "user":"bachtx2",
+        "id":'19400724',
+        "user":"user002",
         "pass":123456       
     },
     "user3":{
-        "id":123,
-        "user":"bachtx3",
+        "id":'19400738',
+        "user":"user003",
         "pass":123456       
-    }
+    },
 }
 
 #time Cheat
