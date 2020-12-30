@@ -245,6 +245,101 @@ def tableGame():
         return False
 #Function DB:---------------------->
 #Function VIP:--------------------->
+def convertDayToSecond(day):
+    second = int(day*24*60*60)
+    return second
+def cheatTimeRemain(UserID,day):
+    try:
+        cheat_remain = api_postDoFunction(UserID, "CHEAT_TIME_REMAIN_VIP", [convertDayToSecond(day)])
+        print("cheat time remain thanh cong")
+        reloadLobby()
+        print("Vao shop vip thanh cong")
+        killApp()
+        openApp()
+        #check show pop-up gia han
+        back_to_lobby()
+        return True    
+    except:
+        print("Error")
+        return False
+def open_vip():
+    try:
+        if exists(image_vip.btn_vip):
+            pocoTag.btnVip.click()
+            print("Vao thanh cong")
+        time.sleep(2)
+    except:
+        print("error")
+        time.sleep(2)
+def open_pack(pack):
+    try:
+        poco(pack).click()
+        touch(image_vip.btn_cancel)
+        print("Mo thanh cong")
+    except:
+        print("error")
+def back_to_lobby():
+    btns = [image_vip.back, image_vip.close, image_vip.outroom]
+    try:
+        for btn in btns:
+            if exists(btn):
+                touch(btn)
+                print("back lobby thanh cong")
+            continue
+    except:
+        print("back lobby khong thanh cong")
+def check_item():
+    items = [image_vip.cachua, image_vip.votay, image_vip.xonuoc, image_vip.trung, image_vip.hoahong, image_vip.hoavang, image_vip.sungnuoc]
+    try:
+        touch(image_vip.btn_profile)
+        if exists(image_vip.list_item):
+            #return False
+            for item in items:
+                if exists(item):
+                    touch(item)
+                    time.sleep(2)
+                    touch(image_vip.btn_profile)
+                else:
+                    swipe(Template(r"tpl1608620057636.png", record_pos=(0.113, 0.122), resolution=(2340, 1079)), vector=[-0.1553, -0.0043])
+                    time.sleep(2)
+                    touch(item)
+            print("List item co ton tai")
+        else:
+            #return True
+            print("List item khong ton tai")
+        back_to_lobby()
+    except:
+        print("Error")
+def to_table():
+    try:
+        pocoTag.btnPlay.click()
+        pocoTag.btnCheat.click()
+        pocoTag.btnAddBot.click()
+        time.sleep(2)
+        pocoTag.btnCheat.click()
+        time.sleep(2)
+        print("Vao ban, cheat bot thanh cong")  
+    except:
+        print("Khong thanh cong")
+def buy_vip_thap(pack):
+    try:
+        poco(pack).click()
+        time.sleep(1)
+        touch(image_vip.btn_ok)
+        print("Khong mua duoc vip thap hon")
+    except:
+        print("Error")
+def cheat_het_gold(num):
+    try:
+        pocoTag.btnCheat.click()
+        touch(Template(r"tpl1608185711465.png", record_pos=(-0.104, -0.161), resolution=(2340, 1079)))
+        text(str(num), enter=True)
+        pocoTag.btnSendCheatPlayer.click()
+        print("Cheat tien thanh cong")
+        pocoTag.btnCheat.click()
+        time.sleep(2)
+    except:
+        print("Khong tim thay")
 #Function WC:---------------------->
 #------------------#
 def beforEvent():
@@ -290,4 +385,5 @@ def beforEvent():
     reportBeforEvent(dataReportConfig)
 #------------------#
 #-------------------------------------------------------------------------------------#
+
 
