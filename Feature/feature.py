@@ -1,9 +1,9 @@
 
 #---------------------------------------------Tile-------------------------------------------------------#
 __author__ = "QC"
-__title__ ="List Poco"
+__title__ ="Danh sach các feature"
 __desc__="""
-    Tong hop danh sach cac poco in game
+    Tong hop danh sach cac feature in game
 """
 #---------------------------------------------End Tile---------------------------------------------------#
 #---------------------------------------------Import LIB-------------------------------------------------#
@@ -13,9 +13,9 @@ from poco.drivers.cocosjs import CocosJsPoco
 #---------------------------------------------End Import Lib---------------------------------------------#
 #---------------------------------------------Link-------------------------------------------------------#
 #---------------------------------------------Link-------------------------------------------------------#
-
+# from Laviuda.Feature.feature import *
 #---------------------------------------------Import FILE------------------------------------------------#
-
+from Laviuda.Feature.Function.function import *
 #---------------------------------------------End Import FILE--------------------------------------------#
 
 #---------------------------------------------Connect Device---------------------------------------------#
@@ -28,82 +28,20 @@ poco = CocosJsPoco()
 #------------------------------------------End Poco------------------------------------------------------#
 #------------------------------------------script content------------------------------------------------#
 #------------------------------------------bien----------------------------------------------#
-x=0
 #------------------------------------------end bien------------------------------------------#
 #------------------------------------------WC------------------------------------------------#
-
+# WC--------------------------->
+def WC():
+    beforEvent()
 #------------------------------------------WC------------------------------------------------#
-class pocoTag:
-    # changeacc
-    btnSwitch = poco("btnSwitch")
-    inputUser = poco("Image_4")
-    logo = poco("logo")
-    inputPass = poco("Image_4_0")
-    btnLogin = poco("btnLogin")
-    btnSetting = poco("btnSetting")
-    #buttn X close
-    btnClose = poco("btnClose")
-    #reload
-    btnPlay = poco("btnPlay")
-    btnLeaveGame = poco("btnLeaveGame")
-    #hide trong close avatar
-    btnHide = poco("btnHide") 
-    #btn event
-    btnMain = poco("btnMain")
-    #noti event
-    notiSHow = poco("<no-name>").offspring("layer_7")[0].child("<no-name>")[0]
-    NOTIFICACIONES = poco(text="NOTIFICACIONES")
-    #btn cheat
-    lbTime = poco(name="lbTime")
-    btnCheat = poco("btnCheat")
-    btnAddBot = poco("btnAddBot")
-    lbTimeServer = poco("lbTimeServer")
-    btnSendCheatPlayer = poco("btnSendCheatPlayer")
-    #btn join in event
-    btnJoin = poco("btnJoin")
-    btnClaim = poco("btnClaim")
-    #WC lable
-    lbDayCurrent = poco(text="Hoy")
-    lbDay1 = poco(text="Día 1")
-    lbDay2 = poco(text="Día 2")
-    lbDay3 = poco(text="Día 3")
-    lbDay4 = poco(text="Día 4")
-    lbDay5 = poco(text="Día 5")
-    lbDay6 = poco(text="Día 6")
-    lbDay7 = poco(text="Día 7")
-    lbNumTacos = poco("lbNumTacos")
-    lbProgress = poco("lbProgress")
-    #gold
-    lbGold = poco(name="lbGold")
-    #deal WC
-    btnOfferEventTB = poco("btnOfferEventTB")
-    imgTruck = poco("imgTruck")
-    #action game
-    btnPass = poco("btnPass")
-    btnKnock = poco("btnKnock")
-    btnExchange1 = poco("btnExchange1")
-    btnSwap = poco("btnSwap")
-    btnExchange5 = poco("btnExchange5")
-    #game
-    bg_table = poco("bg_table")
-    #vip
-    btnVip = poco("btnVip")
-    #DB
-    iconSetting = poco("iconSetting")
-    lobbyLayer2 = poco("bgLobbyLayer2")
-    btnGuest = poco("btnGuest")
-    btnTomorrow = poco("btnTomorrow")
-    btnGooglePlus = poco("btnGooglePlus")
-    btnFacebookNormal = poco("btnFacebookNormal")
-    btnRegister = poco("btnRegister")
-    btnDaily = poco("btnDaily")
+
 #------------------------------------------VIP-----------------------------------------------#
     
 #------------------------------------------VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
 
 #------------------------------------------DB------------------------------------------------#
-#---------------------------------------------End script--------------------------------------------------------------------#
+#---------------------------------------------End script-------------------------------------------------#
 #---------------------------------------------Report-----------------------------------------------------#
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
