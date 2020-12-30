@@ -31,6 +31,9 @@ if not cli_setup():
 
 #------------------------------------------WC------------------------------------------------#
 #------------------------------------------VIP-----------------------------------------------#
+class imageInOutAcc:
+    imgBtnOut=Template(r"tpl1607683227106.png", record_pos=(-0.098, 0.08), resolution=(2400, 1080))
+    imgOutOk=Template(r"tpl1607683352695.png", record_pos=(0.08, 0.068), resolution=(2400, 1080))
 class image_vip:
     list_item = Template(r"tpl1608003653170.png", record_pos=(-0.103, 0.124), resolution=(2340, 1079))
     btn_profile = Template(r"tpl1608619319065.png", record_pos=(-0.218, 0.149), resolution=(2340, 1079))
