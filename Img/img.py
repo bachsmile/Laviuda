@@ -34,6 +34,10 @@ if not cli_setup():
 class imageInOutAcc:
     imgBtnOut=Template(r"tpl1607683227106.png", record_pos=(-0.098, 0.08), resolution=(2400, 1080))
     imgOutOk=Template(r"tpl1607683352695.png", record_pos=(0.08, 0.068), resolution=(2400, 1080))
+class imageWC:
+    imgBtnEvent=Template(r"tpl1607566321368.png", record_pos=(-0.284, -0.009), resolution=(652, 1212))
+    imgWin=Template(r"tpl1608545722831.png", record_pos=(0.35, -0.125), resolution=(2400, 1080))
+    imgProgessBarON=Template(r"tpl1607566598040.png", record_pos=(0.326, 0.22), resolution=(731, 1212))
 class image_vip:
     list_item = Template(r"tpl1608003653170.png", record_pos=(-0.103, 0.124), resolution=(2340, 1079))
     btn_profile = Template(r"tpl1608619319065.png", record_pos=(-0.218, 0.149), resolution=(2340, 1079))
