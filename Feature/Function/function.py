@@ -1036,6 +1036,82 @@ def clickClaimMission():
     except:
         return False
 #-------------------------------------------------------------------------------------#
-
+def gold_number():
+    gold=lbGold.get_text()
+    dec=["M","K","B"]
+    for index in range(len(dec)):
+        don_vi=gold.endswith(dec[index])
+        #print(don_vi)
+        if don_vi== True:
+            #print(dec[index])
+            num = gold.split(dec[index]) 
+            if dec[index]=="M":  
+                num = gold.split("M")  #print(num)
+                number= num[0]         #print(number)
+                number= float(number)    #print(type(number)) 
+                number=number*1000000
+                #print(number)
+            elif dec[index]=="K":
+                num = gold.split("K")   #print(num) 
+                number= num[0]          #print(number)
+                number= float(number)   #print(type(number))
+                number=number*1000
+                #print(number)
+            elif dec[index]=="B":
+                num = gold.split("B")   #print(num)
+                number= num[0]          #print(number)
+                number= float(number)   #print(type(number))
+                number=number*1000000000
+                #print(number)
+    return number
+def log_in_gg():
+    poco = CocosJsPoco()
+    btnGooglePlus.exists()
+    btnGooglePlus.click()  
+    #touch(Template(r"tpl1608609498145.png", record_pos=(-0.179, -0.024), resolution=(1920, 1080)))
+def log_in_FB():
+    btnFacebookNormal.click()
+    time.sleep(5)
+#2.2 Register_thường
+def register():
+    data= {
+        "status": "false"
+    }
+    btnSwitch.click()
+    inputUser.click()
+    text("ngocnt89")
+    inputPass.click()
+    text("12345678")
+    btnRegister.click()  
+# Nhận dailybonus của ngày đầu tiên
+def bonus_day_1():
+    if btnClaim.exists():
+        data["status"]="true"
+        btnClaim.click()
+        btnClaim.click()
+        print("Success!")
+    else:
+        print("Không tự động show Gui daily bonus sau play tutorial")
+    reportdailybonus(data)
+#kiểm tra có auto về lobby sau khi click claim nhận bonus
+def check_lobby():
+    try:
+        btnPlay.exists()
+    except:
+        print("Không auto về lại lobby sau khi nhận bonus")
+    else:
+        print("Success!")
+# 1. check có đang ở log_in screen hay ko
+def check_login():
+    data= {
+        "status": "False"
+    }
+    if btnSwitch.exists():
+        data["status"]="true"
+        print("success!")
+    else:
+        print ("Please go to Login page")
+    reportdailybonus(data)
+#
 
 
