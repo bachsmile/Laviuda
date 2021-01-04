@@ -82,6 +82,22 @@ def fortmartTime(time):
     timeStr= str(time['D'])+"/"+str(time['M'])+"/"+str(time['Y'])+" "+str(time['h'])+":"+str(time['m'])+":"+str(time['s'])
     print(timeStr)
     return timeStr
+#cheat
+def cheatGoldEmpty(gold):
+    try:
+        pocoTag.btnCheat.click()
+        if exists(imageWC.imgGoldCheat):
+            touch(imageWC.imgGoldCheat)
+        else:
+            touch(imageWC.imgGoldCheat1)
+        text(str(gold))
+        pocoTag.btnSendCheatPlayer.click()
+        pocoTag.btnCheat.click()
+        print("Cheat tien thanh cong")
+        return True
+    except:
+        print("Khong tim thay")
+        return False
 # Action
 def reloadLobby():
     try:
@@ -357,17 +373,6 @@ def buy_vip_thap(pack):
         print("Khong mua duoc vip thap hon")
     except:
         print("Error")
-def cheat_het_gold(num):
-    try:
-        pocoTag.btnCheat.click()
-        touch(imageWC.imgGoldCheat)
-        text(str(num), enter=True)
-        pocoTag.btnSendCheatPlayer.click()
-        print("Cheat tien thanh cong")
-        pocoTag.btnCheat.click()
-        time.sleep(2)
-    except:
-        print("Khong tim thay")
 #Function WC:---------------------->
     #------------------#
 def beforEvent():
