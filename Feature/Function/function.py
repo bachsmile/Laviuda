@@ -328,7 +328,7 @@ def check_item():
                     time.sleep(2)
                     touch(image_vip.btn_profile)
                 else:
-                    swipe(Template(r"tpl1608620057636.png", record_pos=(0.113, 0.122), resolution=(2340, 1079)), vector=[-0.1553, -0.0043])
+                    swipe(image_vip.hoahong, record_pos=(0.113, 0.122), resolution=(2340, 1079)), vector=[-0.1553, -0.0043]
                     time.sleep(2)
                     touch(item)
             print("List item co ton tai")
@@ -1031,5 +1031,6 @@ def clickClaimMission():
     except:
         return False
 #-------------------------------------------------------------------------------------#
+
 
 
