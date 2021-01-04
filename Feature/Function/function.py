@@ -360,7 +360,7 @@ def buy_vip_thap(pack):
 def cheat_het_gold(num):
     try:
         pocoTag.btnCheat.click()
-        touch(Template(r"tpl1608185711465.png", record_pos=(-0.104, -0.161), resolution=(2340, 1079)))
+        touch(imageWC.imgGoldCheat)
         text(str(num), enter=True)
         pocoTag.btnSendCheatPlayer.click()
         print("Cheat tien thanh cong")

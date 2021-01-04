@@ -7,7 +7,7 @@ HTTPS_PROXY = "https://172.28.103.34:3128"
 # from test.Autotest.Lavuavi.Function.Cheat.Cheat.api import *
 #--------------------------------------------#
 # Lấy access token mới mỗi lần dùng tool cheat
-ACCESS_TOKEN = "ya29.a0AfH6SMCnBwnSAFh_JwFbHzxBIOPDRo1NrKhLCbNw7Ow26t9EII2tstz1PpbOS5azx1imHlays4YIo7rauGqLNewn9jTv0oyZjIgQnRm7yzowxofGipMvarsWJjr7797vk9ooJEzC19IDAAXGRuobx09InHDYu674C1CjpBgpXh2e"
+ACCESS_TOKEN = "ya29.a0AfH6SMB6DiEEZ4gsVWq6yharpjCwFOowJ4DOYPck-4QhY29UqZKrHjLYlglVLIHIVCfW1Z_0AdmSn2tAS4gidEByYZEte6cJyuIfRENtxwKIJjZedUk8glkMNgs1oi4_sDdfcO0_jWK4DMmwz0X_otx3N_uQIXQKwWhpA136ytXK"
 SERVER_HOST = "http://49.213.81.43:10021"
 BASE_URL = SERVER_HOST + "/api/"
 
@@ -30,7 +30,7 @@ def api_postDoFunction(userId, id, params):
     
     data = {
         "gameId": "laviuda",
-        "mode": "PRIVATE",
+        "mode": "PRIVATE_2",
         "userId": userId,
         "id": id,
         "params": params
@@ -65,7 +65,7 @@ def api_changeTimeServer(timeInMilliseconds):
 
     data = {
         "gameId": "laviuda",
-        "mode": "PRIVATE",
+        "mode": "PRIVATE_2",
         "time": timeInMilliseconds
     }
     print("--------------URL---------------%s" % url)
@@ -98,4 +98,3 @@ def cheatBuyDeal(idU,deal):
     except:
         print("Error cheat deal")
         return False
-

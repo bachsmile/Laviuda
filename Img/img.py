@@ -39,6 +39,7 @@ class imageWC:
     imgWin=Template(r"tpl1608545722831.png", record_pos=(0.35, -0.125), resolution=(2400, 1080))
     imgProgessBarON=Template(r"tpl1607566598040.png", record_pos=(0.326, 0.22), resolution=(731, 1212))
     imgDeal=Template(r"tpl1608534993305.png", record_pos=(-0.003, 0.007), resolution=(2400, 1080))
+    imgGoldCheat=Template(r"tpl1608185711465.png", record_pos=(-0.104, -0.161), resolution=(2340, 1079))
 class image_vip:
     list_item = Template(r"tpl1608003653170.png", record_pos=(-0.103, 0.124), resolution=(2340, 1079))
     btn_profile = Template(r"tpl1608619319065.png", record_pos=(-0.218, 0.149), resolution=(2340, 1079))
