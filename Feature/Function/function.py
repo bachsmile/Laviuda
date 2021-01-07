@@ -13,10 +13,10 @@ from poco.drivers.cocosjs import CocosJsPoco
 from poco.exceptions import PocoTargetTimeout
 #--------------End Import Lib------------------------------#
 #--------------Import FILE---------------------------------#
-
 # from Lavuavi.Config.Api import *
 #link cheat:
-from Lavuida.Config.Api import *
+from Laviuda.Config.Api import *
+from Laviuda.Feature.Function.a import*
 #----------------------------------------------------------#
 from Laviuda.Config.config import *
 from Laviuda.Report.report import *

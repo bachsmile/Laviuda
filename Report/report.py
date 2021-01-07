@@ -13,8 +13,8 @@ from poco.drivers.cocosjs import CocosJsPoco
 #--------------End Import Lib------------------------------#
 #--------------Import FILE---------------------------------#
 #----------------------------------------------------------#
-from Lavuavi.Config.config import *
-from Lavuavi.Report.report import *
+from Laviuda.Config.config import *
+from Laviuda.Report.report import *
 #--------------End Import FILE-----------------------------#
 #--------------Connect Device------------------------------#
 

@@ -93,13 +93,14 @@ timeC={
     },
 }
 timeWC={
-    "start":{"Y":2020,"M":11,"D":26,"h":7,"m":0,"s":0},
-    "end":{"Y":2020,"M":12,"D":2,"h":7,"m":0,"s":0}
+    "start":{"Y":2020,"M":12,"D":29,"h":7,"m":0,"s":0},
+    "end":{"Y":2021,"M":1,"D":5,"h":7,"m":0,"s":0}
 }
 def convertDayTimeToMili(Y,M,D,h,m,s):
     dt = datetime(Y,M,D,h,m,s)
     milliseconds = int(round(dt.timestamp() * 1000))
     print(milliseconds)
+print(convertDayTimeToMili(timeWC["start"]))
 #Feature
 #chalenge
 challenge={
