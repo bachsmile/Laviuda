@@ -7,7 +7,7 @@ HTTPS_PROXY = "https://172.28.103.34:3128"
 # from test.Autotest.Lavuavi.Function.Cheat.Cheat.api import *
 #--------------------------------------------#
 # Lấy access token mới mỗi lần dùng tool cheat
-ACCESS_TOKEN = "ya29.a0AfH6SMB6DiEEZ4gsVWq6yharpjCwFOowJ4DOYPck-4QhY29UqZKrHjLYlglVLIHIVCfW1Z_0AdmSn2tAS4gidEByYZEte6cJyuIfRENtxwKIJjZedUk8glkMNgs1oi4_sDdfcO0_jWK4DMmwz0X_otx3N_uQIXQKwWhpA136ytXK"
+ACCESS_TOKEN = "ya29.a0AfH6SMAurytwdTCU_QLn1tbQO6VN6rbUYT4rqB75l0ft14O7QSojdio_QVzm0MsQaohEubBRiyD-zyhTA472kPFDPa182uQE--bbFJJ1fyu9y1nnI6LeYRP5NHrKLxShCMybUsjB-mSebZ0r9Lygwg--m5gind5aq9Ss4izCL-Tq"
 SERVER_HOST = "http://49.213.81.43:10021"
 BASE_URL = SERVER_HOST + "/api/"
 
@@ -82,6 +82,15 @@ def cheatGold(idU,gold):
     except:
         print("Error cheat gold")
         return False
+def cheatBuyGold(idU, pack):
+    try:
+        cheat = api_postDoFunction(idU, "CHEAT_PAYMENT_IAP", [pack])
+        print(cheat)
+        print("cheat gold success")
+        return True
+    except:
+        print("Error cheat gold")
+        return False
 def cheatBuyDeal(idU,deal):
     try:
         if deal == 1:
@@ -98,3 +107,14 @@ def cheatBuyDeal(idU,deal):
     except:
         print("Error cheat deal")
         return False
+def cheatFinishedMision(idU,day):
+    try:
+        cheat = api_postDoFunction(idU, "CHEAT_FINISH_MISSION_TACOS_BUS", [day])
+        print(cheat)
+        print("cheat finished mission success")
+        return True
+    except:
+        print("Error finished mission")
+        return False
+
+
