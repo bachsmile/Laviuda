@@ -32,76 +32,29 @@ user={
         "pass":123456       
     },
 }
-
-#time Cheat
-#time:
-# timeC={
-#     #24/11/2020 6:00:00  -> 1606172400000
-#     "timeD0":{
-#         "mili":1606172400000,
-#         "data":"24/11/2020 6:00:00"
-#     },
-#     #26/11/2020 06:59:00 -> 1606348740000
-#     "timeD01":{
-#         "mili":1606348740000,
-#         "data":"26/11/2020 06:59:00"
-#     },
-#     #26/11/2020 06:59:40 -> 1606347600000
-#     "timeD02":{
-#         "mili":1606348780000,
-#         "data":"26/11/2020 06:59:40"
-#     },
-#     #26/11/2020 07:30:00 -> 1606350600000
-#     "timeD1":{
-#         "mili":1606350600000,
-#         "data":"26/11/2020 07:30:00"
-#     },
-#     #27/11/2020 11:11:11 -> 1606450271000
-#     "timeD2":{
-#         "mili":1606450271000,
-#         "data":"27/11/2020 11:11:11"
-#     },
-#     #27/11/2020 23:59:00 -> 1606496340000
-#     "timeD21":{
-#         "mili":1606496340000,
-#         "data":"27/11/2020 23:59:00"
-#     },
-#     #28/11/2020 23:59:00 -> 1606582740000
-#     "timeD3":{
-#         "mili":1606582740000,
-#         "data":"28/11/2020 23:59:00"
-#     },
-#     #30/11/2020 11:11:11 -> 1606709471000
-#     "timeD5":{
-#         "mili":1606709471000,
-#         "data":"30/11/2020 11:11:11"
-#     },
-#     #01/12/2020 11:11:11 -> 1606795871000
-#     "timeD6":{
-#         "mili":1606795871000,
-#         "data":"01/12/2020 11:11:11"
-#     },
-#     #01/12/2020 23:59:00 -> 1606841940000
-#     "timeD7":{
-#         "mili":1606841940000,
-#         "data":"01/12/2020 23:59:00"
-#     },
-#     #02/12/2020 23:59:00 -> 1606928340000
-#     "timeD8":{
-#         "mili":1606928340000,
-#         "data":"02/12/2020 23:59:00"
-#     },
-# }
+timeW="""
+00:00:00
+02/12/2020
+"""
 timeWC={
     "start":{"Y":2020,"M":12,"D":29,"h":7,"m":0,"s":0},
     "end":{"Y":2021,"M":1,"D":5,"h":7,"m":0,"s":0}
 }
+def datetoMili(day):
+    return day*86400000
+def minutetoMili(minute):
+    return minute*60000
 def convertDayTimeToMili(time):
     dt = datetime(time['Y'],time['M'],time['D'],time['h'],time['m'],time['s'])
     milliseconds = int(round(dt.timestamp() * 1000))
     print(milliseconds)
     return milliseconds
-print(convertDayTimeToMili(timeWC["start"]))
+# print(convertDayTimeToMili(timeWC["start"]))
+def convertSecondstoDateTime(milliseconds)
+    seconds=milliseconds/1000
+    timestamp = datetime.fromtimestamp(seconds)
+    return timestamp
+# print(convertSecondstoDateTime)
 #Feature
 #chalenge
 challenge={
@@ -209,6 +162,7 @@ dataReportConfig = {
       "Progess": "Fail",
       "CheatFOM": "Fail",
       "Update": "Fail",
+      "Update1": "Fail",
       "NoUpdate":"Fail",
       "ChooseLeave":"Fail",
       "Leave": "Fail",

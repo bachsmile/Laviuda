@@ -122,6 +122,12 @@ def closeEvent():
             pocoTag.btnClose.click()
     except:
         print("error close ev")
+def closeAllEvent():
+    while waitNolimitPoco(pocoTag.btnClose,1):
+        pocoTag.btnClose.click()
+def claimAll():
+    while waitNolimitPoco(pocoTag.btnClaim,1):
+        pocoTag.btnClaim.click()      
 def out():
     try:
         poco = CocosJsPoco()
@@ -399,10 +405,12 @@ def beforEvent():
     #changeAcc
     changeAcc(user["user0"]["user"],user["user0"]["pass"])
     sleep(5)
-    closeEvent()
+#     closeEvent()
+    claimAll()
+    closeAllEvent()
     #In Game--------------------------------------------
     #---------reload lobby------------------------------
-    reloadLobby()
+#     reloadLobby()
     reloadLoby2()
     #---------end reload lobby--------------------------
     #End in Game----------------------------------------
@@ -414,7 +422,6 @@ def beforEvent():
     #end Check btn event--------------------------------
     #-------------End script----------------------------------#
     #-------------Report--------------------------------------#
-    print(dataReportConfig)
     reportBeforEvent(dataReportConfig)
 def afterEvent():
     poco = CocosJsPoco()
@@ -445,11 +452,10 @@ def afterEvent():
     #reload lobby------------------------------
     sleep(2)
     reloadLobby()
-    if waitNolimitPoco(pocoTag.btnClose,1):
-          closeEvent()
+    claimAll()
+    closeAllEvent()
 #     clickClaim()
     reloadLoby2()
-    # poco("btnClaim").click()
  #Check event--------------------------------------------------#
     #Check btn event -----------------------------------
     if CheckBtnEvent():
@@ -491,10 +497,8 @@ def afterEvent():
                 }
                 dayS1['h'] = dayS1['h']-1
                 dayS1['m'] = dayS1['m']+59
-                print(dayS1)
                 timeCheat = api_changeTimeServer(convertDayTimeToMili(dayS1))
                 dataReportConfig["TimeCheat1"]=fortmartTime(dayS1)
-                print(timeCheat)
                 if timeCheat ==200:
                     dataReportConfig['CheatTime1']="Pass"
                 else:
@@ -509,7 +513,7 @@ def afterEvent():
                 sleep(20)
                 CheckLobby()
                 #changeAcc
-                if  changeAcc(user["user1"]["user"],user["user1"]["pass"]):
+                if changeAcc(user["user1"]["user"],user["user1"]["pass"]):
                     CheckLobby()
                     #join table wait
                     joinTable()
@@ -687,6 +691,194 @@ def day3():
     reportDay3(dataReportConfig)
     #------------------------#
     checkMission("day3")
+def day4():
+        #resetDataReport
+    resetDataReportConfig()
+    #------------------------#
+    #report
+    reportDay4(dataReportConfig)
+    #------------------------#
+    checkMission("day4")
+def day5():
+        #resetDataReport
+    resetDataReportConfig()
+    #------------------------#
+    #cheat time pass 1 ngay-> 30/11/2020 11:11:11 -> 1606709471000
+    timeCheat = api_changeTimeServer(1605051600000)
+    #timeCheat = api_changeTimeServer(timeC["timeD0"]["mili"])
+    dayS = {
+        "Y": timeWC["start"]['Y'],
+        "M": timeWC["start"]['M'],
+        "D": timeWC["start"]['D'],
+        "h": timeWC["start"]['h'],
+        "m": timeWC["start"]['m'],
+        "s": timeWC["start"]['s']
+    }
+    timeNow=convertDayTimeToMili(dayS) + datetoMili(4)
+    timeCheat = api_changeTimeServer(timeNow)
+    dataReportConfig["TimeCheat"]=convertSecondstoDateTime(timeNow)
+    #End Cheatime--------------------------------------
+    reloadLoby()
+    #join event
+    eventWCOpen()
+     #check progress
+    prog1=checkProgressCurrent()
+    closeEvent()
+    #cheat gold du play
+    cheatGold(user["user1"]["id"],1000000)
+    checkMission2("day5")
+    sleep(2)
+    eventWCOpen()
+    prog2=checkProgressCurrent()
+    closeEvent()
+    #check update progess
+    if checkUpdateProgessTable(prog1,prog2):
+        dataReportConfig["Update"]="Pass"
+    else:
+        dataReportConfig["Update"]="Fail"
+    #waitplaygame
+    sleep(10)
+    eventWCOpen()
+     #check progress
+    prog3=checkProgressCurrent()
+    lose1()
+    eventWCOpen()
+     #check progress
+    prog4=checkProgressCurrent()
+    #check update progess
+    if checkUpdateProgessTable(prog3,prog4):
+        dataReportConfig["NoUpdate"]="Pass"
+    else:
+        dataReportConfig["NoUpdate"]="Fail"
+    #report
+    reportDay5(dataReportConfig)
+
+def day6():
+#         #resetDataReport
+#     resetDataReportConfig()
+#     #------------------------#
+#     #cheat time pass 1 ngay-> 30/11/2020 11:11:11 -> 1606709471000
+#     timeCheat = api_changeTimeServer(1605051600000)
+#     #timeCheat = api_changeTimeServer(timeC["timeD0"]["mili"])
+#     dayS = {
+#         "Y": timeWC["start"]['Y'],
+#         "M": timeWC["start"]['M'],
+#         "D": timeWC["start"]['D'],
+#         "h": timeWC["start"]['h'],
+#         "m": timeWC["start"]['m'],
+#         "s": timeWC["start"]['s']
+#     }
+#     timeNow=convertDayTimeToMili(dayS) + datetoMili(5)
+#     timeCheat = api_changeTimeServer(timeNow)
+#     dataReportConfig["TimeCheat"]=convertSecondstoDateTime(timeNow)
+#     #reload lobby
+#     reloadLobby()
+#     #click btn play
+#     joinTable()
+#     #cheat theo nhiem vu
+#     #add bot
+#     addBot()
+#     #Click knock
+#     if clickKnock():
+#         data1["Knock"]="Pass"
+#     else:
+#         data1["Knock"]="Fail"
+#     #wait end game
+#     waitEndGame()
+#     #check update progess
+#     if checkUpdateProgessTable():
+#         data1["Update"]="Pass"
+#     else:
+#         data1["Update"]="Fail"
+#     #waitplaygame
+#     sleep(10)
+#     #cheat theo nhiem vu
+#     #Click knock
+#     if clickKnock():
+#         data1["Knock"]="Pass"
+#     else:
+#         data1["Knock"]="Fail"
+#     #chon thoat table
+#     clickOutTable()
+#     #wait end game
+#     waitEndGame()
+#     #check update progess
+#     if checkUpdateProgessTable():
+#         data1["Update"]="Pass"
+#     else:
+#         data1["Update"]="Fail"
+#        #check lobby
+#     if CheckLobby():
+#         data1["Leave"]="Pass"
+#     else:
+#         data1["Leave"]="Fail"
+#     #------------------------#
+#     #report
+#     reportDay6(data1)
+#     #------------------------#
+#     #report
+#     reportDay3(dataReportConfig)
+#     #------------------------#
+#     checkMission("day3")
+def day7():
+    #cheat time pass 1 ngay-> #01/12/2020 23:59:00 -> 1606841940000
+    #cheat time pass 1 ngay-> 30/11/2020 11:11:11 -> 1606709471000
+    timeCheat = api_changeTimeServer(1605051600000)
+    #timeCheat = api_changeTimeServer(timeC["timeD0"]["mili"])
+    dayS = {
+        "Y": timeWC["start"]['Y'],
+        "M": timeWC["start"]['M'],
+        "D": timeWC["start"]['D'],
+        "h": timeWC["start"]['h'],
+        "m": timeWC["start"]['m'],
+        "s": timeWC["start"]['s']
+    }
+    timeNow=convertDayTimeToMili(dayS) + datetoMili(6)-minutetoMili(1)
+    timeCheat = api_changeTimeServer(timeNow)
+    dataReportConfig["TimeCheat"]=convertSecondstoDateTime(timeNow)
+    #reload lobby
+    reloadLobby()
+    #click btn play
+    joinTable()checkGold
+    #wait pass day
+    waitTimePassDay(timeW)
+    #check progess table
+    if checkProgessTable():
+        dataReportConfig["Progess"]="Fail"
+    else:
+        dataReportConfig["Progess"]="Pass"
+    #chon thoat table
+    clickOutTable()
+    #check auto show event
+    if CheckGUIEvent():
+        dataReportConfig['GuiEvent']="Pass"
+    else:
+        dataReportConfig['GuiEvent']="Fail"
+    #check gold init
+    goldInit=checkGold()
+    #check gold claim
+    goldClaim=challengePlay[challenge["day6"]["mission"]]["data"]["gold"]
+    #click claim gift
+    if clickClaim():
+        dataReportConfig['Claim']="Pass"
+    else:
+        dataReportConfig['Claim']="Fail"
+    #exit GUI event
+    closeEvent()
+    #check update gold
+    goldAfter=checkGold()
+    if checkUpdateGold(goldClaim,goldInit,goldAfter):
+        dataReportConfig['UpdateGold']="Pass"
+    else:
+        dataReportConfig['UpdateGold']="Fail"
+    #close Gui Event
+    closeEvent()
+    #change acc3
+    changeAcc(user["user3"]["user"],user["user3"]["pass"])
+    #check gift
+    #------------------------#
+    #report
+    reportDay7(dataReportConfig)
 def exchange1(day):
     try:
         #join event
@@ -700,7 +892,7 @@ def exchange1(day):
         if joinTable():
             dataReportConfig["BtnPlay"]="Pass"
         else:
-            data1["BtnPlay"]="Fail"
+            dataReportConfig["BtnPlay"]="Fail"
         #cheat cheatPorkerSpecial
         #add bot
         if addBot():
@@ -799,6 +991,41 @@ def knock(day):
         print("error knock")
     print(dataReportConfig)
     reportKnock(dataReportConfig)
+def collect(day):
+     try:
+        #join event
+        eventWCOpen()
+        #check progress
+        prog1=checkProgressCurrent()
+        closeEvent()
+        #cheat gold du play
+        cheatGold(user["user1"]["id"],1000000)
+        #click btn play
+        joinTable()
+        #cheat cheatPorkerSpecial
+        #add bot
+        addBot()
+        #Click knock
+        clickKnock()
+        prog2=checkProgressCurrent()
+        #cheat win finished game
+        # cheatNumMision(1)
+        #chon thoat table
+        clickOutTable()
+        #wait end game
+        waitEndGame()
+        #check update progess
+        if checkUpdateProgessTable(prog1,prog2):
+            dataReportConfig["Update"]="Pass"
+        else:
+            dataReportConfig["Update"]="Fail"
+           #check lobby
+        CheckLobby()
+        closeEvent()
+    except:
+        print("error collect")
+    print(dataReportConfig)
+    reportCollect(dataReportConfig)
 def claimGift():
     # script content
     #back to loby
@@ -859,7 +1086,7 @@ def noClaimGift():
         sleep(1)
         closeEvent()
     #check gold claim
-    goldClaim=0
+    goldClaim=challengePlay[challenge["day2"]["mission"]]["data"]["gold"]
     #check update gold
     goldAfter=checkGold()
     if checkUpdateGold(goldClaim,goldInit,goldAfter):
@@ -1149,7 +1376,7 @@ def endEvent():
     #opent GUI event
     eventWCOpen()
     #check gold claim
-    goldClaim=challengePlay["claim"]["data"]["gold"]
+    goldClaim=challengePlay[challenge["day7"]["mission"]]["data"]["gold"]
     #wait pass day
     waitTimePassDay(timeW)
     #check close GUI
@@ -1173,7 +1400,115 @@ def endEvent():
     #-------------End script----------------------------------#
     #-------------Report--------------------------------------#
     reportEndEvent(dataReportConfig)
-    #-------------End Report--------------------------------------#
+#mission
+def win(day):
+    try:
+#         closeEvent()
+         #cheat gold khong du play
+        if cheatGoldEmpty("1") :
+            dataReportConfig["CheatGold0"]="Pass"
+        else :
+            dataReportConfig["CheatGold0"]="Fail"
+        sleep(2)
+        #open event
+        if eventWCOpen():
+            dataReportConfig["OpenGUI"]="Pass"
+        else:
+            dataReportConfig["OpenGUI"]="Fail"
+        sleep(2)
+        #click btn play
+        joinMission()
+        #check noti
+        if checkNotiNoEnoughGold():
+            dataReportConfig["BtnPlay0"]="Pass"
+        else:
+            dataReportConfig["BtnPlay0"]="Fail"
+        closeEvent()
+        #cheat gold du play
+        if cheatGold(user["user1"]["id"],1000000):
+            dataReportConfig["CheatGold1"]="Pass"
+        else:
+            dataReportConfig["CheatGold1"]="Fail"
+        reloadLoby2()
+        #open event
+        eventWCOpen()
+        #click btn play
+        sleep(2)
+        if joinMission():
+            dataReportConfig["BtnPlay1"]="Pass"
+        else:
+            dataReportConfig["BtnPlay1"]="Fail"
+        #check progess table
+        if checkProgessTable():
+            dataReportConfig["Progess"]="Pass"
+        else:
+            dataReportConfig["Progess"]="Fail"
+        #Check table
+        if tableGame():
+            dataReportConfig["JoinTable"]="Pass"
+        else:
+            dataReportConfig["JoinTable"]="Fail"
+        #cheat cheatPorkerSpecial
+        #cheat win finished game
+        if cheatNumMision(1,user["user1"]["id"]):
+            dataReportConfig["CheatFOM"]="Pass"
+        else:
+            dataReportConfig["CheatFOM"]="Fail"
+        #add bot
+        # addBot()
+        #wait luot ban than
+        #Click knock
+        # clickKnock()
+        #chon thoat table
+    #     clickOutTable()
+        #wait end game
+    #     waitEndGame()
+        #check update progess
+        if checkUpdateProgessTable(prog1,prog2):
+            dataReportConfig["Update"]="Pass"
+        else:
+            dataReportConfig["Update"]="Fail"
+        clickOutTable()
+        #check lobby
+        if CheckLobby():
+            dataReportConfig["Leave"]="Pass"
+        else:
+            dataReportConfig["Leave"]="Fail"
+        print("fc win")
+    except:
+        print("error win")
+    print(dataReportConfig)
+    reportWin(dataReportConfig)
+def win1():
+    try:
+        reloadLoby2()
+        #click btn play
+        sleep(2)
+        joinTable()
+        #cheat cheatPorkerSpecial
+        #add bot
+        addBot()
+        #Click knock
+        clickKnock()
+        clickOutTable()
+        #wait end game
+        waitEndGame()
+    except:
+        print("error win")
+def lose1():
+    try:
+        reloadLoby2()
+        #click btn play
+        sleep(2)
+        joinTable()
+        #add bot
+        addBot()
+        #Click knock
+        clickKnock()
+        #wait end game
+        waitEndGame()
+    except:
+        print("error win")
     #------------------#
     #check
 def CheckBtnEvent():
@@ -1239,6 +1574,8 @@ def checkMission(day):
         return knock(day)
     if challenge[day]["mission"]=="exchange1":
         return exchange1(day)
+    if challenge[day]["mission"]=="collect":
+        return collect(day)
 def checkMission2(day):
     if challenge[day]["mission"]=="win":
         return win1()
@@ -1276,6 +1613,17 @@ def checkProgress():
     except:
         print("error checkProgressCurrent")
         return False
+def checkProgessTable():
+    try:
+        if waitNolimitPoco(pocoTag.btnMain,5):
+            print("Progess table")
+            return 1 
+        else:
+            print("Progess no show table")
+            return 0
+    except:
+        return 0 
+        print("error Progess table")
 def checkUpdateProgessTable(prg1,prg2):
     try:
         print(prg1)
