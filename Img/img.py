@@ -83,6 +83,7 @@ class image_vip:
     outroom = Template(r"tpl1608105320117.png", record_pos=(0.45, -0.195), resolution=(2340, 1079))
 #------------------------------------------END VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
+#  class Daily_bonus:
 class Daily_bonus:
     acc_gg_chi= Template(r"tpl1608609498145.png", record_pos=(-0.179, -0.024), resolution=(1920, 1080))
     #acc_gg_ngoc= 
