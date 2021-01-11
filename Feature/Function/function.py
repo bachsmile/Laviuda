@@ -287,7 +287,11 @@ def waitEndGame():
 def checkGold():
     numGold = pocoTag.lbGold.attr("text")
     return pipeSubGold(numGold)
-#Function DB:---------------------->
+def convertDayTimeToMili(time):
+    dt = datetime(time['Y'],time['M'],time['D'],time['h'],time['m'],time['s'])
+    milliseconds = int(round(dt.timestamp() * 1000))
+    print(milliseconds)
+    return milliseconds
 #Function VIP:--------------------->
 def convertDayToSecond(day):
     second = int(day*24*60*60)
@@ -310,17 +314,20 @@ def open_vip():
     try:
         if exists(image_vip.btn_vip):
             pocoTag.btnVip.click()
+            data_report["Status"] = "Pass"
             print("Vao thanh cong")
-        time.sleep(2)
     except:
+        data_report["Status"] = "Fail"
         print("error")
         time.sleep(2)
 def open_pack(pack):
     try:
         poco(pack).click()
         touch(image_vip.btn_cancel)
+        data_report["Status"] = "Pass"
         print("Mo thanh cong")
     except:
+        data_report["Status"] = "Fail"
         print("error")
 def back_to_lobby():
     btns = [image_vip.back, image_vip.close, image_vip.outroom]
@@ -344,12 +351,14 @@ def check_item():
                     time.sleep(2)
                     touch(image_vip.btn_profile)
                 else:
-                    #swipe(image_vip.hoahong, record_pos=(0.113, 0.122), resolution=(2340, 1079)), vector=[-0.1553, -0.0043]
+                    swipe(image_vip.hoahong, record_pos=(0.113, 0.122), resolution=(2340, 1079)), vector=[-0.1553, -0.0043]
                     time.sleep(2)
                     touch(item)
+            data_report["Check_item"] = "Pass"
             print("List item co ton tai")
         else:
             #return True
+            data_report["Check_item"] = "Fail"
             print("List item khong ton tai")
         back_to_lobby()
     except:
@@ -370,9 +379,36 @@ def buy_vip_thap(pack):
         poco(pack).click()
         time.sleep(1)
         touch(image_vip.btn_ok)
+        data_report["Check_low_vip"] = "Pass"
         print("Khong mua duoc vip thap hon")
     except:
+        data_report["Check_low_vip"] = "Fail"
         print("Error")
+# def check_vip():
+    
+def cheat_buy_vip(pack):
+    old_gold = float(re.sub('[MKB]', '', poco("lbGold").get_text()))
+    old_day = float(re.sub(r'\D', '', poco("lbTimeMyVip").get_text()))
+    a = api_postDoFunction("19175089", "CHEAT_PAYMENT_VIP", [pack])
+    try:
+        touch(image_vip.btn_claim)
+        time.sleep(2)
+        new_gold = float(re.sub('[MKB]', '', poco("lbGold").get_text()))
+        new_day = float(re.sub(r'\D', '', poco("lbTimeMyVip").get_text()))
+        gold = new_gold - old_gold
+        gold_in = vip_pack[pack]["dailyTribute"]
+        day = new_day - old_day
+        day_in = vip_pack[pack]["day"] 
+        if gold == gold_in & day == day_in:
+            data_report["Check_gold"] = "Pass"
+            data_report["Check_day"] = "Pass"
+            print("Mua thanh cong")
+            data_report["Status"] = "Pass"
+    except:
+        data_report["Status"] = "Fail"
+        print("Error")
+# def check_gold_support():
+    
 #Function WC:---------------------->
     #------------------#
 def beforEvent():
@@ -1265,17 +1301,17 @@ def checkProgressCurrent():
     except:
         print("error checkProgressCurrent")
         return False
-def checkProgress():
-     try:
-        if waitNolimitPoco(pocoTag.lbProgress,5):
-            print("Progess checkProgressCurrent")
-            return True
-        else:
-            print("NO find progress")
-            return False
-    except:
-        print("error checkProgressCurrent")
-        return False
+# def checkProgress():
+#      try:
+#         if waitNolimitPoco(pocoTag.lbProgress,5):
+#             print("Progess checkProgressCurrent")
+#             return True
+#         else:
+#             print("NO find progress")
+#         return False
+#     except:
+#         print("error checkProgressCurrent")
+#         return False
 def checkUpdateProgessTable(prg1,prg2):
     try:
         print(prg1)
@@ -1674,6 +1710,7 @@ def complete_logout_login_24h():
     else:
         print(" Success!")
 #
+
 
 
 

@@ -306,9 +306,11 @@ account = {
         "pass":123456      
     }
 }
+gold_support = 30000
 # convertDayTimeToMili(2020, 11, 26,6,59,0)   
 # print(challengePlay[challenge["day2"]["mission"]]["data"]["gold"])
 #----------------------------------------------------WC----------------------------------------------------------------------#
+
 
 
 

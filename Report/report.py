@@ -52,6 +52,89 @@ def clearReport():
     f.close()
 #Function DB:---------------------->
 #Function VIP:--------------------->
+#Case1: Open vip
+def reportCheckOpenVip(data):
+    detail = {
+        "Status" : data["Status"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case1: Open Vip
+            Status check: {0}
+                                    
+                                    
+                                    Time test: {2}
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log=report.format(detail["Status"], current_time)
+    f = open("log.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+
+data_report = {
+    "Status" : "Fail"
+}
+#Case2: Open Vip nhưng không mua
+def reportCheckPackVip(data):
+    detail = {
+        "Status" : data["Status"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case1: Check Pack Vip
+            Status check: {0}
+                                    
+                                    
+                                    Time test: {2}
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log=report.format(detail["Status"], current_time)
+    f = open("log.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+#Case 3: Mua Vip 1
+def reportBuyVip(data):
+    detail = {
+        "Check_gold" : data["Check_gold"],
+        "Check_day"  : data["Check_day"],
+        "Check_item" : data["Check_item"],
+        "Check_low_vip" : data["Check_low_vip"],
+        "Status"     : data["Status"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case3: Check mua vip
+            Check gold : {0}
+            Check ngay : {1}
+            Check item : {2}
+            Check buy vip thap : {3}
+            Status check: {4}
+                                    
+                                    
+                                    Time test: {5}
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log = report.format(detail["Check_gold"], detail["Check_day"], detail["Check_day"], detail["Check_item"], detail["Check_low_vip"], detail["Status"], current_time)
+    f = open("log.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+
+data_report = {
+    "Check_gold" : "Fail",
+    "Check_day"  : "Fail",
+    "Check_item" : "Fail",
+    "Check_low_vip" : "Fail",
+    "Status" : "Fail"
+}
 #Function WC:---------------------->
 #BeforEvent
 def reportBeforEvent(data):
