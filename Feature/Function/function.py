@@ -237,7 +237,7 @@ def clickExchange5():
         else:
             return False
     except:
-        return FalseCheckBtnEvent
+        return False
 def clickClaim():
     try:
         if waitNolimitPoco(pocoTag.btnClaim,1):
