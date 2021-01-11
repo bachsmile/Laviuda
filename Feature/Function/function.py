@@ -16,10 +16,6 @@ from poco.exceptions import PocoTargetTimeout
 # from Lavuavi.Config.Api import *
 #link cheat:
 from Laviuda.Config.Api import *
-<<<<<<< HEAD
-from Laviuda.Feature.Function.a import*
-=======
->>>>>>> f767ba540be4fc34920ec9f71e5c870ee818a4ac
 #----------------------------------------------------------#
 from Laviuda.Config.config import *
 from Laviuda.Report.report import *
@@ -108,7 +104,7 @@ def reloadLobby():
         poco = CocosJsPoco()
         pocoTag.btnPlay.click()
         sleep(1)
-        pocotag.btnLeaveGame.click()
+        pocoTag.btnLeaveGame.click()
         print('reload lobby')
         return True
     except:
@@ -150,7 +146,7 @@ def changeAcc(userN,passW):
         User=str(userN)
         text(User)
         pocoTag.logo.click()
-        pocotag.inputPass.click()
+        pocoTag.inputPass.click()
         PassW=str(passW)
         text(PassW)
         pocoTag.logo.click()
@@ -241,7 +237,7 @@ def clickExchange5():
         else:
             return False
     except:
-        return False
+        return FalseCheckBtnEvent
 def clickClaim():
     try:
         if waitNolimitPoco(pocoTag.btnClaim,1):
@@ -471,6 +467,65 @@ def afterEvent():
                     dataReportConfig["Coutdown"]="Pass"
                 else:
                     dataReportConfig["Coutdown"]="Fail"
+                #Join event
+                if eventWCOpen():
+                    sleep(1)
+                    dataReportConfig["After"]="Pass"
+                else:
+                    dataReportConfig["After"]="Fail"
+                sleep(1)
+                if waitNolimitPoco(pocoTag.btnJoin,2):
+                    dataReportConfig['ShowBtnJoin']="Pass"
+                else:
+                    dataReportConfig['ShowBtnJoin']="Fail"
+                closeEvent()
+                #cheat time back 1p
+                #26/11/2020 06:59:20
+                timeCheat = api_changeTimeServer(1605051600000)
+                dayS1 = {
+                    "Y": timeWC["start"]['Y'],
+                    "M": timeWC["start"]['M'],
+                    "D": timeWC["start"]['D'],
+                    "h": timeWC["start"]['h'],
+                    "m": timeWC["start"]['m'],
+                    "s": timeWC["start"]['s']
+                }
+                dayS1['h'] = dayS1['h']-1
+                dayS1['m'] = dayS1['m']+59
+                print(dayS1)
+                timeCheat = api_changeTimeServer(convertDayTimeToMili(dayS1))
+                dataReportConfig["TimeCheat1"]=fortmartTime(dayS1)
+                print(timeCheat)
+                if timeCheat ==200:
+                    dataReportConfig['CheatTime1']="Pass"
+                else:
+                    dataReportConfig['CheatTime1']="Fail"
+                sleep(1)
+                #kill app
+                killApp()
+                #open app
+                sleep(2)
+                openApp()
+                #wait
+                sleep(20)
+                CheckLobby()
+                #changeAcc
+                if  changeAcc(user["user1"]["user"],user["user1"]["pass"]):
+                    CheckLobby()
+                    #join table wait
+                    joinTable()
+                    #wait event
+                    if coutDownTimeIntable():
+                        dataReportConfig['ShowProg']="Pass"
+                    else:
+                        dataReportConfig['ShowProg']="Fail"
+                    #back to lobby
+                    clickOutTable()
+                    closeEvent()
+            else:
+                print(21)
+                dataReportConfig['Befor']="Fail"
+                dataReportConfig["Coutdown"]="Fail"
                 #Join event
                 if eventWCOpen():
                     sleep(1)
@@ -1292,5 +1347,6 @@ def complete_logout_login_24h():
     else:
         print(" Success!")
 #
+
 
 
