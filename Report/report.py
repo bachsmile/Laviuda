@@ -13,8 +13,8 @@ from poco.drivers.cocosjs import CocosJsPoco
 #--------------End Import Lib------------------------------#
 #--------------Import FILE---------------------------------#
 #----------------------------------------------------------#
-from Lavuavi.Config.config import *
-from Lavuavi.Report.report import *
+from Laviuda.Config.config import *
+from Laviuda.Report.report import *
 #--------------End Import FILE-----------------------------#
 #--------------Connect Device------------------------------#
 
@@ -758,6 +758,37 @@ def reportExchange1(data):
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 #Exchange1
+def reportEndEvent(data):
+    detail = {
+      "GUIEvent": data["GUIEvent"],
+      "UpdateGold": data["UpdateGold"],
+      "Button": data["Button"],
+    }
+    report = """
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission end event
+    
+            Auto đóng event:                        {0}    
+            
+            No claim gift:                          {1}
+            
+            Ẩn event:                               {2} 
+            
+                                                                time test: {3}
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log=report.format( detail["GUIEvent"],detail["UpdateGold"], detail["Button"], current_time)
+    f = open("log.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+#--------------------------------------------------------------------------------------------------------#
+#--------------------------------------------------------------------------------------------------------#
+#Exchange1
 def reportDeal(data):
     print(data)
     detail = {
@@ -843,7 +874,33 @@ def resetDataReportConfig():
         "Befor":"Fail",
         "ShowBtnJoin":"Fail"
         }
+def reportdailybonus(data):
+    detail = {
+        "Time": data["Time"],
+        "status": data["status"],
+        "button": data["button"]
+    }   # các chi tiết cần in ra ở file log
+    report = """ 
+    -----------------------------------------------------------------------------
+    
+    CASE: TESR DAILY BOMUS
+    
+            Time :{0}       Status:{1}
+            
+            Show Button:{2}
+                                                                time test: {3}
+    
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S") #log ra ngày hien tại
+    log=report.format(detail["Time"], detail["status"], detail["button"],current_time)
+    f = open("logDailyBonus.txt", 'w') #tạo mới file log
+    f.write(log) #viết file log 
+    print(type(log)) #in ra kiểu dữ liệu của type
+    f.close()      #kết thúc
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------#
+
 
