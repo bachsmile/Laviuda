@@ -82,6 +82,15 @@ def cheatGold(idU,gold):
     except:
         print("Error cheat gold")
         return False
+def cheatBuyGold(idU, pack):
+    try:
+        cheat = api_postDoFunction(idU, "CHEAT_PAYMENT_IAP", [pack])
+        print(cheat)
+        print("cheat gold success")
+        return True
+    except:
+        print("Error cheat gold")
+        return False
 def cheatBuyDeal(idU,deal):
     try:
         if deal == 1:
@@ -107,3 +116,5 @@ def cheatFinishedMision(idU,day):
     except:
         print("Error finished mission")
         return False
+
+
