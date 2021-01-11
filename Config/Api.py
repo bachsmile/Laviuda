@@ -98,3 +98,12 @@ def cheatBuyDeal(idU,deal):
     except:
         print("Error cheat deal")
         return False
+def cheatFinishedMision(idU,day):
+    try:
+        cheat = api_postDoFunction(idU, "CHEAT_FINISH_MISSION_TACOS_BUS", [day])
+        print(cheat)
+        print("cheat finished mission success")
+        return True
+    except:
+        print("Error finished mission")
+        return False
