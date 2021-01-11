@@ -52,6 +52,53 @@ def clearReport():
     f.close()
 #Function DB:---------------------->
 #Function VIP:--------------------->
+#Case1: Open vip
+def reportCheckOpenVip(data):
+    detail = {
+        "Status" : data["Status"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case1: Open Vip
+            Status check: {0}
+                                    
+                                    
+                                    Time test: {2}
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log=report.format(detail["Status"], current_time)
+    f = open("log.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+
+data_report = {
+    "Status" : "Fail"
+}
+#Case2: Open Vip nhưng không mua
+def reportCheckPackVip(data):
+    detail = {
+        "Status" : data["Status"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case1: Check Pack Vip
+            Status check: {0}
+                                    
+                                    
+                                    Time test: {2}
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log=report.format(detail["Status"], current_time)
+    f = open("log.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+
 #Function WC:---------------------->
 #BeforEvent
 def reportBeforEvent(data):
@@ -254,43 +301,30 @@ def reportDay4(data):
 #Day5
 def reportDay5(data):
     detail = {
-      "CheatTime": data["CheatTime"],
       "TimeCheat": data["TimeCheat"],
-      "Reload": data["Reload"],
-      "OpenGUI":data["OpenGUI"],
-      "BtnPlay":data["BtnPlay"],
-      "Win":data["Win"],
       "Update":data["Update"],
-      "Lose": data["Lose"],
       "NoUpdate":data["NoUpdate"],
-      "Leave":data["Leave"],
     }
     report = """
     -----------------------------------------------------------------------------------------------------------
     
     CASE: Test mission Day 5
     
-            Cheat time qua ngay:                    {0}    Time cheat:                          {1}
+            Time cheat:                             {0}
             
-            Reload lobby:                           {2}    
+            Show update progess:                    {1}
             
-            Open GUI event:                         {3}    Click btn play Join table:            {4}
-            
-            Play win:                               {5}    Show update progess:                  {6}
-            
-            Play lose:                              {7}    No Show update progess:               {8}
-
-            Leave table:                            {9}
+            No Show update progess:                 {2}
             
             
-                                                                time test: {10}
+                                                                time test: {3}
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log=report.format( detail["CheatTime"], detail["TimeCheat"], detail["Reload"], detail["OpenGUI"], detail["BtnPlay"], detail["Win"], detail["Update"], detail["Lose"], detail["NoUpdate"], detail["Leave"], current_time)
-    f = open("log.txt", 'w+')
+    log=report.format(detail["TimeCheat"], detail["Update"], detail["NoUpdate"], current_time)
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -758,6 +792,31 @@ def reportExchange1(data):
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 #Exchange1
+def reportCollect(data):
+    detail = {
+      "Update":data["Update"]
+    }
+    report = """
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Exchange1 
+            
+            Show update progess:                    {0}    
+            
+                                                                time test: {1}
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log=report.format(detail["Update"],current_time)
+    f = open("log.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+#--------------------------------------------------------------------------------------------------------#
+#--------------------------------------------------------------------------------------------------------#
+#Exchange1
 def reportEndEvent(data):
     detail = {
       "GUIEvent": data["GUIEvent"],
@@ -830,7 +889,7 @@ def reportDeal(data):
     f.close()
 def resetDataReportConfig():
         dataReportConfig = {
-         "Tab": "Fail",
+        "Tab": "Fail",
         "Mission": "Fail",
         "CheatGold0": "Fail",
         "OpenGUI": "Fail",
@@ -843,6 +902,7 @@ def resetDataReportConfig():
         "Progess": "Fail",
         "CheatFOM": "Fail",
         "Update": "Fail",
+        "Update1": "Fail",
         "NoUpdate":"Fail",
         "ChooseLeave":"Fail",
         "Leave": "Fail",
