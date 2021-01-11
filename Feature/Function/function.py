@@ -437,7 +437,6 @@ def afterEvent():
     timeCheat = api_changeTimeServer(convertDayTimeToMili(dayS))
     dataReportConfig["TimeCheat"]=fortmartTime(dayS)
     print(dayS)
-    print(timeWC["start"])
     if timeCheat ==200:
         dataReportConfig['CheatTime']="Pass"
     else:
@@ -525,7 +524,11 @@ def afterEvent():
             else:
                 print(21)
                 dataReportConfig['Befor']="Fail"
-                dataReportConfig["Coutdown"]="Fail"
+                if coutDownTime()==1:
+                    sleep(1)
+                    dataReportConfig["Coutdown"]="Pass"
+                else:
+                    dataReportConfig["Coutdown"]="Fail"
                 #Join event
                 if eventWCOpen():
                     sleep(1)
@@ -867,6 +870,310 @@ def noClaimGift():
     #-------------End script----------------------------------#
     #-------------Report--------------------------------------#
     reportNoClaimGift(dataReportConfig)
+def CheckChangeAcc():
+     # script content
+    #change acc
+    changeAcc(user["user2"]["user"],user["user2"]["pass"])
+    #open Gui
+    eventWCOpen()
+    #check nv day 1
+    print("error find poco no name")
+    if True:
+        dataReportConfig['MissionDay1']="Pass"
+    else:
+        dataReportConfig['MissionDay1']="Fail"
+    #exit GUI event
+    closeEvent()
+    #End in Game----------------------------------------
+    #-------------End script----------------------------------#
+    #-------------Report--------------------------------------#
+    reportChangeAcc(dataReportConfig)
+def missionPassDayInTable():
+    #Cheat finished mission
+    timeCheat = api_changeTimeServer(convertDayTimeToMili(timeWC["start"]))
+    reloadLobby()
+    clickClaim()
+    closeEvent()
+    cheatFinishedMision(user["user2"]["id"],2)
+    reloadLobby()
+    clickClaim()
+    closeEvent()
+    timeCheat = api_changeTimeServer(1605051600000)
+    #cheat time pass 1 ngay-> 27/11/2020 23:59:00 -> 1606496340000
+    dayS = {
+        "Y": timeWC["start"]['Y'],
+        "M": timeWC["start"]['M'],
+        "D": timeWC["start"]['D'],
+        "h": timeWC["start"]['h'],
+        "m": timeWC["start"]['m'],
+        "s": timeWC["start"]['s']
+    }
+    dayS['D'] = dayS['D']+1
+    dayS['h'] = dayS['h']-1
+    dayS['m'] = dayS['m']+59
+    timeCheat = api_changeTimeServer(convertDayTimeToMili(dayS))
+    print(dayS)
+    #reload lobby
+    reloadLobby()
+    clickClaim()
+    closeEvent()
+    #check GUI event
+    if CheckGUIEvent():
+        closeEvent()
+    #click btn play
+    joinTable()
+    #add bot
+    addBot()
+    #play wait pass day
+    for x in range(2):
+        clickPass()
+    #Show update mission
+    if CheckMissionProgress("day2"):
+        dataReportConfig["MissionNew"]="Pass"
+    else:
+        dataReportConfig["MissionNew"]="Fail"
+    #Click out table
+    clickOutTable()
+    #Click knock
+    clickKnock()
+    #wait end game
+    waitEndGame()
+    #------------------------#
+    #report
+    reportUpdateMissionTable(dataReportConfig)
+def autoClaimGift():
+    # script content
+#     clickOutTable()
+    #Check auto show GUI event
+    if CheckGUIEvent():
+        dataReportConfig['GuiEvent']="Pass"
+    else:
+        dataReportConfig['GuiEvent']="Fail"
+        eventWCOpen()
+    #Check effect claim gift
+    to1=checkTocos()
+    sleep(5)
+    to2=checkTocos()
+    tocosConf=challengePlay[challenge["day2"]["mission"]]["data"]["tacos"]
+    if checkTocosUpdate(tocosConf,to1,to2):
+        dataReportConfig['Effect']="Pass"
+    else:
+        dataReportConfig['Effect']="Fail"
+    #check đánh dấu nhận thưởng 2
+    
+    #check update nhiem vu ngay 3
+    #Show update mission
+    if CheckMissionProgress("day3"):
+        dataReportConfig["MissionNew"]="Pass"
+    else:
+        dataReportConfig["MissionNew"]="Fail"
+    #End in Game----------------------------------------
+    #-------------End script----------------------------------#
+    #-------------Report--------------------------------------#
+    reportAutoClaim(dataReportConfig)
+def missionPassDayOpenGui():
+    #Cheat finished mission
+    cheatFinishedMision(user["user2"]["id"],3)
+    reloadLobby()
+    timeCheat = api_changeTimeServer(1605051600000)
+    #cheat time pass 1 ngay-> #28/11/2020 23:59:00 -> 1606582740000
+    dayS = {
+        "Y": timeWC["start"]['Y'],
+        "M": timeWC["start"]['M'],
+        "D": timeWC["start"]['D'],
+        "h": timeWC["start"]['h'],
+        "m": timeWC["start"]['m'],
+        "s": timeWC["start"]['s']
+    }
+    dayS['D'] = dayS['D']+3
+    dayS['h'] = dayS['h']-1
+    dayS['m'] = dayS['m']+59
+    timeCheat = api_changeTimeServer(convertDayTimeToMili(dayS))
+    #reload lobby
+    reloadLobby()
+    clickClaim()
+    closeEvent()
+    eventWCOpen()
+    waitTimePassDay(timeW)
+    #Show update mission
+    if CheckMissionProgress("day4"):
+        dataReportConfig["MissionNew"]="Pass"
+    else:
+        dataReportConfig["MissionNew"]="Fail"
+    #------------------------#
+    #report
+    print(dataReportConfig)
+    reportUpdateMissionLobby(dataReportConfig)
+def passClaimGift():
+    # script content
+    #Change acc 1
+    changeAcc(user["user1"]["user"],user["user1"]["pass"])
+    #check GUI event
+    if CheckGUIEvent():
+        dataReportConfig['GuiEvent']="Pass"
+    else:
+        dataReportConfig['GuiEvent']="Fail"
+        eventWCOpen()
+    #checkAuto claim
+    to1=checkTocos()
+    sleep(5)
+    to2=checkTocos()
+    tocosConf=challengePlay[challenge["day2"]["mission"]]["data"]["tacos"]
+    if checkTocosUpdate(tocosConf,to1,to2):
+        dataReportConfig['UpdateTocos']="Pass"
+    else:
+        dataReportConfig['UpdateTocos']="Fail"
+    #check tick claim day2
+    #checkUpdate mission
+    if CheckMissionProgress("day4"):
+        dataReportConfig["MissionNew"]="Pass"
+    else:
+        dataReportConfig["MissionNew"]="Fail"
+    #exit GUI event
+    closeEvent()
+    #check update gold
+    #End in Game----------------------------------------
+    #-------------End script----------------------------------#
+    #-------------Report--------------------------------------#
+    reportPassClaimGift(dataReportConfig)
+def UpdateProgressMissionFull():
+    data1 = {
+      "UpdateFull": "Fail",
+      "UpdateAgain": "Fail",
+    }
+    #cheat gan hoan thanh nhiem vu
+    cheatNumMision(challengePlay[challenge["day4"]["mission"]]["data"]["totalX"]-1,user["user1"]["id"])
+    reloadLobby()
+    eventWCOpen()
+    prog1=checkProgressCurrent()
+    closeEvent()
+    checkMission2("day4")
+    #check update progess
+    if waitNolimitPoco(pocoTag.btnMain,1):
+        pocoTag.btnMain.click()
+    prog2=checkProgressCurrent()
+    if checkUpdateProgessTable(prog1,prog2):
+        dataReportConfig["UpdateFull"]="Pass"
+    else:
+        dataReportConfig["UpdateFull"]="Fail"
+    clickOutTable()
+    eventWCOpen()
+    prog3=checkProgressCurrent()
+    closeEvent()
+    checkMission2("day4")
+    #check update progess
+    if waitNolimitPoco(pocoTag.btnMain,1):
+        pocoTag.btnMain.click()
+    prog4=checkProgressCurrent()
+    if checkUpdateProgessTable(prog3,prog4):
+        dataReportConfig["UpdateAgain"]="Pass"
+    else:
+        dataReportConfig["UpdateAgain"]="Fail"
+    #------------------------#
+    #report
+    reportUpdateProgressMissionFull(dataReportConfig)
+def checkDisconect():
+    killApp()
+    openApp()
+    sleep(15)
+    checkProgress()
+    clickOutTable()
+def GuiDeal():
+    if  changeAcc(user["user1"]["user"],user["user1"]["pass"]):
+        dataReportConfig['Login']="Fail"
+    else:
+        dataReportConfig['Login']="Pass"
+    if  CheckGUIEvent() :
+        dataReportConfig['GuiEvent']="Fail"
+        closeEvent()
+    else:
+        dataReportConfig['GuiEvent']="Pass"
+#     close Gui Event
+#     if waitNolimitPoco(poco("btnClaim"),2):
+#         poco("btnClaim").click()
+    if  CheckGUIDeal():
+        dataReportConfig['GuiEDeal']="Pass"
+        closeEvent()
+    else:
+        dataReportConfig['GuiEDeal']="Fail"
+    gold1=checkGold()
+    clickGuiDeal()
+    cheatBuyDeal(user["user1"]["id"],1)
+    clickClaim()
+    if checkDisableBtnDeal():
+        dataReportConfig['BtnBuyWC']="Fail"
+    else:
+        dataReportConfig['BtnBuyWC']="Pass"
+    closeEvent()
+    gold2=checkGold()
+    if checkUpdateGoldDeal(dealWCConfig["offerWC1"],gold1,gold2):
+        dataReportConfig['GoldUpdate']="Pass"
+    else:
+        dataReportConfig['GoldUpdate']="Fail"
+    clickGuiDeal()
+    cheatBuyDeal(user["user1"]["id"],2)
+    clickClaim()
+    sleep(1)
+    cheatBuyDeal(user["user1"]["id"],3)
+    clickClaim()
+    if checkBtnDeal():
+        dataReportConfig['BtnDeal']="Fail"
+    else:
+        dataReportConfig['BtnDeal']="Pass"
+    #report
+    reportDeal(dataReportConfig)
+def endEvent():
+    #change Accout 1
+    changeAcc(user["user1"]["user"],user["user1"]["pass"])
+    #Cheat time-------------#02/12/2020 23:59:00 -> 1606928340000
+    timeCheat = api_changeTimeServer(1605051600000)
+#     timeCheat = api_changeTimeServer(timeC["timeD0"]["mili"])
+    dayS = {
+        "Y": timeWC["end"]['Y'],
+        "M": timeWC["end"]['M'],
+        "D": timeWC["end"]['D'],
+        "h": timeWC["end"]['h'],
+        "m": timeWC["end"]['m'],
+        "s": timeWC["end"]['s']
+    }
+    dayS['h'] = dayS['h']-1
+    dayS['m'] = dayS['m']+59
+    timeCheat = api_changeTimeServer(convertDayTimeToMili(dayS))
+#     dataReportConfig["TimeCheat"]=fortmartTime(dayS)
+    #End Cheatime---------------------------------------
+    #---------reload lobby------------------------------
+    reloadLobby()
+    #---------end reload lobby--------------------------
+    #check gold init
+    goldInit=checkGold()
+    #opent GUI event
+    eventWCOpen()
+    #check gold claim
+    goldClaim=challengePlay["claim"]["data"]["gold"]
+    #wait pass day
+    waitTimePassDay(timeW)
+    #check close GUI
+    if CheckGUIEvent():
+        dataReportConfig['GUIEvent']="Fail"
+    else:
+        dataReportConfig['GUIEvent']="Pass"
+    #check gold
+    goldAfter=checkGold()
+    if checkUpdateGold(goldClaim,goldInit,goldAfter):
+        dataReportConfig['UpdateGold']="Fail"
+    else:
+        dataReportConfig['UpdateGold']="Pass"
+    #End in Game----------------------------------------
+    #Check btn event -----------------------------------
+    if CheckBtnEvent():
+        dataReportConfig["Button"]="Fail"
+    else:
+        dataReportConfig["Button"]="Pass"
+    #end Check btn event--------------------------------
+    #-------------End script----------------------------------#
+    #-------------Report--------------------------------------#
+    reportEndEvent(dataReportConfig)
+    #-------------End Report--------------------------------------#
     #------------------#
     #check
 def CheckBtnEvent():
@@ -932,6 +1239,15 @@ def checkMission(day):
         return knock(day)
     if challenge[day]["mission"]=="exchange1":
         return exchange1(day)
+def checkMission2(day):
+    if challenge[day]["mission"]=="win":
+        return win1()
+    if challenge[day]["mission"]=="play":
+        return "play"
+    if challenge[day]["mission"]=="knock":
+        return "knock"
+    if challenge[day]["mission"]=="exchange1":
+        return "exchange1"
 def checkProgressCurrent():
     try:
         if waitNolimitPoco(pocoTag.lbProgress,5):
@@ -943,6 +1259,17 @@ def checkProgressCurrent():
             print(prgL)
             print("Progess checkProgressCurrent")
             return prgL
+        else:
+            print("NO find progress")
+            return False
+    except:
+        print("error checkProgressCurrent")
+        return False
+def checkProgress():
+     try:
+        if waitNolimitPoco(pocoTag.lbProgress,5):
+            print("Progess checkProgressCurrent")
+            return True
         else:
             print("NO find progress")
             return False
