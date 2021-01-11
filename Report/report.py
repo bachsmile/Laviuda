@@ -13,8 +13,8 @@ from poco.drivers.cocosjs import CocosJsPoco
 #--------------End Import Lib------------------------------#
 #--------------Import FILE---------------------------------#
 #----------------------------------------------------------#
-from Lavuavi.Config.config import *
-from Lavuavi.Report.report import *
+from Laviuda.Config.config import *
+from Laviuda.Report.report import *
 #--------------End Import FILE-----------------------------#
 #--------------Connect Device------------------------------#
 
@@ -52,6 +52,53 @@ def clearReport():
     f.close()
 #Function DB:---------------------->
 #Function VIP:--------------------->
+#Case1: Open vip
+def reportCheckOpenVip(data):
+    detail = {
+        "Status" : data["Status"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case1: Open Vip
+            Status check: {0}
+                                    
+                                    
+                                    Time test: {2}
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log=report.format(detail["Status"], current_time)
+    f = open("log.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+
+data_report = {
+    "Status" : "Fail"
+}
+#Case2: Open Vip nhưng không mua
+def reportCheckPackVip(data):
+    detail = {
+        "Status" : data["Status"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case1: Check Pack Vip
+            Status check: {0}
+                                    
+                                    
+                                    Time test: {2}
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log=report.format(detail["Status"], current_time)
+    f = open("log.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+
 #Function WC:---------------------->
 #BeforEvent
 def reportBeforEvent(data):
@@ -846,4 +893,5 @@ def resetDataReportConfig():
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------#
+
 

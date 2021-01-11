@@ -14,9 +14,8 @@ from poco.exceptions import PocoTargetTimeout
 #--------------End Import Lib------------------------------#
 #--------------Import FILE---------------------------------#
 
-# from Lavuavi.Config.Api import *
 #link cheat:
-from Lavuida.Config.Api import *
+from Laviuda.Config.Api import *
 #----------------------------------------------------------#
 from Laviuda.Config.config import *
 from Laviuda.Report.report import *
@@ -310,18 +309,18 @@ def open_vip():
     try:
         if exists(image_vip.btn_vip):
             pocoTag.btnVip.click()
-            print("Vao thanh cong")
+            data_report["Status"] = "Pass"
         time.sleep(2)
     except:
-        print("error")
+        data_report["Status"] = "Fail"
         time.sleep(2)
 def open_pack(pack):
     try:
         poco(pack).click()
         touch(image_vip.btn_cancel)
-        print("Mo thanh cong")
+        data_report["Status"] = "Pass"
     except:
-        print("error")
+        data_report["Status"] = "Fail"
 def back_to_lobby():
     btns = [image_vip.back, image_vip.close, image_vip.outroom]
     try:
@@ -344,7 +343,7 @@ def check_item():
                     time.sleep(2)
                     touch(image_vip.btn_profile)
                 else:
-                    swipe(image_vip.hoahong, record_pos=(0.113, 0.122), resolution=(2340, 1079)), vector=[-0.1553, -0.0043]
+                    swipe(image_vip.hoahong, record_pos=(0.113, 0.122), resolution=(2340, 1079), vector=[-0.1553, -0.0043])
                     time.sleep(2)
                     touch(item)
             print("List item co ton tai")
@@ -362,7 +361,7 @@ def to_table():
         time.sleep(2)
         pocoTag.btnCheat.click()
         time.sleep(2)
-        print("Vao ban, cheat bot thanh cong")  
+        print("Vao ban, cheat bot thanh cong")
     except:
         print("Khong thanh cong")
 def buy_vip_thap(pack):
@@ -373,6 +372,25 @@ def buy_vip_thap(pack):
         print("Khong mua duoc vip thap hon")
     except:
         print("Error")
+def checkLevelVip():
+    logos = [image_vip.logo_vip_bac, image_vip.logo_vip_vang, image_vip.logo_vip_kimcuong]
+    try:    
+        if exists(image_vip.logo_vip_bac):
+            print("user dang co vip bac")
+        elif exists(image_vip.logo_vip_vang):
+            print("user dang co vip vang")
+        else:
+            print("user dang co vip kim cuong")
+    except:
+        print("error")
+
+#     switcher = {
+#         0: "user dang non-vip",
+#         1: "user dang co vip bac",
+#         2: "user dang co vip vang",
+#         3: "user dang co vip kim cuong"
+#     }
+checkLevelVip()
 #Function WC:---------------------->
     #------------------#
 def beforEvent():
@@ -1036,6 +1054,7 @@ def clickClaimMission():
     except:
         return False
 #-------------------------------------------------------------------------------------#
+
 
 
 
