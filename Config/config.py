@@ -42,8 +42,12 @@ timeWC={
 }
 def datetoMili(day):
     return day*86400000
+def housToMili(hous):
+    return hous*3600000
 def minutetoMili(minute):
     return minute*60000
+def secToMili(sec):
+    return sec*1000
 def convertDayTimeToMili(time):
     dt = datetime(time['Y'],time['M'],time['D'],time['h'],time['m'],time['s'])
     milliseconds = int(round(dt.timestamp() * 1000))
