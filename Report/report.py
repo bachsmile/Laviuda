@@ -864,9 +864,10 @@ def reportdailybonus(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S") #log ra ngày hien tại
     log=report.format(detail["Time"], detail["status"], detail["button"],current_time)
-    f = open("logDailyBonus.txt", 'w') #tạo mới file log
+    f = open("logDailyBonus.txt", 'a') #tạo mới file log
     f.write(log) #viết file log 
     print(type(log)) #in ra kiểu dữ liệu của type
+    print(log)
     f.close()      #kết thúc
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
