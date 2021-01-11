@@ -1301,17 +1301,17 @@ def checkProgressCurrent():
     except:
         print("error checkProgressCurrent")
         return False
-# def checkProgress():
-#      try:
-#         if waitNolimitPoco(pocoTag.lbProgress,5):
-#             print("Progess checkProgressCurrent")
-#             return True
-#         else:
-#             print("NO find progress")
-#         return False
-#     except:
-#         print("error checkProgressCurrent")
-#         return False
+def checkProgress():
+     try:
+        if waitNolimitPoco(pocoTag.lbProgress,5):
+            print("Progess checkProgressCurrent")
+            return True
+        else:
+            print("NO find progress")
+        return False
+    except:
+        print("error checkProgressCurrent")
+        return False
 def checkUpdateProgessTable(prg1,prg2):
     try:
         print(prg1)
