@@ -54,7 +54,7 @@ def convertDayTimeToMili(time):
     print(milliseconds)
     return milliseconds
 # print(convertDayTimeToMili(timeWC["start"]))
-def convertSecondstoDateTime(milliseconds)
+def convertSecondstoDateTime(milliseconds):
     seconds=milliseconds/1000
     timestamp = datetime.fromtimestamp(seconds)
     return timestamp

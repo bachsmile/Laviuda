@@ -97,6 +97,7 @@ class pocoTag:
     btnFacebookNormal = poco("btnFacebookNormal")
     btnRegister = poco("btnRegister")
     btnDaily = poco("btnDaily")
+    btnSelectTable=poco("btnSelectTable")
 #------------------------------------------VIP-----------------------------------------------#
     
 #------------------------------------------VIP-----------------------------------------------#

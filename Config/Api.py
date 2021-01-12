@@ -7,7 +7,7 @@ HTTPS_PROXY = "https://172.28.103.34:3128"
 # from test.Autotest.Lavuavi.Function.Cheat.Cheat.api import *
 #--------------------------------------------#
 # Lấy access token mới mỗi lần dùng tool cheat
-ACCESS_TOKEN = "ya29.a0AfH6SMB6DiEEZ4gsVWq6yharpjCwFOowJ4DOYPck-4QhY29UqZKrHjLYlglVLIHIVCfW1Z_0AdmSn2tAS4gidEByYZEte6cJyuIfRENtxwKIJjZedUk8glkMNgs1oi4_sDdfcO0_jWK4DMmwz0X_otx3N_uQIXQKwWhpA136ytXK"
+ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdjNzJmNzI3LTM3OWItNGRiNi05OTdhLWVjOGU2M2MxMjcxNiIsIm5hbWUiOiJCw6FjaC4gVHLhuqduIFh1w6JuIiwiZW1haWwiOiJiYWNodHhAdm5nLmNvbS52biIsIm9pZCI6IjE5ZDMyODgxLTY4ZmItNGMzMS04NzVkLWE0ZmQwMzEzN2FjMyIsImFkZHJlc3MiOiIxLjUzLjI1NS4xNDQiLCJleHBpcmVkIjoxNjEwNTM0ODYxNzA5LCJ0eXBlIjoiYXp1cmUiLCJ1c2VybmFtZSI6ImJhY2h0eEB2bmcuY29tLnZuIiwiaWF0IjoxNjEwNDQ3MjIxLCJleHAiOjE2MTA1MzM2MjF9.fWr9pXxQEJTiEMqAZc8Qq-0cPNYQfEkg3eN-vYs6SWc"
 SERVER_HOST = "http://49.213.81.43:10021"
 BASE_URL = SERVER_HOST + "/api/"
 
@@ -71,7 +71,7 @@ def api_changeTimeServer(timeInMilliseconds):
     print("--------------URL---------------%s" % url)
     r = requests.post(url, data=json.dumps(data), headers=header)
     return r.status_code
-
+# api_changeTimeServer(1609199400000)
 #Cheat gold
 def cheatGold(idU,gold):
     try:
