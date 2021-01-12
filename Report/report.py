@@ -63,7 +63,7 @@ def reportCheckOpenVip(data):
             Status check: {0}
                                     
                                     
-                                    Time test: {2}
+                                    Time test: {1}
     -----------------------------------------------------------------------------
     """
     now = datetime.now()
@@ -74,7 +74,7 @@ def reportCheckOpenVip(data):
     print(type(log))
     f.close()
 
-data_report = {
+data = {
     "Status" : "Fail"
 }
 #Case2: Open Vip nhưng không mua
@@ -88,7 +88,7 @@ def reportCheckPackVip(data):
             Status check: {0}
                                     
                                     
-                                    Time test: {2}
+                                    Time test: {1}
     -----------------------------------------------------------------------------
     """
     now = datetime.now()
@@ -98,6 +98,9 @@ def reportCheckPackVip(data):
     f.write(log)
     print(type(log))
     f.close()
+data = {
+    "Status" : "Fail"
+}
 #Case 3: Mua Vip 1
 def reportBuyVip(data):
     detail = {
@@ -122,13 +125,13 @@ def reportBuyVip(data):
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log = report.format(detail["Check_gold"], detail["Check_day"], detail["Check_day"], detail["Check_item"], detail["Check_low_vip"], detail["Status"], current_time)
+    log = report.format(detail["Check_gold"], detail["Check_day"], detail["Check_item"], detail["Check_low_vip"], detail["Status"], current_time)
     f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
 
-data_report = {
+data = {
     "Check_gold" : "Fail",
     "Check_day"  : "Fail",
     "Check_item" : "Fail",
@@ -995,6 +998,7 @@ def reportdailybonus(data):
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------#
+
 
 
 

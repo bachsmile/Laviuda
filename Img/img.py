@@ -86,6 +86,13 @@ class image_vip:
     logo_vip_vang = Template(r"tpl1609740925621.png", record_pos=(-0.422, 0.184), resolution=(2340, 1079))
     logo_vip_kimcuong = Template(r"tpl1609740980117.png", record_pos=(-0.421, 0.184), resolution=(2340, 1079))
 
+    no_vip = Template(r"tpl1610440980453.png", record_pos=(0.171, -0.082), resolution=(2340, 1079))
+    vip_gold = Template(r"tpl1610441152067.png", record_pos=(0.197, -0.082), resolution=(2340, 1079))
+    vip_dy = Template(r"tpl1610441182361.png", record_pos=(0.173, -0.084), resolution=(2340, 1079))
+    vip_silver = Template(r"tpl1610441266868.png", record_pos=(0.191, -0.082), resolution=(2340, 1079))
+
+    exprire_vip = Template(r"tpl1610446081905.png", record_pos=(0.012, 0.187), resolution=(2340, 1079))
+
 
 #------------------------------------------END VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
