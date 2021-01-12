@@ -103,11 +103,7 @@ def reloadLobby():
     try:
         poco = CocosJsPoco()
         pocoTag.btnPlay.click()
-<<<<<<< HEAD
-        sleep(2)
-=======
         sleep(1)
->>>>>>> 714d655137aeddb73a6b8c7fb15b056216e52f86
         pocoTag.btnLeaveGame.click()
         print('reload lobby')
         return True
@@ -349,30 +345,30 @@ def back_to_lobby():
             continue
     except:
         print("back lobby khong thanh cong")
-def check_item():
-    items = [image_vip.cachua, image_vip.votay, image_vip.xonuoc, image_vip.trung, image_vip.hoahong, image_vip.hoavang, image_vip.sungnuoc]
-    try:
-        touch(image_vip.btn_profile)
-        if exists(image_vip.list_item):
-            #return False
-            for item in items:
-                if exists(item):
-                    touch(item)
-                    time.sleep(2)
-                    touch(image_vip.btn_profile)
-                else:
-                    swipe(image_vip.hoahong, record_pos=(0.113, 0.122), resolution=(2340, 1079)), vector=[-0.1553, -0.0043]             
-                    time.sleep(2)
-                    touch(item)
-            data_report["Check_item"] = "Pass"
-            print("List item co ton tai")
-        else:
-            #return True
-            data_report["Check_item"] = "Fail"
-            print("List item khong ton tai")
-        back_to_lobby()
-    except:
-        print("Error")
+# def check_item():
+#     items = [image_vip.cachua, image_vip.votay, image_vip.xonuoc, image_vip.trung, image_vip.hoahong, image_vip.hoavang, image_vip.sungnuoc]
+#     try:
+#         touch(image_vip.btn_profile)
+#         if exists(image_vip.list_item):
+#             #return False
+#             for item in items:
+#                 if exists(item):
+#                     touch(item)
+#                     time.sleep(2)
+#                     touch(image_vip.btn_profile)
+#                 else:
+#                     swipe(image_vip.hoahong, record_pos=(0.113, 0.122), resolution=(2340, 1079)), vector=[-0.1553, -0.0043]             
+#                     time.sleep(2)
+#                     touch(item)
+#             data_report["Check_item"] = "Pass"
+#             print("List item co ton tai")
+#         else:
+#             #return True
+#             data_report["Check_item"] = "Fail"
+#             print("List item khong ton tai")
+#         back_to_lobby()
+#     except:
+#         print("Error")
 def to_table():
     try:
         pocoTag.btnPlay.click()
@@ -887,7 +883,8 @@ def day7():
     #reload lobby
     reloadLobby()
     #click btn play
-    joinTable()checkGold
+    joinTable()
+    checkGold
     #wait pass day
     waitTimePassDay(timeW)
     #check progess table
@@ -1039,41 +1036,41 @@ def knock(day):
         print("error knock")
     print(dataReportConfig)
     reportKnock(dataReportConfig)
-def collect(day):
-     try:
-        #join event
-        eventWCOpen()
-        #check progress
-        prog1=checkProgressCurrent()
-        closeEvent()
-        #cheat gold du play
-        cheatGold(user["user1"]["id"],1000000)
-        #click btn play
-        joinTable()
-        #cheat cheatPorkerSpecial
-        #add bot
-        addBot()
-        #Click knock
-        clickKnock()
-        prog2=checkProgressCurrent()
-        #cheat win finished game
-        # cheatNumMision(1)
-        #chon thoat table
-        clickOutTable()
-        #wait end game
-        waitEndGame()
-        #check update progess
-        if checkUpdateProgessTable(prog1,prog2):
-            dataReportConfig["Update"]="Pass"
-        else:
-            dataReportConfig["Update"]="Fail"
-           #check lobby
-        CheckLobby()
-        closeEvent()
-    except:
-        print("error collect")
-    print(dataReportConfig)
-    reportCollect(dataReportConfig)
+# def collect(day):
+#      try:
+#         #join event
+#         eventWCOpen()
+#         #check progress
+#         prog1=checkProgressCurrent()
+#         closeEvent()
+#         #cheat gold du play
+#         cheatGold(user["user1"]["id"],1000000)
+#         #click btn play
+#         joinTable()
+#         #cheat cheatPorkerSpecial
+#         #add bot
+#         addBot()
+#         #Click knock
+#         clickKnock()
+#         prog2=checkProgressCurrent()
+#         #cheat win finished game
+#         # cheatNumMision(1)
+#         #chon thoat table
+#         clickOutTable()
+#         #wait end game
+#         waitEndGame()
+#         #check update progess
+#         if checkUpdateProgessTable(prog1,prog2):
+#             dataReportConfig["Update"]="Pass"
+#         else:
+#             dataReportConfig["Update"]="Fail"
+#            #check lobby
+#         CheckLobby()
+#         closeEvent()
+#     except:
+#         print("error collect")
+#     print(dataReportConfig)
+#     reportCollect(dataReportConfig)
 def claimGift():
     # script content
     #back to loby
@@ -1647,17 +1644,17 @@ def checkProgressCurrent():
     except:
         print("error checkProgressCurrent")
         return False
-def checkProgress():
-     try:
-        if waitNolimitPoco(pocoTag.lbProgress,5):
-            print("Progess checkProgressCurrent")
-            return True
-        else:
-            print("NO find progress")
-        return False
-    except:
-        print("error checkProgressCurrent")
-        return False
+# def checkProgress():
+#      try:
+#         if waitNolimitPoco(pocoTag.lbProgress,5):
+#             print("Progess checkProgressCurrent")
+#             return True
+#         else:
+#             print("NO find progress")
+#         return False
+#     except:
+#         print("error checkProgressCurrent")
+#         return False
 def checkProgessTable():
     try:
         if waitNolimitPoco(pocoTag.btnMain,5):
@@ -1861,7 +1858,7 @@ def log_out():
         print("Success!")
     poco("iconSetting").click()
     poco("bgLobbyLayer2").click()
-    touch(Template(r"tpl1608523320839.png", record_pos=(0.097, 0.08), resolution=(1280, 720)))
+    touch(imageInOutAcc.imgOutOk)
     data["status"]="True"
     reportdailybonus(data)
 def log_in_gg():
@@ -1881,7 +1878,7 @@ def register():
     }
     pocoTag.btnSwitch.click()
     pocoTag.inputUser.click()
-    text("ngocnn37")
+    text("ngocnn49")
     pocoTag.inputPass.click()
     text("12345678")
     pocoTag.btnRegister.click()  
@@ -2093,63 +2090,5 @@ def complete_logout_login_24h():
     if pocoTag.btnClaim.exists():
         print("Show daily bonus khi da nhan 7 lan")
     else:
-<<<<<<< HEAD
+
         print(" khong show GUI daily bonus khi da nhan du 7 lan!")
-check_login()
-register()     
-   #Play tutorial---------------------------------------
-time.sleep(3)
-bonus_day_1()
-check_lobby()
-# 3. Log out-> Log in sau 24h
-log_out()
-time.sleep(3)
-api_changeTimeServer(1608624000000)
-time.sleep(1)
-log_in_FB()
-#5. Nhận bonus lần 2
-claim_bonus()
-#6. Check có đang ở lobby hay không
-check_lobby()
-#7.Kiểm tra có show GUI daily bonus khi dung o lobby cho nhan bonus,nhân bonus 
-claim_bonus()
-#9. Vao lại Gui daily bonus
-into_gui_bonus()
-#10. Log out-> vào lại sau 23h
-Logout_login_23h()
-#11. Vao playinggame-> ra lại lobby
-playing_23h()
-#12. Vào playing game-> Chờ qua 24h rồi ra lại lobby( Ngày 4)
-playing_24h()
-#13. Click nhận bonus của ngày 4
-claim_bonus()
-#14. Đứng chờ ở GUI daily bonus 23h
-GUI_bonus_23h()
-#15. Tiếp tục đứng ở GUI daily bonus chờ thêm 1h( ngày 5)
-api_changeTimeServer(1608969600000)
-#16 Nhận bonus 5 lần-> Log out-> Login sau 24h nhưng không nhận bonus->Login lại sau 24h tiếp theo
-claim_kill_login_24h()
-#17 Click nhận bonus của ngày 6
-claim_bonus()
-#18 Nhận bonus lần thứ 7
-api_changeTimeServer(1609228800000)
-claim_bonus()
-#check an btn Daily bonus ở lobby khi đã nhận đủ 7 lần
-complete_icon_bonus_lobby()
-#19. Ra lại lobby-> đứng ở lobby chờ sau 24
-complete_lobby_24h()
-#20. Log out-> Login lại sau 24h
-complete_logout_login_24h()
-#--------------------------------
-=======
-        print(" Success!")
-#
-
-
-
-
-
-
-
-
->>>>>>> 714d655137aeddb73a6b8c7fb15b056216e52f86
