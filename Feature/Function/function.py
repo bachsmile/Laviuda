@@ -7,6 +7,7 @@ __desc__="""
 #--------------End Tile------------------------------------#
 #--------------Import LIB----------------------------------#
 import json
+import re
 from airtest.core.api import *
 from airtest.cli.parser import cli_setup
 from poco.drivers.cocosjs import CocosJsPoco
@@ -320,20 +321,20 @@ def open_vip():
     try:
         if exists(image_vip.btn_vip):
             pocoTag.btnVip.click()
-            data_report["Status"] = "Pass"
+            data["Status"] = "Pass"
             print("Vao thanh cong")
     except:
-        data_report["Status"] = "Fail"
+        data["Status"] = "Fail"
         print("error")
         time.sleep(2)
 def open_pack(pack):
     try:
         poco(pack).click()
         touch(image_vip.btn_cancel)
-        data_report["Status"] = "Pass"
+        data["Status"] = "Pass"
         print("Mo thanh cong")
     except:
-        data_report["Status"] = "Fail"
+        data["Status"] = "Fail"
         print("error")
 def back_to_lobby():
     btns = [image_vip.back, image_vip.close, image_vip.outroom]
@@ -345,30 +346,40 @@ def back_to_lobby():
             continue
     except:
         print("back lobby khong thanh cong")
-# def check_item():
-#     items = [image_vip.cachua, image_vip.votay, image_vip.xonuoc, image_vip.trung, image_vip.hoahong, image_vip.hoavang, image_vip.sungnuoc]
-#     try:
-#         touch(image_vip.btn_profile)
-#         if exists(image_vip.list_item):
-#             #return False
-#             for item in items:
-#                 if exists(item):
-#                     touch(item)
-#                     time.sleep(2)
-#                     touch(image_vip.btn_profile)
-#                 else:
-#                     swipe(image_vip.hoahong, record_pos=(0.113, 0.122), resolution=(2340, 1079)), vector=[-0.1553, -0.0043]             
-#                     time.sleep(2)
-#                     touch(item)
-#             data_report["Check_item"] = "Pass"
-#             print("List item co ton tai")
-#         else:
-#             #return True
-#             data_report["Check_item"] = "Fail"
-#             print("List item khong ton tai")
-#         back_to_lobby()
-#     except:
-#         print("Error")
+def check_item():
+    items = [image_vip.cachua, image_vip.votay, image_vip.xonuoc, image_vip.trung, image_vip.hoahong, image_vip.hoavang, image_vip.sungnuoc]
+    try:
+        touch(image_vip.btn_profile)
+        if exists(image_vip.list_item):
+            #return False
+            for item in items:
+                if exists(item):
+                    touch(item)
+                    time.sleep(2)
+                    touch(image_vip.btn_profile)
+                else:
+                    swipe(Template(r"tpl1610432749141.png", record_pos=(0.114, 0.123), resolution=(2340, 1079)), vector=[-0.1399, -0.0097])
+                    time.sleep(2)
+                    touch(item)
+            data["Check_item"] = "Pass"
+            print("List item co ton tai")
+        else:
+            #return True
+            data["Check_item"] = "Fail"
+            print("List item khong ton tai")
+        back_to_lobby()
+    except:
+        print("Error")
+def check_item3():
+    try:
+        touch(image_vip.btn_profile)
+        if exists(image_vip.list_item):
+            swipe(Template(r"tpl1610432749141.png", record_pos=(0.114, 0.123), resolution=(2340, 1079)), vector=[-0.1399, -0.0097])
+            time.sleep(2)
+            touch(image_vip.boom)
+        print("success")
+    except:
+        print("Error")
 def to_table():
     try:
         pocoTag.btnPlay.click()
@@ -385,17 +396,15 @@ def buy_vip_thap(pack):
         poco(pack).click()
         time.sleep(1)
         touch(image_vip.btn_ok)
-        data_report["Check_low_vip"] = "Pass"
+        data["Check_low_vip"] = "Pass"
         print("Khong mua duoc vip thap hon")
     except:
-        data_report["Check_low_vip"] = "Fail"
-        print("Error")
-# def check_vip():
-    
+        data["Check_low_vip"] = "Fail"
+        print("Error")  
 def cheat_buy_vip(pack):
     old_gold = float(re.sub('[MKB]', '', poco("lbGold").get_text()))
     old_day = float(re.sub(r'\D', '', poco("lbTimeMyVip").get_text()))
-    a = api_postDoFunction("19175089", "CHEAT_PAYMENT_VIP", [pack])
+    a = api_postDoFunction("19201812", "CHEAT_PAYMENT_VIP", [pack])
     try:
         touch(image_vip.btn_claim)
         time.sleep(2)
@@ -406,23 +415,56 @@ def cheat_buy_vip(pack):
         day = new_day - old_day
         day_in = vip_pack[pack]["day"] 
         if gold == gold_in & day == day_in:
-            data_report["Check_gold"] = "Pass"
-            data_report["Check_day"] = "Pass"
+            data["Check_gold"] = "Pass"
+            data["Check_day"] = "Pass"
             print("Mua thanh cong")
-            data_report["Status"] = "Pass"
+            data["Status"] = "Pass"
     except:
-        data_report["Status"] = "Fail"
+        data["Status"] = "Fail"
         print("Error")
-# def check_gold_support():
-def checkLevelVip():
-    logos = [image_vip.logo_vip_bac, image_vip.logo_vip_vang, image_vip.logo_vip_kimcuong]
-    try:    
-        if exists(image_vip.logo_vip_bac):
-            print("user dang co vip bac")
-        elif exists(image_vip.logo_vip_vang):
-            print("user dang co vip vang")
+def check_gold_support():
+    cheatGoldEmpty(1)
+    reloadLobby()
+    try:
+        if exists(image_vip.btn_ok):
+            image_vip.btn_ok
+            print("Nhann gold support thanh cong")
+    except:
+        print("Khong nhan duoc gold support")
+def check_buy_gold(idU, pack):
+    try:
+        cheat = api_postDoFunction(idU, "CHEAT_PAYMENT_IAP", [pack])
+        pocoTag.btnClaim
+        print("Success")
+    except:
+        print("Error")
+def check_gold_tribute():
+    try:
+        if exists(image_vip.btn_claim):
+            pocoTag.btnClaim
+            print("Success")
+    except:
+        print("Error")
+def checkMoGUIVipGD():
+    try:
+        if exists(image_vip.btn_giahan):
+            touch(image_vip.btn_giahan)
+            print("Success")
         else:
+            print("error")
+    except:
+        print("error")
+def checkLevelVip():
+    try:
+        touch(image_vip.btn_profile)  
+        if exists(image_vip.vip_dy):
             print("user dang co vip kim cuong")
+        if exists(image_vip.vip_gold):
+            print("user dang co vip vang")
+        if exists(image_vip.vip_silver):
+            print("user dang co vip bac")
+        if exists(image_vip.no_vip):
+            print("user dang non vip")
     except:
         print("error")
 #Function WC:---------------------->
