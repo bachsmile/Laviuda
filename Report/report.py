@@ -972,30 +972,26 @@ def resetDataReportConfig():
         }
 def reportdailybonus(data):
     detail = {
-        "Time": data["Time"],
-        "status": data["status"],
-        "button": data["button"]
+        "status": data["status"]
     }   # các chi tiết cần in ra ở file log
     report = """ 
     -----------------------------------------------------------------------------
     
     CASE: TESR DAILY BOMUS
     
-            Time :{0}       Status:{1}
+              Status:{0}
             
-            Show Button:{2}
-                                                                time test: {3}
-    
+                                                                time test: {1}
     -----------------------------------------------------------------------------
     """
     now = datetime.now()
-    current_time = now.strftime("%H:%M:%S") #log ra ngày hien tại
-    log=report.format(detail["Time"], detail["status"], detail["button"],current_time)
-    f = open("logDailyBonus.txt", 'a') #tạo mới file log
-    f.write(log) #viết file log 
-    print(type(log)) #in ra kiểu dữ liệu của type
+    current_time = now.strftime("%H:%M:%S") 
+    log=report.format(detail["status"],current_time)
+    f = open("logDailyBonus.txt", 'a')
+    f.write(log) 
+    print(type(log))
     print(log)
-    f.close()      #kết thúc
+    f.close()    
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------#
