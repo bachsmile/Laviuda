@@ -38,7 +38,7 @@ timeW="""
 """
 timeWC={
     "start":{"Y":2020,"M":12,"D":29,"h":7,"m":0,"s":0},
-    "end":{"Y":2021,"M":1,"D":5,"h":7,"m":0,"s":0}
+    "end":{"Y":2020,"M":1,"D":5,"h":7,"m":0,"s":0}
 }
 def datetoMili(day):
     return day*86400000
@@ -54,6 +54,10 @@ def convertDayTimeToMili(time):
     print(milliseconds)
     return milliseconds
 # print(convertDayTimeToMili(timeWC["start"]))
+def convertSecondstoDateTime(milliseconds):
+    seconds=milliseconds/1000
+    timestamp = datetime.fromtimestamp(seconds)
+    return timestamp
 # def convertSecondstoDateTime(milliseconds)
 #     seconds=milliseconds/1000
 #     timestamp = datetime.fromtimestamp(seconds)
