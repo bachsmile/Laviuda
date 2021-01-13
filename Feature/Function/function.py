@@ -1220,7 +1220,6 @@ def collect(day):
 #         print("error collect")
 #     print(dataReportConfig)
 #     reportCollect(dataReportConfig)
->>>>>>> bbaaf1c3cb853cc4b2a14bf09074e5dc3e1d8663
 def claimGift():
     # script content
     #back to loby
