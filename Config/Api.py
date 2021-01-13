@@ -10,7 +10,6 @@ HTTPS_PROXY = "https://172.28.103.34:3128"
 ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYxZjZlOGZhLTIyMGItNDk1OC1hNGEwLTA3ZDZkZDZjMjRkNCIsIm5hbWUiOiJW4bu5LiBIdeG7s25oIE5ndXnhu4VuIiwiZW1haWwiOiJ2eWhuQHZuZy5jb20udm4iLCJvaWQiOiI5MDJmYWVmMy0yZjA3LTRlZjgtOTViNC04N2I2YzAyNjk3N2MiLCJhZGRyZXNzIjoiMS41My4yNTUuMTQ3IiwiZXhwaXJlZCI6MTYxMDUyODcyODQyNSwidHlwZSI6ImF6dXJlIiwidXNlcm5hbWUiOiJ2eWhuQHZuZy5jb20udm4iLCJpYXQiOjE2MTA0NDEwODgsImV4cCI6MTYxMDUyNzQ4OH0.M1k-SpGPpThFinr7xlYloaDJFqt2jM4ktjD1_snHIq4"
 SERVER_HOST = "http://49.213.81.43:10020"
 BASE_URL = SERVER_HOST + "/api/"
-
 proxyDict = {
     "http": HTTP_PROXY,
     "https": HTTPS_PROXY,
@@ -117,6 +116,4 @@ def cheatFinishedMision(idU,day):
         print("Error finished mission")
         return False
 
-
-
-
+# print(api_changeTimeServer(1609199940000 ))

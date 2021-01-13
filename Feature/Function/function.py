@@ -123,9 +123,8 @@ def reloadLoby2():
     pocoTag.btnHide.click()
 def closeEvent():
     try:
-        sleep(1)
         poco = CocosJsPoco()
-        if waitNolimitPoco(pocoTag.btnClose,1):
+        if waitNolimitPoco(pocoTag.btnClose,2):
             pocoTag.btnClose.click()
     except:
         print("error close ev")
@@ -140,7 +139,6 @@ def out():
     try:
         poco = CocosJsPoco()
         pocoTag.btnSetting.click()
-        sleep(1)
         wait(imageInOutAcc.imgBtnOut)
         touch(imageInOutAcc.imgBtnOut)
         touch(imageInOutAcc.imgOutOk)
@@ -537,7 +535,6 @@ def beforEvent():
     reportBeforEvent(dataReportConfig)
 def afterEvent():
     resetDataReportConfig()
-    poco = CocosJsPoco()
     sleep(2)
 #-------------In Game-------------------------------------------------#
     #-------------Cheat time-----------------------------------#
@@ -577,6 +574,64 @@ def afterEvent():
 #                 print(1)
 #                 dataReportConfig['Befor']="Pass"
 #                 #Open pop-up wait event
+    if CheckBtnEvent():
+        try:
+            eventWCOpen()
+            if CheckNotiEvent():
+                print(1)
+                dataReportConfig['Befor']="Pass"
+                if coutDownTime()==1:
+                    dataReportConfig["Coutdown"]="Pass"
+                else:
+                    dataReportConfig["Coutdown"]="Fail"
+                if eventWCOpen():
+                    dataReportConfig["After"]="Pass"
+                else:
+                    dataReportConfig["After"]="Fail"
+                if waitNolimitPoco(pocoTag.btnJoin,2):
+                    dataReportConfig['ShowBtnJoin']="Pass"
+                else:
+                    dataReportConfig['ShowBtnJoin']="Fail"
+                closeEvent()
+                #cheat time back 1p
+                #26/11/2020 06:59:20
+                timeCheat = api_changeTimeServer(1605051600000)
+                dayS1 = {
+                    "Y": timeWC["start"]['Y'],
+                    "M": timeWC["start"]['M'],
+                    "D": timeWC["start"]['D'],
+                    "h": timeWC["start"]['h'],
+                    "m": timeWC["start"]['m'],
+                    "s": timeWC["start"]['s']
+                }
+                timeNow=convertDayTimeToMili(dayS1) -housToMili(1)+ minutetoMili(59)
+                timeCheat = api_changeTimeServer(timeNow)
+                dataReportConfig["TimeCheat"]=convertSecondstoDateTime(timeNow)
+                if timeCheat ==200:
+                    dataReportConfig['CheatTime1']="Pass"
+                else:
+                    dataReportConfig['CheatTime1']="Fail"
+                sleep(1)
+#                 killApp()
+#                 sleep(2)
+#                 openApp()
+#                 sleep(20)
+#                 claimAll()
+                #changeAcc
+                if changeAcc(user["user1"]["user"],user["user1"]["pass"]):
+                    CheckLobby()
+                    joinTable()
+                    if coutDownTimeIntable():
+                        dataReportConfig['ShowProg']="Pass"
+                    else:
+                        dataReportConfig['ShowProg']="Fail"
+                    clickOutTable()
+#                     closeEvent()
+            else:
+                print(2)
+                dataReportConfig['Befor']="Fail"
+                sleep(20)
+                dataReportConfig["Coutdown"]="Fail"
 #                 if coutDownTime()==1:
 #                     sleep(1)
 #                     dataReportConfig["Coutdown"]="Pass"
@@ -739,11 +794,42 @@ def afterEvent():
 #                     dataReportConfig['CheatTime1']="Fail"
 #                 sleep(1)
 #                 #kill app
+                #Join event
+                if eventWCOpen():
+                    dataReportConfig["After"]="Pass"
+                else:
+                    dataReportConfig["After"]="Fail"
+                if waitNolimitPoco(pocoTag.btnJoin,2):
+                    dataReportConfig['ShowBtnJoin']="Pass"
+                else:
+                    dataReportConfig['ShowBtnJoin']="Fail"
+                closeEvent()
+                #cheat time back 1p
+                #26/11/2020 06:59:20
+                timeCheat = api_changeTimeServer(1605051600000)
+                dayS1 = {
+                    "Y": timeWC["start"]['Y'],
+                    "M": timeWC["start"]['M'],
+                    "D": timeWC["start"]['D'],
+                    "h": timeWC["start"]['h'],
+                    "m": timeWC["start"]['m'],
+                    "s": timeWC["start"]['s']
+                }
+                timeNow=convertDayTimeToMili(dayS1) -housToMili(1)+ minutetoMili(59)
+                timeCheat = api_changeTimeServer(timeNow)
+                dataReportConfig["TimeCheat1"]=convertSecondstoDateTime(timeNow)
+                if timeCheat ==200:
+                    dataReportConfig['CheatTime1']="Pass"
+                else:
+                    dataReportConfig['CheatTime1']="Fail"
+                sleep(1)
+#                 closeEvent()
+                #kill app
 #                 killApp()
-#                 #open app
-#                 sleep(2)
+# #                 #open app
+# #                 sleep(2)
 #                 openApp()
-#                 #wait
+# #                 #wait
 #                 sleep(20)
 #                 CheckLobby()
 #                 #changeAcc
@@ -763,6 +849,93 @@ def afterEvent():
 #                     closeEvent()
 #         except:
 #             print('btnMain no find')
+#                 poco = CocosJsPoco()
+#                 sleep(1)
+                CheckLobby()
+                sleep(1)
+                #changeAcc
+                if changeAcc(user["user1"]["user"],user["user1"]["pass"]):
+                    CheckLobby()
+                    #join table wait
+                    joinTable()
+                    #wait event
+                    if coutDownTimeIntable():
+                        dataReportConfig['ShowProg']="Pass"
+                    else:
+                        dataReportConfig['ShowProg']="Fail"
+                    #back to lobby
+                    clickOutTable()
+#                     closeEvent()
+        except:
+            print('btnMain no find')
+    else:
+        try:
+            print(3)
+            dataReportConfig['Befor']="Fail"
+            sleep(20)
+            dataReportConfig["Coutdown"]="Fail"
+#                 if coutDownTime()==1:
+#                     sleep(1)
+#                     dataReportConfig["Coutdown"]="Pass"
+#                 else:
+#                     dataReportConfig["Coutdown"]="Fail"
+            #Join event
+            if eventWCOpen():
+                dataReportConfig["After"]="Pass"
+            else:
+                dataReportConfig["After"]="Fail"
+#                 eventWCOpen()
+            if waitNolimitPoco(pocoTag.btnJoin,2):
+                dataReportConfig['ShowBtnJoin']="Pass"
+            else:
+                dataReportConfig['ShowBtnJoin']="Fail"
+            closeEvent()
+            #cheat time back 1p
+            #26/11/2020 06:59:20
+            timeCheat = api_changeTimeServer(1605051600000)
+            dayS1 = {
+                "Y": timeWC["start"]['Y'],
+                "M": timeWC["start"]['M'],
+                "D": timeWC["start"]['D'],
+                "h": timeWC["start"]['h'],
+                "m": timeWC["start"]['m'],
+                "s": timeWC["start"]['s']
+            }
+            timeNow=convertDayTimeToMili(dayS1) -housToMili(1)+ minutetoMili(59)
+            timeCheat = api_changeTimeServer(timeNow)
+            dataReportConfig["TimeCheat1"]=convertSecondstoDateTime(timeNow)
+            if timeCheat ==200:
+                dataReportConfig['CheatTime1']="Pass"
+            else:
+                dataReportConfig['CheatTime1']="Fail"
+            sleep(1)
+#                 closeEvent()
+            #kill app
+#                 killApp()
+# #                 #open app
+# #                 sleep(2)
+#                 openApp()
+# #                 #wait
+#                 sleep(20)
+#                 poco = CocosJsPoco()
+#                 sleep(1)
+            CheckLobby()
+            sleep(1)
+            #changeAcc
+            if changeAcc(user["user1"]["user"],user["user1"]["pass"]):
+                CheckLobby()
+                #join table wait
+                joinTable()
+                #wait event
+                if coutDownTimeIntable():
+                    dataReportConfig['ShowProg']="Pass"
+                else:
+                    dataReportConfig['ShowProg']="Fail"
+                #back to lobby
+                clickOutTable()
+#                 closeEvent()
+        except:
+            print('btnMain no find')
     #end Check btn event--------------------------------
   #end check event---------------------------------------------#
 #End in Game----------------------------------------------------------#
@@ -2288,3 +2461,53 @@ def complete_logout_login_24h():
 #     #20. Log out-> Login lại sau 24h
 #     complete_logout_login_24h()
 
+    print(" khong show GUI daily bonus khi da nhan du 7 lan!")
+    # check_login()
+    #2. đăng kí thường
+    register()     
+                     #Play tutorial---------------------------------------
+    time.sleep(3)
+    bonus_day_1()
+    check_lobby()
+    #3. Log out-> Log in sau 24h
+    log_out()
+    time.sleep(3)
+    api_changeTimeServer(1608624000000)
+    time.sleep(3)
+    log_in_FB()
+    time.sleep(3)
+    #5. Nhận bonus lần 2
+    claim_bonus()
+    #6. Check có đang ở lobby hay không
+    check_lobby()
+    #7.Kiểm tra có show GUI daily bonus khi dung o lobby cho nhan bonus,nhân bonus 
+    claim_bonus()
+    #9. Vao lại Gui daily bonus
+    into_gui_bonus()
+    #10. Log out-> vào lại sau 23h
+    Logout_login_23h()
+    #11. Vao playinggame-> ra lại lobby
+    playing_23h()
+    #12. Vào playing game-> Chờ qua 24h rồi ra lại lobby( Ngày 4)
+    playing_24h()
+    #13. Click nhận bonus của ngày 4
+    claim_bonus()
+    #14. Đứng chờ ở GUI daily bonus 23h
+    GUI_bonus_23h()
+    #15. Tiếp tục đứng ở GUI daily bonus chờ thêm 1h( ngày 5)
+    api_changeTimeServer(1608969600000)
+    #16 Nhận bonus 5 lần-> Log out-> Login sau 24h nhưng không nhận bonus->Login lại sau 24h tiếp theo
+    claim_kill_login_24h()
+    #17 Click nhận bonus của ngày 6
+    claim_bonus()
+    #18 Nhận bonus lần thứ 7
+    api_changeTimeServer(1609228800000)
+    claim_bonus()
+    #check an btn Daily bonus ở lobby khi đã nhận đủ 7 lần
+    complete_icon_bonus_lobby()
+    #19. Ra lại lobby-> đứng ở lobby chờ sau 24
+    complete_lobby_24h()
+    #20. Log out-> Login lại sau 24h
+    complete_logout_login_24h()
+# beforEvent()
+afterEvent()
