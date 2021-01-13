@@ -123,9 +123,8 @@ def reloadLoby2():
     pocoTag.btnHide.click()
 def closeEvent():
     try:
-        sleep(1)
         poco = CocosJsPoco()
-        if waitNolimitPoco(pocoTag.btnClose,1):
+        if waitNolimitPoco(pocoTag.btnClose,2):
             pocoTag.btnClose.click()
     except:
         print("error close ev")
@@ -140,7 +139,6 @@ def out():
     try:
         poco = CocosJsPoco()
         pocoTag.btnSetting.click()
-        sleep(1)
         wait(imageInOutAcc.imgBtnOut)
         touch(imageInOutAcc.imgBtnOut)
         touch(imageInOutAcc.imgOutOk)
@@ -520,7 +518,6 @@ def beforEvent():
     reportBeforEvent(dataReportConfig)
 def afterEvent():
     resetDataReportConfig()
-    poco = CocosJsPoco()
     sleep(2)
 #-------------In Game-------------------------------------------------#
     #-------------Cheat time-----------------------------------#
@@ -548,30 +545,20 @@ def afterEvent():
     closeEvent()
 #     clickClaim()
     reloadLoby2()
- #Check event--------------------------------------------------#
-    #Check btn event -----------------------------------
     if CheckBtnEvent():
         try:
-#             poco = CocosJsPoco()
-            #Join event
             eventWCOpen()
-            #Check noti event befor event---------------
             if CheckNotiEvent():
                 print(1)
                 dataReportConfig['Befor']="Pass"
-                #Open pop-up wait event
                 if coutDownTime()==1:
-                    sleep(1)
                     dataReportConfig["Coutdown"]="Pass"
                 else:
                     dataReportConfig["Coutdown"]="Fail"
-                #Join event
                 if eventWCOpen():
-                    sleep(1)
                     dataReportConfig["After"]="Pass"
                 else:
                     dataReportConfig["After"]="Fail"
-                sleep(1)
                 if waitNolimitPoco(pocoTag.btnJoin,2):
                     dataReportConfig['ShowBtnJoin']="Pass"
                 else:
@@ -596,30 +583,23 @@ def afterEvent():
                 else:
                     dataReportConfig['CheatTime1']="Fail"
                 sleep(1)
-                #kill app
 #                 killApp()
-                #open app
-                sleep(2)
+#                 sleep(2)
 #                 openApp()
-                #wait
 #                 sleep(20)
-#                 poco = CocosJsPoco()
 #                 claimAll()
                 #changeAcc
                 if changeAcc(user["user1"]["user"],user["user1"]["pass"]):
-                    print(3)
                     CheckLobby()
-                    #join table wait
                     joinTable()
-                    #wait event
                     if coutDownTimeIntable():
                         dataReportConfig['ShowProg']="Pass"
                     else:
                         dataReportConfig['ShowProg']="Fail"
-                    #back to lobby
                     clickOutTable()
-                    closeEvent()
+#                     closeEvent()
             else:
+                print(2)
                 dataReportConfig['Befor']="Fail"
                 sleep(20)
                 dataReportConfig["Coutdown"]="Fail"
@@ -630,11 +610,9 @@ def afterEvent():
 #                     dataReportConfig["Coutdown"]="Fail"
                 #Join event
                 if eventWCOpen():
-                    sleep(1)
                     dataReportConfig["After"]="Pass"
                 else:
                     dataReportConfig["After"]="Fail"
-                sleep(1)
                 if waitNolimitPoco(pocoTag.btnJoin,2):
                     dataReportConfig['ShowBtnJoin']="Pass"
                 else:
@@ -651,25 +629,24 @@ def afterEvent():
                     "m": timeWC["start"]['m'],
                     "s": timeWC["start"]['s']
                 }
-                dayS1['h'] = dayS1['h']-1
-                dayS1['m'] = dayS1['m']+59
-                print(dayS1)
-                timeCheat = api_changeTimeServer(convertDayTimeToMili(dayS1))
-                dataReportConfig["TimeCheat1"]=fortmartTime(dayS1)
-                print(timeCheat)
+                timeNow=convertDayTimeToMili(dayS1) -housToMili(1)+ minutetoMili(59)
+                timeCheat = api_changeTimeServer(timeNow)
+                dataReportConfig["TimeCheat1"]=convertSecondstoDateTime(timeNow)
                 if timeCheat ==200:
                     dataReportConfig['CheatTime1']="Pass"
                 else:
                     dataReportConfig['CheatTime1']="Fail"
                 sleep(1)
+#                 closeEvent()
                 #kill app
 #                 killApp()
-#                 #open app
-#                 sleep(2)
+# #                 #open app
+# #                 sleep(2)
 #                 openApp()
-#                 #wait
+# #                 #wait
 #                 sleep(20)
 #                 poco = CocosJsPoco()
+#                 sleep(1)
                 CheckLobby()
                 sleep(1)
                 #changeAcc
@@ -684,66 +661,75 @@ def afterEvent():
                         dataReportConfig['ShowProg']="Fail"
                     #back to lobby
                     clickOutTable()
-                    closeEvent()
+#                     closeEvent()
+        except:
+            print('btnMain no find')
+    else:
+        try:
+            print(3)
+            dataReportConfig['Befor']="Fail"
+            sleep(20)
+            dataReportConfig["Coutdown"]="Fail"
+#                 if coutDownTime()==1:
+#                     sleep(1)
+#                     dataReportConfig["Coutdown"]="Pass"
+#                 else:
+#                     dataReportConfig["Coutdown"]="Fail"
+            #Join event
+            if eventWCOpen():
+                dataReportConfig["After"]="Pass"
             else:
-                #Join event
-                dataReportConfig['Befor']="Fail"
-                if eventWCOpen():
-                    sleep(1)
-                    dataReportConfig["After"]="Pass"
-                else:
-                    dataReportConfig["After"]="Fail"
-                sleep(1)
-                if waitNolimitPoco(pocoTag.btnJoin,2):
-                    dataReportConfig['ShowBtnJoin']="Pass"
-                else:
-                    dataReportConfig['ShowBtnJoin']="Fail"
-                closeEvent()
-                #cheat time back 1p
-                #26/11/2020 06:59:20
-                timeCheat = api_changeTimeServer(1605051600000)
-                dayS1 = {
-                    "Y": timeWC["start"]['Y'],
-                    "M": timeWC["start"]['M'],
-                    "D": timeWC["start"]['D'],
-                    "h": timeWC["start"]['h'],
-                    "m": timeWC["start"]['m'],
-                    "s": timeWC["start"]['s']
-                }
-                dayS1['h'] = dayS1['h']-1
-                dayS1['m'] = dayS1['m']+59
-                print(dayS1)
-                timeCheat = api_changeTimeServer(convertDayTimeToMili(dayS1))
-                dataReportConfig["TimeCheat1"]=fortmartTime(dayS1)
-                print(timeCheat)
-                if timeCheat ==200:
-                    dataReportConfig['CheatTime1']="Pass"
-                else:
-                    dataReportConfig['CheatTime1']="Fail"
-                sleep(1)
-                #kill app
-                killApp()
-                #open app
-                sleep(2)
-                openApp()
-                #wait
-                sleep(20)
+                dataReportConfig["After"]="Fail"
+#                 eventWCOpen()
+            if waitNolimitPoco(pocoTag.btnJoin,2):
+                dataReportConfig['ShowBtnJoin']="Pass"
+            else:
+                dataReportConfig['ShowBtnJoin']="Fail"
+            closeEvent()
+            #cheat time back 1p
+            #26/11/2020 06:59:20
+            timeCheat = api_changeTimeServer(1605051600000)
+            dayS1 = {
+                "Y": timeWC["start"]['Y'],
+                "M": timeWC["start"]['M'],
+                "D": timeWC["start"]['D'],
+                "h": timeWC["start"]['h'],
+                "m": timeWC["start"]['m'],
+                "s": timeWC["start"]['s']
+            }
+            timeNow=convertDayTimeToMili(dayS1) -housToMili(1)+ minutetoMili(59)
+            timeCheat = api_changeTimeServer(timeNow)
+            dataReportConfig["TimeCheat1"]=convertSecondstoDateTime(timeNow)
+            if timeCheat ==200:
+                dataReportConfig['CheatTime1']="Pass"
+            else:
+                dataReportConfig['CheatTime1']="Fail"
+            sleep(1)
+#                 closeEvent()
+            #kill app
+#                 killApp()
+# #                 #open app
+# #                 sleep(2)
+#                 openApp()
+# #                 #wait
+#                 sleep(20)
+#                 poco = CocosJsPoco()
+#                 sleep(1)
+            CheckLobby()
+            sleep(1)
+            #changeAcc
+            if changeAcc(user["user1"]["user"],user["user1"]["pass"]):
                 CheckLobby()
-                #changeAcc
-                if changeAcc(user["user1"]["user"],user["user1"]["pass"]):
-                    print(2)
-                    CheckLobby()
-                    print(2)
-                    #join table wait
-                    joinTable()
-                    #wait event
-                    if coutDownTimeIntable():
-                        dataReportConfig['ShowProg']="Pass"
-                    else:
-                        dataReportConfig['ShowProg']="Fail"
-                    #back to lobby
-                    clickOutTable()
-                    closeEvent()
+                #join table wait
+                joinTable()
+                #wait event
+                if coutDownTimeIntable():
+                    dataReportConfig['ShowProg']="Pass"
+                else:
+                    dataReportConfig['ShowProg']="Fail"
+                #back to lobby
+                clickOutTable()
+#                 closeEvent()
         except:
             print('btnMain no find')
     #end Check btn event--------------------------------
@@ -2270,3 +2256,5 @@ def complete_logout_login_24h():
     complete_lobby_24h()
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
+# beforEvent()
+afterEvent()
