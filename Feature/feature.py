@@ -33,15 +33,88 @@ poco = CocosJsPoco()
 # WC--------------------------->
 def WC():
     beforEvent()
-    afterEvent()
+#     afterEvent()
+#     day1()
+#     claimGift()
+#     day2()
+#     noClaimGift()
+#     CheckChangeAcc()
+#     missionPassDayInTable()
+#     autoClaimGift()
+#     day3()
+#     missionPassDayOpenGui()
+#     passClaimGift()
+#     day4()
+#     UpdateProgressMissionFull()
+#     checkDisconect()
+#     day5()
+#     GuiDeal()
+#     day6()
+#     day7()
+#     endEvent()
 #------------------------------------------WC------------------------------------------------#
 
 #------------------------------------------VIP-----------------------------------------------#
+def Vip():
+    clearReport()
+    #Case 1: OPEN VIP
+    open_vip()
+    reportCheckOpenVip(data)
+    #Case 2: OPEN VIP NHƯNG KHÔNG MUA
+    open_pack("btnBuyBroze")
+    open_pack("btnBuySilver")
+    open_pack("btnBuyGold")
+    reportCheckPackVip(data)
+    #Case 3: MUA VIP 1
+    cheat_buy_vip("vip.pack_1")
+    back_to_lobby()
+    check_item() #check item ngoai ban choi
+    to_table()
+    check_item() #check item trong ban choi
+    reportBuyVip(data)
+    #Case 4: MUA VIP 2
+    cheat_buy_vip("vip.pack_2")
+    check_item() #check item trong ban choi
+    reportBuyVip(data)
+    #Case 5: Mua vip 3
+    cheat_buy_vip("vip.pack_3")
+    buy_vip_thap("btnBuyBroze") #check mua vip 1
+    reportBuyVip(data)
+    #Case 6: Mua gold trong shop
+    check_buy_gold(idU, pack)
     
+    #Case 7: Check nhan gold support
+    check_gold_support()
+    back_to_lobby()
+    #Case 8: Cheat qua ngay nhan gold tribute
+    timeWC= {
+    "Y":2021,"M":1,"D":13,"h":7,"m":0,"s":0
+    }
+    api_changeTimeServer(convertDayTimeToMili(timeWC))
+    reloadLobby()
+    check_gold_tribute()
+    #Case 8: Check show data vip theo account
+    changeAcc(userN,passW)
+    #Case9: Check gia han vip
+    cheatTimeRemain(UserID,day)
+    reloadLobby()
+    checkMoGUIVipGD()
+    killApp()
+    openApp()
+    checkMoGUIVipGD()
+    #Case10: Check het han trong ban choi
+    cheatTimeRemain(UserID, 60)
+    to_table()
+    check_item()
+    #Case11: Check het han mua vip
+    checkMoGUIVipGD()
+    cheat_buy_vip("vip.pack_1")
 #------------------------------------------VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
 def DB():
+    #1. check có đang ở màn hình login ko
     check_login()
+    #2. đăng kí thường
     register()     
        #Play tutorial---------------------------------------
     time.sleep(3)
@@ -87,10 +160,13 @@ def DB():
     complete_lobby_24h()
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
+
 #------------------------------------------DB-------------------------------------------
-DB()
 #-----#
 #---------------------------------------------End script-------------------------------------------------#
 #---------------------------------------------Report-----------------------------------------------------#
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
+
+
+

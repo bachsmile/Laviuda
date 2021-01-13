@@ -7,8 +7,13 @@ HTTPS_PROXY = "https://172.28.103.34:3128"
 # from test.Autotest.Lavuavi.Function.Cheat.Cheat.api import *
 #--------------------------------------------#
 # Lấy access token mới mỗi lần dùng tool cheat
+<<<<<<< HEAD
 ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3N1ZWRfdG8iOiI4NTcwNTQ1NzkzNy1nb2VpMmk0bTlxa3NkdXJycWNkNGZxZWE0c2szcmo3ci5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZGllbmNlIjoiODU3MDU0NTc5MzctZ29laTJpNG05cWtzZHVycnFjZDRmcWVhNHNrM3JqN3IuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJ1c2VyX2lkIjoiMTAzNzYzOTI4MzY5MDY5OTYwOTg1Iiwic2NvcGUiOiJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL3VzZXJpbmZvLnByb2ZpbGUgaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC91c2VyaW5mby5lbWFpbCBvcGVuaWQiLCJleHBpcmVzX2luIjozNTk3LCJlbWFpbCI6ImJhY2hzbWlsZTE5OTdAZ21haWwuY29tIiwidmVyaWZpZWRfZW1haWwiOnRydWUsImFjY2Vzc190eXBlIjoib25saW5lIiwidXNlcm5hbWUiOiJiYWNoc21pbGUxOTk3QGdtYWlsLmNvbSIsImlhdCI6MTYxMDEwMTA0MCwiZXhwIjoxNjEwMTg3NDQwfQ.Or53g8Vgi4xBGpvPrmMne5lNrv0eygO_C1n-wSLdKJo"
 SERVER_HOST = "http://49.213.81.43:10021"
+=======
+ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViNmU2NmRkLWQ2ZjQtNDNmMS05NjU4LTBlMjhkMjBkMDZkNiIsIm5hbWUiOiJW4bu5LiBIdeG7s25oIE5ndXnhu4VuIiwiZW1haWwiOiJ2eWhuQHZuZy5jb20udm4iLCJvaWQiOiI5MDJmYWVmMy0yZjA3LTRlZjgtOTViNC04N2I2YzAyNjk3N2MiLCJhZGRyZXNzIjoiMjcuNjUuMTk2LjczIiwiZXhwaXJlZCI6MTYxMDQ0MDEwMDQ4MiwidHlwZSI6ImF6dXJlIiwidXNlcm5hbWUiOiJ2eWhuQHZuZy5jb20udm4iLCJpYXQiOjE2MTAzNTI0NjUsImV4cCI6MTYxMDQzODg2NX0.ZJ24kSnl2Rqaz1Uq70tAGVvmvHlWyFYrzZybtvqNkgU"
+SERVER_HOST = "http://49.213.81.43:10020"
+>>>>>>> bbaaf1c3cb853cc4b2a14bf09074e5dc3e1d8663
 BASE_URL = SERVER_HOST + "/api/"
 
 proxyDict = {
@@ -30,7 +35,7 @@ def api_postDoFunction(userId, id, params):
     
     data = {
         "gameId": "laviuda",
-        "mode": "PRIVATE_2",
+        "mode": "PRIVATE",
         "userId": userId,
         "id": id,
         "params": params
@@ -82,6 +87,15 @@ def cheatGold(idU,gold):
     except:
         print("Error cheat gold")
         return False
+def cheatBuyGold(idU, pack):
+    try:
+        cheat = api_postDoFunction(idU, "CHEAT_PAYMENT_IAP", [pack])
+        print(cheat)
+        print("cheat gold success")
+        return True
+    except:
+        print("Error cheat gold")
+        return False
 def cheatBuyDeal(idU,deal):
     try:
         if deal == 1:
@@ -98,3 +112,15 @@ def cheatBuyDeal(idU,deal):
     except:
         print("Error cheat deal")
         return False
+def cheatFinishedMision(idU,day):
+    try:
+        cheat = api_postDoFunction(idU, "CHEAT_FINISH_MISSION_TACOS_BUS", [day])
+        print(cheat)
+        print("cheat finished mission success")
+        return True
+    except:
+        print("Error finished mission")
+        return False
+
+
+
