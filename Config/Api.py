@@ -7,8 +7,13 @@ HTTPS_PROXY = "https://172.28.103.34:3128"
 # from test.Autotest.Lavuavi.Function.Cheat.Cheat.api import *
 #--------------------------------------------#
 # Lấy access token mới mỗi lần dùng tool cheat
+<<<<<<< HEAD
 ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdjNzJmNzI3LTM3OWItNGRiNi05OTdhLWVjOGU2M2MxMjcxNiIsIm5hbWUiOiJCw6FjaC4gVHLhuqduIFh1w6JuIiwiZW1haWwiOiJiYWNodHhAdm5nLmNvbS52biIsIm9pZCI6IjE5ZDMyODgxLTY4ZmItNGMzMS04NzVkLWE0ZmQwMzEzN2FjMyIsImFkZHJlc3MiOiIxLjUzLjI1NS4xNDQiLCJleHBpcmVkIjoxNjEwNTM0ODYxNzA5LCJ0eXBlIjoiYXp1cmUiLCJ1c2VybmFtZSI6ImJhY2h0eEB2bmcuY29tLnZuIiwiaWF0IjoxNjEwNDQ3MjIxLCJleHAiOjE2MTA1MzM2MjF9.fWr9pXxQEJTiEMqAZc8Qq-0cPNYQfEkg3eN-vYs6SWc"
 SERVER_HOST = "http://49.213.81.43:10021"
+=======
+ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViNmU2NmRkLWQ2ZjQtNDNmMS05NjU4LTBlMjhkMjBkMDZkNiIsIm5hbWUiOiJW4bu5LiBIdeG7s25oIE5ndXnhu4VuIiwiZW1haWwiOiJ2eWhuQHZuZy5jb20udm4iLCJvaWQiOiI5MDJmYWVmMy0yZjA3LTRlZjgtOTViNC04N2I2YzAyNjk3N2MiLCJhZGRyZXNzIjoiMjcuNjUuMTk2LjczIiwiZXhwaXJlZCI6MTYxMDQ0MDEwMDQ4MiwidHlwZSI6ImF6dXJlIiwidXNlcm5hbWUiOiJ2eWhuQHZuZy5jb20udm4iLCJpYXQiOjE2MTAzNTI0NjUsImV4cCI6MTYxMDQzODg2NX0.ZJ24kSnl2Rqaz1Uq70tAGVvmvHlWyFYrzZybtvqNkgU"
+SERVER_HOST = "http://49.213.81.43:10020"
+>>>>>>> bbaaf1c3cb853cc4b2a14bf09074e5dc3e1d8663
 BASE_URL = SERVER_HOST + "/api/"
 
 proxyDict = {
@@ -30,7 +35,7 @@ def api_postDoFunction(userId, id, params):
     
     data = {
         "gameId": "laviuda",
-        "mode": "PRIVATE_2",
+        "mode": "PRIVATE",
         "userId": userId,
         "id": id,
         "params": params
@@ -82,6 +87,15 @@ def cheatGold(idU,gold):
     except:
         print("Error cheat gold")
         return False
+def cheatBuyGold(idU, pack):
+    try:
+        cheat = api_postDoFunction(idU, "CHEAT_PAYMENT_IAP", [pack])
+        print(cheat)
+        print("cheat gold success")
+        return True
+    except:
+        print("Error cheat gold")
+        return False
 def cheatBuyDeal(idU,deal):
     try:
         if deal == 1:
@@ -107,3 +121,6 @@ def cheatFinishedMision(idU,day):
     except:
         print("Error finished mission")
         return False
+
+
+

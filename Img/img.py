@@ -81,13 +81,25 @@ class image_vip:
     back = Template(r"tpl1608001910288.png", record_pos=(0.468, -0.201), resolution=(2340, 1079))
     close = Template(r"tpl1608004769423.png", record_pos=(0.262, -0.16), resolution=(2340, 1079))
     outroom = Template(r"tpl1608105320117.png", record_pos=(0.45, -0.195), resolution=(2340, 1079))
+    logo_non_vip = Template(r"tpl1609735915140.png", record_pos=(-0.421, 0.194), resolution=(2340, 1079))
+    logo_vip_bac = Template(r"tpl1609740849861.png", record_pos=(-0.42, 0.183), resolution=(2340, 1079))
+    logo_vip_vang = Template(r"tpl1609740925621.png", record_pos=(-0.422, 0.184), resolution=(2340, 1079))
+    logo_vip_kimcuong = Template(r"tpl1609740980117.png", record_pos=(-0.421, 0.184), resolution=(2340, 1079))
+
+    no_vip = Template(r"tpl1610440980453.png", record_pos=(0.171, -0.082), resolution=(2340, 1079))
+    vip_gold = Template(r"tpl1610441152067.png", record_pos=(0.197, -0.082), resolution=(2340, 1079))
+    vip_dy = Template(r"tpl1610441182361.png", record_pos=(0.173, -0.084), resolution=(2340, 1079))
+    vip_silver = Template(r"tpl1610441266868.png", record_pos=(0.191, -0.082), resolution=(2340, 1079))
+
+    exprire_vip = Template(r"tpl1610446081905.png", record_pos=(0.012, 0.187), resolution=(2340, 1079))
+
+
 #------------------------------------------END VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
+
 #  class Daily_bonus:
 class Daily_bonus:
     acc_gg_chi= Template(r"tpl1608609498145.png", record_pos=(-0.179, -0.024), resolution=(1920, 1080))
     #acc_gg_ngoc= 
 #------------------------------------------DB------------------------------------------------#
 #---------------------------------------------End script--------------------------------------------------#
-
-

@@ -54,10 +54,17 @@ def convertDayTimeToMili(time):
     print(milliseconds)
     return milliseconds
 # print(convertDayTimeToMili(timeWC["start"]))
+<<<<<<< HEAD
 def convertSecondstoDateTime(milliseconds):
     seconds=milliseconds/1000
     timestamp = datetime.fromtimestamp(seconds)
     return timestamp
+=======
+# def convertSecondstoDateTime(milliseconds)
+#     seconds=milliseconds/1000
+#     timestamp = datetime.fromtimestamp(seconds)
+#     return timestamp
+>>>>>>> bbaaf1c3cb853cc4b2a14bf09074e5dc3e1d8663
 # print(convertSecondstoDateTime)
 #Feature
 #chalenge
@@ -264,9 +271,13 @@ account = {
         "pass":123456      
     }
 }
+gold_support = 30000
 # convertDayTimeToMili(2020, 11, 26,6,59,0)   
 # print(challengePlay[challenge["day2"]["mission"]]["data"]["gold"])
 #----------------------------------------------------WC----------------------------------------------------------------------#
+
+
+
 
 
 
