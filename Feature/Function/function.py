@@ -685,6 +685,65 @@ def afterEvent():
                     #back to lobby
                     clickOutTable()
                     closeEvent()
+            else:
+                #Join event
+                dataReportConfig['Befor']="Fail"
+                if eventWCOpen():
+                    sleep(1)
+                    dataReportConfig["After"]="Pass"
+                else:
+                    dataReportConfig["After"]="Fail"
+                sleep(1)
+                if waitNolimitPoco(pocoTag.btnJoin,2):
+                    dataReportConfig['ShowBtnJoin']="Pass"
+                else:
+                    dataReportConfig['ShowBtnJoin']="Fail"
+                closeEvent()
+                #cheat time back 1p
+                #26/11/2020 06:59:20
+                timeCheat = api_changeTimeServer(1605051600000)
+                dayS1 = {
+                    "Y": timeWC["start"]['Y'],
+                    "M": timeWC["start"]['M'],
+                    "D": timeWC["start"]['D'],
+                    "h": timeWC["start"]['h'],
+                    "m": timeWC["start"]['m'],
+                    "s": timeWC["start"]['s']
+                }
+                dayS1['h'] = dayS1['h']-1
+                dayS1['m'] = dayS1['m']+59
+                print(dayS1)
+                timeCheat = api_changeTimeServer(convertDayTimeToMili(dayS1))
+                dataReportConfig["TimeCheat1"]=fortmartTime(dayS1)
+                print(timeCheat)
+                if timeCheat ==200:
+                    dataReportConfig['CheatTime1']="Pass"
+                else:
+                    dataReportConfig['CheatTime1']="Fail"
+                sleep(1)
+                #kill app
+                killApp()
+                #open app
+                sleep(2)
+                openApp()
+                #wait
+                sleep(20)
+                CheckLobby()
+                #changeAcc
+                if changeAcc(user["user1"]["user"],user["user1"]["pass"]):
+                    print(2)
+                    CheckLobby()
+                    print(2)
+                    #join table wait
+                    joinTable()
+                    #wait event
+                    if coutDownTimeIntable():
+                        dataReportConfig['ShowProg']="Pass"
+                    else:
+                        dataReportConfig['ShowProg']="Fail"
+                    #back to lobby
+                    clickOutTable()
+                    closeEvent()
         except:
             print('btnMain no find')
     #end Check btn event--------------------------------
@@ -939,10 +998,7 @@ def day7():
     reloadLobby()
     #click btn play
     joinTable()
-<<<<<<< HEAD
-=======
     checkGold
->>>>>>> bbaaf1c3cb853cc4b2a14bf09074e5dc3e1d8663
     #wait pass day
     waitTimePassDay(timeW)
     #check progess table
@@ -1094,7 +1150,6 @@ def knock(day):
         print("error knock")
     print(dataReportConfig)
     reportKnock(dataReportConfig)
-<<<<<<< HEAD
 def collect(day):
     try:
         #join event
@@ -1130,7 +1185,6 @@ def collect(day):
         print("error collect")
     print(dataReportConfig)
     reportCollect(dataReportConfig)
-=======
 # def collect(day):
 #      try:
 #         #join event
@@ -1741,7 +1795,6 @@ def checkProgressCurrent():
     except:
         print("error checkProgressCurrent")
         return False
-<<<<<<< HEAD
 def checkProgress():
     try:
         if waitNolimitPoco(pocoTag.lbProgress,5):
@@ -1753,7 +1806,6 @@ def checkProgress():
     except:
         print("error checkProgressCurrent")
         return False
-=======
 # def checkProgress():
 #      try:
 #         if waitNolimitPoco(pocoTag.lbProgress,5):
@@ -1765,7 +1817,6 @@ def checkProgress():
 #     except:
 #         print("error checkProgressCurrent")
 #         return False
->>>>>>> bbaaf1c3cb853cc4b2a14bf09074e5dc3e1d8663
 def checkProgessTable():
     try:
         if waitNolimitPoco(pocoTag.btnMain,5):
@@ -2171,9 +2222,7 @@ def complete_logout_login_24h():
     if pocoTag.btnClaim.exists():
         print("Show daily bonus khi da nhan 7 lan")
     else:
-<<<<<<< HEAD
         print(" Success!")
-#
 # afterEvent()
 CheckLobby()
 #join table wait
@@ -2188,8 +2237,8 @@ clickOutTable()
 closeEvent()
 # reloadLobby()
 # joinTable()
-=======
-        print(" khong show GUI daily bonus khi da nhan du 7 lan!")
+afterEvent()
+  print(" khong show GUI daily bonus khi da nhan du 7 lan!")
 # check_login()
 #2. đăng kí thường
 register()     
@@ -2237,4 +2286,3 @@ complete_icon_bonus_lobby()
 complete_lobby_24h()
 #20. Log out-> Login lại sau 24h
 complete_logout_login_24h()
->>>>>>> bbaaf1c3cb853cc4b2a14bf09074e5dc3e1d8663
