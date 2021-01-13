@@ -7,7 +7,7 @@ HTTPS_PROXY = "https://172.28.103.34:3128"
 # from test.Autotest.Lavuavi.Function.Cheat.Cheat.api import *
 #--------------------------------------------#
 # Lấy access token mới mỗi lần dùng tool cheat
-ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3N1ZWRfdG8iOiI4NTcwNTQ1NzkzNy1nb2VpMmk0bTlxa3NkdXJycWNkNGZxZWE0c2szcmo3ci5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZGllbmNlIjoiODU3MDU0NTc5MzctZ29laTJpNG05cWtzZHVycnFjZDRmcWVhNHNrM3JqN3IuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJ1c2VyX2lkIjoiMTAzNzYzOTI4MzY5MDY5OTYwOTg1Iiwic2NvcGUiOiJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL3VzZXJpbmZvLnByb2ZpbGUgaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC91c2VyaW5mby5lbWFpbCBvcGVuaWQiLCJleHBpcmVzX2luIjozNTk3LCJlbWFpbCI6ImJhY2hzbWlsZTE5OTdAZ21haWwuY29tIiwidmVyaWZpZWRfZW1haWwiOnRydWUsImFjY2Vzc190eXBlIjoib25saW5lIiwidXNlcm5hbWUiOiJiYWNoc21pbGUxOTk3QGdtYWlsLmNvbSIsImlhdCI6MTYxMDEwMTA0MCwiZXhwIjoxNjEwMTg3NDQwfQ.Or53g8Vgi4xBGpvPrmMne5lNrv0eygO_C1n-wSLdKJo"
+ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYxZjZlOGZhLTIyMGItNDk1OC1hNGEwLTA3ZDZkZDZjMjRkNCIsIm5hbWUiOiJW4bu5LiBIdeG7s25oIE5ndXnhu4VuIiwiZW1haWwiOiJ2eWhuQHZuZy5jb20udm4iLCJvaWQiOiI5MDJmYWVmMy0yZjA3LTRlZjgtOTViNC04N2I2YzAyNjk3N2MiLCJhZGRyZXNzIjoiMS41My4yNTUuMTQ3IiwiZXhwaXJlZCI6MTYxMDUyODcyODQyNSwidHlwZSI6ImF6dXJlIiwidXNlcm5hbWUiOiJ2eWhuQHZuZy5jb20udm4iLCJpYXQiOjE2MTA0NDEwODgsImV4cCI6MTYxMDUyNzQ4OH0.M1k-SpGPpThFinr7xlYloaDJFqt2jM4ktjD1_snHIq4"
 SERVER_HOST = "http://49.213.81.43:10020"
 BASE_URL = SERVER_HOST + "/api/"
 
@@ -116,6 +116,7 @@ def cheatFinishedMision(idU,day):
     except:
         print("Error finished mission")
         return False
+
 
 
 
