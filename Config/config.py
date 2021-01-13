@@ -38,11 +38,7 @@ timeW="""
 """
 timeWC={
     "start":{"Y":2020,"M":12,"D":29,"h":7,"m":0,"s":0},
-<<<<<<< HEAD
     "end":{"Y":2020,"M":1,"D":5,"h":7,"m":0,"s":0}
-}
-=======
-    "end":{"Y":2021,"M":1,"D":5,"h":7,"m":0,"s":0}
 }
 def datetoMili(day):
     return day*86400000
@@ -52,28 +48,21 @@ def minutetoMili(minute):
     return minute*60000
 def secToMili(sec):
     return sec*1000
->>>>>>> bbaaf1c3cb853cc4b2a14bf09074e5dc3e1d8663
 def convertDayTimeToMili(time):
     dt = datetime(time['Y'],time['M'],time['D'],time['h'],time['m'],time['s'])
     milliseconds = int(round(dt.timestamp() * 1000))
     print(milliseconds)
     return milliseconds
-<<<<<<< HEAD
-=======
 # print(convertDayTimeToMili(timeWC["start"]))
-<<<<<<< HEAD
 def convertSecondstoDateTime(milliseconds):
     seconds=milliseconds/1000
     timestamp = datetime.fromtimestamp(seconds)
     return timestamp
-=======
 # def convertSecondstoDateTime(milliseconds)
 #     seconds=milliseconds/1000
 #     timestamp = datetime.fromtimestamp(seconds)
 #     return timestamp
->>>>>>> bbaaf1c3cb853cc4b2a14bf09074e5dc3e1d8663
 # print(convertSecondstoDateTime)
->>>>>>> bbaaf1c3cb853cc4b2a14bf09074e5dc3e1d8663
 #Feature
 #chalenge
 challenge={
