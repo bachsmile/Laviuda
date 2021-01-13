@@ -66,7 +66,9 @@ def Vip():
     open_pack("btnBuyGold")
     reportCheckPackVip(data)
     #Case 3: MUA VIP 1
-    cheat_buy_vip("vip.pack_1")
+    checkLevelVip() #check level vip
+    api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", [0]) #cheat non-vip
+    cheat_buy_vip("vip.pack_1") #mua vip 1
     back_to_lobby()
     check_item() #check item ngoai ban choi
     to_table()
@@ -82,7 +84,7 @@ def Vip():
     reportBuyVip(data)
     #Case 6: Mua gold trong shop
     check_buy_gold(idU, pack)
-    
+    reportBuyGold(data)
     #Case 7: Check nhan gold support
     check_gold_support()
     back_to_lobby()
@@ -93,20 +95,20 @@ def Vip():
     api_changeTimeServer(convertDayTimeToMili(timeWC))
     reloadLobby()
     check_gold_tribute()
-    #Case 8: Check show data vip theo account
+    #Case 9: Check show data vip theo account
     changeAcc(userN,passW)
-    #Case9: Check gia han vip
+    #Case 10: Check gia han vip
     cheatTimeRemain(UserID,day)
     reloadLobby()
     checkMoGUIVipGD()
     killApp()
     openApp()
     checkMoGUIVipGD()
-    #Case10: Check het han trong ban choi
+    #Case11: Check het han trong ban choi
     cheatTimeRemain(UserID, 60)
     to_table()
     check_item()
-    #Case11: Check het han mua vip
+    #Case12: Check het han mua vip
     checkMoGUIVipGD()
     cheat_buy_vip("vip.pack_1")
 #------------------------------------------VIP-----------------------------------------------#
@@ -167,6 +169,7 @@ def DB():
 #---------------------------------------------Report-----------------------------------------------------#
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
+
 
 
 
