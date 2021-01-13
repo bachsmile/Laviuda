@@ -7,10 +7,9 @@ HTTPS_PROXY = "https://172.28.103.34:3128"
 # from test.Autotest.Lavuavi.Function.Cheat.Cheat.api import *
 #--------------------------------------------#
 # Lấy access token mới mỗi lần dùng tool cheat
-ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3N1ZWRfdG8iOiI4NTcwNTQ1NzkzNy1nb2VpMmk0bTlxa3NkdXJycWNkNGZxZWE0c2szcmo3ci5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZGllbmNlIjoiODU3MDU0NTc5MzctZ29laTJpNG05cWtzZHVycnFjZDRmcWVhNHNrM3JqN3IuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJ1c2VyX2lkIjoiMTAzNzYzOTI4MzY5MDY5OTYwOTg1Iiwic2NvcGUiOiJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL3VzZXJpbmZvLnByb2ZpbGUgaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC91c2VyaW5mby5lbWFpbCBvcGVuaWQiLCJleHBpcmVzX2luIjozNTk3LCJlbWFpbCI6ImJhY2hzbWlsZTE5OTdAZ21haWwuY29tIiwidmVyaWZpZWRfZW1haWwiOnRydWUsImFjY2Vzc190eXBlIjoib25saW5lIiwidXNlcm5hbWUiOiJiYWNoc21pbGUxOTk3QGdtYWlsLmNvbSIsImlhdCI6MTYxMDEwMTA0MCwiZXhwIjoxNjEwMTg3NDQwfQ.Or53g8Vgi4xBGpvPrmMne5lNrv0eygO_C1n-wSLdKJo"
-SERVER_HOST = "http://49.213.81.43:10020"
+ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdjNzJmNzI3LTM3OWItNGRiNi05OTdhLWVjOGU2M2MxMjcxNiIsIm5hbWUiOiJCw6FjaC4gVHLhuqduIFh1w6JuIiwiZW1haWwiOiJiYWNodHhAdm5nLmNvbS52biIsIm9pZCI6IjE5ZDMyODgxLTY4ZmItNGMzMS04NzVkLWE0ZmQwMzEzN2FjMyIsImFkZHJlc3MiOiIxLjUzLjI1NS4xNDQiLCJleHBpcmVkIjoxNjEwNTM0ODYxNzA5LCJ0eXBlIjoiYXp1cmUiLCJ1c2VybmFtZSI6ImJhY2h0eEB2bmcuY29tLnZuIiwiaWF0IjoxNjEwNDQ3MjIxLCJleHAiOjE2MTA1MzM2MjF9.fWr9pXxQEJTiEMqAZc8Qq-0cPNYQfEkg3eN-vYs6SWc"
+SERVER_HOST = "http://49.213.81.43:10021"
 BASE_URL = SERVER_HOST + "/api/"
-
 proxyDict = {
     "http": HTTP_PROXY,
     "https": HTTPS_PROXY,
@@ -117,5 +116,5 @@ def cheatFinishedMision(idU,day):
         print("Error finished mission")
         return False
 
-
+# print(api_changeTimeServer(1609199940000 ))
 
