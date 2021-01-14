@@ -83,11 +83,12 @@ def Vip():
     buy_vip_thap("btnBuyBroze") #check mua vip 1
     reportBuyVip(data)
     #Case 6: Mua gold trong shop
-    check_buy_gold(idU, pack)
+    check_buy_gold("19202812", "ipa.pack_1")
     reportBuyGold(data)
     #Case 7: Check nhan gold support
     check_gold_support()
     back_to_lobby()
+    reportReceivedGoldSupport(data)
     #Case 8: Cheat qua ngay nhan gold tribute
     timeWC= {
     "Y":2021,"M":1,"D":13,"h":7,"m":0,"s":0
@@ -95,6 +96,7 @@ def Vip():
     api_changeTimeServer(convertDayTimeToMili(timeWC))
     reloadLobby()
     check_gold_tribute()
+    reportReceivedGoldTribute(data)
     #Case 9: Check show data vip theo account
     changeAcc(userN,passW)
     #Case 10: Check gia han vip
@@ -104,13 +106,16 @@ def Vip():
     killApp()
     openApp()
     checkMoGUIVipGD()
+    reportExpiredVip(data)
     #Case11: Check het han trong ban choi
     cheatTimeRemain(UserID, 60)
     to_table()
     check_item()
+    reportCheckExpiredTable(data)
     #Case12: Check het han mua vip
     checkMoGUIVipGD()
     cheat_buy_vip("vip.pack_1")
+    reportBuyVip(data)
 #------------------------------------------VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
 def DB():
@@ -169,6 +174,7 @@ def DB():
 #---------------------------------------------Report-----------------------------------------------------#
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
+
 
 
 

@@ -29,7 +29,7 @@ def api_postDoFunction(userId, id, params):
     
     data = {
         "gameId": "laviuda",
-        "mode": "PRIVATE",
+        "mode": "PRIVATE_2",
         "userId": userId,
         "id": id,
         "params": params
@@ -117,3 +117,4 @@ def cheatFinishedMision(idU,day):
         return False
 
 # print(api_changeTimeServer(1609199940000 ))
+

@@ -171,7 +171,7 @@ data = {
     "Status" : "Fail"
 }
 #Case 7: Nhan gold support
-def reportBuyGold(data):
+def reportReceivedGoldSupport(data):
     detail = {
         "Status"     : data["Status"]
     }
@@ -195,7 +195,7 @@ data = {
     "Status" : "Fail"
 }
 #Case 8: Nhan gold tribute
-def reportReceivedTribute(data):
+def reportReceivedGoldTribute(data):
     detail = {
         "Status"     : data["Status"]
     }
@@ -219,7 +219,7 @@ data = {
     "Status" : "Fail"
 }
 #Case 9: Check show data vip theo account
-def reportDataVip():
+def reportDataVip(data):
     detail = {
         "Status"     : data["Status"]
     }
@@ -243,7 +243,7 @@ data = {
     "Status" : "Fail"
 }
 #Case 10: Check gia han vip
-def reportExpiredVip():
+def reportExpiredVip(data):
     detail = {
         "Mo_GUI_Vip"     : data["Mo_GUI_Vip"],
         "Show_PopUp_GH"  : data["Show_PopUp_GH"],
@@ -1159,6 +1159,7 @@ def reportdailybonus(data):
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------#
+
 
 
 
