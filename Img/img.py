@@ -38,6 +38,7 @@ class imageWC:
     imgBtnEvent=Template(r"tpl1607566321368.png", record_pos=(-0.284, -0.009), resolution=(652, 1212))
     imgWin=Template(r"tpl1608545722831.png", record_pos=(0.35, -0.125), resolution=(2400, 1080))
     imgProgessBarON=Template(r"tpl1607566598040.png", record_pos=(0.326, 0.22), resolution=(731, 1212))
+    imgCar= Template(r"tpl1610524742535.png", record_pos=(0.479, 0.173), resolution=(2400, 1080))
     imgDeal=Template(r"tpl1608534993305.png", record_pos=(-0.003, 0.007), resolution=(2400, 1080))
     imgGoldCheat=Template(r"tpl1608185711465.png", record_pos=(-0.104, -0.161), resolution=(2340, 1079))
     imgGoldCheat1=Template(r"tpl1608102303058.png", record_pos=(0.184, 0.083), resolution=(2400, 1080))

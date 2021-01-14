@@ -11,7 +11,6 @@ import re
 from airtest.core.api import *
 from airtest.cli.parser import cli_setup
 from poco.drivers.cocosjs import CocosJsPoco
-from poco.exceptions import PocoTargetTimeout
 #--------------End Import Lib------------------------------#
 #--------------Import FILE---------------------------------#
 # from Lavuavi.Config.Api import *
@@ -789,21 +788,21 @@ def day2():
     #check auto show event
     if CheckGUIEvent():
         dataReportConfig['GuiEvent']="Pass"
+        closeEvent()
     else:
         dataReportConfig['GuiEvent']="Fail"
     #close Gui Event
 #     clickClaim()
-    closeEvent()
 #     closeEvent()
 #     claimAll()
 #     closeAllEvent()
     #check auto show deal
     if CheckGUIDeal():
         dataReportConfig['GuiEDeal']="Pass"
+            #close Gui Deal
+        closeEvent()
     else:
         dataReportConfig['GuiEDeal']="Fail"
-    #close Gui Deal
-    closeEvent()
     #check mission
      #join event
     eventWCOpen()
@@ -1021,16 +1020,22 @@ def day7():
     #change acc3
     changeAcc(user["user3"]["user"],user["user3"]["pass"])
     #check gift
-    #------------------------#
+    #------------------------#assert_not_equal("actual value", "expected value", "Please fill in the test point.")
     #report
     reportDay7(dataReportConfig)
 def exchange1(day):
+    print(day)
     try:
+        prog1=0
+        prog2=0
+        prog3=0
         #join event
+#         eventWCOpen()
+        sleep(1)
         eventWCOpen()
         #check progress
         prog1=checkProgressCurrent()
-        print(prog1)
+#         return 1
         closeEvent()
         cheatGold(user["user1"]["id"],1000000) 
         #click btn play
@@ -1051,7 +1056,9 @@ def exchange1(day):
             dataReportConfig["Exchange1"]="Pass"
         else:
             dataReportConfig["Exchange1"]="Fail"
+        sleep(3)
         #check update progess
+        touch(imageWC.imgCar)
         prog2=checkProgressCurrent()
         if checkUpdateProgessTable(prog1,prog2):
             dataReportConfig["Update"]="Pass"
@@ -1085,30 +1092,19 @@ def knock(day):
     try:
         #join event
         eventWCOpen()
+        eventWCOpen()
         #check progress
         prog1=checkProgressCurrent()
         closeEvent()
         #cheat gold du play
-        if cheatGold(user["user1"]["id"],1000000) :
-            dataReportConfig["CheatGold"]="Pass"
-        else :
-            dataReportConfig["CheatGold"]="Fail"
+        cheatGold(user["user1"]["id"],1000000)
         #click btn play
-        if joinTable():
-            dataReportConfig["BtnPlay"]="Pass"
-        else:
-            dataReportConfig["BtnPlay"]="Fail"
+        joinTable()
         #Check table
-        if tableGame():
-            dataReportConfig["JoinTable"]="Pass"
-        else:
-            dataReportConfig["JoinTable"]="Fail"
+        tableGame()
         #cheat cheatPorkerSpecial
         #add bot
-        if addBot():
-            dataReportConfig["Bot"]="Pass"
-        else:
-            dataReportConfig["Bot"]="Fail"
+        addBot()
         #Click knock
         if clickKnock():
             dataReportConfig["Knock"]="Pass"
@@ -1127,10 +1123,7 @@ def knock(day):
         else:
             dataReportConfig["Update"]="Fail"
            #check lobby
-        if CheckLobby():
-            dataReportConfig["Leave"]="Pass"
-        else:
-            dataReportConfig["Leave"]="Fail" 
+        CheckLobby()
         closeEvent()
     except:
         print("error knock")
@@ -1765,14 +1758,15 @@ def checkMission2(day):
         return "exchange1"
 def checkProgressCurrent():
     try:
-        if waitNolimitPoco(pocoTag.lbProgress,5):
-            progress=pocoTag.lbProgress.get_text()
+        poco = CocosJsPoco()
+        progress=""
+        if waitNolimitPoco(pocoTag.lbProgress,2):
+#             progress=pocoTag.lbProgress.get_text()
+            progress=poco("lbProgress").get_text()    
             prg=progress.split("/")
             prgL=int(prg[0].strip())
             prgR=int(prg[1].strip())
-            print(prgR)
-            print(prgL)
-            print("Progess checkProgressCurrent")
+            print("Progess checkProgressCurrent"+progress)
             return prgL
         else:
             print("NO find progress")
@@ -1902,7 +1896,8 @@ def CheckLableDay():
 def checkTocos():
     try:
         if waitNolimitPoco(pocoTag.lbNumTacos,2):
-            tocos=int(pocoTag.lbNumTacos.get_text())
+#             tocos=int(pocoTag.lbNumTacos.get_text())
+            tocos=int(poco("lbNumTacos").get_text())
             return tocos
     except:
         return False
@@ -2257,4 +2252,7 @@ def complete_logout_login_24h():
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
 # beforEvent()
-afterEvent()
+# afterEvent()
+# day1()
+# claimGift()
+day2()
