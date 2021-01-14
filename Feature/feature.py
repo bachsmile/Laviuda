@@ -36,9 +36,9 @@ def WC():
     afterEvent()
     day1()
     claimGift()
-#     day2()
-#     noClaimGift()
-#     CheckChangeAcc()
+    day2()
+    noClaimGift()
+    CheckChangeAcc()
 #     missionPassDayInTable()
 #     autoClaimGift()
 #     day3()
@@ -174,6 +174,7 @@ def DB():
 #---------------------------------------------Report-----------------------------------------------------#
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
+
 
 
 
