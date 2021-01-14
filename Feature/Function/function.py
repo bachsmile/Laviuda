@@ -213,8 +213,8 @@ def clickKnock():
         return False
 def clickPass():
     try:
-        if waitNolimitPoco(pocoTag.btnPass,60):
-            pocotag.btnPass.click()
+        if waitNolimitPoco(poco("btnPass"),60):
+            poco("btnPass").click()
             print("pass")
             return True
         else:
@@ -1318,15 +1318,14 @@ def CheckChangeAcc():
      # script content
     #change acc
     changeAcc(user["user2"]["user"],user["user2"]["pass"])
-    if waitNolimitPoco(pocoTag.btnClaim,2):
-        pocoTag.btnClaim.click()
+    clickClaim()
     if waitNolimitPoco(pocoTag.btnClose,2):
         pocoTag.btnClose.click()
     #open Gui
     eventWCOpen()
     #check nv day 1
     print("error find poco no name")
-    if True:
+    if checkMissedMission(1):
         dataReportConfig['MissionDay1']="Pass"
     else:
         dataReportConfig['MissionDay1']="Fail"
@@ -1336,7 +1335,7 @@ def CheckChangeAcc():
     #-------------End script----------------------------------#
     #-------------Report--------------------------------------#
     reportChangeAcc(dataReportConfig)
-def missionPassDayInTable():
+def missionPassDayInTable(day):
     #Cheat finished mission
 #     timeCheat = api_changeTimeServer(convertDayTimeToMili(timeWC["start"]))
 #     reloadLobby()
@@ -1356,7 +1355,7 @@ def missionPassDayInTable():
         "m": timeWC["start"]['m'],
         "s": timeWC["start"]['s']
     }
-    timeNow= convertDayTimeToMili(dayS) + datetoMili(1) - housToMili(1) + minutetoMili(59) 
+    timeNow= convertDayTimeToMili(dayS) + datetoMili(2) - housToMili(1) + minutetoMili(59) 
     timeCheat = api_changeTimeServer(timeNow)
     #reload lobby
     reloadLobby()
@@ -1373,7 +1372,7 @@ def missionPassDayInTable():
     for x in range(2):
         clickPass()
     #Show update mission
-    if CheckMissionProgress("day2"):
+    if CheckMissionProgress(day+1):
         dataReportConfig["MissionNew"]="Pass"
     else:
         dataReportConfig["MissionNew"]="Fail"
@@ -1742,6 +1741,19 @@ def checkMission2(day):
         return "knock"
     if challenge[day]["mission"]=="exchange1":
         return "exchange1"
+def CheckMissionProgress(day):
+    try:
+        if CheckGUIEvent()==False:
+            poco("btnMain").click()
+        if waitNolimitPoco(challengePlay[challenge["day"+ str(day)]["mission"]]["data"]["detailMission"],5):
+            print("Progess update")
+            return True
+        else:
+            print("Progess no update")
+            return False
+    except:
+        print("error checkUpdateProgess")
+        return False
 def checkProgressCurrent():
     try:
         poco = CocosJsPoco()
@@ -1907,6 +1919,15 @@ def checkUpdateGold(gold1, gold2, gold3):
             return False
     except:
         print("Gold update error")
+        return False
+def checkMissedMission(day):
+    try:
+        mission="TBNodeDay"+str(day)
+        if waitNolimitPoco(poco(mission),2):
+            return poco(mission).offspring("imgMissed").attr("visible")
+        else:
+            return False
+    except:
         return False
     #action
 def eventWCOpen():
@@ -2275,4 +2296,4 @@ def complete_logout_login_24h():
     complete_lobby_24h()
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
-missionPassDayInTable()
+missionPassDayInTable(2)
