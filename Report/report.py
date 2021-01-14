@@ -6,10 +6,12 @@ __desc__="""
 """
 #--------------End Tile------------------------------------#
 #--------------Import LIB----------------------------------#
+from importlib import reload
 import json
 from airtest.core.api import *
 from airtest.cli.parser import cli_setup
 from poco.drivers.cocosjs import CocosJsPoco
+from Laviuda.Poco.poco import *
 #--------------End Import Lib------------------------------#
 #--------------Import FILE---------------------------------#
 #----------------------------------------------------------#
@@ -863,38 +865,27 @@ def reportUpdateProgressMissionFull(data):
 #Knock
 def reportKnock(data):
     detail = {
-      "Mission": data["Mission"],
-      "BtnPlay": data["BtnPlay"],
-      "JoinTable":data["JoinTable"],
-      "CheatFOM": data["CheatFOM"],
-      "Bot": data["Bot"],
       "Knock": data["Knock"],
       "Update":data["Update"],
-      "Leave":data["Leave"],
     }
     report = """
             ---------------------------------------------------------------------------------------
     
     CASE: Test mission Knock
             
-            Click btn play:                         {0}    Vao table:                           {1}
+            knock                                   {0}
             
-            Cheat finished obtain mission:          {2}    Add bot                              {3}
-            
-            Wait den luot thi click knock           {4}
-            
-            Show update progess:                    {5}
-            
-            Leave table:                            {6}
+            Show update progess:                    {1}
             
             
-                                                                time test: {7}
+            
+                                                                time test: {2}
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log=report.format(detail["BtnPlay"], detail["JoinTable"], detail["CheatFOM"],detail["Bot"],detail["Knock"], detail["Update"], detail["Leave"], current_time)
+    log=report.format(detail["Knock"], detail["Update"], current_time)
     f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
@@ -1159,10 +1150,4 @@ def reportdailybonus(data):
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------#
-
-
-
-
-
-
 

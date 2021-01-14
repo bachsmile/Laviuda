@@ -33,9 +33,9 @@ poco = CocosJsPoco()
 # WC--------------------------->
 def WC():
     beforEvent()
-#     afterEvent()
-#     day1()
-#     claimGift()
+    afterEvent()
+    day1()
+    claimGift()
 #     day2()
 #     noClaimGift()
 #     CheckChangeAcc()
