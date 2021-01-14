@@ -7,8 +7,8 @@ HTTPS_PROXY = "https://172.28.103.34:3128"
 # from test.Autotest.Lavuavi.Function.Cheat.Cheat.api import *
 #--------------------------------------------#
 # Lấy access token mới mỗi lần dùng tool cheat
-ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYxZjZlOGZhLTIyMGItNDk1OC1hNGEwLTA3ZDZkZDZjMjRkNCIsIm5hbWUiOiJW4bu5LiBIdeG7s25oIE5ndXnhu4VuIiwiZW1haWwiOiJ2eWhuQHZuZy5jb20udm4iLCJvaWQiOiI5MDJmYWVmMy0yZjA3LTRlZjgtOTViNC04N2I2YzAyNjk3N2MiLCJhZGRyZXNzIjoiMS41My4yNTUuMTQ3IiwiZXhwaXJlZCI6MTYxMDUyODcyODQyNSwidHlwZSI6ImF6dXJlIiwidXNlcm5hbWUiOiJ2eWhuQHZuZy5jb20udm4iLCJpYXQiOjE2MTA0NDEwODgsImV4cCI6MTYxMDUyNzQ4OH0.M1k-SpGPpThFinr7xlYloaDJFqt2jM4ktjD1_snHIq4"
-SERVER_HOST = "http://49.213.81.43:10020"
+ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJiMTJiODllLTMxMTktNDZlMi1iZDFhLTczZGE2MDdlODIyYiIsIm5hbWUiOiJW4bu5LiBIdeG7s25oIE5ndXnhu4VuIiwiZW1haWwiOiJ2eWhuQHZuZy5jb20udm4iLCJvaWQiOiI5MDJmYWVmMy0yZjA3LTRlZjgtOTViNC04N2I2YzAyNjk3N2MiLCJhZGRyZXNzIjoiMjcuNjUuMTk2LjcyIiwiZXhwaXJlZCI6MTYxMDY3OTE1Nzk4NiwidHlwZSI6ImF6dXJlIiwidXNlcm5hbWUiOiJ2eWhuQHZuZy5jb20udm4iLCJpYXQiOjE2MTA1OTE1MTAsImV4cCI6MTYxMDY3NzkxMH0.SFXPz3M2EhjpAH6fhWULLRACJdFD9VzZ3FcoXAyaq4M"
+SERVER_HOST = "http://49.213.81.43:10021"
 BASE_URL = SERVER_HOST + "/api/"
 proxyDict = {
     "http": HTTP_PROXY,
@@ -29,7 +29,7 @@ def api_postDoFunction(userId, id, params):
     
     data = {
         "gameId": "laviuda",
-        "mode": "PRIVATE_2",
+        "mode": "PRIVATE",
         "userId": userId,
         "id": id,
         "params": params
@@ -117,4 +117,5 @@ def cheatFinishedMision(idU,day):
         return False
 
 # print(api_changeTimeServer(1609199940000 ))
+
 

@@ -68,18 +68,18 @@ def Vip():
     #Case 3: MUA VIP 1
     checkLevelVip() #check level vip
     api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", [0]) #cheat non-vip
-    cheat_buy_vip("vip.pack_1") #mua vip 1
+    check_buy_vip("vip.pack_1") #mua vip 1
     back_to_lobby()
     check_item() #check item ngoai ban choi
     to_table()
     check_item() #check item trong ban choi
     reportBuyVip(data)
     #Case 4: MUA VIP 2
-    cheat_buy_vip("vip.pack_2")
+    check_buy_vip("vip.pack_2")
     check_item() #check item trong ban choi
     reportBuyVip(data)
     #Case 5: Mua vip 3
-    cheat_buy_vip("vip.pack_3")
+    check_buy_vip("vip.pack_3")
     buy_vip_thap("btnBuyBroze") #check mua vip 1
     reportBuyVip(data)
     #Case 6: Mua gold trong shop
@@ -108,7 +108,7 @@ def Vip():
     checkMoGUIVipGD()
     reportExpiredVip(data)
     #Case11: Check het han trong ban choi
-    cheatTimeRemain(UserID, 60)
+    api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", [60])
     to_table()
     check_item()
     reportCheckExpiredTable(data)
@@ -174,6 +174,7 @@ def DB():
 #---------------------------------------------Report-----------------------------------------------------#
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
+
 
 
 
