@@ -73,7 +73,7 @@ challenge={
         "mission":"knock",
         },
     "day3":{
-        "mission":"win",
+        "mission":"collect",
         },
     "day4":{
         "mission":"collect",
@@ -110,7 +110,7 @@ challengePlay={
                 "detailMission":poco(text="Tocar "),
                 "totalX":4,
                 "tacos":3,
-                "gold":40000
+                "gold":50000
                 },
     },
     "exchange1":{

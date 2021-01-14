@@ -39,7 +39,7 @@ def WC():
     day2()
     noClaimGift()
     CheckChangeAcc()
-#     missionPassDayInTable()
+    missionPassDayInTable()
 #     autoClaimGift()
 #     day3()
 #     missionPassDayOpenGui()
