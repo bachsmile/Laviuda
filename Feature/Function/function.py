@@ -103,6 +103,16 @@ def cheatGoldEmpty(gold):
     except:
         print("Khong tim thay")
         return False
+def CheatCard(wildCard,cardPlay):#ex: WildCard = '2c', cardPlay="ab,2b,3b,4b,5b"
+    pocoTag.btnCheat.click()
+    pocoTag.btnTabCustom.click()
+    pocoTag.btnResetCustom.click()
+    pocoTag.pnPointEvent.click([0.7598879526638265, 0.6159336566925049])
+    text(wildCard)
+    pocoTag.pnCaseId_1.click([0.5944052164770731, 0.4596827030181885] )
+    text(cardPlay)
+    pocoTag.btnSendCustom.click()
+    pocoTag.btnCheat.click() 
 # Action
 def reloadLobby():
     try:
@@ -287,7 +297,19 @@ def waitEndGame():
         poco = CocosJsPoco()
 #       if waitNolimitPoco(poco("imgOtherWin"),100):  
         if waitNoLimit(imageWC.imgWin,100):
-            print(0)
+            print("end game")
+            return True
+        else:
+            print("end time down")
+            return False
+    except:
+        print("error")
+        return False
+def waitEndGame2():
+    try:
+        poco = CocosJsPoco()
+#       if waitNolimitPoco(poco("imgOtherWin"),100):  
+        if waitNoLimit(imageWC.imgWin2,100):
             print("end game")
             return True
         else:
@@ -1153,21 +1175,23 @@ def collect(day):
         prog1=checkProgressCurrent()
         closeEvent()
         #cheat gold du play
-        cheatGold(user["user1"]["id"],1000000)
+        cheatGold(user["user2"]["id"],1000000)
         #click btn play
         joinTable()
         #cheat cheatPorkerSpecial
+        if challengePlay[challenge["day"+str(day)]["mission"]]["data"]["type"] == 'wc':
+            CheatCard(cardCheat["wc"]["card"],cardCheat["wc"]["set"])
         #add bot
         addBot()
         #Click knock
         clickKnock()
-        prog2=checkProgressCurrent()
         #cheat win finished game
         # cheatNumMision(1)
         #chon thoat table
         clickOutTable()
         #wait end game
-        waitEndGame()
+        waitEndGame2()
+        prog2=checkProgressCurrent()
         #check update progess
         if checkUpdateProgessTable(prog1,prog2):
             dataReportConfig["Update"]="Pass"
@@ -1175,7 +1199,6 @@ def collect(day):
             dataReportConfig["Update"]="Fail"
            #check lobby
         CheckLobby()
-        closeEvent()
     except:
         print("error collect")
     print(dataReportConfig)
@@ -1273,7 +1296,7 @@ def passClaimGift():
         dataReportConfig['UpdateTocos']="Fail"
     #check tick claim day2
     #checkUpdate mission
-    if CheckMissionProgress("day4"):
+    if CheckMissionProgress(4):
         dataReportConfig["MissionNew"]="Pass"
     else:
         dataReportConfig["MissionNew"]="Fail"
@@ -1303,10 +1326,13 @@ def autoClaimGift():
     else:
         dataReportConfig['Effect']="Fail"
     #check đánh dấu nhận thưởng 2
-    
+    if checkFinishMission(2):
+        dataReportConfig['Tick']="Pass"
+    else:
+        dataReportConfig['Tick']="Fail"
     #check update nhiem vu ngay 3
     #Show update mission
-    if CheckMissionProgress("day3"):
+    if CheckMissionProgress(3):
         dataReportConfig["MissionNew"]="Pass"
     else:
         dataReportConfig["MissionNew"]="Fail"
@@ -1411,7 +1437,7 @@ def missionPassDayOpenGui():
     eventWCOpen()
     waitTimePassDay(timeW)
     #Show update mission
-    if CheckMissionProgress("day4"):
+    if CheckMissionProgress(4):
         dataReportConfig["MissionNew"]="Pass"
     else:
         dataReportConfig["MissionNew"]="Fail"
@@ -1929,7 +1955,16 @@ def checkMissedMission(day):
             return False
     except:
         return False
-    #action
+def checkFinishMission(day):
+    try:
+        mission="TBNodeDay"+str(day)
+        if waitNolimitPoco(poco(mission),5):
+            return poco(mission).offspring("imgClaimed").attr("visible")
+        else:
+            return False
+    except:
+        return False
+#action
 def eventWCOpen():
     try:
         poco = CocosJsPoco()
@@ -2296,4 +2331,4 @@ def complete_logout_login_24h():
     complete_lobby_24h()
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
-missionPassDayInTable(2)
+print(collect(3))

@@ -59,6 +59,11 @@ class pocoTag:
     btnAddBot = poco("btnAddBot")
     lbTimeServer = poco("lbTimeServer")
     btnSendCheatPlayer = poco("btnSendCheatPlayer")
+    btnSendCustom = poco("btnSendCustom")
+    btnTabCustom = poco("btnTabCustom")
+    btnResetCustom = poco("btnResetCustom")
+    pnPointEvent = poco("pnPointEvent")
+    pnCaseId_1 = poco("pnCaseId_1")
     #btn join in event
     btnJoin = poco("btnJoin")
     btnClaim = poco("btnClaim")

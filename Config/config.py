@@ -73,7 +73,7 @@ challenge={
         "mission":"knock",
         },
     "day3":{
-        "mission":"collect",
+        "mission":"collect", #wc
         },
     "day4":{
         "mission":"collect",
@@ -126,7 +126,8 @@ challengePlay={
             "detailMission": poco(text="Coleccionar "),
             "totalX":4, 
             "tacos":2,
-            "gold":20000
+            "gold":20000,
+            "type":"wc"
         },
     },
     "claim":{
@@ -141,6 +142,13 @@ challengePlay={
             "tacos":6,
             "gold":200000
         },
+    }
+}
+
+cardCheat={
+    "wc":{
+        "card":"2c",
+        "set":"ab,2b,3b,4b,5b"
     }
 }
 #deal

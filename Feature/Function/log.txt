@@ -1,278 +1,91 @@
 
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Test mission Day 1
-    
-            Tab Day1 enable:                        Pass    Nhiem vu Day 1 show:                 Pass
-            
-                                                                 time test: 17:21:40
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Exchange1
-    
-            Click btn Play:                         Pass    
-            
-            Add bot:                                Pass
-            
-            Exchange1:                              Pass    
+    CASE: Test mission Exchange1 
             
             Show update progess:                    Fail    
             
-            Choose Leave table:                     Pass    
-            
-            No update progess bar at end game:      Pass    
-            
-            Leave table:                            Pass
-            
-            
-                                                                time test: 17:23:25
+                                                                time test: 14:22:27
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Claim gift finished mission   
+    CASE: Test mission Exchange1 
             
-            Cheat finished mission:                 Pass     
+            Show update progess:                    Fail    
             
-            Show GUI event                          Pass
-                    
-            Update gold :                           Fail   
-            
-            Update Tocos:                           Fail
-            
-            
-                                                                time test: 17:27:00
+                                                                time test: 14:23:45
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Test mission Day 2
-    
-            Cheat time qua ngay:                    Fail    Time cheat:                          2020-12-30 07:00:00
+    CASE: Test mission Exchange1 
             
-            Reload lobby:                           Pass    
+            Show update progess:                    Fail    
             
-            Auto show GUI event:                    Fail    Auto show GUI deal:                  Fail
-            
-            Tab Day 2 enable:                       Fail    Nhiem vu Day 2 show:                 Fail
-                     
-                                                                    time test: 17:32:08
-
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 2
-    
-            Cheat time qua ngay:                    Pass    Time cheat:                          2020-12-30 07:00:00
-            
-            Reload lobby:                           Pass    
-            
-            Auto show GUI event:                    Fail    Auto show GUI deal:                  Fail
-            
-            Tab Day 2 enable:                       Pass    Nhiem vu Day 2 show:                 Pass
-                     
-                                                                    time test: 17:37:05
-
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 2
-    
-            Cheat time qua ngay:                    Pass    Time cheat:                          2020-12-30 07:00:00
-            
-            Reload lobby:                           Pass    
-            
-            Auto show GUI event:                    Pass    Auto show GUI deal:                  Fail
-            
-            Tab Day 2 enable:                       Fail    Nhiem vu Day 2 show:                 Fail
-                     
-                                                                    time test: 08:50:28
-
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 2
-    
-            Cheat time qua ngay:                    Pass    Time cheat:                          2020-12-30 07:00:00
-            
-            Reload lobby:                           Pass    
-            
-            Auto show GUI event:                    Fail    Auto show GUI deal:                  Fail
-            
-            Tab Day 2 enable:                       Pass    Nhiem vu Day 2 show:                 Pass
-                     
-                                                                    time test: 08:53:43
-
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 2
-    
-            Cheat time qua ngay:                    Pass    Time cheat:                          2020-12-30 07:00:00
-            
-            Reload lobby:                           Pass    
-            
-            Auto show GUI event:                    Fail    Auto show GUI deal:                  Fail
-            
-            Tab Day 2 enable:                       Pass    Nhiem vu Day 2 show:                 Pass
-                     
-                                                                    time test: 08:55:48
-
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 2
-    
-            Cheat time qua ngay:                    Pass    Time cheat:                          2020-12-30 07:00:00
-            
-            Reload lobby:                           Pass    
-            
-            Auto show GUI event:                    Fail    Auto show GUI deal:                  Fail
-            
-            Tab Day 2 enable:                       Pass    Nhiem vu Day 2 show:                 Pass
-                     
-                                                                    time test: 08:59:25
-
-    
-            ---------------------------------------------------------------------------------------
-    
-    CASE: Test mission Knock
-            
-            Click btn play:                         Pass    Vao table:                           Pass
-            
-            Cheat finished obtain mission:          Fail    Add bot                              Pass
-            
-            Wait den luot thi click knock           Pass
-            
-            Show update progess:                    Pass
-            
-            Leave table:                            Fail
-            
-            
-                                                                time test: 09:01:08
+                                                                time test: 14:26:35
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Hoan thanh mission dong GUI khong nhan
-    
-            Khong nhan qua :                           Pass      
+    CASE: Test mission Exchange1 
             
+            Show update progess:                    Fail    
             
-            
-                                                                time test: 09:18:02
+                                                                time test: 14:29:20
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Claim gift finished mission
+    CASE: Test mission Exchange1 
             
-            Nhiem vu Day1 acc2 khong hoan thanh:    Pass
+            Show update progess:                    Fail    
             
-            
-            
-                                                                time test: 09:23:33
+                                                                time test: 14:29:47
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Claim gift finished mission
+    CASE: Test mission Exchange1 
             
-            Nhiem vu Day1 acc2 khong hoan thanh:    Pass
+            Show update progess:                    Fail    
             
-            
-            
-                                                                time test: 09:43:24
+                                                                time test: 14:32:10
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Qua ngay khi dang trong ban
+    CASE: Test mission Exchange1 
             
-            Update nhiem vu ngay moi                Fail
-
+            Show update progess:                    Fail    
             
-            
-                                                                time test: 10:16:09
+                                                                time test: 14:38:38
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Qua ngay khi dang trong ban
+    CASE: Test mission Exchange1 
             
-            Update nhiem vu ngay moi                Fail
-
+            Show update progess:                    Fail    
             
-            
-                                                                time test: 10:22:04
+                                                                time test: 15:07:17
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Qua ngay khi dang trong ban
+    CASE: Test mission Exchange1 
             
-            Update nhiem vu ngay moi                Fail
-
+            Show update progess:                    Pass    
             
-            
-                                                                time test: 10:24:54
-                                                                Reporter: BachTX
-    ----------------------------------------------------------------------------------------------------------
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Qua ngay khi dang trong ban
-            
-            Update nhiem vu ngay moi                Fail
-
-            
-            
-                                                                time test: 10:43:12
-                                                                Reporter: BachTX
-    ----------------------------------------------------------------------------------------------------------
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Qua ngay khi dang trong ban
-            
-            Update nhiem vu ngay moi                Fail
-
-            
-            
-                                                                time test: 11:14:10
-                                                                Reporter: BachTX
-    ----------------------------------------------------------------------------------------------------------
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Qua ngay khi dang trong ban
-            
-            Update nhiem vu ngay moi                Fail
-
-            
-            
-                                                                time test: 11:25:19
-                                                                Reporter: BachTX
-    ----------------------------------------------------------------------------------------------------------
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Qua ngay khi dang trong ban
-            
-            Update nhiem vu ngay moi                Pass
-
-            
-            
-                                                                time test: 11:31:25
+                                                                time test: 15:15:06
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     
