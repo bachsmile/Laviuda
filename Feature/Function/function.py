@@ -429,15 +429,32 @@ def buy_vip_thap(pack):
     except:
         data["Check_low_vip"] = "Fail"
         print("Error")  
-def cheat_buy_vip(pack):
-    old_gold = float(re.sub('[MKB]', '', poco("lbGold").get_text()))
-    old_day = float(re.sub(r'\D', '', poco("lbTimeMyVip").get_text()))
-    api_postDoFunction("19201812", "CHEAT_PAYMENT_VIP", [pack])
+def checkTimeRemainVip(): 
     try:
+        if checkExists(poco("lbTimeMyVip")):
+            old_day = int(re.sub(r'\D', '', poco("lbTimeMyVip").get_text()))
+            return old_day
+        else:
+            old_day = 0
+            return old_day
+    except:
+        print("error")
+def cheatPayMentVip(idU, pack):
+    try:
+        cheat = api_postDoFunction(idU, "CHEAT_PAYMENT_VIP", [pack])
         touch(image_vip.btn_claim)
         time.sleep(2)
+        print("success")
+    except:
+        print("error")
+def check_buy_vip(idU, pack):
+    old_gold = float(re.sub('[MKB]', '', poco("lbGold").get_text()))
+    checkTimeRemainVip()
+    cheatPayMentVip(idU, pack)
+    try:
+        time.sleep(2)
         new_gold = float(re.sub('[MKB]', '', poco("lbGold").get_text()))
-        new_day = float(re.sub(r'\D', '', poco("lbTimeMyVip").get_text()))
+        new_day = int(re.sub(r'\D', '', poco("lbTimeMyVip").get_text()))
         gold = new_gold - old_gold
         gold_in = vip_pack[pack]["dailyTribute"]
         day = new_day - old_day
@@ -461,12 +478,18 @@ def check_gold_support():
     except:
         data["Status"] = "Fail"
         print("Khong nhan duoc gold support")
-def check_buy_gold(idU, pack):
-    old_gold = float(re.sub('[MKB]', '', poco("lbGold").get_text()))
-    cheat = api_postDoFunction(idU, "CHEAT_PAYMENT_IAP", [pack])
+def cheatBuyGold(idU, pack):
     try:
+        cheat = api_postDoFunction(idU, "CHEAT_PAYMENT_IAP", [pack])
         pocoTag.btnClaim
         time.sleep(2)
+        print("Success")
+    except:
+        print("Error")
+def check_buy_gold(idU, pack):
+    old_gold = float(re.sub('[MKB]', '', poco("lbGold").get_text()))
+    cheatBuyGold(idU, pack)
+    try:
         new_gold = float(re.sub('[MKB]', '', poco("lbGold").get_text()))
         gold = new_gold - old_gold
         gold_conf = vip_pack[pack]["dailyTribute"]
@@ -512,6 +535,11 @@ def checkLevelVip():
             print("user dang non vip")
     except:
         print("error")
+def checkExists(self):
+    try:
+        return self.attr('visible')
+    except :
+        return 0
 #Function WC:---------------------->
     #------------------#
 def beforEvent():
@@ -2331,4 +2359,3 @@ def complete_logout_login_24h():
     complete_lobby_24h()
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
-print(collect(3))
