@@ -1439,9 +1439,11 @@ def missionPassDayInTable(day):
     #------------------------#
     #report
     reportUpdateMissionTable(dataReportConfig)
-def missionPassDayOpenGui():
+def missionPassDayOpenGui(day):
+    to1=0
+    to2=0
     #Cheat finished mission
-    cheatFinishedMision(user["user2"]["id"],3)
+#     cheatFinishedMision(user["user2"]["id"],3)
     reloadLobby()
     timeCheat = api_changeTimeServer(1605051600000)
     #cheat time pass 1 ngay-> #28/11/2020 23:59:00 -> 1606582740000
@@ -1453,19 +1455,28 @@ def missionPassDayOpenGui():
         "m": timeWC["start"]['m'],
         "s": timeWC["start"]['s']
     }
-    dayS['D'] = dayS['D']+3
-    dayS['h'] = dayS['h']-1
-    dayS['m'] = dayS['m']+59
-    timeNow= convertDayTimeToMili(dayS) + datetoMili(3) - housToMili(1) + minutetoMili(59) 
+    timeNow= convertDayTimeToMili(dayS) + datetoMili(day) - housToMili(1) + minutetoMili(59)+secToMili(40) 
     timeCheat = api_changeTimeServer(timeNow)
     #reload lobby
     reloadLobby()
-    clickClaim()
-    closeEvent()
-    eventWCOpen()
-    waitTimePassDay(timeW)
+#     clickClaim()
+#     closeEvent()
+    if CheckGUIEvent()==False:
+        eventWCOpen()
+    sleep(3)
+    to1=checkTocos()
+#     sleep(2)
+#     to1=checkTocos()
+#     waitTimePassDay(dayS,Y,M,D,h,m,s)
+    sleep(25)
+    to2=checkTocos()
     #Show update mission
-    if CheckMissionProgress(4):
+    tocosConf=challengePlay[challenge["day"+str(day)]["mission"]]["data"]["tacos"]
+    if checkTocosUpdate(tocosConf,to1,to2):
+        dataReportConfig['Effect']="Pass"
+    else:
+        dataReportConfig['Effect']="Fail"
+    if CheckMissionProgress(day+1):
         dataReportConfig["MissionNew"]="Pass"
     else:
         dataReportConfig["MissionNew"]="Fail"
@@ -1798,8 +1809,9 @@ def checkMission2(day):
 def CheckMissionProgress(day):
     try:
         if CheckGUIEvent()==False:
-            poco("btnMain").click()
-        if waitNolimitPoco(challengePlay[challenge["day"+ str(day)]["mission"]]["data"]["detailMission"],5):
+            pocoTag.btnMain.click()
+        elif waitNolimitPoco(challengePlay[challenge["day"+ str(day)]["mission"]]["data"]["detailMission"],5):
+            print(challengePlay[challenge["day"+ str(day)]["mission"]]["data"]["detailMission"])
             print("Progess update")
             return True
         else:
@@ -2359,3 +2371,4 @@ def complete_logout_login_24h():
     complete_lobby_24h()
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
+missionPassDayOpenGui(3)
