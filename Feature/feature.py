@@ -42,7 +42,7 @@ def WC():
     missionPassDayInTable(2)
     autoClaimGift()
     day3()
-#     missionPassDayOpenGui()
+    missionPassDayOpenGui()
 #     passClaimGift()
 #     day4()
 #     UpdateProgressMissionFull()

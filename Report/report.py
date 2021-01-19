@@ -809,24 +809,27 @@ def reportUpdateMissionTable(data):
 #reportUpdateMissionLobby
 def reportUpdateMissionLobby(data):
     detail = {
+      "Effect":data["Effect"],
       "MissionNew": data["MissionNew"],
     }
     report = """
     -----------------------------------------------------------------------------------------------------------
     
     CASE: Qua ngay khi dang mo gui event
+    
+            effect nhận quà                         {0}
             
-            Update nhiem vu ngay moi                {0}
+            Update nhiem vu ngay moi                {1}
 
             
             
-                                                                time test: {1}
+                                                                time test: {2}
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log=report.format(detail["MissionNew"], current_time)
+    log=report.format(detail["Effect"],detail["MissionNew"], current_time)
     f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))

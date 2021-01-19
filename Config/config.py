@@ -32,14 +32,24 @@ user={
         "pass":123456       
     },
 }
-timeW="""
-00:00:00
-02/12/2020
-"""
 timeWC={
     "start":{"Y":2020,"M":12,"D":29,"h":7,"m":0,"s":0},
     "end":{"Y":2020,"M":1,"D":5,"h":7,"m":0,"s":0}
 }
+# def timeBtnCheat(time,Y,M,D,h,m,s):
+#     TY=0+Y
+#     TM=0+M
+#     TD=0+D
+#     Th=0+h
+#     Tm=0+m
+#     Ts=0+s
+#     timeW="""
+# {0}:{1}:{2}
+# {3}/{4}/{5}
+# """
+#     timeWt=timeW.format(time['h']+Th, time['m']+Tm,time['s']+Ts,time['D']+TD,time['M']+TM,time['Y']+TY)
+#     return timeWt
+# print(timeBtnCheat(timeWC[ "start"],1,-11,-28,0,0,0))
 def datetoMili(day):
     return day*86400000
 def housToMili(hous):
@@ -76,7 +86,7 @@ challenge={
         "mission":"collect", #wc
         },
     "day4":{
-        "mission":"collect",
+        "mission":"win",
     },
      "day5":{
          "mission":"win",       
@@ -92,7 +102,7 @@ challengePlay={
     "win":{
         "data":{
                 "detailMission":poco(text="Ganar "),
-                "totalX":3,
+                "totalX":4,
                 "tacos":4,
                 "gold":80000
                 },
@@ -125,8 +135,8 @@ challengePlay={
         "data":{
             "detailMission": poco(text="Coleccionar "),
             "totalX":4, 
-            "tacos":2,
-            "gold":20000,
+            "tacos":4,
+            "gold":80000,
             "type":"wc"
         },
     },
