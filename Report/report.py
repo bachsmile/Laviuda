@@ -994,11 +994,11 @@ def reportEndEvent(data):
     
     CASE: Test mission end event
     
-            Auto đóng event:                        {0}    
+            Auto close event:                        {0}    
             
             No claim gift:                          {1}
             
-            Ẩn event:                               {2} 
+            Hide event:                               {2} 
             
                                                                 time test: {3}
                                                                 Reporter: BachTX

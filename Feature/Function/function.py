@@ -1562,25 +1562,25 @@ def GuiDeal():
         closeEvent()
     else:
         dataReportConfig['GuiEDeal']="Fail"
-    gold1=checkGold()
+    gold1=getGold(user["user"]["id"])
     clickGuiDeal()
-    cheatBuyDeal(user["user1"]["id"],1)
+    cheatBuyDeal(user["user"]["id"],1)
     clickClaim()
     if checkDisableBtnDeal():
         dataReportConfig['BtnBuyWC']="Fail"
     else:
         dataReportConfig['BtnBuyWC']="Pass"
     closeEvent()
-    gold2=checkGold()
+    gold2=getGold(user["user"]["id"])
     if checkUpdateGoldDeal(dealWCConfig["offerWC1"],gold1,gold2):
         dataReportConfig['GoldUpdate']="Pass"
     else:
         dataReportConfig['GoldUpdate']="Fail"
     clickGuiDeal()
-    cheatBuyDeal(user["user1"]["id"],2)
+    cheatBuyDeal(user["user"]["id"],2)
     clickClaim()
     sleep(1)
-    cheatBuyDeal(user["user1"]["id"],3)
+    cheatBuyDeal(user["user"]["id"],3)
     clickClaim()
     if checkBtnDeal():
         dataReportConfig['BtnDeal']="Fail"
@@ -1602,29 +1602,28 @@ def endEvent():
         "m": timeWC["end"]['m'],
         "s": timeWC["end"]['s']
     }
-    dayS['h'] = dayS['h']-1
-    dayS['m'] = dayS['m']+59
-    timeCheat = api_changeTimeServer(convertDayTimeToMili(dayS))
+    timeNow=convertDayTimeToMili(dayS) -housToMili(1)+ minutetoMili(59)+secToMili(30)
+    timeCheat = api_changeTimeServer(timeNow)
 #     dataReportConfig["TimeCheat"]=fortmartTime(dayS)
     #End Cheatime---------------------------------------
     #---------reload lobby------------------------------
     reloadLobby()
     #---------end reload lobby--------------------------
     #check gold init
-    goldInit=checkGold()
+    goldInit=getGold(user["user1"]["id"])
     #opent GUI event
     eventWCOpen()
     #check gold claim
     goldClaim=challengePlay[challenge["day7"]["mission"]]["data"]["gold"]
     #wait pass day
-    waitTimePassDay(timeW)
+    sleep(30)
     #check close GUI
     if CheckGUIEvent():
         dataReportConfig['GUIEvent']="Fail"
     else:
         dataReportConfig['GUIEvent']="Pass"
     #check gold
-    goldAfter=checkGold()
+    goldAfter=getGold(user["user1"]["id"])
     if checkUpdateGold(goldClaim,goldInit,goldAfter):
         dataReportConfig['UpdateGold']="Fail"
     else:
@@ -2434,3 +2433,4 @@ def complete_logout_login_24h():
     complete_lobby_24h()
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
+endEvent()

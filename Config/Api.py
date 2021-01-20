@@ -116,7 +116,7 @@ def cheatFinishedMision(idU,day):
 def getGold(userId):
     try:
         """"
-            Send post function to admin tool back end
+            Send post module to admin tool back end
         """
         url = BASE_URL + "player/getModel"
 
@@ -137,7 +137,7 @@ def getGold(userId):
 def getModel(userId,modelName):
     try:
         """"
-            Send post function to admin tool back end
+            Send post module to admin tool back end
         """
         url = BASE_URL + "player/getModel"
 
