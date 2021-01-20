@@ -266,40 +266,33 @@ vip_pack = {
         "id": 1,
         "price":50,
         "bonus": 0.3,
-        "dailyTribute":5,
+        "dailyTribute":5000000,
         "day":3
     },
     "vip.pack_2" : {
         "id": 2,
         "point":100,
         "bonus":0.5,
-        "dailyTribute":6,
+        "dailyTribute":6000000,
         "day":7
     },
     "vip.pack_3" : {
         "id": 3,
         "point":300,
         "bonus":1,
-        "dailyTribute":7,
+        "dailyTribute":7000000,
         "day":30
     }
 }
 
 pack_gold = {
-    "credit_card" : {
-            "id": 1,
-            "10MXN":1000000,
-            "15MXN":1500000,
-            "30MXN":3500000,
-            "40MXN":5000000
-    },
     "gg_play" : {
             "id": 2,
-            "20MXN":2000000,
-            "50MXN":6500000,
-            "100MXN":15000000,
-            "200MXN":30000000,
-            "400MXN":60000000
+            "iap.pack_1":2000000,
+            "iap.pack_2":6500000,
+            "iap.pack_3":15000000,
+            "iap.pack_4":30000000,
+            "iap.pack_5":60000000
     } 
 }
 account = {
@@ -309,12 +302,13 @@ account = {
         "pass":123456      
     },
     "user1":{
-        "id":"19175089",
-        "user":"nguyenvy123",
+        "id":"20040460",
+        "user":"vyhn0908",
         "pass":123456      
     }
 }
 gold_support = 30000
+
 
 
 
