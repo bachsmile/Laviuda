@@ -7,7 +7,6 @@ HTTPS_PROXY = "https://172.28.103.34:3128"
 # from test.Autotest.Lavuavi.Function.Cheat.Cheat.api import *
 #--------------------------------------------#
 # Lấy access token mới mỗi lần dùng tool cheat
-ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBiZTRiY2I1LTY1NTktNDA5Ny1iYTBjLTVhYjg4MmRhOTAxZiIsIm5hbWUiOiJOZ-G7jWMuIE5ndXnhu4VuIFRo4buLICg3KSIsImVtYWlsIjoibmdvY250N0B2bmcuY29tLnZuIiwib2lkIjoiODE3YmVhMTYtNTZjYi00NDQ1LTg5ZmYtN2E0ODlkN2ZjN2Y1IiwiYWRkcmVzcyI6IjEuNTMuMjU1LjE0NCIsImV4cGlyZWQiOjE2MTExMzYxMjM1NzcsInR5cGUiOiJhenVyZSIsInVzZXJuYW1lIjoibmdvY250N0B2bmcuY29tLnZuIiwiaWF0IjoxNjExMDQ4NTUyLCJleHAiOjE2MTExMzQ5NTJ9.8dysQKzbHDCqbCjw5onV40lMShGk1U0W5f8jZxffaRs"
 SERVER_HOST = "http://49.213.81.43:10021"
 BASE_URL = SERVER_HOST + "/api/"
 
