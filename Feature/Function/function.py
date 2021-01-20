@@ -40,6 +40,7 @@ poco = CocosJsPoco()
 #----------------------------Function-------------------------------------------------#
 #Function general:----------------->
 #highlight
+cheatGold(12206650,10000)
 def killApp():
     try:
         clear_app("com.zingplay.laviuda")
@@ -1562,25 +1563,25 @@ def GuiDeal():
         closeEvent()
     else:
         dataReportConfig['GuiEDeal']="Fail"
-    gold1=checkGold()
+    gold1=getGold(user["user"]["id"])
     clickGuiDeal()
-    cheatBuyDeal(user["user1"]["id"],1)
+    cheatBuyDeal(user["user"]["id"],1)
     clickClaim()
     if checkDisableBtnDeal():
         dataReportConfig['BtnBuyWC']="Fail"
     else:
         dataReportConfig['BtnBuyWC']="Pass"
     closeEvent()
-    gold2=checkGold()
+    gold2=getGold(user["user"]["id"])
     if checkUpdateGoldDeal(dealWCConfig["offerWC1"],gold1,gold2):
         dataReportConfig['GoldUpdate']="Pass"
     else:
         dataReportConfig['GoldUpdate']="Fail"
     clickGuiDeal()
-    cheatBuyDeal(user["user1"]["id"],2)
+    cheatBuyDeal(user["user"]["id"],2)
     clickClaim()
     sleep(1)
-    cheatBuyDeal(user["user1"]["id"],3)
+    cheatBuyDeal(user["user"]["id"],3)
     clickClaim()
     if checkBtnDeal():
         dataReportConfig['BtnDeal']="Fail"
@@ -1602,29 +1603,28 @@ def endEvent():
         "m": timeWC["end"]['m'],
         "s": timeWC["end"]['s']
     }
-    dayS['h'] = dayS['h']-1
-    dayS['m'] = dayS['m']+59
-    timeCheat = api_changeTimeServer(convertDayTimeToMili(dayS))
+    timeNow=convertDayTimeToMili(dayS) -housToMili(1)+ minutetoMili(59)+secToMili(30)
+    timeCheat = api_changeTimeServer(timeNow)
 #     dataReportConfig["TimeCheat"]=fortmartTime(dayS)
     #End Cheatime---------------------------------------
     #---------reload lobby------------------------------
     reloadLobby()
     #---------end reload lobby--------------------------
     #check gold init
-    goldInit=checkGold()
+    goldInit=getGold(user["user1"]["id"])
     #opent GUI event
     eventWCOpen()
     #check gold claim
     goldClaim=challengePlay[challenge["day7"]["mission"]]["data"]["gold"]
     #wait pass day
-    waitTimePassDay(timeW)
+    sleep(30)
     #check close GUI
     if CheckGUIEvent():
         dataReportConfig['GUIEvent']="Fail"
     else:
         dataReportConfig['GUIEvent']="Pass"
     #check gold
-    goldAfter=checkGold()
+    goldAfter=getGold(user["user1"]["id"])
     if checkUpdateGold(goldClaim,goldInit,goldAfter):
         dataReportConfig['UpdateGold']="Fail"
     else:
@@ -2154,21 +2154,39 @@ def register():
     pocoTag.inputPass.click()
     text("12345678")
     pocoTag.btnRegister.click()  
+#play tutorial
+def play_tutorial():
+    if pocoTag.btnCallBack.exists():
+        pocoTag.btnCallBack.click()
+        pocoTag.btnSkip.click()
+        time.sleep(2)
+        Daily_bonus.btn_out_tutorial.click()
+    else:
+        print("Dont show tutorial after register")
+        time.sleep(3)
 # Nhận dailybonus của ngày đầu tiên
 #def close_even():
-    
+def btn_claim_exit(btn):
+    try:
+        return btn.attr('visible')
+    except:
+        return 0
+    else:
+        print("12345")
 def bonus_day_1():
     data= {
         "status": "False"
     }
-    if pocoTag.btnClaim.exists():
+    try: 
+        btn_claim_exit(pocoTag.btnClaim)==True
+    except:    
+        print("khong auto show Gui daily bonus sau play tutorial")
+    else:
         data["status"]="true"
-        time.sleep(3)
-        pocoTag.btnClaim.click()
+        time.sleep(5)
+        pocoTag.btnClaim.click()  
         pocoTag.btnClaim.click()
         print("nhan gold day 1 success!")
-    else:
-        print("khong auto show Gui daily bonus sau play tutorial")
     reportdailybonus(data)
 #kiểm tra có auto về lobby sau khi click claim nhận bonus
 def check_lobby():
@@ -2196,18 +2214,20 @@ def claim_bonus():
         "status": "False"
     }
     time.sleep(3)
-    if pocoTag.btnClaim.exists():
+    try:
+        btn_claim_exit(pocoTag.btnClaim)==True
+    except:
+        print("Dont show GUI bonus day2")
+        data["status"]="False"
+    else:
         data["status"]="True"
         pocoTag.btnClaim.click()
         print("Nhan bonus day2 success!")
-    else:
-        print("Dont show GUI bonus day2")
-        data["status"]="False"
     reportdailybonus(data)
 #9. Kiểm tra có show GUI daily bonus khi dung o lobby cho nhan bonus
 def check_show_GUI():
     api_changeTimeServer(1608796800000)
-    if pocoTag.btnClaim.exists():
+    if btn_claim_exit(pocoTag.btnClaim)==True:
         print("Auto show GUi daily bonus khi o lobby sau24h!")
     else:
         print("Khong auto show GUI daily bonus o lobby sau 24h")
@@ -2228,14 +2248,16 @@ def Logout_login_23h():
         "status": "False"
     }
     time.sleep(5)
-    if pocoTag.btnClaim.exists():
+    try:
+        return pocoTag.btnClaim.attr('visible')
+    except:
+        data["status"]="True"
+        print("Ko Show GUI khi chuwa ddur 24h!")
+    else:
         pocoTag.btnClaim.click()
         time.sleep(3)
         data["status"]="False"
         print("Show daily GUI daily bonus khi chua du 24h")
-    else:
-        data["status"]="True"
-        print("Ko Show GUI khi chuwa ddur 24h!")
     reportdailybonus(data)
     time.sleep(3)
 #11. Vao playinggame-> ra lại lobby
@@ -2247,7 +2269,7 @@ def playing_23h():
     api_changeTimeServer(1608882000000)
     pocoTag.btnLeaveGame.click()       #leave khi chưa đủ 24h
     time.sleep(1)
-    if pocoTag.btnClaim.exists():
+    if btn_claim_exit(pocoTag.btnClaim)==True:
         pocoTag.btnClaim.click()
         data["status"]="False"
         print("Show GUI bonus khi leave tuwf playing chuwa ddur 24h")
@@ -2336,56 +2358,7 @@ def complete_logout_login_24h():
     if pocoTag.btnClaim.exists():
         print("Show daily bonus khi da nhan 7 lan")
     else:
-        print(" Success!")
-#     print(" khong show GUI daily bonus khi da nhan du 7 lan!")
-#     # check_login()
-#     #2. đăng kí thường
-#     register()     
-#                      #Play tutorial---------------------------------------
-#     time.sleep(3)
-#     bonus_day_1()
-#     check_lobby()
-#     #3. Log out-> Log in sau 24h
-#     log_out()
-#     time.sleep(3)
-#     api_changeTimeServer(1608624000000)
-#     time.sleep(3)
-#     log_in_FB()
-#     time.sleep(3)
-#     #5. Nhận bonus lần 2
-#     claim_bonus()
-#     #6. Check có đang ở lobby hay không
-#     check_lobby()
-#     #7.Kiểm tra có show GUI daily bonus khi dung o lobby cho nhan bonus,nhân bonus 
-#     claim_bonus()
-#     #9. Vao lại Gui daily bonus
-#     into_gui_bonus()
-#     #10. Log out-> vào lại sau 23h
-#     Logout_login_23h()
-#     #11. Vao playinggame-> ra lại lobby
-#     playing_23h()
-#     #12. Vào playing game-> Chờ qua 24h rồi ra lại lobby( Ngày 4)
-#     playing_24h()
-#     #13. Click nhận bonus của ngày 4
-#     claim_bonus()
-#     #14. Đứng chờ ở GUI daily bonus 23h
-#     GUI_bonus_23h()
-#     #15. Tiếp tục đứng ở GUI daily bonus chờ thêm 1h( ngày 5)
-#     api_changeTimeServer(1608969600000)
-#     #16 Nhận bonus 5 lần-> Log out-> Login sau 24h nhưng không nhận bonus->Login lại sau 24h tiếp theo
-#     claim_kill_login_24h()
-#     #17 Click nhận bonus của ngày 6
-#     claim_bonus()
-#     #18 Nhận bonus lần thứ 7
-#     api_changeTimeServer(1609228800000)
-#     claim_bonus()
-#     #check an btn Daily bonus ở lobby khi đã nhận đủ 7 lần
-#     complete_icon_bonus_lobby()
-#     #19. Ra lại lobby-> đứng ở lobby chờ sau 24
-#     complete_lobby_24h()
-#     #20. Log out-> Login lại sau 24h
-#     complete_logout_login_24h()
-
+        print(" khong show GUI daily bonus khi da nhan du 7 lan!")
     print(" khong show GUI daily bonus khi da nhan du 7 lan!")
     # check_login()
     #2. đăng kí thường

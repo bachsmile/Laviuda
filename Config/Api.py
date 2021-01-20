@@ -113,7 +113,7 @@ def cheatFinishedMision(idU,day):
 def getGold(userId):
     try:
         """"
-            Send post function to admin tool back end
+            Send post module to admin tool back end
         """
         url = BASE_URL + "player/getModel"
 
@@ -154,10 +154,9 @@ def getLevelVip(userId):
 def getModel(userId,modelName):
     try:
         """"
-            Send post function to admin tool back end
+            Send post module to admin tool back end
         """
         url = BASE_URL + "player/getModel"
-
         data = {
             "gameId": "laviuda",
             "mode": "PRIVATE_2",
