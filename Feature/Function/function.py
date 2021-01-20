@@ -1875,7 +1875,7 @@ def register():
     }
     pocoTag.btnSwitch.click()
     pocoTag.inputUser.click()
-    text("ngocnn93")
+    text("ngocnn75")
     pocoTag.inputPass.click()
     text("12345678")
     pocoTag.btnRegister.click()  
