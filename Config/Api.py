@@ -7,7 +7,7 @@ HTTPS_PROXY = "https://172.28.103.34:3128"
 # from test.Autotest.Lavuavi.Function.Cheat.Cheat.api import *
 #--------------------------------------------#
 # Lấy access token mới mỗi lần dùng tool cheat
-ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjNTU0NWMzLTUxNDItNGMyNi1iODZkLTA3YzUxM2ZmODg4NiIsIm5hbWUiOiJCw6FjaC4gVHLhuqduIFh1w6JuIiwiZW1haWwiOiJiYWNodHhAdm5nLmNvbS52biIsIm9pZCI6IjE5ZDMyODgxLTY4ZmItNGMzMS04NzVkLWE0ZmQwMzEzN2FjMyIsImFkZHJlc3MiOiIxLjUzLjI1NS4xNDUiLCJleHBpcmVkIjoxNjExMTk0MjI5NTA1LCJ0eXBlIjoiYXp1cmUiLCJ1c2VybmFtZSI6ImJhY2h0eEB2bmcuY29tLnZuIiwiaWF0IjoxNjExMTA2NTUzLCJleHAiOjE2MTExOTI5NTN9.wjmm4J2nNRHRH59G27NFbtwUXGAO8_UXEvozDqSbD1w"
+ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ4ZDg0YzkxLTFmNTUtNDkzMS1iMjE1LTI1MjcyMmZhNWJlOSIsIm5hbWUiOiJW4bu5LiBIdeG7s25oIE5ndXnhu4VuIiwiZW1haWwiOiJ2eWhuQHZuZy5jb20udm4iLCJvaWQiOiI5MDJmYWVmMy0yZjA3LTRlZjgtOTViNC04N2I2YzAyNjk3N2MiLCJhZGRyZXNzIjoiMS41My4yNTUuMTQ0IiwiZXhwaXJlZCI6MTYxMTEzNzMwOTk3NSwidHlwZSI6ImF6dXJlIiwidXNlcm5hbWUiOiJ2eWhuQHZuZy5jb20udm4iLCJpYXQiOjE2MTEwNDk2MzYsImV4cCI6MTYxMTEzNjAzNn0.t3ASTYbKZauSpZ1EiBkAgdDPX3cqkxBlDNWaBc9daGA"
 SERVER_HOST = "http://49.213.81.43:10021"
 BASE_URL = SERVER_HOST + "/api/"
 proxyDict = {
@@ -37,7 +37,6 @@ def api_postDoFunction(userId, id, params):
     print("--------------API--------%s-------%s-----%s" % (id,params,url))
     r = requests.post(url, data=json.dumps(data), headers=header, timeout=1000)
     res = json.loads(r.text)
-    print(res)
     return r.status_code
 def api_get():
     """"
@@ -68,8 +67,6 @@ def api_changeTimeServer(timeInMilliseconds):
     print("--------------URL---------------%s" % url)
     r = requests.post(url, data=json.dumps(data), headers=header)
     return r.status_code
-# api_changeTimeServer(1609199400000)
-#Cheat gold
 def cheatGold(idU,gold):
     try:
         cheat = api_postDoFunction(idU, "ADD_GOLD", [gold])
@@ -130,8 +127,28 @@ def getGold(userId):
         r = requests.post(url, data=json.dumps(data), headers=header, timeout=1000)
         res = json.loads(r.text)['modelData']
         gold=json.loads(res)['gold']
-        print(gold)
         return gold
+    except json.decoder.JSONDecodeError:
+        print('Failed JSON')
+def getLevelVip(userId):
+    try:
+        """"
+            Send post function to admin tool back end
+        """
+        url = BASE_URL + "player/getModel"
+
+        data = {
+            "gameId": "laviuda",
+            "mode": "PRIVATE_2",
+            "userId": userId,
+            "modelName":"UProfileModel"
+        }
+        print("--------------API-------------%s" % (url))
+        r = requests.post(url, data=json.dumps(data), headers=header, timeout=1000)
+        res = json.loads(r.text)['modelData']
+        levelVip = json.loads(res)['vipLevel']
+        print(levelVip)
+        return levelVip
     except json.decoder.JSONDecodeError:
         print('Failed JSON')
 def getModel(userId,modelName):
@@ -155,4 +172,5 @@ def getModel(userId,modelName):
     except json.decoder.JSONDecodeError:
         print('Failed JSON')
 # getModel(19130219,"UEventTacosBusModel")
-# getGold(19130219)
+# a = getGold(20040460)
+# api_postDoFunction("20040460", "CHEAT_PAYMENT_VIP", ["vip.pack_1"])

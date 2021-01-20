@@ -428,15 +428,20 @@ def buy_vip_thap(pack):
         print("Khong mua duoc vip thap hon")
     except:
         data["Check_low_vip"] = "Fail"
-        print("Error")  
-def checkTimeRemainVip(): 
+        print("Error")
+def checkExists(self):
+    try:
+        return self.attr('visible')
+    except :
+        return 0
+def checkTimeRemainVip():
     try:
         if checkExists(poco("lbTimeMyVip")):
             old_day = int(re.sub(r'\D', '', poco("lbTimeMyVip").get_text()))
-            return old_day
+            print(old_day)
+#             return old_day
         else:
-            old_day = 0
-            return old_day
+            print(0)
     except:
         print("error")
 def cheatPayMentVip(idU, pack):
@@ -448,22 +453,17 @@ def cheatPayMentVip(idU, pack):
     except:
         print("error")
 def check_buy_vip(idU, pack):
-    old_gold = float(re.sub('[MKB]', '', poco("lbGold").get_text()))
-    checkTimeRemainVip()
+    old_gold = getGold(idU)
     cheatPayMentVip(idU, pack)
     try:
         time.sleep(2)
-        new_gold = float(re.sub('[MKB]', '', poco("lbGold").get_text()))
-        new_day = int(re.sub(r'\D', '', poco("lbTimeMyVip").get_text()))
-        gold = new_gold - old_gold
-        gold_in = vip_pack[pack]["dailyTribute"]
-        day = new_day - old_day
-        day_in = vip_pack[pack]["day"]
-        if gold == gold_in & day == day_in:
+        new_gold = getGold(idU)
+        gold_in = new_gold - old_gold
+        gold_conf = vip_pack[pack]["dailyTribute"]
+        if gold_in == gold_conf:
             data["Check_gold"] = "Pass"
-            data["Check_day"] = "Pass"
-            print("Mua thanh cong")
             data["Status"] = "Pass"
+            print("Success")
     except:
         data["Status"] = "Fail"
         print("Error")
@@ -487,13 +487,13 @@ def cheatBuyGold(idU, pack):
     except:
         print("Error")
 def check_buy_gold(idU, pack):
-    old_gold = float(re.sub('[MKB]', '', poco("lbGold").get_text()))
+    old_gold = getGold(idU)
     cheatBuyGold(idU, pack)
     try:
-        new_gold = float(re.sub('[MKB]', '', poco("lbGold").get_text()))
-        gold = new_gold - old_gold
-        gold_conf = vip_pack[pack]["dailyTribute"]
-        if gold == gold_conf:
+        new_gold = getGold(idU)
+        gold_in = new_gold - old_gold
+        gold_conf = pack_gold["gg_play"][pack]
+        if gold_in == gold_conf:
             data["Check_gold"] = "Pass"
             data["Status"] = "Pass"
             print("Success")
