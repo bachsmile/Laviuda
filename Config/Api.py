@@ -140,7 +140,6 @@ def getModel(userId,modelName):
             Send post module to admin tool back end
         """
         url = BASE_URL + "player/getModel"
-
         data = {
             "gameId": "laviuda",
             "mode": "PRIVATE_2",
