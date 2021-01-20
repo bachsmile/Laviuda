@@ -103,6 +103,7 @@ class pocoTag:
     btnRegister = poco("btnRegister")
     btnDaily = poco("btnDaily")
     btnSelectTable=poco("btnSelectTable")
+    pnGold = poco("pnGold")
 #------------------------------------------VIP-----------------------------------------------#
     
 #------------------------------------------VIP-----------------------------------------------#

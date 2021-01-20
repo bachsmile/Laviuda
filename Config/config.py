@@ -31,7 +31,13 @@ user={
         "user":"user003",
         "pass":123456       
     },
+     "user":{
+        "id":'19130219',
+        "user":"user",
+        "pass":123456       
+    },
 }
+
 timeWC={
     "start":{"Y":2020,"M":12,"D":29,"h":7,"m":0,"s":0},
     "end":{"Y":2020,"M":1,"D":5,"h":7,"m":0,"s":0}
@@ -104,7 +110,8 @@ challengePlay={
                 "detailMission":poco(text="Ganar "),
                 "totalX":4,
                 "tacos":4,
-                "gold":80000
+                "gold":80000,
+                "type":"win"
                 },
     },
     "final":{
@@ -159,7 +166,15 @@ cardCheat={
     "wc":{
         "card":"2c",
         "set":"ab,2b,3b,4b,5b"
-    }
+    },
+    "win":{
+        "card":"2c",
+        "set":"2t,2b,2r,ab,ac"
+    },
+    "lose":{
+        "card":"2c",
+        "set":"3t,42b,7r,9b,10c"
+    },
 }
 #deal
 dealWCConfig={
@@ -176,34 +191,51 @@ dealWCConfig={
 #dataReport
 dataReportConfig = {
       "Tab": "Fail",
-      "Mission": "Fail",
-      "CheatGold0": "Fail",
-      "OpenGUI": "Fail",
-      "CheatGold1": "Fail",
-      "Button": "Fail",
-      "BtnPlay0": "Fail",
-      "BtnPlay": "Fail",
-      "BtnPlay1": "Fail",
-      "JoinTable":"Fail",
-      "Progess": "Fail",
-      "CheatFOM": "Fail",
-      "Update": "Fail",
-      "Update1": "Fail",
-      "NoUpdate":"Fail",
-      "ChooseLeave":"Fail",
-      "Leave": "Fail",
-      "CheatTime": "Fail",
-      "TimeCheat": "Fail",
-      "Reload": "Fail",
-      "GuiEvent": "Fail",
-      "GuiEDeal": "Fail",
-      "CheatFOM": "Fail",
-      "Bot": "Fail",
-      "Knock": "Fail",
-      "Exchange1":"Fail",
-      "BtnBuyWC":"Fail",
-      "GoldUpdate":"Fail",
-      "BtnDeal":"Fail"
+        "Mission": "Fail",
+        "CheatGold0": "Fail",
+        "OpenGUI": "Fail",
+        "CheatGold1": "Fail",
+        "Button": "Fail",
+        "BtnPlay0": "Fail",
+        "BtnPlay": "Fail",
+        "BtnPlay1": "Fail",
+        "JoinTable":"Fail",
+        "Progess": "Fail",
+        "CheatFOM": "Fail",
+        "Update": "Fail",
+        "Update1": "Fail",
+        "NoUpdate":"Fail",
+        "ChooseLeave":"Fail",
+        "Leave": "Fail",
+        "CheatTime": "Fail",
+        "TimeCheat": "Fail",
+        "CheatTime1": "Fail",
+        "TimeCheat1": "Fail",
+        "Reload": "Fail",
+        "GuiEvent": "Fail",
+        "GuiEDeal": "Fail",
+        "CheatFM": "Fail",
+        "Bot": "Fail",
+        "Knock": "Fail",
+        "Exchange1":"Fail",
+        "BtnBuyWC":"Fail",
+        "GoldUpdate":"Fail",
+        "BtnDeal":"Fail",
+        "Login":"Fail",
+        "UpdateTocos":"Fail",
+        "MissionDay1":"Fail",
+        "MissionNew":"Fail",
+        "Effect":"Fail",
+        "Tick":"Fail",
+        "UpdateFull": "Fail",
+        "UpdateAgain": "Fail",
+        "ShowProg": "Fail",
+        "Coutdown":"Fail",
+        "After":"Fail",
+        "Befor":"Fail",
+        "ShowBtnJoin":"Fail",
+        "noPlay":"Fail",
+        "onPlay":"Fail"
     }
 # convertDayTimeToMili(2020, 11, 26,6,59,0)   
 # print(challengePlay[challenge["day2"]["mission"]]["data"]["gold"])
