@@ -91,11 +91,11 @@ def fortmartTime(time):
 def cheatGoldEmpty(gold):
     try:
         pocoTag.btnCheat.click()
-        if exists(imageWC.imgGoldCheat):
-            touch(imageWC.imgGoldCheat)
+        if waitNolimitPoco(pocoTag.pnGold,2):
+            pocoTag.pnGold.click([0.6045215255512122, 0.41971168518066404])
+            text(str(gold))
         else:
-            touch(imageWC.imgGoldCheat1)
-        text(str(gold))
+            return False
         pocoTag.btnSendCheatPlayer.click()
         pocoTag.btnCheat.click()
         print("Cheat tien thanh cong")
@@ -211,8 +211,8 @@ def addBot():
         return False
 def clickKnock():
     try:
-        if waitNolimitPoco(pocoTag.btnKnock,60):
-            pocoTag.btnKnock.click()
+        if waitNolimitPoco(poco("btnKnock"),60):
+            poco("btnKnock").click()
             print("event clickKnock")
             return True
         else:
@@ -905,6 +905,19 @@ def day4():
         #resetDataReport
     resetDataReportConfig()
     #------------------------#
+    #join event
+    eventWCOpen()
+    #Check enable ngay 1 va nhiem vu ngay 1
+    if CheckLableDay()==4:
+        dataReportConfig["Tab"]="Pass"
+    else:
+        dataReportConfig["Tab"]="Fail"
+    if waitNolimitPoco(challengePlay[challenge["day4"]["mission"]]["data"]["detailMission"],5):
+        dataReportConfig["Mission"]="Pass"
+    else:
+        dataReportConfig["Mission"]="Fail"
+    print(dataReportConfig)
+    closeEvent()
     #report
     reportDay4(dataReportConfig)
     #------------------------#
@@ -1236,9 +1249,9 @@ def claimGift():
     #back to loby
     CheckLobby()
     #check gold init
-    goldInit=checkGold()
+    goldInit=getGold(user["user1"]["id"])
     #Cheat finished mission-----------------------
-    if cheatFinishedMision(user["user1"]["id"],1):
+    if cheatFinishedMision(user["user"]["id"],1):
         dataReportConfig['CheatFM']="Pass"
     else:
         dataReportConfig['CheatFM']="Fail"
@@ -1256,11 +1269,12 @@ def claimGift():
     tocosConf=challengePlay[challenge["day1"]["mission"]]["data"]["tacos"]
     #click claim gift
     clickClaimMission()
+    sleep(2)
     to2=checkTocos()
     #exit GUI event
     closeEvent()
     #check update gold
-    goldAfter=checkGold()
+    goldAfter=getGold(user["user1"]["id"])
     if checkUpdateGold(goldClaim,goldInit,goldAfter):
         dataReportConfig['GoldUpdate']="Pass"
     else:
@@ -1303,33 +1317,36 @@ def noClaimGift():
     #-------------End script----------------------------------#
     #-------------Report--------------------------------------#
     reportNoClaimGift(dataReportConfig)
-def passClaimGift():
+def passClaimGift(day):
     # script content
     #Change acc 1
     changeAcc(user["user1"]["user"],user["user1"]["pass"])
     #check GUI event
     if CheckGUIEvent():
-        dataReportConfig['GuiEvent']="Pass"
+        dataReportConfig['GUIEvent']="Pass"
     else:
-        dataReportConfig['GuiEvent']="Fail"
+        dataReportConfig['GUIEvent']="Fail"
         eventWCOpen()
     #checkAuto claim
     to1=checkTocos()
     sleep(5)
     to2=checkTocos()
-    tocosConf=challengePlay[challenge["day2"]["mission"]]["data"]["tacos"]
+    tocosConf=challengePlay[challenge["day"+str(2)]["mission"]]["data"]["tacos"]
     if checkTocosUpdate(tocosConf,to1,to2):
         dataReportConfig['UpdateTocos']="Pass"
     else:
         dataReportConfig['UpdateTocos']="Fail"
     #check tick claim day2
+    if checkFinishMission(2):
+        dataReportConfig['Tick']="Pass"
+    else:
+        dataReportConfig['Tick']="Fail"
     #checkUpdate mission
-    if CheckMissionProgress(4):
+    if CheckMissionProgress(day):
         dataReportConfig["MissionNew"]="Pass"
     else:
         dataReportConfig["MissionNew"]="Fail"
     #exit GUI event
-    closeEvent()
     #check update gold
     #End in Game----------------------------------------
     #-------------End script----------------------------------#
@@ -1527,10 +1544,11 @@ def checkDisconect():
     checkProgress()
     clickOutTable()
 def GuiDeal():
-    if  changeAcc(user["user1"]["user"],user["user1"]["pass"]):
-        dataReportConfig['Login']="Fail"
-    else:
-        dataReportConfig['Login']="Pass"
+    dataReportConfig['Login']="Fail"
+#     if  changeAcc(user["user1"]["user"],user["user1"]["pass"]):
+#         dataReportConfig['Login']="Fail"
+#     else:
+#         dataReportConfig['Login']="Pass"
     if  CheckGUIEvent() :
         dataReportConfig['GuiEvent']="Fail"
         closeEvent()
@@ -1626,75 +1644,71 @@ def win(day):
     try:
 #         closeEvent()
          #cheat gold khong du play
-        if cheatGoldEmpty("1") :
-            dataReportConfig["CheatGold0"]="Pass"
-        else :
-            dataReportConfig["CheatGold0"]="Fail"
+        cheatGoldEmpty(1) 
         sleep(2)
         #open event
-        if eventWCOpen():
-            dataReportConfig["OpenGUI"]="Pass"
-        else:
-            dataReportConfig["OpenGUI"]="Fail"
+        eventWCOpen()
+        prog1=checkProgressCurrent()
         sleep(2)
         #click btn play
         joinMission()
         #check noti
         if checkNotiNoEnoughGold():
-            dataReportConfig["BtnPlay0"]="Pass"
+            dataReportConfig["noPlay"]="Pass"
         else:
-            dataReportConfig["BtnPlay0"]="Fail"
+            dataReportConfig["noPlay"]="Fail"
         closeEvent()
         #cheat gold du play
-        if cheatGold(user["user1"]["id"],1000000):
-            dataReportConfig["CheatGold1"]="Pass"
-        else:
-            dataReportConfig["CheatGold1"]="Fail"
+        cheatGold(user["user"]["id"],1000000)
         reloadLoby2()
         #open event
         eventWCOpen()
         #click btn play
         sleep(2)
-        if joinMission():
-            dataReportConfig["BtnPlay1"]="Pass"
-        else:
-            dataReportConfig["BtnPlay1"]="Fail"
+        joinMission()
         #check progess table
-        if checkProgessTable():
+        if checkShowProgessTable():
             dataReportConfig["Progess"]="Pass"
         else:
             dataReportConfig["Progess"]="Fail"
         #Check table
         if tableGame():
-            dataReportConfig["JoinTable"]="Pass"
+            dataReportConfig["onPlay"]="Pass"
         else:
-            dataReportConfig["JoinTable"]="Fail"
+            dataReportConfig["onPlay"]="Fail"
         #cheat cheatPorkerSpecial
-        #cheat win finished game
-        if cheatNumMision(1,user["user1"]["id"]):
-            dataReportConfig["CheatFOM"]="Pass"
-        else:
-            dataReportConfig["CheatFOM"]="Fail"
+        CheatCard(cardCheat[challengePlay[challenge[day]["mission"]]["data"]["type"]]["card"], cardCheat[challengePlay[challenge[day]["mission"]]["data"]["type"]]["set"])
         #add bot
-        # addBot()
+        addBot()
         #wait luot ban than
         #Click knock
-        # clickKnock()
+        clickKnock()
         #chon thoat table
-    #     clickOutTable()
+#         clickOutTable()
         #wait end game
-    #     waitEndGame()
+        waitEndGame2()
+        prog2=checkProgressCurrent()
         #check update progess
         if checkUpdateProgessTable(prog1,prog2):
             dataReportConfig["Update"]="Pass"
         else:
             dataReportConfig["Update"]="Fail"
+        CheatCard(cardCheat["lose"]["card"], cardCheat["lose"]["set"])
+        sleep(10)
+        clickKnock()
+        #chon thoat table
         clickOutTable()
-        #check lobby
-        if CheckLobby():
-            dataReportConfig["Leave"]="Pass"
+        #wait end game
+        waitEndGame()
+        prog3=checkProgressCurrent()
+        #check update progess
+        if checkUpdateProgessTable(prog2,prog3):
+            dataReportConfig["Update1"]="Pass"
         else:
-            dataReportConfig["Leave"]="Fail"
+            dataReportConfig["Update1"]="Fail"
+#         clickOutTable()
+        #check lobby
+        CheckLobby()
         print("fc win")
     except:
         print("error win")
@@ -1806,6 +1820,28 @@ def checkMission2(day):
         return "knock"
     if challenge[day]["mission"]=="exchange1":
         return "exchange1"
+def checkDisableBtnDeal():
+    try:
+        if waitNolimitPoco(pocoTag.btnOfferEventTB,1):
+            print("check CheckGUIDeal")
+            return False
+        else:
+            return True
+    except:
+        print("check CheckGUIDeal no exists")
+        return True 
+def checkNotiNoEnoughGold():
+    try:
+        if waitNolimitPoco(pocoTag.NOTIFICACIONES,5):
+            print('Noti no enough gold')
+            poco.click([0.49964862965565704, 0.6496874809265136])
+            return True
+        else:
+            print('no show Noti no enough gold')
+            return False
+    except:
+        print("error show enough gold")
+        return False
 def CheckMissionProgress(day):
     try:
         if CheckGUIEvent()==False:
@@ -1859,6 +1895,17 @@ def checkProgessTable():
             return 0
     except:
         return 0 
+        print("error Progess table")
+def checkShowProgessTable():
+    try:
+        if waitNoLimit(imageWC.imgProgessBarON,10):
+            print("Progess show on table")
+            return True 
+        else:
+            print("Progess no show on table")
+            return False
+    except:
+        return False 
         print("error Progess table")
 def checkUpdateProgessTable(prg1,prg2):
     try:
@@ -2019,6 +2066,22 @@ def clickClaimMission():
     try:
         if waitNolimitPoco(pocoTag.btnJoin,1):
             pocoTag.btnJoin.click()
+            return True
+        else:
+            return False
+    except:
+        return False
+def joinMission():
+    try:
+        poco = CocosJsPoco()
+        pocoTag.btnJoin.click()
+        return True
+    except:
+        return False
+def clickGuiDeal():
+    try:
+        if waitNolimitPoco(pocoTag.btnOfferEventTB,10):
+            pocoTag.btnOfferEventTB.click()
             return True
         else:
             return False
@@ -2371,4 +2434,3 @@ def complete_logout_login_24h():
     complete_lobby_24h()
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
-missionPassDayOpenGui(3)

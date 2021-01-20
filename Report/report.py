@@ -459,42 +459,22 @@ def reportDay3(data):
 #Day4
 def reportDay4(data):
     detail = {
-      "BtnPlay": data["BtnPlay"],
-      "CheatCard": data["CheatCard"],
-      "Bot": data["Bot"],
-      "Knock":data["Knock"],
-      "ChooseLeave":data["ChooseLeave"],
-      "Update":data["Update"],
-      "Leave":data["Leave"],
+      "Tab": data["Tab"],
+      "Mission": data["Mission"],
     }
     report = """
     -----------------------------------------------------------------------------------------------------------
     
     CASE: Test mission Day 4
     
-            Click btn Play:                         {0}    
+            Tab Day4 enable:                        {0}    Nhiem vu Day 4 show:                 {1}
             
-            Cheat 4 card WC:                        {1}    
-            
-            Add bot:                                {2}    
-            
-            Knock:                                  {3}    
-            
-            Choose Leave table:                     {4}           
-            
-            Show update progess:                    {5}
-            
-            Leave table:                            {6}
-            
-            
-                                                                time test: {7}
-                                                                Reporter: BachTX
-    ----------------------------------------------------------------------------------------------------------
+                                                                 time test: {2}
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log=report.format( detail["BtnPlay"], detail["CheatCard"], detail["Bot"], detail["Knock"], detail["ChooseLeave"],detail["Update"], detail["Leave"], current_time)
-    f = open("log.txt", 'w+')
+    log=report.format( detail["Tab"], detail["Mission"],current_time)
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -745,7 +725,7 @@ def reportPassClaimGift(data):
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log=report.format( detail["ChangeAcc"], detail["GUIEvent"], detail["UpdateTocos"], detail["Tick"], detail["MissionNew"], current_time)
+    log=report.format( detail["GUIEvent"], detail["UpdateTocos"], detail["Tick"], detail["MissionNew"], current_time)
     f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
@@ -898,43 +878,35 @@ def reportKnock(data):
 #Win
 def reportWin(data):
     detail = {
-      "CheatGold0": data["CheatGold0"],
-      "OpenGUI":data["OpenGUI"],
-      "BtnPlay0":data["BtnPlay0"],
-      "CheatGold1":data["CheatGold1"],
-      "BtnPlay1":data["BtnPlay1"],
+      "noPlay": data["noPlay"],
+      "onPlay":data["onPlay"],
       "Progess": data["Progess"],
-      "CheatFOM": data["CheatFOM"],
       "Update":data["Update"],
-      "Leave":data["Leave"],
+      "Update1":data["Update1"]
     }
     report = """
             -------------------------------------------------------------------------------------------
     
     CASE: Test mission Win
             
-            Cheat gold = 0:                         {0}    
+            khong du gold click btn play show noti khong du gold:             {0}
             
-            Open GUI event:                         {1}    Click btn play show noti:            {2}
+            Du gold click btn play vào bàn:                                   {1}    
             
-            Cheat gold = 1M:                        {3}    Click btn play Join table:           {4}
+            Auto Show progess bar:                                            {2}    
             
-            Show progess bar:                       {5}    
+            Show update progess win:                                          {3}
             
-            Cheat finished obtain mission:          {6}
-            
-            Show update progess:                    {7}
-            
-            Leave table:                            {8}
+            No update progess lose:                                           {4}
             
             
-                                                                time test: {9}
+                                                                time test: {5}
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log=report.format(detail["CheatGold0"], detail["OpenGUI"], detail["BtnPlay0"], detail["CheatGold1"], detail["BtnPlay1"], detail["Progess"], detail["CheatFOM"], detail["Update"], detail["Leave"], current_time)
+    log=report.format(detail["noPlay"], detail["onPlay"], detail["Progess"], detail["Update"], detail["Update1"], current_time)
     f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
@@ -1083,50 +1055,52 @@ def reportDeal(data):
     f.close()
 def resetDataReportConfig():
         dataReportConfig = {
-        "Tab": "Fail",
-        "Mission": "Fail",
-        "CheatGold0": "Fail",
-        "OpenGUI": "Fail",
-        "CheatGold1": "Fail",
-        "Button": "Fail",
-        "BtnPlay0": "Fail",
-        "BtnPlay": "Fail",
-        "BtnPlay1": "Fail",
-        "JoinTable":"Fail",
-        "Progess": "Fail",
-        "CheatFOM": "Fail",
-        "Update": "Fail",
-        "Update1": "Fail",
-        "NoUpdate":"Fail",
-        "ChooseLeave":"Fail",
-        "Leave": "Fail",
-        "CheatTime": "Fail",
-        "TimeCheat": "Fail",
-        "CheatTime1": "Fail",
-        "TimeCheat1": "Fail",
-        "Reload": "Fail",
-        "GuiEvent": "Fail",
-        "GuiEDeal": "Fail",
-        "CheatFM": "Fail",
-        "Bot": "Fail",
-        "Knock": "Fail",
-        "Exchange1":"Fail",
-        "BtnBuyWC":"Fail",
-        "GoldUpdate":"Fail",
-        "BtnDeal":"Fail",
-        "Login":"Fail",
-        "UpdateTocos":"Fail",
-        "MissionDay1":"Fail",
-        "MissionNew":"Fail",
-        "Effect":"Fail",
-        "Tick":"Fail",
-        "UpdateFull": "Fail",
-        "UpdateAgain": "Fail",
-        "ShowProg": "Fail",
-        "Coutdown":"Fail",
-        "After":"Fail",
-        "Befor":"Fail",
-        "ShowBtnJoin":"Fail"
+            "Tab": "Fail",
+            "Mission": "Fail",
+            "CheatGold0": "Fail",
+            "OpenGUI": "Fail",
+            "CheatGold1": "Fail",
+            "Button": "Fail",
+            "BtnPlay0": "Fail",
+            "BtnPlay": "Fail",
+            "BtnPlay1": "Fail",
+            "JoinTable":"Fail",
+            "Progess": "Fail",
+            "CheatFOM": "Fail",
+            "Update": "Fail",
+            "Update1": "Fail",
+            "NoUpdate":"Fail",
+            "ChooseLeave":"Fail",
+            "Leave": "Fail",
+            "CheatTime": "Fail",
+            "TimeCheat": "Fail",
+            "CheatTime1": "Fail",
+            "TimeCheat1": "Fail",
+            "Reload": "Fail",
+            "GuiEvent": "Fail",
+            "GuiEDeal": "Fail",
+            "CheatFM": "Fail",
+            "Bot": "Fail",
+            "Knock": "Fail",
+            "Exchange1":"Fail",
+            "BtnBuyWC":"Fail",
+            "GoldUpdate":"Fail",
+            "BtnDeal":"Fail",
+            "Login":"Fail",
+            "UpdateTocos":"Fail",
+            "MissionDay1":"Fail",
+            "MissionNew":"Fail",
+            "Effect":"Fail",
+            "Tick":"Fail",
+            "UpdateFull": "Fail",
+            "UpdateAgain": "Fail",
+            "ShowProg": "Fail",
+            "Coutdown":"Fail",
+            "After":"Fail",
+            "Befor":"Fail",
+            "ShowBtnJoin":"Fail",
+            "noPlay":"Fail",
+            "onPlay":"Fail"
         }
 def reportdailybonus(data):
     detail = {
