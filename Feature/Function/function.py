@@ -429,15 +429,20 @@ def buy_vip_thap(pack):
         print("Khong mua duoc vip thap hon")
     except:
         data["Check_low_vip"] = "Fail"
-        print("Error")  
-def checkTimeRemainVip(): 
+        print("Error")
+def checkExists(self):
+    try:
+        return self.attr('visible')
+    except :
+        return 0
+def checkTimeRemainVip():
     try:
         if checkExists(poco("lbTimeMyVip")):
             old_day = int(re.sub(r'\D', '', poco("lbTimeMyVip").get_text()))
-            return old_day
+            print(old_day)
+#             return old_day
         else:
-            old_day = 0
-            return old_day
+            print(0)
     except:
         print("error")
 def cheatPayMentVip(idU, pack):
@@ -449,22 +454,17 @@ def cheatPayMentVip(idU, pack):
     except:
         print("error")
 def check_buy_vip(idU, pack):
-    old_gold = float(re.sub('[MKB]', '', poco("lbGold").get_text()))
-    checkTimeRemainVip()
+    old_gold = getGold(idU)
     cheatPayMentVip(idU, pack)
     try:
         time.sleep(2)
-        new_gold = float(re.sub('[MKB]', '', poco("lbGold").get_text()))
-        new_day = int(re.sub(r'\D', '', poco("lbTimeMyVip").get_text()))
-        gold = new_gold - old_gold
-        gold_in = vip_pack[pack]["dailyTribute"]
-        day = new_day - old_day
-        day_in = vip_pack[pack]["day"]
-        if gold == gold_in & day == day_in:
+        new_gold = getGold(idU)
+        gold_in = new_gold - old_gold
+        gold_conf = vip_pack[pack]["dailyTribute"]
+        if gold_in == gold_conf:
             data["Check_gold"] = "Pass"
-            data["Check_day"] = "Pass"
-            print("Mua thanh cong")
             data["Status"] = "Pass"
+            print("Success")
     except:
         data["Status"] = "Fail"
         print("Error")
@@ -488,13 +488,13 @@ def cheatBuyGold(idU, pack):
     except:
         print("Error")
 def check_buy_gold(idU, pack):
-    old_gold = float(re.sub('[MKB]', '', poco("lbGold").get_text()))
+    old_gold = getGold(idU)
     cheatBuyGold(idU, pack)
     try:
-        new_gold = float(re.sub('[MKB]', '', poco("lbGold").get_text()))
-        gold = new_gold - old_gold
-        gold_conf = vip_pack[pack]["dailyTribute"]
-        if gold == gold_conf:
+        new_gold = getGold(idU)
+        gold_in = new_gold - old_gold
+        gold_conf = pack_gold["gg_play"][pack]
+        if gold_in == gold_conf:
             data["Check_gold"] = "Pass"
             data["Status"] = "Pass"
             print("Success")
@@ -2359,4 +2359,51 @@ def complete_logout_login_24h():
         print("Show daily bonus khi da nhan 7 lan")
     else:
         print(" khong show GUI daily bonus khi da nhan du 7 lan!")
-
+    print(" khong show GUI daily bonus khi da nhan du 7 lan!")
+    # check_login()
+    #2. đăng kí thường
+    register()     
+                     #Play tutorial---------------------------------------
+    time.sleep(3)
+    bonus_day_1()
+    check_lobby()
+    #3. Log out-> Log in sau 24h
+    log_out()
+    time.sleep(3)
+    api_changeTimeServer(1608624000000)
+    time.sleep(3)
+    log_in_FB()
+    time.sleep(3)
+    #5. Nhận bonus lần 2
+    claim_bonus()
+    #6. Check có đang ở lobby hay không
+    check_lobby()
+    #7.Kiểm tra có show GUI daily bonus khi dung o lobby cho nhan bonus,nhân bonus 
+    claim_bonus()
+    #9. Vao lại Gui daily bonus
+    into_gui_bonus()
+    #10. Log out-> vào lại sau 23h
+    Logout_login_23h()
+    #11. Vao playinggame-> ra lại lobby
+    playing_23h()
+    #12. Vào playing game-> Chờ qua 24h rồi ra lại lobby( Ngày 4)
+    playing_24h()
+    #13. Click nhận bonus của ngày 4
+    claim_bonus()
+    #14. Đứng chờ ở GUI daily bonus 23h
+    GUI_bonus_23h()
+    #15. Tiếp tục đứng ở GUI daily bonus chờ thêm 1h( ngày 5)
+    api_changeTimeServer(1608969600000)
+    #16 Nhận bonus 5 lần-> Log out-> Login sau 24h nhưng không nhận bonus->Login lại sau 24h tiếp theo
+    claim_kill_login_24h()
+    #17 Click nhận bonus của ngày 6
+    claim_bonus()
+    #18 Nhận bonus lần thứ 7
+    api_changeTimeServer(1609228800000)
+    claim_bonus()
+    #check an btn Daily bonus ở lobby khi đã nhận đủ 7 lần
+    complete_icon_bonus_lobby()
+    #19. Ra lại lobby-> đứng ở lobby chờ sau 24
+    complete_lobby_24h()
+    #20. Log out-> Login lại sau 24h
+    complete_logout_login_24h()
