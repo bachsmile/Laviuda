@@ -7,6 +7,7 @@ from airtest.cli.parser import cli_setup
 from poco.drivers.cocosjs import CocosJsPoco
 import json
 poco = CocosJsPoco()
+#----------------------------------------------------WC----------------------------------------------------------------------#
 #config
 #id
 # user["user0"]["user"]
@@ -74,11 +75,6 @@ def convertSecondstoDateTime(milliseconds):
     seconds=milliseconds/1000
     timestamp = datetime.fromtimestamp(seconds)
     return timestamp
-# def convertSecondstoDateTime(milliseconds)
-#     seconds=milliseconds/1000
-#     timestamp = datetime.fromtimestamp(seconds)
-#     return timestamp
-# print(convertSecondstoDateTime)
 #Feature
 #chalenge
 challenge={
@@ -319,9 +315,7 @@ account = {
     }
 }
 gold_support = 30000
-# convertDayTimeToMili(2020, 11, 26,6,59,0)   
-# print(challengePlay[challenge["day2"]["mission"]]["data"]["gold"])
-#----------------------------------------------------WC----------------------------------------------------------------------#
+
 
 
 
