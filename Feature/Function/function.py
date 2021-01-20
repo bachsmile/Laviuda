@@ -40,7 +40,6 @@ poco = CocosJsPoco()
 #----------------------------Function-------------------------------------------------#
 #Function general:----------------->
 #highlight
-cheatGold(12206650,10000)
 def killApp():
     try:
         clear_app("com.zingplay.laviuda")
@@ -115,18 +114,30 @@ def CheatCard(wildCard,cardPlay):#ex: WildCard = '2c', cardPlay="ab,2b,3b,4b,5b"
     pocoTag.btnSendCustom.click()
     pocoTag.btnCheat.click() 
 # Action
+def back_to_lobby():
+    btns = [image_vip.back, image_vip.close, image_vip.outroom]
+    try:
+        for btn in btns:
+            if exists(btn):
+                touch(btn)
+                print("back lobby thanh cong")
+            continue
+    except:
+        print("back lobby khong thanh cong")
 def reloadLobby():
     try:
         poco = CocosJsPoco()
-        pocoTag.btnSelectTable.click()
+        pocoTag.btnPlay.click()
+        back_to_lobby()
         sleep(1)
-        pocoTag.btnLeaveGame.click()
-#         touch(image_vip.back)
+#         pocoTag.btnLeaveGame.click()
+#         touch(image_vip.back)    
         print('reload lobby')
         return True
     except:
         print('error reload lobby')
         return False
+reloadLobby()
 def reloadLoby2():
     poco = CocosJsPoco()
     poco.click([0.04817596456992819, 0.9241753578186035])
@@ -365,16 +376,6 @@ def open_pack(pack):
     except:
         data["Status"] = "Fail"
         print("error")
-def back_to_lobby():
-    btns = [image_vip.back, image_vip.close, image_vip.outroom]
-    try:
-        for btn in btns:
-            if exists(btn):
-                touch(btn)
-                print("back lobby thanh cong")
-            continue
-    except:
-        print("back lobby khong thanh cong")
 def check_item():
     items = [image_vip.cachua, image_vip.votay, image_vip.xonuoc, image_vip.trung, image_vip.hoahong, image_vip.hoavang, image_vip.sungnuoc]
     try:
@@ -463,19 +464,25 @@ def check_buy_vip(idU, pack):
         gold_conf = vip_pack[pack]["dailyTribute"]
         if gold_in == gold_conf:
             data["Check_gold"] = "Pass"
-            data["Status"] = "Pass"
             print("Success")
     except:
-        data["Status"] = "Fail"
+        data["Check_gold"] = "Pass"
         print("Error")
-def check_gold_support():
+# check_buy_vip(19202812, "vip.pack_1")
+# reportBuyVip(data)
+def check_gold_support(idU):
     cheatGoldEmpty(1)
     reloadLobby()
+    old_gold = getGold(idU)
     try:
         if exists(image_vip.btn_ok):
             image_vip.btn_ok
-            data["Status"] = "Pass"
-            print("Nhan gold support thanh cong")
+            new_gold = getGold(idU)
+            gold_in = new_gold - old_gold
+            gold_conf = gold_support
+            if gold_in == gold_conf: 
+                data["Status"] = "Pass"
+                print("Nhan gold support thanh cong")
     except:
         data["Status"] = "Fail"
         print("Khong nhan duoc gold support")
@@ -2407,3 +2414,4 @@ def complete_logout_login_24h():
     complete_lobby_24h()
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
+
