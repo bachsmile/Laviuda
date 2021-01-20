@@ -97,6 +97,8 @@ class pocoTag:
     btnFacebookNormal = poco("btnFacebookNormal")
     btnRegister = poco("btnRegister")
     btnDaily = poco("btnDaily")
+    btnCallBack=poco("btnCallBack")
+    btnSkip= poco("btnSkip")
 #---------------------------------------------End script--------------------------------------------------------------------#
 #---------------------------------------------Report-----------------------------------------------------#
 #File report
