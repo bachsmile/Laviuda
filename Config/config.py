@@ -31,15 +31,31 @@ user={
         "user":"user003",
         "pass":123456       
     },
+     "user":{
+        "id":'19130219',
+        "user":"user",
+        "pass":123456       
+    },
 }
-timeW="""
-00:00:00
-02/12/2020
-"""
+
 timeWC={
     "start":{"Y":2020,"M":12,"D":29,"h":7,"m":0,"s":0},
     "end":{"Y":2021,"M":1,"D":5,"h":7,"m":0,"s":0}
 }
+# def timeBtnCheat(time,Y,M,D,h,m,s):
+#     TY=0+Y
+#     TM=0+M
+#     TD=0+D
+#     Th=0+h
+#     Tm=0+m
+#     Ts=0+s
+#     timeW="""
+# {0}:{1}:{2}
+# {3}/{4}/{5}
+# """
+#     timeWt=timeW.format(time['h']+Th, time['m']+Tm,time['s']+Ts,time['D']+TD,time['M']+TM,time['Y']+TY)
+#     return timeWt
+# print(timeBtnCheat(timeWC[ "start"],1,-11,-28,0,0,0))
 def datetoMili(day):
     return day*86400000
 def housToMili(hous):
@@ -54,6 +70,10 @@ def convertDayTimeToMili(time):
     print(milliseconds)
     return milliseconds
 # print(convertDayTimeToMili(timeWC["start"]))
+def convertSecondstoDateTime(milliseconds):
+    seconds=milliseconds/1000
+    timestamp = datetime.fromtimestamp(seconds)
+    return timestamp
 # def convertSecondstoDateTime(milliseconds)
 #     seconds=milliseconds/1000
 #     timestamp = datetime.fromtimestamp(seconds)
@@ -69,10 +89,10 @@ challenge={
         "mission":"knock",
         },
     "day3":{
-        "mission":"win",
+        "mission":"collect", #wc
         },
     "day4":{
-        "mission":"collect",
+        "mission":"win",
     },
      "day5":{
          "mission":"win",       
@@ -88,9 +108,10 @@ challengePlay={
     "win":{
         "data":{
                 "detailMission":poco(text="Ganar "),
-                "totalX":3,
+                "totalX":4,
                 "tacos":4,
-                "gold":80000
+                "gold":80000,
+                "type":"win"
                 },
     },
     "final":{
@@ -106,7 +127,7 @@ challengePlay={
                 "detailMission":poco(text="Tocar "),
                 "totalX":4,
                 "tacos":3,
-                "gold":40000
+                "gold":50000
                 },
     },
     "exchange1":{
@@ -121,8 +142,9 @@ challengePlay={
         "data":{
             "detailMission": poco(text="Coleccionar "),
             "totalX":4, 
-            "tacos":2,
-            "gold":20000
+            "tacos":4,
+            "gold":80000,
+            "type":"wc"
         },
     },
     "claim":{
@@ -139,6 +161,21 @@ challengePlay={
         },
     }
 }
+
+cardCheat={
+    "wc":{
+        "card":"2c",
+        "set":"ab,2b,3b,4b,5b"
+    },
+    "win":{
+        "card":"2c",
+        "set":"2t,2b,2r,ab,ac"
+    },
+    "lose":{
+        "card":"2c",
+        "set":"3t,42b,7r,9b,10c"
+    },
+}
 #deal
 dealWCConfig={
     "offerWC1":{
@@ -154,34 +191,51 @@ dealWCConfig={
 #dataReport
 dataReportConfig = {
       "Tab": "Fail",
-      "Mission": "Fail",
-      "CheatGold0": "Fail",
-      "OpenGUI": "Fail",
-      "CheatGold1": "Fail",
-      "Button": "Fail",
-      "BtnPlay0": "Fail",
-      "BtnPlay": "Fail",
-      "BtnPlay1": "Fail",
-      "JoinTable":"Fail",
-      "Progess": "Fail",
-      "CheatFOM": "Fail",
-      "Update": "Fail",
-      "Update1": "Fail",
-      "NoUpdate":"Fail",
-      "ChooseLeave":"Fail",
-      "Leave": "Fail",
-      "CheatTime": "Fail",
-      "TimeCheat": "Fail",
-      "Reload": "Fail",
-      "GuiEvent": "Fail",
-      "GuiEDeal": "Fail",
-      "CheatFOM": "Fail",
-      "Bot": "Fail",
-      "Knock": "Fail",
-      "Exchange1":"Fail",
-      "BtnBuyWC":"Fail",
-      "GoldUpdate":"Fail",
-      "BtnDeal":"Fail"
+        "Mission": "Fail",
+        "CheatGold0": "Fail",
+        "OpenGUI": "Fail",
+        "CheatGold1": "Fail",
+        "Button": "Fail",
+        "BtnPlay0": "Fail",
+        "BtnPlay": "Fail",
+        "BtnPlay1": "Fail",
+        "JoinTable":"Fail",
+        "Progess": "Fail",
+        "CheatFOM": "Fail",
+        "Update": "Fail",
+        "Update1": "Fail",
+        "NoUpdate":"Fail",
+        "ChooseLeave":"Fail",
+        "Leave": "Fail",
+        "CheatTime": "Fail",
+        "TimeCheat": "Fail",
+        "CheatTime1": "Fail",
+        "TimeCheat1": "Fail",
+        "Reload": "Fail",
+        "GuiEvent": "Fail",
+        "GuiEDeal": "Fail",
+        "CheatFM": "Fail",
+        "Bot": "Fail",
+        "Knock": "Fail",
+        "Exchange1":"Fail",
+        "BtnBuyWC":"Fail",
+        "GoldUpdate":"Fail",
+        "BtnDeal":"Fail",
+        "Login":"Fail",
+        "UpdateTocos":"Fail",
+        "MissionDay1":"Fail",
+        "MissionNew":"Fail",
+        "Effect":"Fail",
+        "Tick":"Fail",
+        "UpdateFull": "Fail",
+        "UpdateAgain": "Fail",
+        "ShowProg": "Fail",
+        "Coutdown":"Fail",
+        "After":"Fail",
+        "Befor":"Fail",
+        "ShowBtnJoin":"Fail",
+        "noPlay":"Fail",
+        "onPlay":"Fail"
     }
 # convertDayTimeToMili(2020, 11, 26,6,59,0)   
 # print(challengePlay[challenge["day2"]["mission"]]["data"]["gold"])
@@ -268,6 +322,7 @@ gold_support = 30000
 # convertDayTimeToMili(2020, 11, 26,6,59,0)   
 # print(challengePlay[challenge["day2"]["mission"]]["data"]["gold"])
 #----------------------------------------------------WC----------------------------------------------------------------------#
+
 
 
 

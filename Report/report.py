@@ -6,10 +6,12 @@ __desc__="""
 """
 #--------------End Tile------------------------------------#
 #--------------Import LIB----------------------------------#
+from importlib import reload
 import json
 from airtest.core.api import *
 from airtest.cli.parser import cli_setup
 from poco.drivers.cocosjs import CocosJsPoco
+from Laviuda.Poco.poco import *
 #--------------End Import Lib------------------------------#
 #--------------Import FILE---------------------------------#
 #----------------------------------------------------------#
@@ -63,7 +65,8 @@ def reportCheckOpenVip(data):
             Status check: {0}
                                     
                                     
-                                    Time test: {2}
+                                    Time test: {1}
+                                    Reporter: VyHN
     -----------------------------------------------------------------------------
     """
     now = datetime.now()
@@ -74,7 +77,7 @@ def reportCheckOpenVip(data):
     print(type(log))
     f.close()
 
-data_report = {
+data = {
     "Status" : "Fail"
 }
 #Case2: Open Vip nhưng không mua
@@ -88,7 +91,8 @@ def reportCheckPackVip(data):
             Status check: {0}
                                     
                                     
-                                    Time test: {2}
+                                    Time test: {1}
+                                    Reporter: VyHN
     -----------------------------------------------------------------------------
     """
     now = datetime.now()
@@ -98,7 +102,10 @@ def reportCheckPackVip(data):
     f.write(log)
     print(type(log))
     f.close()
-#Case 3: Mua Vip 1
+data = {
+    "Status" : "Fail"
+}
+#Case 3/4/5: Mua Vip
 def reportBuyVip(data):
     detail = {
         "Check_gold" : data["Check_gold"],
@@ -110,29 +117,188 @@ def reportBuyVip(data):
     report = """
     -----------------------------------------------------------------------------
     Case3: Check mua vip
-            Check gold : {0}
-            Check ngay : {1}
+            Check gold nhan duoc : {0}
+            Check time remain : {1}
             Check item : {2}
             Check buy vip thap : {3}
             Status check: {4}
                                     
                                     
                                     Time test: {5}
+                                    Reporter: VyHN
     -----------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log = report.format(detail["Check_gold"], detail["Check_day"], detail["Check_day"], detail["Check_item"], detail["Check_low_vip"], detail["Status"], current_time)
+    log = report.format(detail["Check_gold"], detail["Check_day"], detail["Check_item"], detail["Check_low_vip"], detail["Status"], current_time)
     f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
 
-data_report = {
+data = {
     "Check_gold" : "Fail",
     "Check_day"  : "Fail",
     "Check_item" : "Fail",
     "Check_low_vip" : "Fail",
+    "Status" : "Fail"
+}
+#Case 6: Mua gold trong shop
+def reportBuyGold(data):
+    detail = {
+        "Check_gold" : data["Check_gold"],
+        "Status"     : data["Status"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case 6: Check mua gold
+            Check gold nhan duoc: {0}
+            Status check: {1}
+                                    
+                                    
+                                    Time test: {2}
+                                    Reporter: VyHN
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log = report.format(detail["Check_gold"], detail["Status"], current_time)
+    f = open("log.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+
+data = {
+    "Check_gold" : "Fail",
+    "Status" : "Fail"
+}
+#Case 7: Nhan gold support
+def reportReceivedGoldSupport(data):
+    detail = {
+        "Status"     : data["Status"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case 7: Check mua gold
+            Status check: {0}                                            
+                                    Time test: {1}
+                                    Reporter: VyHN
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log = report.format(detail["Status"], current_time)
+    f = open("log.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+
+data = {
+    "Status" : "Fail"
+}
+#Case 8: Nhan gold tribute
+def reportReceivedGoldTribute(data):
+    detail = {
+        "Status"     : data["Status"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case 8: Check nhan gold tribute
+            Status check: {0}                                            
+                                    Time test: {1}
+                                    Reporter: VyHN
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log = report.format(detail["Status"], current_time)
+    f = open("log.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+
+data = {
+    "Status" : "Fail"
+}
+#Case 9: Check show data vip theo account
+def reportDataVip(data):
+    detail = {
+        "Status"     : data["Status"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case 8: Check nhan gold tribute
+            Status check: {0}                                            
+                                    Time test: {1}
+                                    Reporter: VyHN
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log = report.format(detail["Status"], current_time)
+    f = open("log.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+
+data = {
+    "Status" : "Fail"
+}
+#Case 10: Check gia han vip
+def reportExpiredVip(data):
+    detail = {
+        "Mo_GUI_Vip"     : data["Mo_GUI_Vip"],
+        "Show_PopUp_GH"  : data["Show_PopUp_GH"],
+        "Status"         : data["Status"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case 8: Check show pop-up gia han va mo GUI Vip
+            Mo GUI Vip  : {0}
+            Show pop-up gia han : {1}
+            Status check: {2}                                            
+                                    Time test: {3}
+                                    Reporter: VyHN
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log = report.format(detail["Mo_GUI_Vip"], detail["Show_PopUp_GH"], detail["Status"], current_time)
+    f = open("log.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+
+data = {
+    "Mo_GUI_Vip" : "Fail",
+    "Show_PopUp_GH" : "Fail",
+    "Status" : "Fail"
+}
+#Case 11: Check het han trong ban choi
+def reportCheckExpiredTable(data):
+    detail = {
+        "Check_item"     : data["Check_item"],
+        "Status"         : data["Status"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case 8: Check show pop-up gia han va mo GUI Vip
+            Check item  : {0}
+            Status check: {1}                                            
+                                    Time test: {2}
+                                    Reporter: VyHN
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log = report.format(detail["Check_item"], detail["Status"], current_time)
+    f = open("log.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+
+data = {
+    "Check_item" : "Fail",
     "Status" : "Fail"
 }
 #Function WC:---------------------->
@@ -293,42 +459,22 @@ def reportDay3(data):
 #Day4
 def reportDay4(data):
     detail = {
-      "BtnPlay": data["BtnPlay"],
-      "CheatCard": data["CheatCard"],
-      "Bot": data["Bot"],
-      "Knock":data["Knock"],
-      "ChooseLeave":data["ChooseLeave"],
-      "Update":data["Update"],
-      "Leave":data["Leave"],
+      "Tab": data["Tab"],
+      "Mission": data["Mission"],
     }
     report = """
     -----------------------------------------------------------------------------------------------------------
     
     CASE: Test mission Day 4
     
-            Click btn Play:                         {0}    
+            Tab Day4 enable:                        {0}    Nhiem vu Day 4 show:                 {1}
             
-            Cheat 4 card WC:                        {1}    
-            
-            Add bot:                                {2}    
-            
-            Knock:                                  {3}    
-            
-            Choose Leave table:                     {4}           
-            
-            Show update progess:                    {5}
-            
-            Leave table:                            {6}
-            
-            
-                                                                time test: {7}
-                                                                Reporter: BachTX
-    ----------------------------------------------------------------------------------------------------------
+                                                                 time test: {2}
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log=report.format( detail["BtnPlay"], detail["CheatCard"], detail["Bot"], detail["Knock"], detail["ChooseLeave"],detail["Update"], detail["Leave"], current_time)
-    f = open("log.txt", 'w+')
+    log=report.format( detail["Tab"], detail["Mission"],current_time)
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -579,7 +725,7 @@ def reportPassClaimGift(data):
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log=report.format( detail["ChangeAcc"], detail["GUIEvent"], detail["UpdateTocos"], detail["Tick"], detail["MissionNew"], current_time)
+    log=report.format( detail["GUIEvent"], detail["UpdateTocos"], detail["Tick"], detail["MissionNew"], current_time)
     f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
@@ -594,7 +740,7 @@ def reportChangeAcc(data):
     report = """
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Claim gift finished mission
+    CASE: Check change account
             
             Nhiem vu Day1 acc2 khong hoan thanh:    {0}
             
@@ -643,24 +789,27 @@ def reportUpdateMissionTable(data):
 #reportUpdateMissionLobby
 def reportUpdateMissionLobby(data):
     detail = {
+      "Effect":data["Effect"],
       "MissionNew": data["MissionNew"],
     }
     report = """
     -----------------------------------------------------------------------------------------------------------
     
     CASE: Qua ngay khi dang mo gui event
+    
+            effect nhận quà                         {0}
             
-            Update nhiem vu ngay moi                {0}
+            Update nhiem vu ngay moi                {1}
 
             
             
-                                                                time test: {1}
+                                                                time test: {2}
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log=report.format(detail["MissionNew"], current_time)
+    log=report.format(detail["Effect"],detail["MissionNew"], current_time)
     f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
@@ -699,38 +848,27 @@ def reportUpdateProgressMissionFull(data):
 #Knock
 def reportKnock(data):
     detail = {
-      "Mission": data["Mission"],
-      "BtnPlay": data["BtnPlay"],
-      "JoinTable":data["JoinTable"],
-      "CheatFOM": data["CheatFOM"],
-      "Bot": data["Bot"],
       "Knock": data["Knock"],
       "Update":data["Update"],
-      "Leave":data["Leave"],
     }
     report = """
             ---------------------------------------------------------------------------------------
     
     CASE: Test mission Knock
             
-            Click btn play:                         {0}    Vao table:                           {1}
+            knock                                   {0}
             
-            Cheat finished obtain mission:          {2}    Add bot                              {3}
-            
-            Wait den luot thi click knock           {4}
-            
-            Show update progess:                    {5}
-            
-            Leave table:                            {6}
+            Show update progess:                    {1}
             
             
-                                                                time test: {7}
+            
+                                                                time test: {2}
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log=report.format(detail["BtnPlay"], detail["JoinTable"], detail["CheatFOM"],detail["Bot"],detail["Knock"], detail["Update"], detail["Leave"], current_time)
+    log=report.format(detail["Knock"], detail["Update"], current_time)
     f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
@@ -740,43 +878,35 @@ def reportKnock(data):
 #Win
 def reportWin(data):
     detail = {
-      "CheatGold0": data["CheatGold0"],
-      "OpenGUI":data["OpenGUI"],
-      "BtnPlay0":data["BtnPlay0"],
-      "CheatGold1":data["CheatGold1"],
-      "BtnPlay1":data["BtnPlay1"],
+      "noPlay": data["noPlay"],
+      "onPlay":data["onPlay"],
       "Progess": data["Progess"],
-      "CheatFOM": data["CheatFOM"],
       "Update":data["Update"],
-      "Leave":data["Leave"],
+      "Update1":data["Update1"]
     }
     report = """
             -------------------------------------------------------------------------------------------
     
     CASE: Test mission Win
             
-            Cheat gold = 0:                         {0}    
+            khong du gold click btn play show noti khong du gold:             {0}
             
-            Open GUI event:                         {1}    Click btn play show noti:            {2}
+            Du gold click btn play vào bàn:                                   {1}    
             
-            Cheat gold = 1M:                        {3}    Click btn play Join table:           {4}
+            Auto Show progess bar:                                            {2}    
             
-            Show progess bar:                       {5}    
+            Show update progess win:                                          {3}
             
-            Cheat finished obtain mission:          {6}
-            
-            Show update progess:                    {7}
-            
-            Leave table:                            {8}
+            No update progess lose:                                           {4}
             
             
-                                                                time test: {9}
+                                                                time test: {5}
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log=report.format(detail["CheatGold0"], detail["OpenGUI"], detail["BtnPlay0"], detail["CheatGold1"], detail["BtnPlay1"], detail["Progess"], detail["CheatFOM"], detail["Update"], detail["Leave"], current_time)
+    log=report.format(detail["noPlay"], detail["onPlay"], detail["Progess"], detail["Update"], detail["Update1"], current_time)
     f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
@@ -864,11 +994,11 @@ def reportEndEvent(data):
     
     CASE: Test mission end event
     
-            Auto đóng event:                        {0}    
+            Auto close event:                        {0}    
             
             No claim gift:                          {1}
             
-            Ẩn event:                               {2} 
+            Hide event:                               {2} 
             
                                                                 time test: {3}
                                                                 Reporter: BachTX
@@ -925,50 +1055,52 @@ def reportDeal(data):
     f.close()
 def resetDataReportConfig():
         dataReportConfig = {
-        "Tab": "Fail",
-        "Mission": "Fail",
-        "CheatGold0": "Fail",
-        "OpenGUI": "Fail",
-        "CheatGold1": "Fail",
-        "Button": "Fail",
-        "BtnPlay0": "Fail",
-        "BtnPlay": "Fail",
-        "BtnPlay1": "Fail",
-        "JoinTable":"Fail",
-        "Progess": "Fail",
-        "CheatFOM": "Fail",
-        "Update": "Fail",
-        "Update1": "Fail",
-        "NoUpdate":"Fail",
-        "ChooseLeave":"Fail",
-        "Leave": "Fail",
-        "CheatTime": "Fail",
-        "TimeCheat": "Fail",
-        "CheatTime1": "Fail",
-        "TimeCheat1": "Fail",
-        "Reload": "Fail",
-        "GuiEvent": "Fail",
-        "GuiEDeal": "Fail",
-        "CheatFM": "Fail",
-        "Bot": "Fail",
-        "Knock": "Fail",
-        "Exchange1":"Fail",
-        "BtnBuyWC":"Fail",
-        "GoldUpdate":"Fail",
-        "BtnDeal":"Fail",
-        "Login":"Fail",
-        "UpdateTocos":"Fail",
-        "MissionDay1":"Fail",
-        "MissionNew":"Fail",
-        "Effect":"Fail",
-        "Tick":"Fail",
-        "UpdateFull": "Fail",
-        "UpdateAgain": "Fail",
-        "ShowProg": "Fail",
-        "Coutdown":"Fail",
-        "After":"Fail",
-        "Befor":"Fail",
-        "ShowBtnJoin":"Fail"
+            "Tab": "Fail",
+            "Mission": "Fail",
+            "CheatGold0": "Fail",
+            "OpenGUI": "Fail",
+            "CheatGold1": "Fail",
+            "Button": "Fail",
+            "BtnPlay0": "Fail",
+            "BtnPlay": "Fail",
+            "BtnPlay1": "Fail",
+            "JoinTable":"Fail",
+            "Progess": "Fail",
+            "CheatFOM": "Fail",
+            "Update": "Fail",
+            "Update1": "Fail",
+            "NoUpdate":"Fail",
+            "ChooseLeave":"Fail",
+            "Leave": "Fail",
+            "CheatTime": "Fail",
+            "TimeCheat": "Fail",
+            "CheatTime1": "Fail",
+            "TimeCheat1": "Fail",
+            "Reload": "Fail",
+            "GuiEvent": "Fail",
+            "GuiEDeal": "Fail",
+            "CheatFM": "Fail",
+            "Bot": "Fail",
+            "Knock": "Fail",
+            "Exchange1":"Fail",
+            "BtnBuyWC":"Fail",
+            "GoldUpdate":"Fail",
+            "BtnDeal":"Fail",
+            "Login":"Fail",
+            "UpdateTocos":"Fail",
+            "MissionDay1":"Fail",
+            "MissionNew":"Fail",
+            "Effect":"Fail",
+            "Tick":"Fail",
+            "UpdateFull": "Fail",
+            "UpdateAgain": "Fail",
+            "ShowProg": "Fail",
+            "Coutdown":"Fail",
+            "After":"Fail",
+            "Befor":"Fail",
+            "ShowBtnJoin":"Fail",
+            "noPlay":"Fail",
+            "onPlay":"Fail"
         }
 def reportdailybonus(data):
     detail = {
@@ -995,8 +1127,5 @@ def reportdailybonus(data):
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------#
-
-
-
 
 

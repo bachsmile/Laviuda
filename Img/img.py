@@ -38,9 +38,13 @@ class imageWC:
     imgBtnEvent=Template(r"tpl1607566321368.png", record_pos=(-0.284, -0.009), resolution=(652, 1212))
     imgWin=Template(r"tpl1608545722831.png", record_pos=(0.35, -0.125), resolution=(2400, 1080))
     imgProgessBarON=Template(r"tpl1607566598040.png", record_pos=(0.326, 0.22), resolution=(731, 1212))
+    imgCar= Template(r"tpl1610524742535.png", record_pos=(0.479, 0.173), resolution=(2400, 1080))
     imgDeal=Template(r"tpl1608534993305.png", record_pos=(-0.003, 0.007), resolution=(2400, 1080))
     imgGoldCheat=Template(r"tpl1608185711465.png", record_pos=(-0.104, -0.161), resolution=(2340, 1079))
     imgGoldCheat1=Template(r"tpl1608102303058.png", record_pos=(0.184, 0.083), resolution=(2400, 1080))
+    imgWin2= Template(r"tpl1610956013632.png", record_pos=(-0.016, -0.038), resolution=(2400, 1080))
+
+
 class image_vip:
     list_item = Template(r"tpl1608003653170.png", record_pos=(-0.103, 0.124), resolution=(2340, 1079))
     btn_profile = Template(r"tpl1608619319065.png", record_pos=(-0.218, 0.149), resolution=(2340, 1079))
@@ -86,6 +90,13 @@ class image_vip:
     logo_vip_vang = Template(r"tpl1609740925621.png", record_pos=(-0.422, 0.184), resolution=(2340, 1079))
     logo_vip_kimcuong = Template(r"tpl1609740980117.png", record_pos=(-0.421, 0.184), resolution=(2340, 1079))
 
+    no_vip = Template(r"tpl1610440980453.png", record_pos=(0.171, -0.082), resolution=(2340, 1079))
+    vip_gold = Template(r"tpl1610441152067.png", record_pos=(0.197, -0.082), resolution=(2340, 1079))
+    vip_dy = Template(r"tpl1610441182361.png", record_pos=(0.173, -0.084), resolution=(2340, 1079))
+    vip_silver = Template(r"tpl1610441266868.png", record_pos=(0.191, -0.082), resolution=(2340, 1079))
+
+    exprire_vip = Template(r"tpl1610446081905.png", record_pos=(0.012, 0.187), resolution=(2340, 1079))
+
 
 #------------------------------------------END VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
@@ -99,3 +110,4 @@ class Daily_bonus:
     #acc_gg_ngoc= 
 #------------------------------------------DB------------------------------------------------#
 #---------------------------------------------End script--------------------------------------------------#
+
