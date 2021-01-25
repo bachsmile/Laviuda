@@ -1,0 +1,35 @@
+
+    -----------------------------------------------------------------------------
+    
+    CASE: Test btn truoc thoi gian show event
+    
+            Time :2020-12-28 17:00:00       Status cheat:Pass
+            
+            Khong show Button event:Fail
+                                                                time test: 11:38:17
+    
+    -----------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test btn sau thoi gian show event
+    
+            Time :                                  2020-12-29 06:59:30    Status cheat time 1p befor event: Pass
+            
+            Click btn befor event show noti:        Fail
+            
+            Wait coutdown:                          Fail
+            
+            Click btn after event:                  Pass
+            
+            Show btn join event:                    Fail
+            
+            Time:                                   2020-12-29 06:59:00    Status cheat time 1p befor event: Pass
+            
+            Show Progess:                           Pass
+            
+            
+                                                                time test: 11:39:50
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    

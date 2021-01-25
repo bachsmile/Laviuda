@@ -13,7 +13,7 @@ poco = CocosJsPoco()
 # user["user0"]["user"]
 user={
     "user0":{
-        "id":"19400486",
+        "id":"20427600",
         "user":"user000",
         "pass":123456      
     },
