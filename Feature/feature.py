@@ -40,20 +40,21 @@ def WC():
     noClaimGift()
     CheckChangeAcc()
     missionPassDayInTable(2)
-    autoClaimGift()
-    day3()
-    missionPassDayOpenGui()
-    passClaimGift()
-    day4()
+#     autoClaimGift()
+#     day3()
+#     missionPassDayOpenGui()
+#     passClaimGift()
+#     day4()
+    
 #     UpdateProgressMissionFull()
 #     checkDisconect()
 #     day5()
 #     GuiDeal()
 #     day6()
 #     day7()
-    endEvent()
+#     endEvent()
 #------------------------------------------WC------------------------------------------------#
-
+WC()
 #------------------------------------------VIP-----------------------------------------------#
 def Vip():
     clearReport()
@@ -178,12 +179,3 @@ def DB():
 #---------------------------------------------Report-----------------------------------------------------#
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
-
-
-
-
-
-
-
-
-

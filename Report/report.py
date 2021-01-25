@@ -993,9 +993,9 @@ def reportEndEvent(data):
     
             Auto close event:                        {0}    
             
-            No claim gift:                          {1}
+            No claim gift:                           {1}
             
-            Hide event:                               {2} 
+            Hide event:                              {2} 
             
                                                                 time test: {3}
                                                                 Reporter: BachTX

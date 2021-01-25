@@ -44,7 +44,9 @@ class imageWC:
     imgGoldCheat1=Template(r"tpl1608102303058.png", record_pos=(0.184, 0.083), resolution=(2400, 1080))
     imgWin2= Template(r"tpl1610956013632.png", record_pos=(-0.016, -0.038), resolution=(2400, 1080))
 
-
+    imgEventSpec=Template(r"tpl1611116438960.png", record_pos=(-0.003, -0.004), resolution=(2400, 1080))
+    imgDealSpec=Template(r"tpl1611133566424.png", record_pos=(-0.022, 0.001), resolution=(2400, 1080))
+    imgVipBag=Template(r"tpl1611132990403.png", record_pos=(0.004, -0.014), resolution=(2400, 1080))
 class image_vip:
     list_item = Template(r"tpl1608003653170.png", record_pos=(-0.103, 0.124), resolution=(2340, 1079))
     btn_profile = Template(r"tpl1608619319065.png", record_pos=(-0.218, 0.149), resolution=(2340, 1079))
