@@ -68,7 +68,7 @@ def Vip():
     reportCheckPackVip(data)
     #Case 3: MUA VIP 1
     checkLevelVip() #check level vip
-    api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", [0]) #cheat non-vip
+    api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", ["0"]) #cheat non-vip
     check_buy_vip("vip.pack_1") #mua vip 1
     back_to_lobby()
     check_item() #check item ngoai ban choi
@@ -175,6 +175,7 @@ def DB():
 #---------------------------------------------Report-----------------------------------------------------#
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
+
 
 
 
