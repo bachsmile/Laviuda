@@ -1026,26 +1026,24 @@ def reportDeal(data):
     
     CASE: Test mission Deal
             
-            Login again                             {0}
+            Khong show Gui event:                   {0}    
             
-            Khong show Gui event:                   {1}    
+            Khong show Gui Deal:                    {1}
             
-            Khong show Gui Deal:                    {2}
+            Button buy disiable:                    {2}    
             
-            Button buy disiable:                    {3}    
+            Gold update:                            {3}    
             
-            Gold update:                            {4}    
-            
-            Button Deal hide:                       {5}    
+            Button Deal hide:                       {4}    
             
            
-                                                                time test: {6}
+                                                                time test: {5}
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log=report.format( detail["Login"],detail["GuiEvent"], detail["GuiEDeal"], detail["BtnBuyWC"],detail["GoldUpdate"], detail["BtnDeal"], current_time)
+    log=report.format(detail["GuiEvent"], detail["GuiEDeal"], detail["BtnBuyWC"],detail["GoldUpdate"], detail["BtnDeal"], current_time)
     f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
