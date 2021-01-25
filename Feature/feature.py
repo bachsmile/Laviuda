@@ -54,10 +54,10 @@ def WC():
 #     day7()
 #     endEvent()
 #------------------------------------------WC------------------------------------------------#
-WC()
+# WC()
 #------------------------------------------VIP-----------------------------------------------#
 def Vip():
-    clearReport()
+    clearReportVip()
     #Case 1: OPEN VIP
     open_vip()
     reportCheckOpenVip(data)
@@ -69,19 +69,23 @@ def Vip():
     reportCheckPackVip(data)
     #Case 3: MUA VIP 1
     checkLevelVip() #check level vip
-    back_to_lobby()
     api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", ["0"]) #cheat non-vip
     reloadLobby()
-    check_buy_vip(19202912, "vip.pack_1") #mua vip 1
+    time.sleep(1)
     back_to_lobby()
+    check_buy_vip(19202812, "vip.pack_1") #mua vip 1
+#     back_to_lobby()
     check_item() #check item ngoai ban choi
     to_table()
     check_item() #check item trong ban choi
+    back_to_lobby()
     reportBuyVip(data)
-#     #Case 4: MUA VIP 2
-#     check_buy_vip("vip.pack_2")
-#     check_item() #check item trong ban choi
-#     reportBuyVip(data)
+    #Case 4: MUA VIP 2
+    check_buy_vip(19202812, "vip.pack_2")
+    to_table()
+    check_item() #check item trong ban choi
+    back_to_lobby()
+    reportBuyVip(data)
 #     #Case 5: Mua vip 3
 #     check_buy_vip("vip.pack_3")
 #     buy_vip_thap("btnBuyBroze") #check mua vip 1
