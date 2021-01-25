@@ -128,17 +128,19 @@ def back_to_lobby():
 def reloadLobby():
     try:
         poco = CocosJsPoco()
-        pocoTag.btnPlay.click()
-        back_to_lobby()
+        pocoTag.btnSelectTable.click()
+#         back_to_lobby()
         sleep(1)
-#         pocoTag.btnLeaveGame.click()
+        if waitNolimitPoco(pocoTag.btnLeaveGame,1):
+            pocoTag.btnLeaveGame.click()
+        else:
+            touch(image_vip.back)  
 #         touch(image_vip.back)    
         print('reload lobby')
         return True
     except:
         print('error reload lobby')
         return False
-reloadLobby()
 def reloadLoby2():
     poco = CocosJsPoco()
     poco.click([0.04817596456992819, 0.9241753578186035])
@@ -168,7 +170,6 @@ def out():
         print("error out")
 def changeAcc(userN,passW):
     try:
-        poco = CocosJsPoco()
         out()
         pocoTag.btnSwitch.click()
         pocoTag.inputUser.click()
@@ -184,6 +185,7 @@ def changeAcc(userN,passW):
         text(PassW)
         pocoTag.logo.click()
         pocoTag.btnLogin.click()
+        clear()
         return True
     except:
         print("error login")
@@ -552,6 +554,8 @@ def checkExists(self):
     #------------------#
 def beforEvent():
     clearReport()
+    claimAll()
+    closeAllEvent()
     timeCheat = api_changeTimeServer(1605051600000)
     dayS = {
         "Y": timeWC["start"]['Y'],
@@ -577,8 +581,8 @@ def beforEvent():
     closeAllEvent()
     #reloadLobby()
     reloadLoby2()
-    claimAll()
-    closeAllEvent()
+#     claimAll()
+#     closeAllEvent()
     #Check btn event -----------------------------------
     if CheckBtnEvent():
         dataReportConfig["Button"]="Fail"
@@ -590,6 +594,8 @@ def beforEvent():
     reportBeforEvent(dataReportConfig)
 def afterEvent():
     resetDataReportConfig()
+    claimAll()
+    closeAllEvent()
     sleep(2)
 #-------------In Game-------------------------------------------------#
     #-------------Cheat time-----------------------------------#
@@ -916,6 +922,8 @@ def day2():
 def day3():
         #resetDataReport
     resetDataReportConfig()
+    claimAll()
+    closeAllEvent()
     #------------------------#
     #report
     reportDay3(dataReportConfig)
@@ -2465,4 +2473,6 @@ def complete_logout_login_24h():
     complete_lobby_24h()
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
-
+# changeAcc(user["user0"]["user"],user["user0"]["pass"])
+# sleep(5)
+# changeAcc(user["user0"]["user"],user["user0"]["pass"])
