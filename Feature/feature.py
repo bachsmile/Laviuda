@@ -32,11 +32,11 @@ poco = CocosJsPoco()
 #------------------------------------------WC------------------------------------------------#
 # WC--------------------------->
 def WC():
-    beforEvent()
-    afterEvent()
+#     beforEvent()
+#     afterEvent()
 #     day1()
 #     claimGift()
-#     day2()
+    day2()
 #     noClaimGift()
 #     CheckChangeAcc()
 #     missionPassDayInTable(2)
