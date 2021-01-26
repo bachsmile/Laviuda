@@ -108,11 +108,14 @@ def CheatCard(wildCard,cardPlay):#ex: WildCard = '2c', cardPlay="ab,2b,3b,4b,5b"
     pocoTag.btnTabCustom.click()
     pocoTag.btnResetCustom.click()
     pocoTag.pnPointEvent.click([0.7598879526638265, 0.6159336566925049])
+    text("")
+    pocoTag.pnPointEvent.click([0.7598879526638265, 0.6159336566925049])
     text(wildCard)
     pocoTag.pnCaseId_1.click([0.5944052164770731, 0.4596827030181885] )
     text(cardPlay)
     pocoTag.btnSendCustom.click()
-    pocoTag.btnCheat.click() 
+    pocoTag.btnCheat.click()
+    clear()
 # Action
 def back_to_lobby():
     btns = [image_vip.back, image_vip.icon_close, image_vip.outroom]
@@ -1096,7 +1099,9 @@ def day6():
     #------------------------#
     checkMission("day3")
 def day7():
-    #cheat time pass 1 ngay-> #01/12/2020 23:59:00 -> 1606841940000
+    resetDataReportConfig()
+    claimAll()
+    closeAllEvent()
     #cheat time pass 1 ngay-> 30/11/2020 11:11:11 -> 1606709471000
     timeCheat = api_changeTimeServer(1605051600000)
     #timeCheat = api_changeTimeServer(timeC["timeD0"]["mili"])
@@ -1108,7 +1113,7 @@ def day7():
         "m": timeWC["start"]['m'],
         "s": timeWC["start"]['s']
     }
-    timeNow=convertDayTimeToMili(dayS) + datetoMili(6)-minutetoMili(1)
+    timeNow=convertDayTimeToMili(dayS) + datetoMili(6)-secToMili(40)
     timeCheat = api_changeTimeServer(timeNow)
     dataReportConfig["TimeCheat"]=convertSecondstoDateTime(timeNow)
     #reload lobby
@@ -1119,31 +1124,33 @@ def day7():
     joinTable()
     #wait pass day
 #     waitTimePassDay(timeW)
-    sleep(50)
+    sleep(30)
     #check progess table
     if checkProgessTable():
-        dataReportConfig["Progess"]="Fail"
+        dataReportConfig["HideProgress"]="Fail"
     else:
-        dataReportConfig["Progess"]="Pass"
+        dataReportConfig["HideProgress"]="Pass"
     #chon thoat table
     clickOutTable()
+    sleep(1)
     claimAll()
+    closeDealSpec1()
     #check auto show event
+    #check gold init
+    goldInit=getGold(user["user1"]["id"])
     if CheckGUIEvent():
         dataReportConfig['GuiEvent']="Pass"
     else:
         dataReportConfig['GuiEvent']="Fail"
-    #check gold init
-    goldInit=getGold(user["user1"]["id"])
+        eventWCOpen()
     #check gold claim
-    goldClaim=challengePlay[challenge["day7"]["mission"]]["data"]["gold"]
+    to=checkTocos()
+    goldClaim=to*challengePlay[challenge["day7"]["mission"]]["data"]["gold"]
     #click claim gift
-    if clickClaim():
-        dataReportConfig['Claim']="Pass"
-    else:
-        dataReportConfig['Claim']="Fail"
+    clickClaimMission()
     #exit GUI event
-    closeEvent()
+#     closeEvent()
+    clickClaim()
     #check update gold
     goldAfter=getGold(user["user1"]["id"])
     if checkUpdateGold(goldClaim,goldInit,goldAfter):
@@ -1151,10 +1158,18 @@ def day7():
     else:
         dataReportConfig['UpdateGold']="Fail"
     #close Gui Event
-    closeEvent()
+#     closeEvent()
     #change acc3
     changeAcc(user["user3"]["user"],user["user3"]["pass"])
+    claimAll()
+    closeAllEvent()
+    eventWCOpen()
     #check gift
+    gift=checkTocos()
+    if gift==0:
+        dataReportConfig['CheckGift']="Pass"
+    else:
+        dataReportConfig['CheckGift']="Fail"
     #------------------------#
     #report
     reportDay7(dataReportConfig)
@@ -1562,38 +1577,43 @@ def missionPassDayOpenGui(day):
     print(dataReportConfig)
     reportUpdateMissionLobby(dataReportConfig)
 def UpdateProgressMissionFull():
+    resetDataReportConfig()
+    claimAll()
+    closeAllEvent()
     data1 = {
       "UpdateFull": "Fail",
       "UpdateAgain": "Fail",
     }
     #cheat gan hoan thanh nhiem vu
-    cheatNumMision(challengePlay[challenge["day4"]["mission"]]["data"]["totalX"]-1,user["user1"]["id"])
+    cheatNumMision(user["user1"]["id"],challengePlay[challenge["day4"]["mission"]]["data"]["totalX"]-1)
     reloadLobby()
+    claimAll()
+    closeAllEvent()
     eventWCOpen()
     prog1=checkProgressCurrent()
     closeEvent()
+    print(prog1)
     checkMission2("day4")
     #check update progess
-    if waitNolimitPoco(pocoTag.btnMain,1):
-        pocoTag.btnMain.click()
+    touch(imageWC.imgCar)
     prog2=checkProgressCurrent()
     if checkUpdateProgessTable(prog1,prog2):
         dataReportConfig["UpdateFull"]="Pass"
     else:
         dataReportConfig["UpdateFull"]="Fail"
-    clickOutTable()
+#     clickOutTable()
+    sleep(5)
     eventWCOpen()
     prog3=checkProgressCurrent()
     closeEvent()
     checkMission2("day4")
     #check update progess
-    if waitNolimitPoco(pocoTag.btnMain,1):
-        pocoTag.btnMain.click()
+    eventWCOpen()
     prog4=checkProgressCurrent()
     if checkUpdateProgessTable(prog3,prog4):
-        dataReportConfig["UpdateAgain"]="Pass"
-    else:
         dataReportConfig["UpdateAgain"]="Fail"
+    else:
+        dataReportConfig["UpdateAgain"]="Pass"
     #------------------------#
     #report
     reportUpdateProgressMissionFull(dataReportConfig)
@@ -1666,7 +1686,10 @@ def GuiDeal():
     reportDeal(dataReportConfig)
 def endEvent():
     #change Accout 1
-    changeAcc(user["user1"]["user"],user["user1"]["pass"])
+    resetDataReportConfig()
+    claimAll()
+    closeAllEvent()
+    changeAcc(user["user2"]["user"],user["user2"]["pass"])
     claimAll()
     closeAllEvent()
     #Cheat time-------------#02/12/2020 23:59:00 -> 1606928340000
@@ -1690,21 +1713,23 @@ def endEvent():
     closeAllEvent()
     #---------end reload lobby--------------------------
     #check gold init
-    goldInit=getGold(user["user1"]["id"])
+    goldInit=getGold(user["user2"]["id"])
     sleep(1)
     #opent GUI event
     eventWCOpen()
     #check gold claim
-    goldClaim=challengePlay[challenge["day7"]["mission"]]["data"]["gold"]
+    to=checkTocos()
+    goldClaim=to*challengePlay[challenge["day7"]["mission"]]["data"]["gold"]
     #wait pass day
     sleep(30)
     #check close GUI
     if CheckGUIEvent():
         dataReportConfig['GUIEvent']="Fail"
+        closeEvent()
     else:
         dataReportConfig['GUIEvent']="Pass"
     #check gold
-    goldAfter=getGold(user["user1"]["id"])
+    goldAfter=getGold(user["user2"]["id"])
     if checkUpdateGold(goldClaim,goldInit,goldAfter):
         dataReportConfig['UpdateGold']="Fail"
     else:
@@ -1722,6 +1747,7 @@ def endEvent():
 #mission
 def win(day):
     try:
+        clearReport()
 #         closeEvent()
          #cheat gold khong du play
         cheatGoldEmpty(1) 
@@ -1794,20 +1820,26 @@ def win(day):
         print("error win")
     print(dataReportConfig)
     reportWin(dataReportConfig)
-def win1():
+def win1(day):
     try:
+        claimAll()
+        closeAllEvent()
+        clear()
+        cheatGold(user["user1"]["id"],1000000)
         reloadLoby2()
+        claimAll()
+        closeAllEvent()
         #click btn play
-        sleep(2)
         joinTable()
         #cheat cheatPorkerSpecial
+        CheatCard(cardCheat[challengePlay[challenge[day]["mission"]]["data"]["type"]]["card"], cardCheat[challengePlay[challenge[day]["mission"]]["data"]["type"]]["set"])
         #add bot
         addBot()
         #Click knock
         clickKnock()
         clickOutTable()
         #wait end game
-        waitEndGame()
+        waitEndGame2()
     except:
         print("error win")
 def lose1():
@@ -1893,7 +1925,7 @@ def checkMission(day):
         return collect(day)
 def checkMission2(day):
     if challenge[day]["mission"]=="win":
-        return win1()
+        return win1(day)
     if challenge[day]["mission"]=="play":
         return "play"
     if challenge[day]["mission"]=="knock":
@@ -1986,6 +2018,7 @@ def checkProgessTable():
         else:
             print("Progess no show table")
             return 0
+        clear()
     except:
         return 0 
         print("error Progess table")
@@ -2543,5 +2576,6 @@ def complete_logout_login_24h():
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
 # changeAcc(user["user2"]["user"],user["user2"]["pass"])
-GuiDeal()
+endEvent()
+
 

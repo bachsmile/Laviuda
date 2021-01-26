@@ -559,14 +559,10 @@ def reportDay6(data):
 #Day7
 def reportDay7(data):
     detail = {
-      "CheatTime": data["CheatTime"],
       "TimeCheat": data["TimeCheat"],
       "HideProgress": data["HideProgress"],
-      "Leave":data["Leave"],
       "GuiEvent":data["GuiEvent"],
-      "Claim":data["Claim"],
       "UpdateGold":data["UpdateGold"],
-      "ChangeAccout ": data["ChangeAccout"],
       "CheckGift": data["CheckGift"],
     }
     report = """
@@ -574,28 +570,26 @@ def reportDay7(data):
     
     CASE: Test mission Day 7
     
-            Cheat time qua ngay:                    {0}    Time cheat:                          {1}
+            Time cheat:                             {0}
             
-            Hide progress bar:                      {2}    
+            Hide progress bar:                      {1}    
             
-            Leave table:                            {3}
+            Auto show GUI event:                    {2}    
             
-            Auto show GUI event:                    {4}    Claim Gift:                          {5}
+            Update gold :                           {3}    
             
-            Update gold :                           {5}    
-            
-            Change accout miss all day mission:     {6}    Check gift:                          {7}    
+            Change accout miss all day mission:     {4}  
             
             
             
-                                                                time test: {8}
+                                                                time test: {5}
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log=report.format( detail["CheatTime"], detail["TimeCheat"], detail["HideProgress"], detail["Leave"], detail["GuiEvent"], detail["Claim"], detail["UpdateGold"], detail["ChangeAccout"], detail["CheckGift"], current_time)
-    f = open("log.txt", 'w+')
+    log=report.format( detail["TimeCheat"], detail["HideProgress"], detail["GuiEvent"], detail["UpdateGold"], detail["CheckGift"], current_time)
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -1099,7 +1093,8 @@ def resetDataReportConfig():
             "Befor":"Fail",
             "ShowBtnJoin":"Fail",
             "noPlay":"Fail",
-            "onPlay":"Fail"
+            "onPlay":"Fail",
+            "HideProgress":"Fail"
         }
 def reportdailybonus(data):
     detail = {
@@ -1126,6 +1121,7 @@ def reportdailybonus(data):
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------#
+
 
 
 

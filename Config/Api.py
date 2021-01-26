@@ -7,7 +7,7 @@ HTTPS_PROXY = "https://172.28.103.34:3128"
 # from test.Autotest.Lavuavi.Function.Cheat.Cheat.api import *
 #--------------------------------------------#
 # Lấy access token mới mỗi lần dùng tool cheat
-ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVjM2QwNDMyLThhOGYtNGI2MS05ODJhLTE3NDIyN2I2ZmUzNiIsIm5hbWUiOiJCw6FjaC4gVHLhuqduIFh1w6JuIiwiZW1haWwiOiJiYWNodHhAdm5nLmNvbS52biIsIm9pZCI6IjE5ZDMyODgxLTY4ZmItNGMzMS04NzVkLWE0ZmQwMzEzN2FjMyIsImFkZHJlc3MiOiIxLjUzLjI1NS4xNDYiLCJleHBpcmVkIjoxNjExNjM0NjY3MTM5LCJ0eXBlIjoiYXp1cmUiLCJ1c2VybmFtZSI6ImJhY2h0eEB2bmcuY29tLnZuIiwiaWF0IjoxNjExNTQ2OTY3LCJleHAiOjE2MTE2MzMzNjd9.vifk-kts_IVSwEoTMAXSa2YMZUkJVrmEGQiBz380Gus"
+ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZlMWJmZTRkLTBhYTAtNGRjZS1hYjM3LTk1NTdmNTc2YTBkNyIsIm5hbWUiOiJCw6FjaC4gVHLhuqduIFh1w6JuIiwiZW1haWwiOiJiYWNodHhAdm5nLmNvbS52biIsIm9pZCI6IjE5ZDMyODgxLTY4ZmItNGMzMS04NzVkLWE0ZmQwMzEzN2FjMyIsImFkZHJlc3MiOiIyNy42NS4xOTYuNzMiLCJleHBpcmVkIjoxNjExNzI3MjkxNTM5LCJ0eXBlIjoiYXp1cmUiLCJ1c2VybmFtZSI6ImJhY2h0eEB2bmcuY29tLnZuIiwiaWF0IjoxNjExNjM5NTg2LCJleHAiOjE2MTE3MjU5ODZ9.EZ_Oahv5GlC-NIJnGEGdym01oLxJjjIOkJDhQoL0kkA"
 SERVER_HOST = "http://49.213.81.43:10021"
 BASE_URL = SERVER_HOST + "/api/"
 proxyDict = {
@@ -110,6 +110,15 @@ def cheatFinishedMision(idU,day):
     except:
         print("Error finished mission")
         return False
+def cheatNumMision(idU,num):
+    try:
+        cheat = api_postDoFunction(idU, "CHEAT_NUM_OBTAIN_MISSION", [num])
+        print(cheat)
+        print("cheat finished mission success")
+        return True
+    except:
+        print("Error finished mission")
+        return False
 def getGold(userId):
     try:
         """"
@@ -175,6 +184,7 @@ def getModel(userId,modelName):
 # api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", ["0"])
 # api_postDoFunction("19202812", "CHEAT_PAYMENT_VIP", ["vip.pack_1"])
 # api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", ["0"])
+
 
 
 
