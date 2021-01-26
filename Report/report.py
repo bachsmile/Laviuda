@@ -52,6 +52,11 @@ def clearReport():
     f = open("log.txt", 'w+')
     f.write(report)
     f.close()
+def clearReportVip():
+    report=""
+    f = open("logVip.txt", 'w+')
+    f.write(report)
+    f.close()
 #Function DB:---------------------->
 #Function VIP:--------------------->
 #Case1: Open vip
@@ -72,7 +77,7 @@ def reportCheckOpenVip(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log=report.format(detail["Status"], current_time)
-    f = open("log.txt", 'a+')
+    f = open("logVip.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -98,7 +103,7 @@ def reportCheckPackVip(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log=report.format(detail["Status"], current_time)
-    f = open("log.txt", 'a+')
+    f = open("logVip.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -110,9 +115,8 @@ def reportBuyVip(data):
     detail = {
         "Check_gold" : data["Check_gold"], 
 #         "Check_day"  : data["Check_day"],
-#         "Check_item" : data["Check_item"],
+        "Check_item" : data["Check_item"]
 #         "Check_low_vip" : data["Check_low_vip"],
-        "Status"     : data["Status"]
     }
     report = """
     -----------------------------------------------------------------------------
@@ -128,7 +132,7 @@ def reportBuyVip(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log = report.format(detail["Check_gold"], detail["Check_item"], current_time)
-    f = open("log.txt", 'a+')
+    f = open("logVip.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -1122,6 +1126,7 @@ def reportdailybonus(data):
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------#
+
 
 
 

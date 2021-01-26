@@ -172,6 +172,9 @@ def getModel(userId,modelName):
         print('Failed JSON')
 # getModel(19130219,"UEventTacosBusModel")
 # a = getGold(20040460)
+# api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", ["0"])
 # api_postDoFunction("19202812", "CHEAT_PAYMENT_VIP", ["vip.pack_1"])
 # api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", ["0"])
+
+
 

@@ -115,7 +115,7 @@ def CheatCard(wildCard,cardPlay):#ex: WildCard = '2c', cardPlay="ab,2b,3b,4b,5b"
     pocoTag.btnCheat.click() 
 # Action
 def back_to_lobby():
-    btns = [image_vip.back, image_vip.close, image_vip.outroom]
+    btns = [image_vip.back, image_vip.icon_close, image_vip.outroom]
     try:
         for btn in btns:
             if exists(btn):
@@ -196,7 +196,6 @@ def changeAcc(userN,passW):
         return True
     except:
         print("error login")
-        return False
 def joinTable():
     try:
         sleep(2)
@@ -427,7 +426,6 @@ def check_item():
             #return True
             data["Check_item"] = "Fail"
             print("List item khong ton tai")
-        back_to_lobby()
     except:
         print("Error")
 def check_item3():
@@ -498,8 +496,6 @@ def check_buy_vip(idU, pack):
     except:
         data["Check_gold"] = "Pass"
         print("Error")
-# check_buy_vip(19202812, "vip.pack_1")
-# reportBuyVip(data)
 def check_gold_support(idU):
     cheatGoldEmpty(1)
     reloadLobby()
@@ -571,6 +567,7 @@ def checkLevelVip():
             print("user dang co vip bac")
         if exists(image_vip.no_vip):
             print("user dang non vip")
+        back_to_lobby()
     except:
         print("error")
 def checkExists(self):
@@ -2547,3 +2544,4 @@ def complete_logout_login_24h():
     complete_logout_login_24h()
 # changeAcc(user["user2"]["user"],user["user2"]["pass"])
 GuiDeal()
+
