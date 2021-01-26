@@ -13,7 +13,7 @@ poco = CocosJsPoco()
 # user["user0"]["user"]
 user={
     "user0":{
-        "id":"19400486",
+        "id":"20427600",
         "user":"user000",
         "pass":123456      
     },
@@ -23,8 +23,8 @@ user={
         "pass":123456      
     },
     "user2":{
-        "id":'19400724',
-        "user":"user002",
+        "id":'20431874',
+        "user":"final8",
         "pass":123456       
     },
     "user3":{
@@ -175,13 +175,16 @@ cardCheat={
 #deal
 dealWCConfig={
     "offerWC1":{
-        "gold":16000000
+        "gold":16000000,
+        "gold1":6500000
     },
     "offerWC2":{
-        "gold":60000000
+        "gold":60000000,
+        "gold1":15000000
     },
-    "offerWC1":{
-        "gold":150000000
+    "offerWC3":{
+        "gold":150000000,
+        "gold1":30000000
     },
 }
 #dataReport

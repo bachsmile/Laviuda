@@ -1,0 +1,78 @@
+
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Day 1
+    
+            Tab Day1 enable:                        Pass    Nhiem vu Day 1 show:                 Pass
+            
+                                                                 time test: 14:35:07
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Exchange1
+    
+            Click btn Play:                         Pass    
+            
+            Add bot:                                Pass
+            
+            Exchange1:                              Pass    
+            
+            Show update progess:                    Pass    
+            
+            Choose Leave table:                     Pass    
+            
+            No update progess bar at end game:      Pass    
+            
+            Leave table:                            Pass
+            
+            
+                                                                time test: 14:36:57
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Claim gift finished mission   
+            
+            Cheat finished mission:                 Pass     
+            
+            Show GUI event                          Pass
+                    
+            Update gold :                           Fail   
+            
+            Update Tocos:                           Fail
+            
+            
+                                                                time test: 14:38:14
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Day 2
+    
+            Cheat time qua ngay:                    Pass    Time cheat:                          2020-12-30 07:00:00
+            
+            Reload lobby:                           Pass    
+            
+            Auto show GUI event:                    Fail    Auto show GUI deal:                  Fail
+            
+            Tab Day 2 enable:                       Pass    Nhiem vu Day 2 show:                 Pass
+                     
+                                                                    time test: 14:42:18
+
+    
+            ---------------------------------------------------------------------------------------
+    
+    CASE: Test mission Knock
+            
+            knock                                   Pass
+            
+            Show update progess:                    Pass
+            
+            
+            
+                                                                time test: 14:43:38
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    

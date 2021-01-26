@@ -32,15 +32,16 @@ poco = CocosJsPoco()
 #------------------------------------------WC------------------------------------------------#
 # WC--------------------------->
 def WC():
-    beforEvent()
-    afterEvent()
-    day1()
-    claimGift()
+#     beforEvent()
+#     afterEvent()
+#     day1()
+#     claimGift()
     day2()
-    noClaimGift()
-    CheckChangeAcc()
-    missionPassDayInTable(2)
+#     noClaimGift()
+#     CheckChangeAcc()
+#     missionPassDayInTable(2)
 #     autoClaimGift()
+    
 #     day3()
 #     missionPassDayOpenGui()
 #     passClaimGift()
@@ -184,4 +185,5 @@ def DB():
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
 #---------------------------------------------End Report-------------------------------------------------#
+
 

@@ -47,6 +47,8 @@ class imageWC:
     imgEventSpec=Template(r"tpl1611116438960.png", record_pos=(-0.003, -0.004), resolution=(2400, 1080))
     imgDealSpec=Template(r"tpl1611133566424.png", record_pos=(-0.022, 0.001), resolution=(2400, 1080))
     imgVipBag=Template(r"tpl1611132990403.png", record_pos=(0.004, -0.014), resolution=(2400, 1080))
+    imageOfferDeal=Template(r"tpl1611561055433.png", record_pos=(-0.075, -0.092), resolution=(2400, 1080))
+
 class image_vip:
     list_item = Template(r"tpl1608003653170.png", record_pos=(-0.103, 0.124), resolution=(2340, 1079))
     btn_profile = Template(r"tpl1608619319065.png", record_pos=(-0.218, 0.149), resolution=(2340, 1079))
@@ -112,5 +114,4 @@ class Daily_bonus:
     #acc_gg_ngoc= 
 #------------------------------------------DB------------------------------------------------#
 #---------------------------------------------End script--------------------------------------------------#
-
 

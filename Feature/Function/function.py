@@ -22,7 +22,6 @@ from Laviuda.Config.config import *
 from Laviuda.Report.report import *
 from Laviuda.Img.img import *
 from Laviuda.Poco.poco import *
-from importlib import reload
 #--------------End Import FILE-----------------------------#
 #--------------Connect Device------------------------------#
 
@@ -129,30 +128,42 @@ def reloadLobby():
     try:
         poco = CocosJsPoco()
         pocoTag.btnSelectTable.click()
+#         back_to_lobby()
         sleep(1)
-#         pocoTag.btnLeaveGame.click()
+        if waitNolimitPoco(pocoTag.btnLeaveGame,1):
+            pocoTag.btnLeaveGame.click()
+        else:
+            touch(image_vip.back)  
 #         touch(image_vip.back)    
         print('reload lobby')
+        clear()
         return True
     except:
         print('error reload lobby')
         return False
 def reloadLoby2():
-    poco = CocosJsPoco()
-    poco.click([0.04817596456992819, 0.9241753578186035])
-    pocoTag.btnHide.click()
+    try:
+        poco = CocosJsPoco()
+        poco.click([0.04817596456992819, 0.9241753578186035])
+        pocoTag.btnHide.click()
+        clear()
+    except:
+        clear()
 def closeEvent():
     try:
-        if waitNolimitPoco(poco("btnClose"),2):
-            poco("btnClose").click()
+        if waitNolimitPoco(pocoTag.btnClose,2):
+            pocoTag.btnClose.click()
+            clear()
     except:
         print("error close ev")
 def closeAllEvent():
-    while waitNolimitPoco(poco("btnClose"),2):
+    while waitNolimitPoco(pocoTag.btnClose,2):
         pocoTag.btnClose.click()
+        clear()
 def claimAll():
     while waitNolimitPoco(poco("btnClaim"),2):
         pocoTag.btnClaim.click()
+        clear()
         continue
 def out():
     try:
@@ -166,7 +177,6 @@ def out():
         print("error out")
 def changeAcc(userN,passW):
     try:
-        poco = CocosJsPoco()
         out()
         pocoTag.btnSwitch.click()
         pocoTag.inputUser.click()
@@ -182,6 +192,8 @@ def changeAcc(userN,passW):
         text(PassW)
         pocoTag.logo.click()
         pocoTag.btnLogin.click()
+        clear()
+        return True
     except:
         print("error login")
 def joinTable():
@@ -213,6 +225,7 @@ def addBot():
             pocoTag.btnAddBot.click()
         pocoTag.btnCheat.click()
         print("event addBot")
+        clear()
         return True
     except:
         print("error addBot")
@@ -272,6 +285,7 @@ def clickClaim():
     try:
         if waitNolimitPoco(pocoTag.btnClaim,1):
             pocoTag.btnClaim.click()
+            clear()
             return True
         else:
             return False
@@ -326,6 +340,25 @@ def waitEndGame2():
     except:
         print("error")
         return False
+def fortmatGold(gold):
+    if gold/pow(10,9)>=1:
+        print("haha")
+        if (gold % pow(10, 9))//pow(10,8)>0:
+            return (str(gold // pow(10, 9)) + "." + str((gold % pow(10, 9))//pow(10,8)) + "B")
+        else:
+            return(str(gold // pow(10, 9)) + "B")
+    elif gold/pow(10,6)>=1:
+        if (gold % pow(10, 6))//pow(10,5)>0:
+            return (str(gold // pow(10, 6)) + "." + str((gold % pow(10, 6))//pow(10,5)) + "M")
+        else:
+            return (str(gold // pow(10, 6)) + "M")
+    elif gold/pow(10,3)>10:
+        if ((gold % pow(10, 3))//pow(10,2))>0:
+            return (str(gold // pow(10, 3)) + "." + str((gold % pow(10, 3))//pow(10,2)) + "K")
+        else:
+            return (str(gold // pow(10, 3)) + "K")
+    else:
+        return (str(gold))
 def checkGold():
 #     numGold = pocoTag.lbGold.attr("text")
     numGold = poco(name="lbGold").attr("text")
@@ -546,6 +579,8 @@ def checkExists(self):
     #------------------#
 def beforEvent():
     clearReport()
+    claimAll()
+    closeAllEvent()
     timeCheat = api_changeTimeServer(1605051600000)
     dayS = {
         "Y": timeWC["start"]['Y'],
@@ -571,8 +606,8 @@ def beforEvent():
     closeAllEvent()
     #reloadLobby()
     reloadLoby2()
-    claimAll()
-    closeAllEvent()
+#     claimAll()
+#     closeAllEvent()
     #Check btn event -----------------------------------
     if CheckBtnEvent():
         dataReportConfig["Button"]="Fail"
@@ -584,6 +619,8 @@ def beforEvent():
     reportBeforEvent(dataReportConfig)
 def afterEvent():
     resetDataReportConfig()
+    claimAll()
+    closeAllEvent()
     sleep(2)
 #-------------In Game-------------------------------------------------#
     #-------------Cheat time-----------------------------------#
@@ -910,6 +947,8 @@ def day2():
 def day3():
         #resetDataReport
     resetDataReportConfig()
+    claimAll()
+    closeAllEvent()
     #------------------------#
     #report
     reportDay3(dataReportConfig)
@@ -1565,43 +1604,59 @@ def checkDisconect():
     checkProgress()
     clickOutTable()
 def GuiDeal():
-    dataReportConfig['Login']="Fail"
+    claimAll()
+    closeAllEvent()
 #     if  changeAcc(user["user1"]["user"],user["user1"]["pass"]):
 #         dataReportConfig['Login']="Fail"
 #     else:
 #         dataReportConfig['Login']="Pass"
+    reloadLobby()
+    closeDealSpec()
     if  CheckGUIEvent() :
         dataReportConfig['GuiEvent']="Fail"
         closeEvent()
     else:
         dataReportConfig['GuiEvent']="Pass"
-#     close Gui Event
-#     if waitNolimitPoco(poco("btnClaim"),2):
-#         poco("btnClaim").click()
     if  CheckGUIDeal():
-        dataReportConfig['GuiEDeal']="Pass"
+        dataReportConfig['GuiEDeal']="Fail"
         closeEvent()
     else:
-        dataReportConfig['GuiEDeal']="Fail"
-    gold1=getGold(user["user"]["id"])
+        dataReportConfig['GuiEDeal']="Pass"
+    gold1=getGold(user["user2"]["id"])
     clickGuiDeal()
-    cheatBuyDeal(user["user"]["id"],1)
+    cheatBuyDeal(user["user2"]["id"],1)
     clickClaim()
-    if checkDisableBtnDeal():
-        dataReportConfig['BtnBuyWC']="Fail"
-    else:
+    sleep(1)
+    if checkDisableBtnBuy(1):
         dataReportConfig['BtnBuyWC']="Pass"
+    else:
+        dataReportConfig['BtnBuyWC']="Fail"
     closeEvent()
-    gold2=getGold(user["user"]["id"])
-    if checkUpdateGoldDeal(dealWCConfig["offerWC1"],gold1,gold2):
+    gold2=getGold(user["user2"]["id"])
+    clickGuiDeal()
+    goldConf=0
+    if waitNoLimit(imageWC.imageOfferDeal,2):
+        goldConf=dealWCConfig["offerWC1"]["gold"]
+    else:
+        goldConf=dealWCConfig["offerWC1"]["gold1"]
+    closeEvent()
+    if checkUpdateGold(goldConf,gold1,gold2):
         dataReportConfig['GoldUpdate']="Pass"
     else:
         dataReportConfig['GoldUpdate']="Fail"
     clickGuiDeal()
-    cheatBuyDeal(user["user"]["id"],2)
+    cheatBuyDeal(user["user2"]["id"],2)
+    sleep(1)
+    clickClaim()
+    cheatBuyDeal(user["user2"]["id"],2)
+    sleep(1)
     clickClaim()
     sleep(1)
-    cheatBuyDeal(user["user"]["id"],3)
+    cheatBuyDeal(user["user2"]["id"],3)
+    sleep(1)
+    clickClaim()
+    cheatBuyDeal(user["user2"]["id"],3)
+    sleep(1)
     clickClaim()
     if checkBtnDeal():
         dataReportConfig['BtnDeal']="Fail"
@@ -1849,12 +1904,25 @@ def checkDisableBtnDeal():
     try:
         if waitNolimitPoco(pocoTag.btnOfferEventTB,1):
             print("check CheckGUIDeal")
+            clear()
             return False
         else:
             return True
     except:
         print("check CheckGUIDeal no exists")
         return True 
+def checkDisableBtnBuy(offer):
+    try:
+        if waitNolimitPoco(poco("lbPrice"+str(offer)),1):
+            print("check purchased")
+            clear()
+            return False
+        else:
+            clear()
+            return True
+    except:
+        print("check check purchased no exists")
+        return False 
 def checkNotiNoEnoughGold():
     try:
         if waitNolimitPoco(pocoTag.NOTIFICACIONES,5):
@@ -1965,6 +2033,16 @@ def CheckGUIDeal():
     except:
         print("check CheckGUIDeal no exists")
         return False
+def checkBtnDeal():
+    try:
+        if waitNolimitPoco(poco("btnOfferEventTB"),1):
+            print("check CheckGUIDeal")
+            return True
+        else:
+            return False
+    except:
+        print("check CheckGUIDeal no exists")
+        return False
 def CheckLableDay():
     try:
         if waitNolimitPoco(pocoTag.lbDay1,1):
@@ -2016,6 +2094,7 @@ def CheckLableDay():
                 return 7
             else:
                 return False
+        clear()
     except:
         return False
 def checkTocos():
@@ -2082,6 +2161,7 @@ def eventWCOpen():
         poco = CocosJsPoco()
         if waitNolimitPoco(pocoTag.btnMain,5):
             pocoTag.btnMain.click()
+            pocoTag.btnMain.invalidate()
             print("event WC")
             return True
     except:
@@ -2091,6 +2171,7 @@ def clickClaimMission():
     try:
         if waitNolimitPoco(pocoTag.btnJoin,1):
             pocoTag.btnJoin.click()
+            pocoTag.btnJoin.invalidate()
             return True
         else:
             return False
@@ -2107,6 +2188,7 @@ def clickGuiDeal():
     try:
         if waitNolimitPoco(pocoTag.btnOfferEventTB,10):
             pocoTag.btnOfferEventTB.click()
+            clear()
             return True
         else:
             return False
@@ -2116,6 +2198,7 @@ def closeDealSpec():
     try:
         if waitNoLimit(imageWC.imgEventSpec,2):
             pocoTag.btnClose.click()
+            clear()
             return True
         else:
             return False
@@ -2459,3 +2542,6 @@ def complete_logout_login_24h():
     complete_lobby_24h()
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
+# changeAcc(user["user2"]["user"],user["user2"]["pass"])
+GuiDeal()
+

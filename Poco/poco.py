@@ -28,7 +28,6 @@ poco = CocosJsPoco()
 #------------------------------------------End Poco------------------------------------------------------#
 #------------------------------------------script content------------------------------------------------#
 #------------------------------------------bien----------------------------------------------#
-x=0
 #------------------------------------------end bien------------------------------------------#
 #------------------------------------------WC------------------------------------------------#
 #------------------------------------------WC------------------------------------------------#
@@ -106,6 +105,67 @@ class pocoTag:
     btnSkip= poco("btnSkip")
     btnSelectTable=poco("btnSelectTable")
     pnGold = poco("pnGold")
+def clear():
+    fruits =[
+    pocoTag.btnSwitch,
+    pocoTag.inputUser,
+    pocoTag.logo,
+    pocoTag.inputPass,
+    pocoTag.btnLogin,
+    pocoTag.btnSetting,
+    pocoTag.btnClose,
+    pocoTag.btnPlay,
+    pocoTag.btnLeaveGame,
+    pocoTag.btnHide ,
+    pocoTag.btnMain,
+    pocoTag.notiShow,
+    pocoTag.NOTIFICACIONES,
+    pocoTag.lbTime,
+    pocoTag.btnCheat,
+    pocoTag.btnAddBot,
+    pocoTag.lbTimeServer,
+    pocoTag.btnSendCheatPlayer,
+    pocoTag.btnSendCustom,
+    pocoTag.btnTabCustom,
+    pocoTag.btnResetCustom,
+    pocoTag.pnPointEvent,
+    pocoTag.pnCaseId_1,
+    pocoTag.btnJoin,
+    pocoTag.btnClaim,
+    pocoTag.lbDayCurrent,
+    pocoTag.lbDay1,
+    pocoTag.lbDay2,
+    pocoTag.lbDay3,
+    pocoTag.lbDay4,
+    pocoTag.lbDay5,
+    pocoTag.lbDay6,
+    pocoTag.lbDay7,
+    pocoTag.lbNumTacos,
+    pocoTag.lbProgress,
+    pocoTag.lbGold,
+    pocoTag.btnOfferEventTB,
+    pocoTag.imgTruck,
+    pocoTag.btnPass,
+    pocoTag.btnKnock,
+    pocoTag.btnExchange1,
+    pocoTag.btnSwap,
+    pocoTag.btnExchange5,
+    pocoTag.bg_table,
+    pocoTag.btnVip,
+    pocoTag.iconSetting,
+    pocoTag.lobbyLayer2,
+    pocoTag.btnGuest,
+    pocoTag.btnTomorrow,
+    pocoTag.btnGooglePlus,
+    pocoTag.btnFacebookNormal,
+    pocoTag.btnRegister,
+    pocoTag.btnDaily,
+    pocoTag.btnCallBack,
+    pocoTag.btnSkip,
+    pocoTag.btnSelectTable,
+    pocoTag.pnGold]
+    for x in fruits:
+        x.invalidate()
 #------------------------------------------VIP-----------------------------------------------#
 #------------------------------------------VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
@@ -115,7 +175,4 @@ class pocoTag:
 #---------------------------------------------Report-----------------------------------------------------#
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
-
-
-
 
