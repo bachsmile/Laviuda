@@ -1,119 +1,15 @@
 
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Test mission Deal
-            
-            Login again                             Fail
-            
-            Khong show Gui event:                   Pass    
-            
-            Khong show Gui Deal:                    Fail
-            
-            Button buy disiable:                    Fail    
-            
-            Gold update:                            Fail    
-            
-            Button Deal hide:                       Fail    
-            
-           
-                                                                time test: 15:37:54
-                                                                Reporter: BachTX
-    ----------------------------------------------------------------------------------------------------------
+    CASE: Test mission end event
     
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Deal
+            Auto close event:                        Pass    
             
-            Login again                             Fail
+            No claim gift:                           Pass
             
-            Khong show Gui event:                   Pass    
+            Hide event:                              Fail 
             
-            Khong show Gui Deal:                    Fail
-            
-            Button buy disiable:                    Fail    
-            
-            Gold update:                            Fail    
-            
-            Button Deal hide:                       Pass    
-            
-           
-                                                                time test: 15:51:31
-                                                                Reporter: BachTX
-    ----------------------------------------------------------------------------------------------------------
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Deal
-            
-            Khong show Gui event:                   Pass    
-            
-            Khong show Gui Deal:                    Fail
-            
-            Button buy disiable:                    Fail    
-            
-            Gold update:                            Pass    
-            
-            Button Deal hide:                       Fail    
-            
-           
-                                                                time test: 15:58:19
-                                                                Reporter: BachTX
-    ----------------------------------------------------------------------------------------------------------
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Deal
-            
-            Khong show Gui event:                   Pass    
-            
-            Khong show Gui Deal:                    Pass
-            
-            Button buy disiable:                    Fail    
-            
-            Gold update:                            Fail    
-            
-            Button Deal hide:                       Pass    
-            
-           
-                                                                time test: 16:04:14
-                                                                Reporter: BachTX
-    ----------------------------------------------------------------------------------------------------------
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Deal
-            
-            Khong show Gui event:                   Pass    
-            
-            Khong show Gui Deal:                    Pass
-            
-            Button buy disiable:                    Pass    
-            
-            Gold update:                            Pass    
-            
-            Button Deal hide:                       Fail    
-            
-           
-                                                                time test: 16:17:26
-                                                                Reporter: BachTX
-    ----------------------------------------------------------------------------------------------------------
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Deal
-            
-            Khong show Gui event:                   Pass    
-            
-            Khong show Gui Deal:                    Pass
-            
-            Button buy disiable:                    Pass    
-            
-            Gold update:                            Pass    
-            
-            Button Deal hide:                       Pass    
-            
-           
-                                                                time test: 16:20:08
+                                                                time test: 17:54:48
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     

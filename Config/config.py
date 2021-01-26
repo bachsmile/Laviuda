@@ -18,8 +18,8 @@ user={
         "pass":123456      
     },
     "user1":{
-        "id":"19400458",
-        "user":"user001",
+        "id":"20431806",
+        "user":"final5",
         "pass":123456      
     },
     "user2":{
@@ -104,9 +104,9 @@ challengePlay={
     "win":{
         "data":{
                 "detailMission":poco(text="Ganar "),
-                "totalX":4,
-                "tacos":4,
-                "gold":80000,
+                "totalX":3,
+                "tacos":3,
+                "gold":100000,
                 "type":"win"
                 },
     },
@@ -145,7 +145,7 @@ challengePlay={
     },
     "claim":{
         "data":{
-            "gold":120000
+            "gold":15000
         } 
     },
     "play":{
@@ -234,7 +234,8 @@ dataReportConfig = {
         "Befor":"Fail",
         "ShowBtnJoin":"Fail",
         "noPlay":"Fail",
-        "onPlay":"Fail"
+        "onPlay":"Fail",
+        "HideProgress":"Fail"
     }
 # convertDayTimeToMili(2020, 11, 26,6,59,0)   
 # print(challengePlay[challenge["day2"]["mission"]]["data"]["gold"])
@@ -321,4 +322,3 @@ def abc():
     else:
         gold_conf = pack_gold["gg_play"][pack]*2
     print(gold_conf)
-# abc()
