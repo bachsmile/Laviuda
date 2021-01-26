@@ -311,14 +311,14 @@ account = {
     }
 }
 gold_support = 30000
-
-
-
-
-
-
-
-
-
-
-
+# gold_conf = (pack_gold["gg_play"]["iap.pack_1"]) + (pack_gold["gg_play"]["iap.pack_1"]*30/100)
+# print(gold_conf)
+def abc():
+    if getLevelVip(19202812) == 1:
+        gold_conf = (pack_gold["gg_play"][pack]) + (pack_gold["gg_play"][pack])*30/100
+    elif getLevelVip(19202812) == 2:
+        gold_conf = (pack_gold["gg_play"][pack]) + (pack_gold["gg_play"][pack])*50/100
+    else:
+        gold_conf = pack_gold["gg_play"][pack]*2
+    print(gold_conf)
+# abc()
