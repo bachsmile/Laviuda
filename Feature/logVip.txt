@@ -1,19 +1,10 @@
 
     -----------------------------------------------------------------------------
-    Case1: Open Vip
-            Status check: Pass
-                                    
-                                    
-                                    Time test: 11:46:41
-                                    Reporter: VyHN
-    -----------------------------------------------------------------------------
+    Case 8: Check nhan gold tribute
     
-    -----------------------------------------------------------------------------
-    Case2: Check Pack Vip
-            Status check: Pass
-                                    
-                                    
-                                    Time test: 11:47:16
+            Check gold tribute : Pass
+            Status check: Pass                                            
+                                    Time test: 17:17:17
                                     Reporter: VyHN
     -----------------------------------------------------------------------------
     

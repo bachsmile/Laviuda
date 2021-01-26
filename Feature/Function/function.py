@@ -377,14 +377,9 @@ def convertDayToSecond(day):
     return second
 def cheatTimeRemain(UserID,day):
     try:
-        cheat_remain = api_postDoFunction(UserID, "CHEAT_TIME_REMAIN_VIP", [convertDayToSecond(day)])
+        cheat_remain = api_postDoFunction(UserID, "CHEAT_TIME_REMAIN_VIP", [str(convertDayToSecond(day))])
         print("cheat time remain thanh cong")
         reloadLobby()
-        print("Vao shop vip thanh cong")
-        killApp()
-        openApp()
-        #check show pop-up gia han
-        back_to_lobby()
         return True 
     except:
         print("Error")
@@ -424,7 +419,7 @@ def check_item():
                     time.sleep(2)
                     touch(item)
             data["Check_item"] = "Pass"
-            print("List item co ton tai")
+            print("List item co ton tai")   
         else:
             #return True
             data["Check_item"] = "Fail"
@@ -480,8 +475,9 @@ def checkTimeRemainVip():
 def cheatPayMentVip(idU, pack):
     try:
         cheat = api_postDoFunction(idU, "CHEAT_PAYMENT_VIP", [pack])
+        time.sleep(1)
         touch(image_vip.btn_claim)
-        time.sleep(2)
+        time.sleep(1)
         print("success")
     except:
         print("error")
@@ -497,7 +493,7 @@ def check_buy_vip(idU, pack):
             data["Check_gold"] = "Pass"
             print("Success")
     except:
-        data["Check_gold"] = "Pass"
+        data["Check_gold"] = "Fail"
         print("Error")
 def check_gold_support(idU):
     cheatGoldEmpty(1)
@@ -507,18 +503,23 @@ def check_gold_support(idU):
         if exists(image_vip.btn_ok):
             image_vip.btn_ok
             new_gold = getGold(idU)
+            print(new_gold)
             gold_in = new_gold - old_gold
             gold_conf = gold_support
-            if gold_in == gold_conf: 
+            if gold_in == gold_conf:
+                data["Gold_support"] = "Pass"
                 data["Status"] = "Pass"
                 print("Nhan gold support thanh cong")
+        else:
+            data["Gold_support"] = "Fail"
+            data["Status"] = "Fail"
+            print("khong nhan duoc gold support")
     except:
-        data["Status"] = "Fail"
-        print("Khong nhan duoc gold support")
+        print("Error")
 def cheatBuyGold(idU, pack):
     try:
         cheat = api_postDoFunction(idU, "CHEAT_PAYMENT_IAP", [pack])
-        pocoTag.btnClaim
+        pocoTag.btnClaim.click()
         time.sleep(2)
         print("Success")
     except:
@@ -527,24 +528,51 @@ def check_buy_gold(idU, pack):
     old_gold = getGold(idU)
     cheatBuyGold(idU, pack)
     try:
+        time.sleep(1)
         new_gold = getGold(idU)
         gold_in = new_gold - old_gold
-        gold_conf = pack_gold["gg_play"][pack]
+        gold_defaul = pack_gold["gg_play"][pack]
+        if getLevelVip(19202812) == 1:
+            gold_conf = gold_defaul + gold_defaul*30/100
+        elif getLevelVip(19202812) == 2:
+            gold_conf = gold_defaul + gold_defaul*50/100
+        elif getLevelVip(19202812) == 3:
+            gold_conf = gold_defaul*2
+        else:
+            gold_conf = gold_defaul
         if gold_in == gold_conf:
             data["Check_gold"] = "Pass"
             data["Status"] = "Pass"
             print("Success")
     except:
+        data["Check_gold"] = "Fail"
         data["Status"] = "Fail"
         print("Error")
-def check_gold_tribute():
+def check_gold_tribute(idU):
+    old_gold = getGold(idU)
     try:
         if exists(image_vip.btn_claim):
-            pocoTag.btnClaim
-            data["Status"] = "Pass"
-            print("Success")
+            pocoTag.btnClaim.click()
+            time.sleep(1)
+            new_gold = getGold(idU)
+            gold_in = new_gold - old_gold
+            if getLevelVip(19202812) == 1:
+                gold_conf = vip_pack["vip.pack_1"]["dailyTribute"]
+            elif getLevelVip(19202812) == 2:
+                gold_conf = vip_pack["vip.pack_2"]["dailyTribute"]
+            elif getLevelVip(19202812) == 3:
+                gold_conf = vip_pack["vip.pack_3"]["dailyTribute"]
+            else:
+                gold_conf = 0
+            if gold_in == gold_conf:
+                data["Gold_tribute"] = "Pass"
+                data["Status"] = "Pass"
+                print("Nhan duoc gold tribute")
+        else:
+            data["Gold_tribute"] = "Fail"
+            data["Status"] = "Fail"
+            print("Ko nhan duoc gold tribute")
     except:
-        data["Status"] = "Fail"
         print("Error")
 def checkMoGUIVipGD():
     try:
@@ -2576,6 +2604,3 @@ def complete_logout_login_24h():
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
 # changeAcc(user["user2"]["user"],user["user2"]["pass"])
-endEvent()
-
-
