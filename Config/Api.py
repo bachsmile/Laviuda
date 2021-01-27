@@ -7,7 +7,7 @@ HTTPS_PROXY = "https://172.28.103.34:3128"
 # from test.Autotest.Lavuavi.Function.Cheat.Cheat.api import *
 #--------------------------------------------#
 # Lấy access token mới mỗi lần dùng tool cheat
-ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM4ZWY2NGJhLTcxYjItNDNlZi05MGQ2LTQ2NzAxNTRjN2MyZCIsIm5hbWUiOiJW4bu5LiBIdeG7s25oIE5ndXnhu4VuIiwiZW1haWwiOiJ2eWhuQHZuZy5jb20udm4iLCJvaWQiOiI5MDJmYWVmMy0yZjA3LTRlZjgtOTViNC04N2I2YzAyNjk3N2MiLCJhZGRyZXNzIjoiMS41My4yNTUuMTQ0IiwiZXhwaXJlZCI6MTYxMTcxNTEzMDIyNiwidHlwZSI6ImF6dXJlIiwidXNlcm5hbWUiOiJ2eWhuQHZuZy5jb20udm4iLCJpYXQiOjE2MTE2Mjc0MjUsImV4cCI6MTYxMTcxMzgyNX0.ReJVcxa46kCef-_iU2hFywNZqlhsmbOwO_fC4MqvSD8"
+ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZlMWJmZTRkLTBhYTAtNGRjZS1hYjM3LTk1NTdmNTc2YTBkNyIsIm5hbWUiOiJCw6FjaC4gVHLhuqduIFh1w6JuIiwiZW1haWwiOiJiYWNodHhAdm5nLmNvbS52biIsIm9pZCI6IjE5ZDMyODgxLTY4ZmItNGMzMS04NzVkLWE0ZmQwMzEzN2FjMyIsImFkZHJlc3MiOiIyNy42NS4xOTYuNzMiLCJleHBpcmVkIjoxNjExNzI3MjkxNTM5LCJ0eXBlIjoiYXp1cmUiLCJ1c2VybmFtZSI6ImJhY2h0eEB2bmcuY29tLnZuIiwiaWF0IjoxNjExNjM5NTg2LCJleHAiOjE2MTE3MjU5ODZ9.EZ_Oahv5GlC-NIJnGEGdym01oLxJjjIOkJDhQoL0kkA"
 SERVER_HOST = "http://49.213.81.43:10021"
 BASE_URL = SERVER_HOST + "/api/"
 proxyDict = {
@@ -104,6 +104,15 @@ def cheatBuyDeal(idU,deal):
 def cheatFinishedMision(idU,day):
     try:
         cheat = api_postDoFunction(idU, "CHEAT_FINISH_MISSION_TACOS_BUS", [day])
+        print(cheat)
+        print("cheat finished mission success")
+        return True
+    except:
+        print("Error finished mission")
+        return False
+def cheatNumMision(idU,num):
+    try:
+        cheat = api_postDoFunction(idU, "CHEAT_NUM_OBTAIN_MISSION", [num])
         print(cheat)
         print("cheat finished mission success")
         return True
