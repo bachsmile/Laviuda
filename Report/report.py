@@ -811,7 +811,7 @@ def reportUpdateMissionLobby(data):
     
     CASE: Qua ngay khi dang mo gui event
     
-            effect nhận quà                         {0}
+            effect claim gift                       {0}
             
             Update nhiem vu ngay moi                {1}
 
