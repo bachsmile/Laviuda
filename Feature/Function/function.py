@@ -2647,5 +2647,4 @@ def complete_logout_login_24h():
 # changeAcc(user["user2"]["user"],user["user2"]["pass"])
     GuiDeal()
     beforEvent("user0")
-
-
+    
