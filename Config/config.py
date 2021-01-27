@@ -13,28 +13,28 @@ poco = CocosJsPoco()
 # user["user0"]["user"]
 user={
     "user0":{
-        "id":"20427600",
-        "user":"user000",
+        "id":"20484109",
+        "user":"auto00",
         "pass":123456      
     },
     "user1":{
-        "id":"20431806",
-        "user":"final5",
+        "id":"20484121",
+        "user":"auto01",
         "pass":123456      
     },
     "user2":{
-        "id":'20431874',
-        "user":"final8",
+        "id":'20484133',
+        "user":"auto02",
         "pass":123456       
     },
     "user3":{
-        "id":'19400738',
-        "user":"user003",
+        "id":'20484148',
+        "user":"auto03",
         "pass":123456       
     },
      "user":{
-        "id":'19130219',
-        "user":"user",
+        "id":'20484164',
+        "user":"autotest",
         "pass":123456       
     },
 }
@@ -43,20 +43,6 @@ timeWC={
     "start":{"Y":2020,"M":12,"D":29,"h":7,"m":0,"s":0},
     "end":{"Y":2021,"M":1,"D":5,"h":7,"m":0,"s":0}
 }
-# def timeBtnCheat(time,Y,M,D,h,m,s):
-#     TY=0+Y
-#     TM=0+M
-#     TD=0+D
-#     Th=0+h
-#     Tm=0+m
-#     Ts=0+s
-#     timeW="""
-# {0}:{1}:{2}
-# {3}/{4}/{5}
-# """
-#     timeWt=timeW.format(time['h']+Th, time['m']+Tm,time['s']+Ts,time['D']+TD,time['M']+TM,time['Y']+TY)
-#     return timeWt
-# print(timeBtnCheat(timeWC[ "start"],1,-11,-28,0,0,0))
 def datetoMili(day):
     return day*86400000
 def housToMili(hous):
@@ -169,7 +155,7 @@ cardCheat={
     },
     "lose":{
         "card":"2c",
-        "set":"3t,42b,7r,9b,10c"
+        "set":"3t,2b,7r,9b,10c"
     },
 }
 #deal

@@ -32,30 +32,28 @@ poco = CocosJsPoco()
 #------------------------------------------WC------------------------------------------------#
 # WC--------------------------->
 def WC():
-    beforEvent()
-    afterEvent()
-    day1()
-    claimGift()
-    day2()
-#     noClaimGift()
-#     CheckChangeAcc()
-#     missionPassDayInTable(2)
-#     autoClaimGift()
-    
-#     day3()
-#     missionPassDayOpenGui()
-#     passClaimGift()
-#     day4()
-    
-    UpdateProgressMissionFull()
+    beforEvent("user0")
+    afterEvent("user1")
+    day1("user1")
+    claimGift("day1","user1")
+    day2("user1")
+    noClaimGift("day2","user1")
+    CheckChangeAcc(1,"user2") #1 -> day 1
+    missionPassDayInTable(2,"user2")
+    autoClaimGift("day2")
+    day3("user2")
+    missionPassDayOpenGui(3,user2)
+    passClaimGift(2,"user1")
+    day4("user1")
+    UpdateProgressMissionFull("day4","user1")
 #     checkDisconect()
 #     day5()
-    GuiDeal()
+    GuiDeal("user2")
 #     day6()
-    day7()
-    endEvent()
+    day7("user1","user3")
+    endEvent("day7","user2")
 #------------------------------------------WC------------------------------------------------#
-WC()
+# WC()
 #------------------------------------------VIP-----------------------------------------------#
 def Vip():
     clearReportVip()

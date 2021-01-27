@@ -1,15 +1,20 @@
 
-    -----------------------------------------------------------------------------------------------------------
+            -------------------------------------------------------------------------------------------
     
-    CASE: Test mission end event
-    
-            Auto close event:                        Pass    
+    CASE: Test mission Win
             
-            No claim gift:                           Pass
+            khong du gold click btn play show noti khong du gold:             Pass
             
-            Hide event:                              Fail 
+            Du gold click btn play vào bàn:                                   Pass    
             
-                                                                time test: 17:54:48
+            Auto Show progess bar:                                            Pass    
+            
+            Show update progess win:                                          Pass
+            
+            No update progess lose:                                           Fail
+            
+            
+                                                                time test: 10:26:11
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     
