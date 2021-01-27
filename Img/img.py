@@ -83,12 +83,12 @@ class image_vip:
 
     btn_giahan = Template(r"tpl1608196142533.png", record_pos=(0.016, 0.185), resolution=(2340, 1079))
     pop_up_giahan = Template(r"tpl1608199295143.png", record_pos=(0.011, -0.006), resolution=(2340, 1079))
+    btn_hethan = Template(r"tpl1611720932545.png", record_pos=(0.016, 0.186), resolution=(2340, 1079))
     icon_app = Template(r"tpl1608201973810.png", record_pos=(0.354, -0.842), resolution=(1079, 2340))
     icon_close = Template(r"tpl1608260634718.png", record_pos=(0.214, -0.107), resolution=(2340, 1079))
 
     back = Template(r"tpl1608001910288.png", record_pos=(0.468, -0.201), resolution=(2340, 1079))
-    close = Template(r"tpl1608004769423.png", record_pos=(0.262, -0.16), resolution=(2340, 1079))
-    outroom = Template(r"tpl1608105320117.png", record_pos=(0.45, -0.195), resolution=(2340, 1079))
+    outroom = Template(r"tpl1611718493315.png", record_pos=(0.449, -0.193), resolution=(2340, 1079))
     logo_non_vip = Template(r"tpl1609735915140.png", record_pos=(-0.421, 0.194), resolution=(2340, 1079))
     logo_vip_bac = Template(r"tpl1609740849861.png", record_pos=(-0.42, 0.183), resolution=(2340, 1079))
     logo_vip_vang = Template(r"tpl1609740925621.png", record_pos=(-0.422, 0.184), resolution=(2340, 1079))
