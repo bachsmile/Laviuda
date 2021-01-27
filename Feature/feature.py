@@ -55,7 +55,7 @@ def WC():
     day7()
     endEvent()
 #------------------------------------------WC------------------------------------------------#
-WC()
+# WC()
 #------------------------------------------VIP-----------------------------------------------#
 def Vip():
     clearReportVip()
@@ -109,25 +109,25 @@ def Vip():
     check_gold_tribute(19202812)
     reportReceivedGoldTribute(data)
     #Case 9: Check show data vip theo account
-#     changeAcc(userN,passW)
-#     #Case 10: Check gia han vip
-#     cheatTimeRemain(UserID,day)
-#     reloadLobby()
-#     checkMoGUIVipGD()
-#     killApp()
-#     openApp()
-#     checkMoGUIVipGD()
-#     reportExpiredVip(data)
-#     #Case11: Check het han trong ban choi
-#     api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", [60])
-#     to_table()
-#     check_item()
-#     reportCheckExpiredTable(data)
-#     #Case12: Check het han mua vip
-#     checkMoGUIVipGD()
-#     cheat_buy_vip("vip.pack_1")
-#     reportBuyVip(data)
-Vip()
+    changeAcc(account["user1"]["user"],account["user1"]["pass"])
+    changeAcc(account["user0"]["user"],account["user0"]["pass"])
+    #Case 10: Check show pop-up gia han vip
+    cheatTimeRemain(19202812, 1)
+    reloadLobby()
+    checkMoGUIGH()
+    reportExpiredVip(data)
+    #Case11: Check het han trong ban choi
+    api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", [10])
+    to_table()
+    time.sleep(3)
+    check_item()
+    back_lobby_from_table()
+    reportCheckExpiredTable(data)
+    #Case12: Check het han mua vip
+    checkMoGUIVip()
+    check_buy_vip(19202812, "vip.pack_1")
+    reportBuyVip(data)
+# Vip()
 #------------------------------------------VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
 def DB():
@@ -187,6 +187,7 @@ def DB():
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
 #---------------------------------------------End Report-------------------------------------------------#
+
 
 
 
