@@ -31,6 +31,27 @@ poco = CocosJsPoco()
 #------------------------------------------end bien------------------------------------------#
 #------------------------------------------WC------------------------------------------------#
 # WC--------------------------->
+# def WC():
+#     beforEvent("user0")
+#     afterEvent("user1")
+#     day1("user1")
+#     claimGift("day1","user1")
+#     day2("user1")
+#     noClaimGift("day2","user1")
+#     CheckChangeAcc(1,"user2") #1 -> day 1
+#     missionPassDayInTable(2,"user2")
+#     autoClaimGift("day2")
+#     day3("user2")
+#     missionPassDayOpenGui(3,"user2")
+#     passClaimGift(2,"user1")
+#     day4("user1")
+#     UpdateProgressMissionFull("day4","user1")
+# #     checkDisconect()
+# #     day5()
+#     GuiDeal("user1")
+# #     day6()
+#     day7("user1","user3")
+#     endEvent("day7","user2")
 def WC():
     beforEvent(configCase["beforEvent"]["account"])
     afterEvent(configCase["afterEvent"]["account"])
@@ -73,8 +94,8 @@ def Vip():
     time.sleep(1)
     back_to_lobby()
     check_buy_vip(19202812, "vip.pack_1") #mua vip 1
-#   back_to_lobby()
-#   check_item() #check item ngoai ban choi
+    #   back_to_lobby()
+    #   check_item() #check item ngoai ban choi
     to_table()
     check_item() #check item trong ban choi
     back_to_lobby()
@@ -100,15 +121,15 @@ def Vip():
     reportReceivedGoldSupport(data)
     #Case 8: Cheat qua ngay nhan gold tribute
     timeWC= {
-    "Y":2021,"M":1,"D":2,"h":12,"m":0,"s":0
+    "Y":2020,"M":12,"D":26,"h":12,"m":0,"s":0
     }
     api_changeTimeServer(convertDayTimeToMili(timeWC))
     reloadLobby()
     check_gold_tribute(19202812)
     reportReceivedGoldTribute(data)
     #Case 9: Check show data vip theo account
-    changeAcc(account["user1"]["user"],account["user1"]["pass"])
-    changeAcc(account["user0"]["user"],account["user0"]["pass"])
+    #   changeAcc(account["user1"]["user"],account["user1"]["pass"])
+    #   changeAcc(account["user0"]["user"],account["user0"]["pass"])
     #Case 10: Check show pop-up gia han vip
     cheatTimeRemain(19202812, 1)
     reloadLobby()
@@ -185,8 +206,3 @@ def DB():
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
 #---------------------------------------------End Report-------------------------------------------------#
-
-
-
-
-

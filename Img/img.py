@@ -72,10 +72,11 @@ class image_vip:
     btn_vip = Template(r"tpl1607915160724.png", record_pos=(0.235, 0.045), resolution=(2340, 1079))
     btn_cancel = Template(r"tpl1607501575359.png", record_pos=(-0.066, 0.081), resolution=(2340, 1079))
     btn_ok = Template(r"tpl1607501814421.png", record_pos=(0.098, 0.081), resolution=(2340, 1079))
+    btn_ok_sp = Template(r"tpl1611731902604.png", record_pos=(0.017, 0.064), resolution=(2340, 1079))
+
     btn_yes = Template(r"tpl1608711034073.png", record_pos=(0.099, 0.069), resolution=(2340, 1079))
     btn_no = Template(r"tpl1608711053674.png", record_pos=(-0.066, 0.069), resolution=(2340, 1079))
-
-
+    pop_up_gold_support = Template(r"tpl1611730576492.png", record_pos=(0.016, 0.0), resolution=(2340, 1079))
     image_vip_silver = Template(r"tpl1607916065983.png", record_pos=(0.021, -0.028), resolution=(2340, 1079))
     image_vip_gold = Template(r"tpl1607916089476.png", record_pos=(0.163, -0.03), resolution=(2340, 1079))
     image_vip_dynamion = Template(r"tpl1607916128309.png", record_pos=(0.307, -0.029), resolution=(2340, 1079))
