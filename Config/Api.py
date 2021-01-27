@@ -155,4 +155,4 @@ def getModel(userId,modelName):
         print('Failed JSON')
 # getModel(19130219,"UEventTacosBusModel")
 # getGold(19130219)
-
+getGold(20285163)
