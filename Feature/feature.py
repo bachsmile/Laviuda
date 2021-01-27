@@ -100,15 +100,15 @@ def Vip():
     reportReceivedGoldSupport(data)
     #Case 8: Cheat qua ngay nhan gold tribute
     timeWC= {
-    "Y":2021,"M":1,"D":2,"h":12,"m":0,"s":0
+    "Y":2020,"M":12,"D":23,"h":12,"m":0,"s":0
     }
     api_changeTimeServer(convertDayTimeToMili(timeWC))
     reloadLobby()
     check_gold_tribute(19202812)
     reportReceivedGoldTribute(data)
     #Case 9: Check show data vip theo account
-    changeAcc(account["user1"]["user"],account["user1"]["pass"])
-    changeAcc(account["user0"]["user"],account["user0"]["pass"])
+#   changeAcc(account["user1"]["user"],account["user1"]["pass"])
+#   changeAcc(account["user0"]["user"],account["user0"]["pass"])
     #Case 10: Check show pop-up gia han vip
     cheatTimeRemain(19202812, 1)
     reloadLobby()
@@ -185,6 +185,7 @@ def DB():
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
 #---------------------------------------------End Report-------------------------------------------------#
+
 
 
 
