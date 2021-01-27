@@ -118,7 +118,7 @@ def CheatCard(wildCard,cardPlay):#ex: WildCard = '2c', cardPlay="ab,2b,3b,4b,5b"
     clear()
 # Action
 def back_to_lobby():
-    btns = [image_vip.back, image_vip.icon_close, image_vip.outroom]
+    btns = [image_vip.outroom, image_vip.icon_close, image_vip.back]
     try:
         for btn in btns:
             if exists(btn):
@@ -390,6 +390,9 @@ def open_vip():
             pocoTag.btnVip.click()
             data["Status"] = "Pass"
             print("Vao thanh cong")
+        else:
+            data["Status"] = "Fail"
+            print("Vao khong thanh cong")
     except:
         data["Status"] = "Fail"
         print("error")
@@ -421,7 +424,6 @@ def check_item():
             data["Check_item"] = "Pass"
             print("List item co ton tai")   
         else:
-            #return True
             data["Check_item"] = "Fail"
             print("List item khong ton tai")
     except:
@@ -532,11 +534,11 @@ def check_buy_gold(idU, pack):
         new_gold = getGold(idU)
         gold_in = new_gold - old_gold
         gold_defaul = pack_gold["gg_play"][pack]
-        if getLevelVip(19202812) == 1:
+        if getLevelVip(idU) == 1:
             gold_conf = gold_defaul + gold_defaul*30/100
-        elif getLevelVip(19202812) == 2:
+        elif getLevelVip(idU) == 2:
             gold_conf = gold_defaul + gold_defaul*50/100
-        elif getLevelVip(19202812) == 3:
+        elif getLevelVip(idU) == 3:
             gold_conf = gold_defaul*2
         else:
             gold_conf = gold_defaul
@@ -556,11 +558,11 @@ def check_gold_tribute(idU):
             time.sleep(1)
             new_gold = getGold(idU)
             gold_in = new_gold - old_gold
-            if getLevelVip(19202812) == 1:
+            if getLevelVip(idU) == 1:
                 gold_conf = vip_pack["vip.pack_1"]["dailyTribute"]
-            elif getLevelVip(19202812) == 2:
+            elif getLevelVip(idU) == 2:
                 gold_conf = vip_pack["vip.pack_2"]["dailyTribute"]
-            elif getLevelVip(19202812) == 3:
+            elif getLevelVip(idU) == 3:
                 gold_conf = vip_pack["vip.pack_3"]["dailyTribute"]
             else:
                 gold_conf = 0
@@ -574,17 +576,38 @@ def check_gold_tribute(idU):
             print("Ko nhan duoc gold tribute")
     except:
         print("Error")
-def checkMoGUIVipGD():
+def back_lobby_from_table():
     try:
-        if exists(image_vip.btn_giahan):
-            data["Show_PopUp_GH"] = "Pass"
+        if exists(image_vip.outroom):
+            touch(image_vip.outroom)
+            time.sleep(1)
+            print("Out ban thanh cong")
+        else:
+            print("Out ban khong thanh cong")
+    except:
+        print("error")
+def checkMoGUIGH():
+    try:
+        if exists(image_vip.btn_giahan):  
             touch(image_vip.btn_giahan)
+            data["Show_PopUp_GH"] = "Pass"
             data["Mo_GUI_Vip"] = "Pass"
+            data["Status"] = "Pass"
             print("Success")
         else:
             data["Show_PopUp_GH"] = "Fail"
             data["Mo_GUI_Vip"] = "Fail"
+            data["Status"] = "Fail"
             print("error")
+    except:
+        print("error")
+def checkMoGUIVip():
+    try:
+        if exists(image_vip.btn_hethan):
+            touch(image_vip.btn_hethan)
+            print("vao GUI vip thanh cong")
+        else:
+            print("Vao GUI vip ko thanh cong")
     except:
         print("error")
 def checkLevelVip():
@@ -601,11 +624,6 @@ def checkLevelVip():
         back_to_lobby()
     except:
         print("error")
-def checkExists(self):
-    try:
-        return self.attr('visible')
-    except :
-        return 0
 #Function WC:---------------------->
     #------------------#
 def beforEvent(user):
@@ -2623,8 +2641,6 @@ def complete_logout_login_24h():
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
 # changeAcc(user["user2"]["user"],user["user2"]["pass"])
-<<<<<<< HEAD
-beforEvent("user0")
+    GuiDeal()
+    beforEvent("user0")
 
-=======
->>>>>>> 0afea7e28a5cb2f53410ea570baab1d68519604e
