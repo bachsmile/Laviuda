@@ -272,7 +272,8 @@ def reportExpiredVip(data):
     report = """
     -----------------------------------------------------------------------------
     Case 8: Check show pop-up gia han va mo GUI Vip
-            Mo GUI Vip  : {0}
+    
+            Check mo GUI Vip  : {0}
             Show pop-up gia han : {1}
             Status check: {2}                                            
                                     Time test: {3}
@@ -282,7 +283,7 @@ def reportExpiredVip(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log = report.format(detail["Mo_GUI_Vip"], detail["Show_PopUp_GH"], detail["Status"], current_time)
-    f = open("log.txt", 'a+')
+    f = open("logVip.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -300,7 +301,8 @@ def reportCheckExpiredTable(data):
     }
     report = """
     -----------------------------------------------------------------------------
-    Case 8: Check show pop-up gia han va mo GUI Vip
+    Case 11: Check het han vip trong ban choi
+    
             Check item  : {0}
             Status check: {1}                                            
                                     Time test: {2}
@@ -310,7 +312,7 @@ def reportCheckExpiredTable(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log = report.format(detail["Check_item"], detail["Status"], current_time)
-    f = open("log.txt", 'a+')
+    f = open("logVip.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
