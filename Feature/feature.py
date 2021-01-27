@@ -88,28 +88,24 @@ def Vip():
     back_to_lobby()
     reportCheckPackVip(data)
     #Case 3: MUA VIP 1
-    checkLevelVip() #check level vip
     cheatTimeRemain(19202812, 0) #cheat non-vip
     reloadLobby()
-    time.sleep(1)
     back_to_lobby()
     check_buy_vip(19202812, "vip.pack_1") #mua vip 1
-    #   back_to_lobby()
-    #   check_item() #check item ngoai ban choi
     to_table()
     check_item() #check item trong ban choi
     back_to_lobby()
-    reportBuyVip(data)
+    reportBuyVip1(data)
     #Case 4: MUA VIP 2
     check_buy_vip(19202812, "vip.pack_2")
     to_table()
     check_item() #check item trong ban choi
     back_to_lobby()
-    reportBuyVip(data)
+    reportBuyVip2(data)
     #Case 5: Mua vip 3
     check_buy_vip(19202812, "vip.pack_3")
-    buy_vip_thap("btnBuyBroze") #check mua vip 1
-    reportBuyVip(data)
+    buy_vip_thap("btnBuySilver") #check mua vip 1
+    reportBuyVip3(data)
     #Case 6: Mua gold trong shop
     check_buy_gold(19202812, "iap.pack_1")
     reportBuyGold(data)
@@ -119,9 +115,10 @@ def Vip():
     #Case 7.1: Check nhan gold support lần 2
     check_gold_support(19202812)
     reportReceivedGoldSupport(data)
+    cheatGold(19202812, 50000)
     #Case 8: Cheat qua ngay nhan gold tribute
     timeWC= {
-    "Y":2020,"M":12,"D":26,"h":12,"m":0,"s":0
+    "Y":2020,"M":12,"D":25,"h":12,"m":0,"s":0
     }
     api_changeTimeServer(convertDayTimeToMili(timeWC))
     reloadLobby()
@@ -206,3 +203,4 @@ def DB():
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
 #---------------------------------------------End Report-------------------------------------------------#
+
