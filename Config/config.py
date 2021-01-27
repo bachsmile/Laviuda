@@ -86,6 +86,89 @@ challenge={
         "mission":"claim",
     }
 }
+# configCase["beforEvent"]["account"]
+# configCase["beforEvent"]["day"]
+# "day"+str(configCase["claimGift"]["day"])
+configCase={
+    "beforEvent":{
+        "day":0,
+        "account":"user0"
+    },
+     "afterEvent":{
+        "day":0,
+        "account":"user1"
+    },
+     "day1":{
+        "day":1,
+        "account":"user1"
+    },
+     "claimGift":{
+        "day":1,
+        "account":"user1"
+    },
+     "day2":{
+        "day":2,
+        "account":"user1"
+    },
+     "noClaimGift":{
+        "day":2,
+        "account":"user1"
+    },
+     "CheckChangeAcc":{
+        "day":2,
+        "account":"user2"
+    },
+     "missionPassDayInTable":{
+        "day":2,
+        "account":"user2"
+    },
+     "autoClaimGift":{
+        "day":2,
+        "account":"user2"
+    },
+    
+     "day3":{
+        "day":3,
+        "account":"user2"
+    },
+    
+     "missionPassDayOpenGui":{
+        "day":3,
+        "account":"user2"
+    },
+    
+     "passClaimGift":{
+        "day":2,
+        "account":"user1"
+    },
+    
+     "day4":{
+        "day":4,
+        "account":"user1"
+    },
+    
+     "UpdateProgressMissionFull":{
+        "day":4,
+        "account":"user1"
+    },
+     "GuiDeal":{
+        "day":4,
+        "account":"user1"
+    },
+     "day7":{
+        "day":7,
+        "account":"user1",
+        "account2":"user3"
+    },
+     "endEvent":{
+        "day":8,
+        "account":"user2"
+    },
+    
+}
+
+print("day"+str(configCase["autoClaimGift"]["day"]))
+print(configCase["passClaimGift"]["day"])
 challengePlay={
     "win":{
         "data":{
@@ -298,3 +381,5 @@ account = {
     }
 }
 gold_support = 30000
+
+

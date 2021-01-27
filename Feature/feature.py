@@ -32,28 +32,28 @@ poco = CocosJsPoco()
 #------------------------------------------WC------------------------------------------------#
 # WC--------------------------->
 def WC():
-#     beforEvent("user0")
-#     afterEvent("user1")
-#     day1("user1")
-#     claimGift("day1","user1")
-#     day2("user1")
-#     noClaimGift("day2","user1")
-#     CheckChangeAcc(1,"user2") #1 -> day 1
-#     missionPassDayInTable(2,"user2")
-#     autoClaimGift("day2")
-#     day3("user2")
-#     missionPassDayOpenGui(3,"user2")
-#     passClaimGift(2,"user1")
-#     day4("user1")
-#     UpdateProgressMissionFull("day4","user1")
-# #     checkDisconect()
-# #     day5()
-#     GuiDeal("user1")
-# #     day6()
-#     day7("user1","user3")
-#     endEvent("day7","user2")
+    beforEvent(configCase["beforEvent"]["account"])
+    afterEvent(configCase["afterEvent"]["account"])
+    day1(configCase["day1"]["account"])
+    claimGift("day"+str(configCase["claimGift"]["day"]),configCase["claimGift"]["account"])
+    day2(configCase["day2"]["account"])
+    noClaimGift("day"+str(configCase["noClaimGift"]["day"]),configCase["noClaimGift"]["account"])
+    CheckChangeAcc(configCase["CheckChangeAcc"]["day"]-1,configCase["CheckChangeAcc"]["account"]) #1 -> day 1
+    missionPassDayInTable(configCase["missionPassDayInTable"]["day"],configCase["missionPassDayInTable"]["account"])
+    autoClaimGift("day"+str(configCase["autoClaimGift"]["day"]))
+    day3(configCase["day3"]["account"])
+    missionPassDayOpenGui(configCase["missionPassDayOpenGui"]["day"],configCase["missionPassDayOpenGui"]["account"])
+    passClaimGift(configCase["passClaimGift"]["day"],configCase["passClaimGift"]["account"])
+    day4(configCase["day4"]["account"])
+    UpdateProgressMissionFull("day"+str(configCase["UpdateProgressMissionFull"]["day"]),configCase["UpdateProgressMissionFull"]["account"])
+#     checkDisconect()
+#     day5()
+    GuiDeal(configCase["GuiDeal"]["account"])
+#     day6()
+    day7(configCase["day7"]["account"],configCase["day7"]["account2"])
+    endEvent("day"+str(configCase["endEvent"]["day"]-1),configCase["endEvent"]["account"])
 #------------------------------------------WC------------------------------------------------#
-WC()
+# WC()
 #------------------------------------------VIP-----------------------------------------------#
 def Vip():
     clearReportVip()
@@ -185,6 +185,7 @@ def DB():
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
 #---------------------------------------------End Report-------------------------------------------------#
+
 
 
 
