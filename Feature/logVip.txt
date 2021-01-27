@@ -1,0 +1,14 @@
+
+    -----------------------------------------------------------------------------
+    Case5: Check mua vip kim cuong
+    
+    
+            Check gold nhan duoc : Pass
+            Check item           : Fail
+            check mua vip thap   : Pass
+                                    
+                                    
+                                    Time test: 17:39:32
+                                    Reporter: VyHN
+    -----------------------------------------------------------------------------
+    

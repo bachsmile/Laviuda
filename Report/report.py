@@ -114,17 +114,15 @@ def reportCheckPackVip(data):
 data = {
     "Status" : "Fail"
 }
-#Case 3/4/5: Mua Vip
-def reportBuyVip(data):
+#Case 3: Mua Vip bac
+def reportBuyVip1(data):
     detail = {
         "Check_gold" : data["Check_gold"], 
-#         "Check_day"  : data["Check_day"],
         "Check_item" : data["Check_item"]
-#        "Check_low_vip" : data["Check_low_vip"],
     }
     report = """
     -----------------------------------------------------------------------------
-    Case3: Check mua vip
+    Case3: Check mua vip bac
     
     
             Check gold nhan duoc : {0}
@@ -145,10 +143,72 @@ def reportBuyVip(data):
 
 data = {
     "Check_gold" : "Fail",
-#     "Check_day"  : "Fail",
     "Check_item" : "Fail"
-#     "Check_low_vip" : "Fail",
-#     "Status" : "Fail"
+}
+#Case 4: Mua vip vang
+def reportBuyVip2(data):
+    detail = {
+        "Check_gold" : data["Check_gold"], 
+        "Check_item" : data["Check_item"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case4: Check mua vip vang
+    
+    
+            Check gold nhan duoc : {0}
+            Check item           : {1}
+                                    
+                                    
+                                    Time test: {2}
+                                    Reporter: VyHN
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log = report.format(detail["Check_gold"], detail["Check_item"], current_time)
+    f = open("logVip.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+
+data = {
+    "Check_gold" : "Fail",
+    "Check_item" : "Fail"
+}
+#Case 5: Mua vip kim cuong
+def reportBuyVip3(data):
+    detail = {
+        "Check_gold" : data["Check_gold"], 
+        "Check_item" : data["Check_item"],
+        "Check_low_vip" : data["Check_low_vip"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case5: Check mua vip kim cuong
+    
+    
+            Check gold nhan duoc : {0}
+            Check item           : {1}
+            check mua vip thap   : {2}
+                                    
+                                    
+                                    Time test: {3}
+                                    Reporter: VyHN
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log = report.format(detail["Check_gold"], detail["Check_item"], detail["Check_low_vip"], current_time)
+    f = open("logVip.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+
+data = {
+    "Check_gold" : "Fail",
+    "Check_item" : "Fail",
+    "Check_low_vip" : "Fail"
 }
 #Case 6: Mua gold trong shop
 def reportBuyGold(data):
@@ -1143,6 +1203,7 @@ def reportdailybonus(data):
 
 
 print(1600==1600.0)
+
 
 
 

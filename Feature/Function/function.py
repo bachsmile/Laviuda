@@ -118,7 +118,7 @@ def CheatCard(wildCard,cardPlay):#ex: WildCard = '2c', cardPlay="ab,2b,3b,4b,5b"
     clear()
 # Action
 def back_to_lobby():
-    btns = [image_vip.outroom, image_vip.icon_close, image_vip.back]
+    btns = [image_vip.outroom, image_vip.icon_close, image_vip.back, image_vip.close]
     try:
         for btn in btns:
             if exists(btn):
@@ -451,6 +451,7 @@ def to_table():
         print("Khong thanh cong")
 def buy_vip_thap(pack):
     try:
+        pocoTag.btnVip.click()
         poco(pack).click()
         time.sleep(1)
         touch(image_vip.btn_ok)
@@ -499,6 +500,7 @@ def check_buy_vip(idU, pack):
         print("Error")
 def check_gold_support(idU):
     cheatGoldEmpty(1)
+    time.sleep(1)
     reloadLobby()
     old_gold = getGold(idU)
     try:

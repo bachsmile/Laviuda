@@ -90,6 +90,8 @@ class image_vip:
 
     back = Template(r"tpl1608001910288.png", record_pos=(0.468, -0.201), resolution=(2340, 1079))
     outroom = Template(r"tpl1611718493315.png", record_pos=(0.449, -0.193), resolution=(2340, 1079))
+    close = Template(r"tpl1611741685261.png", record_pos=(0.258, -0.157), resolution=(2340, 1079))
+
     logo_non_vip = Template(r"tpl1609735915140.png", record_pos=(-0.421, 0.194), resolution=(2340, 1079))
     logo_vip_bac = Template(r"tpl1609740849861.png", record_pos=(-0.42, 0.183), resolution=(2340, 1079))
     logo_vip_vang = Template(r"tpl1609740925621.png", record_pos=(-0.422, 0.184), resolution=(2340, 1079))
@@ -115,6 +117,7 @@ class Daily_bonus:
     #acc_gg_ngoc= 
 #------------------------------------------DB------------------------------------------------#
 #---------------------------------------------End script--------------------------------------------------#
+
 
 
 
