@@ -67,6 +67,8 @@ def reportCheckOpenVip(data):
     report = """
     -----------------------------------------------------------------------------
     Case1: Open Vip
+    
+    
             Status check: {0}
                                     
                                     
@@ -93,6 +95,8 @@ def reportCheckPackVip(data):
     report = """
     -----------------------------------------------------------------------------
     Case2: Check Pack Vip
+    
+    
             Status check: {0}
                                     
                                     
@@ -116,11 +120,13 @@ def reportBuyVip(data):
         "Check_gold" : data["Check_gold"], 
 #         "Check_day"  : data["Check_day"],
         "Check_item" : data["Check_item"]
-#         "Check_low_vip" : data["Check_low_vip"],
+#        "Check_low_vip" : data["Check_low_vip"],
     }
     report = """
     -----------------------------------------------------------------------------
     Case3: Check mua vip
+    
+    
             Check gold nhan duoc : {0}
             Check item           : {1}
                                     
@@ -153,6 +159,8 @@ def reportBuyGold(data):
     report = """
     -----------------------------------------------------------------------------
     Case 6: Check mua gold
+    
+    
             Check gold nhan duoc: {0}
             Status check: {1}
                                     
@@ -164,7 +172,7 @@ def reportBuyGold(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log = report.format(detail["Check_gold"], detail["Status"], current_time)
-    f = open("log.txt", 'a+')
+    f = open("logVip.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -176,49 +184,58 @@ data = {
 #Case 7: Nhan gold support
 def reportReceivedGoldSupport(data):
     detail = {
-        "Status"     : data["Status"]
+        "Gold_support"  : data["Gold_support"],
+        "Status"       : data["Status"]
     }
     report = """
     -----------------------------------------------------------------------------
-    Case 7: Check mua gold
-            Status check: {0}                                            
-                                    Time test: {1}
+    Case 7: Check nhan gold support
+    
+    
+            Check nhan duoc gold support: {0}
+            Status check: {1}                                            
+                                    Time test: {2}
                                     Reporter: VyHN
     -----------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log = report.format(detail["Status"], current_time)
-    f = open("log.txt", 'a+')
+    log = report.format(detail["Gold_support"], detail["Status"], current_time)
+    f = open("logVip.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
 
 data = {
+    "Gold_support" : "Fail",
     "Status" : "Fail"
 }
 #Case 8: Nhan gold tribute
 def reportReceivedGoldTribute(data):
     detail = {
+        "Gold_tribute" : data["Gold_tribute"],
         "Status"     : data["Status"]
     }
     report = """
     -----------------------------------------------------------------------------
     Case 8: Check nhan gold tribute
-            Status check: {0}                                            
-                                    Time test: {1}
+    
+            Check gold tribute : {0}
+            Status check: {1}                                            
+                                    Time test: {2}
                                     Reporter: VyHN
     -----------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log = report.format(detail["Status"], current_time)
-    f = open("log.txt", 'a+')
+    log = report.format(detail["Gold_tribute"], detail["Status"], current_time)
+    f = open("logVip.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
 
 data = {
+    "Gold_tribute" : "Fail",
     "Status" : "Fail"
 }
 #Case 9: Check show data vip theo account

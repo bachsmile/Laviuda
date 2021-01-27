@@ -68,13 +68,13 @@ def Vip():
     reportCheckPackVip(data)
     #Case 3: MUA VIP 1
     checkLevelVip() #check level vip
-    api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", ["0"]) #cheat non-vip
+    cheatTimeRemain(19202812, 0) #cheat non-vip
     reloadLobby()
     time.sleep(1)
     back_to_lobby()
     check_buy_vip(19202812, "vip.pack_1") #mua vip 1
-#     back_to_lobby()
-    check_item() #check item ngoai ban choi
+#   back_to_lobby()
+#   check_item() #check item ngoai ban choi
     to_table()
     check_item() #check item trong ban choi
     back_to_lobby()
@@ -85,26 +85,28 @@ def Vip():
     check_item() #check item trong ban choi
     back_to_lobby()
     reportBuyVip(data)
-#     #Case 5: Mua vip 3
-#     check_buy_vip("vip.pack_3")
-#     buy_vip_thap("btnBuyBroze") #check mua vip 1
-#     reportBuyVip(data)
-#     #Case 6: Mua gold trong shop
-#     check_buy_gold("19202812", "ipa.pack_1")
-#     reportBuyGold(data)
-#     #Case 7: Check nhan gold support
-#     check_gold_support()
-#     back_to_lobby()
-#     reportReceivedGoldSupport(data)
-#     #Case 8: Cheat qua ngay nhan gold tribute
-#     timeWC= {
-#     "Y":2021,"M":1,"D":13,"h":7,"m":0,"s":0
-#     }
-#     api_changeTimeServer(convertDayTimeToMili(timeWC))
-#     reloadLobby()
-#     check_gold_tribute()
-#     reportReceivedGoldTribute(data)
-#     #Case 9: Check show data vip theo account
+    #Case 5: Mua vip 3
+    check_buy_vip(19202812, "vip.pack_3")
+    buy_vip_thap("btnBuyBroze") #check mua vip 1
+    reportBuyVip(data)
+    #Case 6: Mua gold trong shop
+    check_buy_gold(19202812, "iap.pack_1")
+    reportBuyGold(data)
+    #Case 7: Check nhan gold support
+    check_gold_support(19202812)
+    reportReceivedGoldSupport(data)
+    #Case 7.1: Check nhan gold support lần 2
+    check_gold_support(19202812)
+    reportReceivedGoldSupport(data)
+    #Case 8: Cheat qua ngay nhan gold tribute
+    timeWC= {
+    "Y":2021,"M":1,"D":2,"h":12,"m":0,"s":0
+    }
+    api_changeTimeServer(convertDayTimeToMili(timeWC))
+    reloadLobby()
+    check_gold_tribute(19202812)
+    reportReceivedGoldTribute(data)
+    #Case 9: Check show data vip theo account
 #     changeAcc(userN,passW)
 #     #Case 10: Check gia han vip
 #     cheatTimeRemain(UserID,day)
@@ -123,7 +125,7 @@ def Vip():
 #     checkMoGUIVipGD()
 #     cheat_buy_vip("vip.pack_1")
 #     reportBuyVip(data)
-# Vip()
+Vip()
 #------------------------------------------VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
 def DB():
