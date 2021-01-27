@@ -410,7 +410,7 @@ def reportDay1(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log=report.format( detail["Tab"], detail["Mission"],current_time)
-    f = open("log.txt", 'w+')
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -837,7 +837,7 @@ def reportUpdateProgressMissionFull(data):
     report = """
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Claim gift finished mission 
+    CASE: Update Progress Mission Full
             
             Update progress full:                                           {0}
             
@@ -903,7 +903,7 @@ def reportWin(data):
             
             khong du gold click btn play show noti khong du gold:             {0}
             
-            Du gold click btn play vào bàn:                                   {1}    
+            Du gold click btn play vao ban:                                   {1}    
             
             Auto Show progess bar:                                            {2}    
             
@@ -1138,6 +1138,7 @@ def reportdailybonus(data):
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------#
+
 
 
 

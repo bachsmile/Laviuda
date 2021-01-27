@@ -155,7 +155,7 @@ cardCheat={
     },
     "lose":{
         "card":"2c",
-        "set":"3t,2b,7r,9b,10c"
+        "set":"3t,2b,7r,9b,9c"
     },
 }
 #deal
@@ -308,3 +308,4 @@ def abc():
     else:
         gold_conf = pack_gold["gg_play"][pack]*2
     print(gold_conf)
+

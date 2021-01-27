@@ -1,10 +1,12 @@
 
     -----------------------------------------------------------------------------
-    Case 8: Check nhan gold tribute
+    Case1: Open Vip
     
-            Check gold tribute : Pass
-            Status check: Pass                                            
-                                    Time test: 17:17:17
+    
+            Status check: Pass
+                                    
+                                    
+                                    Time test: 12:59:19
                                     Reporter: VyHN
     -----------------------------------------------------------------------------
     

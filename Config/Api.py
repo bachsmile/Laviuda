@@ -7,7 +7,7 @@ HTTPS_PROXY = "https://172.28.103.34:3128"
 # from test.Autotest.Lavuavi.Function.Cheat.Cheat.api import *
 #--------------------------------------------#
 # Lấy access token mới mỗi lần dùng tool cheat
-ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZlMWJmZTRkLTBhYTAtNGRjZS1hYjM3LTk1NTdmNTc2YTBkNyIsIm5hbWUiOiJCw6FjaC4gVHLhuqduIFh1w6JuIiwiZW1haWwiOiJiYWNodHhAdm5nLmNvbS52biIsIm9pZCI6IjE5ZDMyODgxLTY4ZmItNGMzMS04NzVkLWE0ZmQwMzEzN2FjMyIsImFkZHJlc3MiOiIyNy42NS4xOTYuNzMiLCJleHBpcmVkIjoxNjExNzI3MjkxNTM5LCJ0eXBlIjoiYXp1cmUiLCJ1c2VybmFtZSI6ImJhY2h0eEB2bmcuY29tLnZuIiwiaWF0IjoxNjExNjM5NTg2LCJleHAiOjE2MTE3MjU5ODZ9.EZ_Oahv5GlC-NIJnGEGdym01oLxJjjIOkJDhQoL0kkA"
+ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyYWYzNDhhLWU0YjUtNGM0Yy1iZWI4LTE3YjA3ZTA1Zjc3NyIsIm5hbWUiOiJCw6FjaC4gVHLhuqduIFh1w6JuIiwiZW1haWwiOiJiYWNodHhAdm5nLmNvbS52biIsIm9pZCI6IjE5ZDMyODgxLTY4ZmItNGMzMS04NzVkLWE0ZmQwMzEzN2FjMyIsImFkZHJlc3MiOiIxLjUzLjI1NS4xNDQiLCJleHBpcmVkIjoxNjExODEwMTY1NDg2LCJ0eXBlIjoiYXp1cmUiLCJ1c2VybmFtZSI6ImJhY2h0eEB2bmcuY29tLnZuIiwiaWF0IjoxNjExNzI3MzM4LCJleHAiOjE2MTE4MTM3Mzh9.2dl1VMSmuZy5InMbOZ46jEGdsdZo_8Yt8eeaqvEObpI"
 SERVER_HOST = "http://49.213.81.43:10021"
 BASE_URL = SERVER_HOST + "/api/"
 proxyDict = {
@@ -184,3 +184,4 @@ def getModel(userId,modelName):
 # api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", ["0"])
 # api_postDoFunction("19202812", "CHEAT_PAYMENT_VIP", ["vip.pack_1"])
 # api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", ["0"])
+
