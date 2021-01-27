@@ -48,7 +48,7 @@ def WC():
 #     UpdateProgressMissionFull("day4","user1")
 # #     checkDisconect()
 # #     day5()
-    GuiDeal("user1")
+#     GuiDeal("user1")
 # #     day6()
 #     day7("user1","user3")
 #     endEvent("day7","user2")
