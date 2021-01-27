@@ -1128,7 +1128,7 @@ def day6():
     reportDay3(dataReportConfig)
     #------------------------#
     checkMission("day3")
-def day7(user,user1):
+def day7(users,user1):
     resetDataReportConfig()
     claimAll()
     closeAllEvent()
@@ -1167,7 +1167,7 @@ def day7(user,user1):
     closeDealSpec1()
     #check auto show event
     #check gold init
-    goldInit=getGold(user[user]["id"])
+    goldInit=getGold(user[users]["id"])
     if CheckGUIEvent():
         dataReportConfig['GuiEvent']="Pass"
     else:
@@ -1182,7 +1182,7 @@ def day7(user,user1):
 #     closeEvent()
     clickClaim()
     #check update gold
-    goldAfter=getGold(user[user]["id"])
+    goldAfter=getGold(user[users]["id"])
     if checkUpdateGold(goldClaim,goldInit,goldAfter):
         dataReportConfig['UpdateGold']="Pass"
     else:
@@ -1680,11 +1680,8 @@ def checkDisconect():
 def GuiDeal(users):
     claimAll()
     closeAllEvent()
-#     if  changeAcc(user["user1"]["user"],user["user1"]["pass"]):
-#         dataReportConfig['Login']="Fail"
-#     else:
-#         dataReportConfig['Login']="Pass"
-    reloadLobby()
+    changeAcc(user[users]["user"],user[users]["pass"])
+    claimAll()
     closeDealSpec()
     if  CheckGUIEvent() :
         dataReportConfig['GuiEvent']="Fail"
@@ -1706,7 +1703,7 @@ def GuiDeal(users):
     else:
         dataReportConfig['BtnBuyWC']="Fail"
     closeEvent()
-    gold2=getGold(user[user]["id"])
+    gold2=getGold(user[users]["id"])
     clickGuiDeal()
     goldConf=0
     if waitNoLimit(imageWC.imageOfferDeal,2):

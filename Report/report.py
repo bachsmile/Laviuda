@@ -1029,7 +1029,6 @@ def reportEndEvent(data):
 def reportDeal(data):
     print(data)
     detail = {
-      "Login":data["Login"],
       "GuiEvent": data["GuiEvent"],
       "GuiEDeal": data["GuiEDeal"],
       "BtnBuyWC": data["BtnBuyWC"],
@@ -1141,6 +1140,6 @@ def reportdailybonus(data):
 
 
 
-
+print(1600==1600.0)
 
 
