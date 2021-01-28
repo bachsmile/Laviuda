@@ -9,40 +9,6 @@ import json
 poco = CocosJsPoco()
 #----------------------------------------------------WC----------------------------------------------------------------------#
 #config
-#id
-# user["user0"]["user"]
-user={
-    "user0":{
-        "id":"20484109",
-        "user":"auto00",
-        "pass":123456      
-    },
-    "user1":{
-        "id":"20484121",
-        "user":"auto01",
-        "pass":123456      
-    },
-    "user2":{
-        "id":'20484133',
-        "user":"auto02",
-        "pass":123456       
-    },
-    "user3":{
-        "id":'20484148',
-        "user":"auto03",
-        "pass":123456       
-    },
-     "user":{
-        "id":'20484164',
-        "user":"autotest",
-        "pass":123456       
-    },
-}
-
-timeWC={
-    "start":{"Y":2020,"M":12,"D":29,"h":7,"m":0,"s":0},
-    "end":{"Y":2021,"M":1,"D":5,"h":7,"m":0,"s":0}
-}
 def datetoMili(day):
     return day*86400000
 def housToMili(hous):
@@ -56,11 +22,45 @@ def convertDayTimeToMili(time):
     milliseconds = int(round(dt.timestamp() * 1000))
     print(milliseconds)
     return milliseconds
-# print(convertDayTimeToMili(timeWC["start"]))
 def convertSecondstoDateTime(milliseconds):
     seconds=milliseconds/1000
     timestamp = datetime.fromtimestamp(seconds)
     return timestamp
+#Time Start end End WC
+timeWC={
+    "start":{"Y":2020,"M":12,"D":29,"h":7,"m":0,"s":0},
+    "end":{"Y":2021,"M":1,"D":5,"h":7,"m":0,"s":0}
+}
+#id
+# user["user0"]["user"]
+user={
+    "user0":{
+        "id":"20484109",
+        "user":"auto00",
+        "pass":123456      
+    },
+    "user1":{
+        "id":"20510792",
+        "user":"gsn001",
+        "pass":123456      
+    },
+    "user2":{
+        "id":'200510812',
+        "user":"gsn002",
+        "pass":123456       
+    },
+    "user3":{
+        "id":'20510826',
+        "user":"gsn003",
+        "pass":123456       
+    },
+     "user":{
+        "id":'20484164',
+        "user":"autotest",
+        "pass":123456       
+    },
+}
+
 #Feature
 #chalenge
 challenge={
@@ -167,8 +167,8 @@ configCase={
     
 }
 
-print("day"+str(configCase["autoClaimGift"]["day"]))
-print(configCase["passClaimGift"]["day"])
+# print("day"+str(configCase["autoClaimGift"]["day"]))
+# print(configCase["passClaimGift"]["day"])
 challengePlay={
     "win":{
         "data":{

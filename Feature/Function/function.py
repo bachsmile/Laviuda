@@ -12,6 +12,7 @@ import sys
 from airtest.core.api import *
 from airtest.cli.parser import cli_setup
 from poco.drivers.cocosjs import CocosJsPoco
+from poco.agent import PocoAgent
 #--------------End Import Lib------------------------------#
 #--------------Import FILE---------------------------------#
 # from Lavuavi.Config.Api import *
@@ -130,6 +131,7 @@ def back_to_lobby():
 def reloadLobby():
     try:
         poco = CocosJsPoco()
+        clear()
         pocoTag.btnSelectTable.click()
 #         back_to_lobby()
         sleep(1)
@@ -139,7 +141,6 @@ def reloadLobby():
             touch(image_vip.back)  
 #         touch(image_vip.back)    
         print('reload lobby')
-        clear()
         return True
     except:
         print('error reload lobby')
@@ -147,23 +148,25 @@ def reloadLobby():
 def reloadLoby2():
     try:
         poco = CocosJsPoco()
+        clear()
         poco.click([0.04817596456992819, 0.9241753578186035])
         pocoTag.btnHide.click()
-        clear()
     except:
         clear()
 def closeEvent():
     try:
+        clear()
         if waitNolimitPoco(pocoTag.btnClose,2):
-            pocoTag.btnClose.click()
-            clear()
+            pocoTag.btnClose.click()  
     except:
         print("error close ev")
 def closeAllEvent():
+    clear()
     while waitNolimitPoco(pocoTag.btnClose,2):
         pocoTag.btnClose.click()
         clear()
 def claimAll():
+    clear()
     while waitNolimitPoco(poco("btnClaim"),2):
         pocoTag.btnClaim.click()
         clear()
@@ -202,6 +205,7 @@ def changeAcc(userN,passW):
 def joinTable():
     try:
         sleep(2)
+        clear()
         poco = CocosJsPoco()
 #         pocoTag.btnPlay.click()
         pocoTag.btnSelectTable.click()
@@ -729,7 +733,7 @@ def afterEvent(users):
                     "m": timeWC["start"]['m'],
                     "s": timeWC["start"]['s']
                 }
-                timeNow=convertDayTimeToMili(dayS1) -housToMili(1)+ minutetoMili(59)
+                timeNow=convertDayTimeToMili(dayS1) -housToMili(1)+ minutetoMili(59)+secToMili(20)
                 timeCheat = api_changeTimeServer(timeNow)
                 dataReportConfig["TimeCheat"]=convertSecondstoDateTime(timeNow)
                 if timeCheat ==200:
@@ -748,7 +752,8 @@ def afterEvent(users):
                     closeAllEvent()
                     CheckLobby()
                     joinTable()
-                    if coutDownTimeIntable():
+                    sleep(20)
+                    if checkProgress():
                         dataReportConfig['ShowProg']="Pass"
                     else:
                         dataReportConfig['ShowProg']="Fail"
@@ -786,7 +791,7 @@ def afterEvent(users):
                     "m": timeWC["start"]['m'],
                     "s": timeWC["start"]['s']
                 }
-                timeNow=convertDayTimeToMili(dayS1) -housToMili(1)+ minutetoMili(59)
+                timeNow=convertDayTimeToMili(dayS1) -housToMili(1)+ minutetoMili(59)+secToMili(20)
                 timeCheat = api_changeTimeServer(timeNow)
                 dataReportConfig["TimeCheat1"]=convertSecondstoDateTime(timeNow)
                 if timeCheat ==200:
@@ -809,7 +814,8 @@ def afterEvent(users):
                     #join table wait
                     joinTable()
                     #wait event
-                    if coutDownTimeIntable():
+                    sleep(20)
+                    if checkProgress():
                         dataReportConfig['ShowProg']="Pass"
                     else:
                         dataReportConfig['ShowProg']="Fail"
@@ -851,7 +857,7 @@ def afterEvent(users):
                 "m": timeWC["start"]['m'],
                 "s": timeWC["start"]['s']
             }
-            timeNow=convertDayTimeToMili(dayS1) -housToMili(1)+ minutetoMili(59)
+            timeNow=convertDayTimeToMili(dayS1) -housToMili(1)+ minutetoMili(59)+secToMili(20)
             timeCheat = api_changeTimeServer(timeNow)
             dataReportConfig["TimeCheat1"]=convertSecondstoDateTime(timeNow)
             if timeCheat ==200:
@@ -880,7 +886,8 @@ def afterEvent(users):
                 #join table wait
                 joinTable()
                 #wait event
-                if coutDownTimeIntable():
+                sleep(20)
+                if checkProgress():
                     dataReportConfig['ShowProg']="Pass"
                 else:
                     dataReportConfig['ShowProg']="Fail"
@@ -1576,6 +1583,7 @@ def missionPassDayInTable(day,users):
     closeAllEvent()
     cheatFinishedMision(user[users]["id"],day)
     reloadLobby()
+    sleep(1)
     claimAll()
     closeAllEvent()
     #click btn play
@@ -1690,11 +1698,20 @@ def UpdateProgressMissionFull(day,users):
     #report
     reportUpdateProgressMissionFull(dataReportConfig)
 def checkDisconect():
-    killApp()
-    openApp()
-    sleep(15)
-    checkProgress()
-    clickOutTable()
+    try:
+        killApp()
+        openApp()
+        sleep(20)
+        poco = CocosJsPoco()  
+        clear()
+        poco = CocosJsPoco()
+        claimAll()
+        closeAllEvent()
+        joinTable()
+        checkProgress()
+        clickOutTable()
+    except:
+        print("fail")
 def GuiDeal(users):
     claimAll()
     closeAllEvent()
@@ -2261,6 +2278,7 @@ def checkFinishMission(day):
 def eventWCOpen():
     try:
         poco = CocosJsPoco()
+        clear()
         if waitNolimitPoco(pocoTag.btnMain,5):
             pocoTag.btnMain.click()
             pocoTag.btnMain.invalidate()
@@ -2645,4 +2663,5 @@ def complete_logout_login_24h():
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
 # changeAcc(user["user2"]["user"],user["user2"]["pass"])
-
+CheckChangeAcc(configCase["CheckChangeAcc"]["day"]-1,configCase["CheckChangeAcc"]["account"]) #1 -> day 1       {*}
+missionPassDayInTable(configCase["missionPassDayInTable"]["day"],configCase["missionPassDayInTable"]["account"])
