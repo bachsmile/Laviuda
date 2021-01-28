@@ -119,7 +119,7 @@ def CheatCard(wildCard,cardPlay):#ex: WildCard = '2c', cardPlay="ab,2b,3b,4b,5b"
     clear()
 # Action
 def back_to_lobby():
-    btns = [image_vip.outroom, image_vip.icon_close, image_vip.back]
+    btns = [image_vip.outroom, image_vip.icon_close, image_vip.back, image_vip.close]
     try:
         for btn in btns:
             if exists(btn):
@@ -455,6 +455,7 @@ def to_table():
         print("Khong thanh cong")
 def buy_vip_thap(pack):
     try:
+        pocoTag.btnVip.click()
         poco(pack).click()
         time.sleep(1)
         touch(image_vip.btn_ok)
@@ -503,13 +504,14 @@ def check_buy_vip(idU, pack):
         print("Error")
 def check_gold_support(idU):
     cheatGoldEmpty(1)
+    time.sleep(2)
     reloadLobby()
     old_gold = getGold(idU)
     try:
-        if exists(image_vip.btn_ok):
-            image_vip.btn_ok
+        if exists(image_vip.pop_up_gold_support):
+            touch(image_vip.btn_ok_sp)
+            time.sleep(1)
             new_gold = getGold(idU)
-            print(new_gold)
             gold_in = new_gold - old_gold
             gold_conf = gold_support
             if gold_in == gold_conf:
@@ -525,8 +527,8 @@ def check_gold_support(idU):
 def cheatBuyGold(idU, pack):
     try:
         cheat = api_postDoFunction(idU, "CHEAT_PAYMENT_IAP", [pack])
-        pocoTag.btnClaim.click()
         time.sleep(2)
+        pocoTag.btnClaim.click()
         print("Success")
     except:
         print("Error")
@@ -2663,5 +2665,3 @@ def complete_logout_login_24h():
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
 # changeAcc(user["user2"]["user"],user["user2"]["pass"])
-CheckChangeAcc(configCase["CheckChangeAcc"]["day"]-1,configCase["CheckChangeAcc"]["account"]) #1 -> day 1       {*}
-missionPassDayInTable(configCase["missionPassDayInTable"]["day"],configCase["missionPassDayInTable"]["account"])
