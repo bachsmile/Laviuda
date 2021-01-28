@@ -58,6 +58,7 @@ class image_vip:
     xonuoc = Template(r"tpl1608013651272.png", record_pos=(-0.029, 0.122), resolution=(2340, 1079))
     trung = Template(r"tpl1608013670433.png", record_pos=(0.042, 0.122), resolution=(2340, 1079))
     hoahong = Template(r"tpl1608013711710.png", record_pos=(-0.04, 0.123), resolution=(2340, 1079))
+    hoahong1 = Template(r"tpl1610432749141.png", record_pos=(0.114, 0.123), resolution=(2340, 1079))
     hoavang = Template(r"tpl1608013735462.png", record_pos=(0.033, 0.123), resolution=(2340, 1079))
     sungnuoc = Template(r"tpl1608013753862.png", record_pos=(0.106, 0.122), resolution=(2340, 1079))
     boom = Template(r"tpl1608087183486.png", record_pos=(-0.048, 0.122), resolution=(2340, 1079))
@@ -117,6 +118,7 @@ class Daily_bonus:
     #acc_gg_ngoc= 
 #------------------------------------------DB------------------------------------------------#
 #---------------------------------------------End script--------------------------------------------------#
+
 
 
 

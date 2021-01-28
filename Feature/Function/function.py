@@ -422,7 +422,7 @@ def check_item():
                     time.sleep(2)
                     touch(image_vip.btn_profile)
                 else:
-                    swipe(Template(r"tpl1610432749141.png", record_pos=(0.114, 0.123), resolution=(2340, 1079)), vector=[-0.1399, -0.0097])
+                    swipe(image_vip.hoahong1, vector=[-0.1399, -0.0097])
                     time.sleep(2)
                     touch(item)
             data["Check_item"] = "Pass"
@@ -436,7 +436,7 @@ def check_item3():
     try:
         touch(image_vip.btn_profile)
         if exists(image_vip.list_item):
-            swipe(Template(r"tpl1610432749141.png", record_pos=(0.114, 0.123), resolution=(2340, 1079)), vector=[-0.1399, -0.0097])
+            swipe(image_vip.hoahong1, vector=[-0.1399, -0.0097])
             time.sleep(2)
             touch(image_vip.boom)
         print("success")
@@ -2665,3 +2665,6 @@ def complete_logout_login_24h():
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
 # changeAcc(user["user2"]["user"],user["user2"]["pass"])
+    GuiDeal()
+    beforEvent("user0")
+    
