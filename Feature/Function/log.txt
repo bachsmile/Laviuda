@@ -32,3 +32,209 @@
                                     Reporter: VyHN
     -----------------------------------------------------------------------------
     
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Day 1
+    
+            Tab Day1 enable:                        Pass    Nhiem vu Day 1 show:                 Pass
+            
+                                                                 time test: 09:56:49
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Qua ngay khi dang trong ban
+            
+            Update nhiem vu ngay moi                Pass
+
+            
+            
+                                                                time test: 10:16:21
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test btn sau thoi gian show event
+    
+            Time :                                  2020-12-29 06:59:30    Status cheat time 1p befor event: Pass
+            
+            Click btn befor event show noti:        Fail
+            
+            Wait coutdown:                          Fail
+            
+            Click btn after event:                  Pass
+            
+            Show btn join event:                    Pass
+            
+            Time:                                   2020-12-29 06:59:00    Status cheat time 1p befor event: Pass
+            
+            Show Progess:                           Pass
+            
+            
+                                                                time test: 10:23:37
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test btn sau thoi gian show event
+    
+            Time :                                  2020-12-29 06:59:30    Status cheat time 1p befor event: Pass
+            
+            Click btn befor event show noti:        Fail
+            
+            Wait coutdown:                          Fail
+            
+            Click btn after event:                  Pass
+            
+            Show btn join event:                    Pass
+            
+            Time:                                   2020-12-29 06:59:00    Status cheat time 1p befor event: Pass
+            
+            Show Progess:                           Pass
+            
+            
+                                                                time test: 10:29:02
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test btn sau thoi gian show event
+    
+            Time :                                  2020-12-29 06:59:30    Status cheat time 1p befor event: Pass
+            
+            Click btn befor event show noti:        Fail
+            
+            Wait coutdown:                          Fail
+            
+            Click btn after event:                  Pass
+            
+            Show btn join event:                    Pass
+            
+            Time:                                   2020-12-29 06:59:00    Status cheat time 1p befor event: Pass
+            
+            Show Progess:                           Pass
+            
+            
+                                                                time test: 10:36:16
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Day 1
+    
+            Tab Day1 enable:                        Fail    Nhiem vu Day 1 show:                 Fail
+            
+                                                                 time test: 10:36:38
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test btn sau thoi gian show event
+    
+            Time :                                  2020-12-29 06:59:30    Status cheat time 1p befor event: Pass
+            
+            Click btn befor event show noti:        Fail
+            
+            Wait coutdown:                          Fail
+            
+            Click btn after event:                  Pass
+            
+            Show btn join event:                    Pass
+            
+            Time:                                   2020-12-29 06:59:00    Status cheat time 1p befor event: Pass
+            
+            Show Progess:                           Pass
+            
+            
+                                                                time test: 10:41:34
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Day 1
+    
+            Tab Day1 enable:                        Pass    Nhiem vu Day 1 show:                 Pass
+            
+                                                                 time test: 10:41:56
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test btn sau thoi gian show event
+    
+            Time :                                  2020-12-29 06:59:30    Status cheat time 1p befor event: Pass
+            
+            Click btn befor event show noti:        Fail
+            
+            Wait coutdown:                          Fail
+            
+            Click btn after event:                  Pass
+            
+            Show btn join event:                    Pass
+            
+            Time:                                   2020-12-29 06:59:20    Status cheat time 1p befor event: Pass
+            
+            Show Progess:                           Pass
+            
+            
+                                                                time test: 10:50:59
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Day 1
+    
+            Tab Day1 enable:                        Pass    Nhiem vu Day 1 show:                 Pass
+            
+                                                                 time test: 10:51:11
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Exchange1
+    
+            Click btn Play:                         Pass    
+            
+            Add bot:                                Pass
+            
+            Exchange1:                              Pass    
+            
+            Show update progess:                    Pass    
+            
+            Choose Leave table:                     Pass    
+            
+            No update progess bar at end game:      Pass    
+            
+            Leave table:                            Pass
+            
+            
+                                                                time test: 10:53:01
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Check change account
+            
+            Nhiem vu Day1 acc2 khong hoan thanh:    Fail
+            
+            
+            
+                                                                time test: 10:57:30
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Qua ngay khi dang trong ban
+            
+            Update nhiem vu ngay moi                Pass
+
+            
+            
+                                                                time test: 10:59:39
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
