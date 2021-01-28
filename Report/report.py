@@ -747,7 +747,7 @@ def reportAutoClaim(data):
     report = """
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Claim gift finished mission
+    CASE: AutoClaim gift finished mission
     
             Auto show GUI event:                    {0}     
                           
