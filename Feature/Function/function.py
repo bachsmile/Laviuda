@@ -2665,3 +2665,4 @@ def complete_logout_login_24h():
 # changeAcc(user["user2"]["user"],user["user2"]["pass"])
 CheckChangeAcc(configCase["CheckChangeAcc"]["day"]-1,configCase["CheckChangeAcc"]["account"]) #1 -> day 1       {*}
 missionPassDayInTable(configCase["missionPassDayInTable"]["day"],configCase["missionPassDayInTable"]["account"])
+autoClaimGift("day"+str(configCase["autoClaimGift"]["day"]))

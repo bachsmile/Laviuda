@@ -32,12 +32,12 @@ poco = CocosJsPoco()
 #------------------------------------------WC------------------------------------------------#
 # WC--------------------------->
 def WC():
-    beforEvent(configCase["beforEvent"]["account"])
-    afterEvent(configCase["afterEvent"]["account"])
-    day1(configCase["day1"]["account"])
-    claimGift("day"+str(configCase["claimGift"]["day"]),configCase["claimGift"]["account"])
-    day2(configCase["day2"]["account"])
-    noClaimGift("day"+str(configCase["noClaimGift"]["day"]),configCase["noClaimGift"]["account"])
+#     beforEvent(configCase["beforEvent"]["account"])
+#     afterEvent(configCase["afterEvent"]["account"])
+#     day1(configCase["day1"]["account"])
+#     claimGift("day"+str(configCase["claimGift"]["day"]),configCase["claimGift"]["account"])
+#     day2(configCase["day2"]["account"])
+#     noClaimGift("day"+str(configCase["noClaimGift"]["day"]),configCase["noClaimGift"]["account"])
     CheckChangeAcc(configCase["CheckChangeAcc"]["day"]-1,configCase["CheckChangeAcc"]["account"]) #1 -> day 1       {*}
     missionPassDayInTable(configCase["missionPassDayInTable"]["day"],configCase["missionPassDayInTable"]["account"])
     autoClaimGift("day"+str(configCase["autoClaimGift"]["day"]))
