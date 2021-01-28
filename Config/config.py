@@ -360,7 +360,6 @@ vip_pack = {
 
 pack_gold = {
     "gg_play" : {
-            "id": 2,
             "iap.pack_1":2000000,
             "iap.pack_2":6500000,
             "iap.pack_3":15000000,
@@ -381,6 +380,7 @@ account = {
     }
 }
 gold_support = 30000
+
 
 
 
