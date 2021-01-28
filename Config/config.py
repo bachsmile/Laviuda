@@ -45,7 +45,7 @@ user={
         "pass":123456      
     },
     "user2":{
-        "id":'200510812',
+        "id":'20510812',
         "user":"gsn002",
         "pass":123456       
     },
@@ -238,7 +238,7 @@ cardCheat={
     },
     "lose":{
         "card":"2c",
-        "set":"3t,2b,7r,9b,9c"
+        "set":"3t,2b,7r,9b,qc"
     },
 }
 #deal
