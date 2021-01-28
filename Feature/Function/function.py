@@ -500,7 +500,7 @@ def check_buy_vip(idU, pack):
         print("Error")
 def check_gold_support(idU):
     cheatGoldEmpty(1)
-    time.sleep(1)
+    time.sleep(2)
     reloadLobby()
     old_gold = getGold(idU)
     try:
@@ -2650,3 +2650,4 @@ def complete_logout_login_24h():
     GuiDeal()
     beforEvent("user0")
     
+
