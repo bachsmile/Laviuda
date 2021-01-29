@@ -1080,9 +1080,12 @@ def day5(users):
         dataReportConfig["Update"]="Fail"
     #report
     reportDay5(dataReportConfig)
-def day6():
+def day6(users):
         #resetDataReport
     resetDataReportConfig()
+    sleep(2)
+    claimAll() 
+    closeAllEvent()
     #------------------------#
     #cheat time pass 1 ngay-> 30/11/2020 11:11:11 -> 1606709471000
     timeCheat = api_changeTimeServer(1605051600000)
@@ -1099,54 +1102,34 @@ def day6():
     timeCheat = api_changeTimeServer(timeNow)
     dataReportConfig["TimeCheat"]=convertSecondstoDateTime(timeNow)
     #reload lobby
+    cheatGold(user[users]["id"],1000000)
     reloadLobby()
+    claimAll() 
+    closeAllEvent()
     #click btn play
     joinTable()
+    prog1=checkProgressCurrent()
     #cheat theo nhiem vu
     #add bot
     addBot()
     #Click knock
-    if clickKnock():
-        data1["Knock"]="Pass"
-    else:
-        data1["Knock"]="Fail"
+    clickKnock()
     #wait end game
     waitEndGame()
+    prog2=checkProgressCurrent()
     #check update progess
-    if checkUpdateProgessTable():
-        data1["Update"]="Pass"
+    if checkUpdateProgessTable(prog1,prog2):
+        dataReportConfig["Update"]="Pass"
     else:
-        data1["Update"]="Fail"
-    #waitplaygame
-    sleep(10)
-    #cheat theo nhiem vu
-    #Click knock
-    if clickKnock():
-        data1["Knock"]="Pass"
-    else:
-        data1["Knock"]="Fail"
+        dataReportConfig["Update"]="Fail"
     #chon thoat table
     clickOutTable()
     #wait end game
     waitEndGame()
-    #check update progess
-    if checkUpdateProgessTable():
-        data1["Update"]="Pass"
-    else:
-        data1["Update"]="Fail"
-       #check lobby
-    if CheckLobby():
-        data1["Leave"]="Pass"
-    else:
-        data1["Leave"]="Fail"
     #------------------------#
     #report
-    reportDay6(data1)
+    reportDay6(dataReportConfig)
     #------------------------#
-    #report
-    reportDay3(dataReportConfig)
-    #------------------------#
-    checkMission("day3")
 def day7(users,user1):
     resetDataReportConfig()
     sleep(2)

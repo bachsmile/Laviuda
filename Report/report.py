@@ -590,41 +590,28 @@ def reportDay5(data):
 #Day6
 def reportDay6(data):
     detail = {
-      "CheatTime": data["CheatTime"],
       "TimeCheat": data["TimeCheat"],
-      "Reload": data["Reload"],
-      "OpenGUI":data["OpenGUI"],
-      "BtnPlay":data["BtnPlay"],
-      "CheatCard": data["CheatCard"],
-      "Update":data["Update"],
-      "Leave":data["Leave"],
+      "Update":data["Update"]
     }
     report = """
     -----------------------------------------------------------------------------------------------------------
     
     CASE: Test mission Day 6
     
-            Cheat time qua ngay:                    {0}    Time cheat:                          {1}
-            
-            Reload lobby:                           {2}    
-            
-            Open GUI event:                         {3}    Click btn play Join table:           {4}
-            
-            Cheat card Mission:                     {5}   
-            
-            Show update progess:                    {6}
-            
-            Leave table:                            {7}
+            Time cheat:                             {0}
+                      
+            Show update progess:                    {1}
             
             
-                                                                time test: {8}
+            
+                                                                time test: {2}
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log=report.format( detail["CheatTime"], detail["TimeCheat"], detail["Reload"], detail["OpenGUI"], detail["BtnPlay"], detail["CheatCard"], detail["Update"], detail["Leave"], current_time)
-    f = open("log.txt", 'w+')
+    log=report.format(detail["TimeCheat"], detail["Update"], current_time)
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -1195,9 +1182,6 @@ def reportdailybonus(data):
 #--------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------#
 
-
-
-print(1600==1600.0)
 
 
 
