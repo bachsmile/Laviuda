@@ -45,13 +45,13 @@ user={
         "pass":123456      
     },
     "user2":{
-        "id":'20510812',
-        "user":"gsn002",
+        "id":'20532843',
+        "user":"gsn005",
         "pass":123456       
     },
     "user3":{
-        "id":'20510826',
-        "user":"gsn003",
+        "id":'20532884',
+        "user":"gsn006",
         "pass":123456       
     },
      "user":{
@@ -77,10 +77,10 @@ challenge={
         "mission":"win",
     },
      "day5":{
-         "mission":"win",       
+         "mission":"full",       
     },
      "day6":{
-         "mission":"final",    
+         "mission":"play",    
     },
      "day7":{
         "mission":"claim",
@@ -179,12 +179,12 @@ challengePlay={
                 "type":"win"
                 },
     },
-    "final":{
+    "full":{
         "data":{
-            "detailMission":poco(text="Jugar "),
+            "detailMission":poco(text="Termina el juego con "),
             "totalX":4,
             "tacos":3,
-            "gold":120000
+            "gold":150000
         }    
     },
     "knock":{
@@ -239,6 +239,10 @@ cardCheat={
     "lose":{
         "card":"2c",
         "set":"3t,2b,7r,9b,qc"
+    },
+    "full":{
+        "card":"2c",
+        "set":"3t,3b,3r,ab,ac"
     },
 }
 #deal
