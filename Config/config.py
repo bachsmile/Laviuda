@@ -55,8 +55,8 @@ user={
         "pass":123456       
     },
      "user":{
-        "id":'20484164',
-        "user":"autotest",
+        "id":'20538919',
+        "user":"zpstest",
         "pass":123456       
     },
 }
@@ -384,7 +384,5 @@ account = {
     }
 }
 gold_support = 30000
-
-
 
 

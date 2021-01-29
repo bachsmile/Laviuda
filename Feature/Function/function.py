@@ -349,7 +349,6 @@ def waitEndGame2():
         return False
 def fortmatGold(gold):
     if gold/pow(10,9)>=1:
-        print("haha")
         if (gold % pow(10, 9))//pow(10,8)>0:
             return (str(gold // pow(10, 9)) + "." + str((gold % pow(10, 9))//pow(10,8)) + "B")
         else:
@@ -369,7 +368,8 @@ def fortmatGold(gold):
 def checkGold():
 #     numGold = pocoTag.lbGold.attr("text")
     numGold = poco(name="lbGold").attr("text")
-    return pipeSubGold(numGold)
+#     return pipeSubGold(numGold)
+    return numGold
 def convertDayTimeToMili(time):
     dt = datetime(time['Y'],time['M'],time['D'],time['h'],time['m'],time['s'])
     milliseconds = int(round(dt.timestamp() * 1000))
@@ -1941,28 +1941,28 @@ def lose1():
     except:
         print("error win")
 def full1(day):
-     try:
-        claimAll()
-        closeAllEvent()
-        clear()
-        cheatGold(user["user1"]["id"],1000000)
-        reloadLoby2()
-        claimAll()
-        closeAllEvent()
-        #click btn play
-        joinTable()
-        #cheat cheatPorkerSpecial
-        CheatCard(cardCheat[challengePlay[challenge[day]["mission"]]["data"]["type"]]["card"], cardCheat[challengePlay[challenge[day]["mission"]]["data"]["type"]]["set"])
-        #add bot
-        addBot()
-        #Click knock
-        clickKnock()
-        clickOutTable()
-        #wait end game
-        waitEndGame2()
+    try:
+            claimAll()
+            closeAllEvent()
+            clear()
+            cheatGold(user["user1"]["id"],1000000)
+            reloadLoby2()
+            claimAll()
+            closeAllEvent()
+            #click btn play
+            joinTable()
+            #cheat cheatPorkerSpecial
+            CheatCard(cardCheat[challengePlay[challenge[day]["mission"]]["data"]["type"]]["card"], cardCheat[challengePlay[challenge[day]["mission"]]["data"]["type"]]["set"])
+            #add bot
+            addBot()
+            #Click knock
+            clickKnock()
+            clickOutTable()
+            #wait end game
+            waitEndGame2()
     except:
-        print("error win")
-    #------------------#
+            print("error win")
+    #-- ----------------#
 #check
 def CheckBtnEvent():
     try:
@@ -2038,7 +2038,7 @@ def checkMission2(day):
         return "knock"
     if challenge[day]["mission"]=="exchange1":
         return "exchange1"
-     if challenge[day]["mission"]=="full":
+    if challenge[day]["mission"]=="full":
         return full1(day)
 def checkDisableBtnDeal():
     try:
@@ -2267,17 +2267,19 @@ def checkUpdateGold(gold1, gold2, gold3):
         print(gold3)
         claim= float(gold1)
         update= gold3 - gold2
-        print(claim)
         print(update)
         if update == claim :
-            print("Gold update")
-            return True
+            if fortmatGold(gold3)==checkGold():
+                print("Gold update")
+                return True
+            else:
+                return False
         else:
             print("gold update false")
             return False
     except:
         print("Gold update error")
-        return False
+        return False 
 def checkMissedMission(day):
     try:
         mission="TBNodeDay"+str(day)
@@ -2684,3 +2686,48 @@ def complete_logout_login_24h():
     complete_lobby_24h()
     #20. Log out-> Login lại sau 24h
     complete_logout_login_24h()
+#BT
+def afterBT():
+    try:
+        timeBT={
+            "start":{"Y":2020,"M":11,"D":18,"h":13,"m":0,"s":0},
+            "end":{"Y":2021,"M":1,"D":5,"h":7,"m":0,"s":0}
+        }
+         #Cheat time-------------#02/12/2020 23:59:00 -> 1606928340000
+        timeCheat = api_changeTimeServer(1605051600000)
+    #     timeCheat = api_changeTimeServer(timeC["timeD0"]["mili"])
+        dayS = {
+            "Y": timeBT["start"]['Y'],
+            "M": timeBT["start"]['M'],
+            "D": timeBT["start"]['D'],
+            "h": timeBT["start"]['h'],
+            "m": timeBT["start"]['m'],
+            "s": timeBT["start"]['s']
+        }
+        timeNow=convertDayTimeToMili(dayS) -housToMili(1)+ minutetoMili(59)+secToMili(30)
+        timeCheat = api_changeTimeServer(timeNow)
+        reloadLobby()
+        sleep(2)
+        claimAll()
+        closeAllEvent()
+        eventWCOpen()                  
+        if waitNoLimit(BT.noti,10):
+            print("check noti event")
+    except:
+        print("no check noti event")
+def tut():
+    eventWCOpen()
+    sleep(5)
+    for x in range(2):
+        poco.click([0.94378074490513, 0.875])
+        sleep(10)
+    sleep(2)
+    poco.click([0.9508081517919887, 0.109375])
+    if waitNoLimit(BT.dealBT,2):
+        print("Tut fail")
+    poco.click([0, 1])
+    if waitNolimitPoco(poco("sprChap1"),2):
+        print("Tut fail")
+    poco("btnTut5").click()
+    claimAll()
+    closeAllEvent()     
