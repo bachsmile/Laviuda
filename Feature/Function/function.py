@@ -1768,7 +1768,7 @@ def GuiDeal(users):
     #report
     reportDeal(dataReportConfig)
 def endEvent(day,users):
-    #change Accout 1GuiDeal
+    #change Accout 1
     resetDataReportConfig()
     claimAll()
     closeAllEvent()
