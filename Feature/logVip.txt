@@ -1,20 +1,21 @@
 
     -----------------------------------------------------------------------------
-    Case 8: Check show pop-up gia han va mo GUI Vip
+    Case 11: Check het han vip trong ban choi
     
-            Check mo GUI Vip  : Pass
-            Show pop-up gia han : Pass
-            Status check: Pass                                            
-                                    Time test: 09:44:51
+            Check item  : Pass                                            
+                                    Time test: 13:03:48
                                     Reporter: VyHN
     -----------------------------------------------------------------------------
     
     -----------------------------------------------------------------------------
-    Case 11: Check het han vip trong ban choi
+    Case3: Check mua vip bac
     
-            Check item  : Fail
-            Status check: Pass                                            
-                                    Time test: 09:45:07
+    
+            Check gold nhan duoc : Pass
+            Check item           : Pass
+                                    
+                                    
+                                    Time test: 13:03:54
                                     Reporter: VyHN
     -----------------------------------------------------------------------------
     

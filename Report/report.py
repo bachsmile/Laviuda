@@ -356,30 +356,27 @@ data = {
 #Case 11: Check het han trong ban choi
 def reportCheckExpiredTable(data):
     detail = {
-        "Check_item"     : data["Check_item"],
-        "Status"         : data["Status"]
+        "Check_item"     : data["Check_item"]
     }
     report = """
     -----------------------------------------------------------------------------
     Case 11: Check het han vip trong ban choi
     
-            Check item  : {0}
-            Status check: {1}                                            
-                                    Time test: {2}
+            Check item  : {0}                                            
+                                    Time test: {1}
                                     Reporter: VyHN
     -----------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log = report.format(detail["Check_item"], detail["Status"], current_time)
+    log = report.format(detail["Check_item"], current_time)
     f = open("logVip.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
 
 data = {
-    "Check_item" : "Fail",
-    "Status" : "Fail"
+    "Check_item" : "Fail"
 }
 #Function WC:---------------------->
 #BeforEvent
