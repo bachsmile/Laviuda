@@ -9,19 +9,25 @@ import json
 poco = CocosJsPoco()
 #----------------------------------------------------WC----------------------------------------------------------------------#
 #config
+#doi ngay qua miliseconds
 def datetoMili(day):
     return day*86400000
+#doi gio qua miliseconds
 def housToMili(hous):
     return hous*3600000
+#doi phu qua miliseconds
 def minutetoMili(minute):
     return minute*60000
+#doi giay qua miliseconds
 def secToMili(sec):
     return sec*1000
+#doi daytime qua miliseconds
 def convertDayTimeToMili(time):
     dt = datetime(time['Y'],time['M'],time['D'],time['h'],time['m'],time['s'])
     milliseconds = int(round(dt.timestamp() * 1000))
     print(milliseconds)
     return milliseconds
+#doi miliseconds sang daytime
 def convertSecondstoDateTime(milliseconds):
     seconds=milliseconds/1000
     timestamp = datetime.fromtimestamp(seconds)
@@ -31,7 +37,7 @@ timeWC={
     "start":{"Y":2020,"M":12,"D":29,"h":7,"m":0,"s":0},
     "end":{"Y":2021,"M":1,"D":5,"h":7,"m":0,"s":0}
 }
-#id
+#Account
 # user["user0"]["user"]
 user={
     "user0":{
@@ -62,7 +68,7 @@ user={
 }
 
 #Feature
-#chalenge
+#Config nhiem vu thuc hien trong cac ngay
 challenge={
     "day1":{
         "mission":"exchange1",
@@ -89,6 +95,7 @@ challenge={
 # configCase["beforEvent"]["account"]
 # configCase["beforEvent"]["day"]
 # "day"+str(configCase["claimGift"]["day"])
+#config cac account su dung trong cac case test
 configCase={
     "beforEvent":{
         "day":0,
@@ -169,6 +176,7 @@ configCase={
 
 # print("day"+str(configCase["autoClaimGift"]["day"]))
 # print(configCase["passClaimGift"]["day"])
+#config infor cac nhiem vu
 challengePlay={
     "win":{
         "data":{
@@ -226,7 +234,7 @@ challengePlay={
         },
     }
 }
-
+#cac bo bai can cheat vaf wildcard can cheat
 cardCheat={
     "wc":{
         "card":"2c",
@@ -245,7 +253,7 @@ cardCheat={
         "set":"3t,3b,3r,ab,ac"
     },
 }
-#deal
+#deal config
 dealWCConfig={
     "offerWC1":{
         "gold":16000000,
