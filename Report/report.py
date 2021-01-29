@@ -565,7 +565,6 @@ def reportDay5(data):
     detail = {
       "TimeCheat": data["TimeCheat"],
       "Update":data["Update"],
-      "NoUpdate":data["NoUpdate"],
     }
     report = """
     -----------------------------------------------------------------------------------------------------------
@@ -576,16 +575,15 @@ def reportDay5(data):
             
             Show update progess:                    {1}
             
-            No Show update progess:                 {2}
             
             
-                                                                time test: {3}
+                                                                time test: {2}
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log=report.format(detail["TimeCheat"], detail["Update"], detail["NoUpdate"], current_time)
+    log=report.format(detail["TimeCheat"], detail["Update"], current_time)
     f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
