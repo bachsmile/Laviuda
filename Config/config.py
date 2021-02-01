@@ -38,7 +38,7 @@ timeWC={
     "end":{"Y":2021,"M":1,"D":5,"h":7,"m":0,"s":0}
 }
 #Account
-user["user0"]["user"]
+#user["user0"]["user"]
 user={
     "user0":{
         "id":"20609637",
