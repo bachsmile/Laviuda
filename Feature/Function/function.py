@@ -40,6 +40,7 @@ poco = CocosJsPoco()
 #----------------------------Function-------------------------------------------------#
 #Function general:----------------->
 #highlight
+#tắt app
 def killApp():
     try:
         clear_app("com.zingplay.laviuda")
@@ -48,6 +49,7 @@ def killApp():
     except:
         print('error kill App')
         return False
+#mở lại app
 def openApp():
     try:
         start_app("com.zingplay.laviuda")
@@ -56,19 +58,23 @@ def openApp():
     except:
         print('error open App')
         return False
+#kiểm tra đối tượng 
 def exists1(self):
         try:
             return self.attr('visible')
         except :
             return 0
+#check đối tượng hình ảnh
 def waitNoLimit(obj,time):
     try:
         wait(obj,time,0.5)
         return True 
     except:
         return False
+#check đối tượng poco
 def waitNolimitPoco(obj,time):
     return obj.wait(time).exists()
+#MPK-> số
 def pipeSubGold(strGold):
     gold=0
     lenght = len(strGold)-1
@@ -83,14 +89,15 @@ def pipeSubGold(strGold):
     else:
         gold=float(strGold)
     return gold
+#Chuyển json time -> chuỗi time
 def fortmartTime(time):
     timeStr= str(time['D'])+"/"+str(time['M'])+"/"+str(time['Y'])+" "+str(time['h'])+":"+str(time['m'])+":"+str(time['s'])
     print(timeStr)
     return timeStr
 #cheat
+#cheat gold về 0
 def cheatGoldEmpty(gold):
     try:
-        clear()
         pocoTag.btnCheat.click()
         if waitNolimitPoco(pocoTag.pnGold,2):
             pocoTag.pnGold.click([0.6045215255512122, 0.41971168518066404])
@@ -104,6 +111,7 @@ def cheatGoldEmpty(gold):
     except:
         print("Khong tim thay")
         return False
+#cheat set card trong bàn chơi
 def CheatCard(wildCard,cardPlay):#ex: WildCard = '2c', cardPlay="ab,2b,3b,4b,5b"
     pocoTag.btnCheat.click()
     pocoTag.btnTabCustom.click()
@@ -118,8 +126,9 @@ def CheatCard(wildCard,cardPlay):#ex: WildCard = '2c', cardPlay="ab,2b,3b,4b,5b"
     pocoTag.btnCheat.click()
     clear()
 # Action
+#reload
 def back_to_lobby():
-    btns = [image_vip.outroom, image_vip.icon_close, image_vip.back]
+    btns = [image_vip.outroom, image_vip.icon_close, image_vip.back, image_vip.close]
     try:
         for btn in btns:
             if exists(btn):
@@ -131,6 +140,7 @@ def back_to_lobby():
 def reloadLobby():
     try:
         poco = CocosJsPoco()
+        clear()
         pocoTag.btnSelectTable.click()
 #         back_to_lobby()
         sleep(1)
@@ -140,7 +150,6 @@ def reloadLobby():
             touch(image_vip.back)  
 #         touch(image_vip.back)    
         print('reload lobby')
-        clear()
         return True
     except:
         print('error reload lobby')
@@ -148,27 +157,33 @@ def reloadLobby():
 def reloadLoby2():
     try:
         poco = CocosJsPoco()
+        clear()
         poco.click([0.04817596456992819, 0.9241753578186035])
         pocoTag.btnHide.click()
-        clear()
     except:
         clear()
+#dong cac event "x"
 def closeEvent():
     try:
+        clear()
         if waitNolimitPoco(pocoTag.btnClose,2):
-            pocoTag.btnClose.click()
-            clear()
+            pocoTag.btnClose.click()  
     except:
         print("error close ev")
+#dong tat ca cac event co btn x xuat hien
 def closeAllEvent():
+    clear()
     while waitNolimitPoco(pocoTag.btnClose,2):
         pocoTag.btnClose.click()
         clear()
+#claim tat ca nhung pop up claim xuat hien
 def claimAll():
+    clear()
     while waitNolimitPoco(poco("btnClaim"),2):
         pocoTag.btnClaim.click()
         clear()
         continue
+#logout
 def out():
     try:
         poco = CocosJsPoco()
@@ -179,6 +194,7 @@ def out():
         print("out")
     except:
         print("error out")
+#thay doi tai khoang
 def changeAcc(userN,passW):
     try:
         out()
@@ -200,9 +216,11 @@ def changeAcc(userN,passW):
         return True
     except:
         print("error login")
+#vao ban choi
 def joinTable():
     try:
         sleep(2)
+        clear()
         poco = CocosJsPoco()
 #         pocoTag.btnPlay.click()
         pocoTag.btnSelectTable.click()
@@ -211,6 +229,7 @@ def joinTable():
     except:
         print("error joinTable")
         return 0
+#out ban choi
 def clickOutTable():
     try:
         poco = CocosJsPoco()
@@ -220,6 +239,7 @@ def clickOutTable():
     except:
         print("error register back")
         return False
+#them bot
 def addBot():
     try:
         poco = CocosJsPoco()
@@ -234,6 +254,7 @@ def addBot():
     except:
         print("error addBot")
         return False
+#click btn knock
 def clickKnock():
     try:
         if waitNolimitPoco(poco("btnKnock"),60):
@@ -246,6 +267,7 @@ def clickKnock():
     except:
         print("error clickKnock")
         return False
+#click btn pass
 def clickPass():
     try:
         if waitNolimitPoco(poco("btnPass"),60):
@@ -258,6 +280,7 @@ def clickPass():
     except:
         print("error Pass")
         return False
+#click btn exchange1
 def clickExchange1():
     try:
         if waitNolimitPoco(pocoTag.btnExchange1,60):
@@ -276,6 +299,7 @@ def clickExchange1():
     except:
         print("error Exchange1")
         return False
+#click btn exchange5
 def clickExchange5():
     try:
         if waitNolimitPoco(pocoTag.btnExchange5,60):
@@ -285,6 +309,7 @@ def clickExchange5():
             return False
     except:
         return False
+#claim qua 1 lan
 def clickClaim():
     try:
         if waitNolimitPoco(pocoTag.btnClaim,1):
@@ -296,6 +321,7 @@ def clickClaim():
     except:
         return False
 # check
+#check ban choi
 def tableGame():
     try:
         if waitNolimitPoco(pocoTag.bg_table,10):
@@ -307,6 +333,7 @@ def tableGame():
     except:
         print("error table play")
         return False
+#check lobby
 def CheckLobby():
     try:
         if waitNolimitPoco(pocoTag.btnPlay,60):
@@ -318,6 +345,7 @@ def CheckLobby():
     except:
         print("error back lobby")
         return False
+#check end game khi thua
 def waitEndGame():
     try:
         poco = CocosJsPoco()
@@ -331,6 +359,7 @@ def waitEndGame():
     except:
         print("error")
         return False
+#check end game khi thang
 def waitEndGame2():
     try:
         poco = CocosJsPoco()
@@ -344,9 +373,9 @@ def waitEndGame2():
     except:
         print("error")
         return False
+#format gold ve dang hien thi trong game
 def fortmatGold(gold):
     if gold/pow(10,9)>=1:
-        print("haha")
         if (gold % pow(10, 9))//pow(10,8)>0:
             return (str(gold // pow(10, 9)) + "." + str((gold % pow(10, 9))//pow(10,8)) + "B")
         else:
@@ -363,10 +392,13 @@ def fortmatGold(gold):
             return (str(gold // pow(10, 3)) + "K")
     else:
         return (str(gold))
+#lay text gold trong ther gold nguoi choi
 def checkGold():
 #     numGold = pocoTag.lbGold.attr("text")
     numGold = poco(name="lbGold").attr("text")
-    return pipeSubGold(numGold)
+#     return pipeSubGold(numGold)
+    return numGold
+#chuyen time sang miliseconds
 def convertDayTimeToMili(time):
     dt = datetime(time['Y'],time['M'],time['D'],time['h'],time['m'],time['s'])
     milliseconds = int(round(dt.timestamp() * 1000))
@@ -628,7 +660,8 @@ def checkLevelVip():
         print("error")
 #Function WC:---------------------->
     #------------------#
-def beforEvent(user):
+#case1
+def beforEvent(users):
     clearReport()
     claimAll()
     closeAllEvent()
@@ -650,7 +683,7 @@ def beforEvent(user):
         dataReportConfig['CheatTime']="Fail"
     #End Cheatime---------------------------------------
     #changeAcc
-    changeAcc(user[user]["user"],user[user]["pass"])
+    changeAcc(user[users]["user"],user[users]["pass"])
     sleep(5)
     #closeEvent()
     claimAll()
@@ -668,7 +701,8 @@ def beforEvent(user):
     #-------------End script----------------------------------#
     #-------------Report--------------------------------------#
     reportBeforEvent(dataReportConfig)
-def afterEvent(user):
+#case2
+def afterEvent(users):
     resetDataReportConfig()
     claimAll()
     closeAllEvent()
@@ -731,7 +765,7 @@ def afterEvent(user):
                     "m": timeWC["start"]['m'],
                     "s": timeWC["start"]['s']
                 }
-                timeNow=convertDayTimeToMili(dayS1) -housToMili(1)+ minutetoMili(59)
+                timeNow=convertDayTimeToMili(dayS1) -housToMili(1)+ minutetoMili(59)+secToMili(20)
                 timeCheat = api_changeTimeServer(timeNow)
                 dataReportConfig["TimeCheat"]=convertSecondstoDateTime(timeNow)
                 if timeCheat ==200:
@@ -745,12 +779,13 @@ def afterEvent(user):
 #                 sleep(20)
 #                 claimAll()
                 #changeAcc
-                if changeAcc(user[user]["user"],user[user]["pass"]):
+                if changeAcc(user[users]["user"],user[users]["pass"]):
                     claimAll()
                     closeAllEvent()
                     CheckLobby()
                     joinTable()
-                    if coutDownTimeIntable():
+                    sleep(20)
+                    if checkProgress():
                         dataReportConfig['ShowProg']="Pass"
                     else:
                         dataReportConfig['ShowProg']="Fail"
@@ -788,7 +823,7 @@ def afterEvent(user):
                     "m": timeWC["start"]['m'],
                     "s": timeWC["start"]['s']
                 }
-                timeNow=convertDayTimeToMili(dayS1) -housToMili(1)+ minutetoMili(59)
+                timeNow=convertDayTimeToMili(dayS1) -housToMili(1)+ minutetoMili(59)+secToMili(20)
                 timeCheat = api_changeTimeServer(timeNow)
                 dataReportConfig["TimeCheat1"]=convertSecondstoDateTime(timeNow)
                 if timeCheat ==200:
@@ -804,14 +839,15 @@ def afterEvent(user):
                 CheckLobby()
                 sleep(1)
                 #changeAcc
-                if changeAcc(user[user]["user"],user[user]["pass"]):
+                if changeAcc(user[users]["user"],user[users]["pass"]):
                     claimAll()
                     closeAllEvent()
                     CheckLobby()
                     #join table wait
                     joinTable()
                     #wait event
-                    if coutDownTimeIntable():
+                    sleep(20)
+                    if checkProgress():
                         dataReportConfig['ShowProg']="Pass"
                     else:
                         dataReportConfig['ShowProg']="Fail"
@@ -853,7 +889,7 @@ def afterEvent(user):
                 "m": timeWC["start"]['m'],
                 "s": timeWC["start"]['s']
             }
-            timeNow=convertDayTimeToMili(dayS1) -housToMili(1)+ minutetoMili(59)
+            timeNow=convertDayTimeToMili(dayS1) -housToMili(1)+ minutetoMili(59)+secToMili(20)
             timeCheat = api_changeTimeServer(timeNow)
             dataReportConfig["TimeCheat1"]=convertSecondstoDateTime(timeNow)
             if timeCheat ==200:
@@ -874,7 +910,7 @@ def afterEvent(user):
             CheckLobby()
             sleep(1)
             #changeAcc
-            if changeAcc(user[user]["user"],user[user]["pass"]):
+            if changeAcc(user[users]["user"],user[users]["pass"]):
                 sleep(1)
                 claimAll()
                 closeAllEvent()
@@ -882,7 +918,8 @@ def afterEvent(user):
                 #join table wait
                 joinTable()
                 #wait event
-                if coutDownTimeIntable():
+                sleep(20)
+                if checkProgress():
                     dataReportConfig['ShowProg']="Pass"
                 else:
                     dataReportConfig['ShowProg']="Fail"
@@ -897,6 +934,7 @@ def afterEvent(user):
 #-------------End script----------------------------------#
 #-------------Report--------------------------------------#
     reportAfterEvent(dataReportConfig)
+#case3
 def day1(user):
     resetDataReportConfig()
     #join event
@@ -922,6 +960,7 @@ def day1(user):
     #report
     reportDay1(dataReportConfig)
     checkMission("day1",user)
+#case4
 def day2(user):
     #resetDataReport
     resetDataReportConfig()
@@ -995,6 +1034,7 @@ def day2(user):
     reportDay2(dataReportConfig)
     #------------------------#
     checkMission("day2",user)
+#case5
 def day3(user):
         #resetDataReport
     resetDataReportConfig()
@@ -1005,6 +1045,7 @@ def day3(user):
     reportDay3(dataReportConfig)
     #------------------------#
     checkMission("day3",user)
+#case6
 def day4(user):
         #resetDataReport
     resetDataReportConfig()
@@ -1028,9 +1069,12 @@ def day4(user):
     reportDay4(dataReportConfig)
     #------------------------#
     checkMission("day4",user)
-def day5():
+#case7
+def day5(users):
         #resetDataReport
     resetDataReportConfig()
+    claimAll() 
+    closeAllEvent()
     #------------------------#
     #cheat time pass 1 ngay-> 30/11/2020 11:11:11 -> 1606709471000
     timeCheat = api_changeTimeServer(1605051600000)
@@ -1048,15 +1092,19 @@ def day5():
     dataReportConfig["TimeCheat"]=convertSecondstoDateTime(timeNow)
     #End Cheatime--------------------------------------
     reloadLoby()
+    claimAll()
+    closeAllEvent()
     #join event
     eventWCOpen()
      #check progress
     prog1=checkProgressCurrent()
     closeEvent()
     #cheat gold du play
-    cheatGold(user["user1"]["id"],1000000)
+    cheatGold(user[users]["id"],1000000)
     checkMission2("day5")
     sleep(2)
+    claimAll()
+    closeAllEvent()
     eventWCOpen()
     prog2=checkProgressCurrent()
     closeEvent()
@@ -1065,25 +1113,15 @@ def day5():
         dataReportConfig["Update"]="Pass"
     else:
         dataReportConfig["Update"]="Fail"
-    #waitplaygame
-    sleep(10)
-    eventWCOpen()
-     #check progress
-    prog3=checkProgressCurrent()
-    lose1()
-    eventWCOpen()
-     #check progress
-    prog4=checkProgressCurrent()
-    #check update progess
-    if checkUpdateProgessTable(prog3,prog4):
-        dataReportConfig["NoUpdate"]="Pass"
-    else:
-        dataReportConfig["NoUpdate"]="Fail"
     #report
     reportDay5(dataReportConfig)
-def day6():
+#case8
+def day6(users):
         #resetDataReport
     resetDataReportConfig()
+    sleep(2)
+    claimAll() 
+    closeAllEvent()
     #------------------------#
     #cheat time pass 1 ngay-> 30/11/2020 11:11:11 -> 1606709471000
     timeCheat = api_changeTimeServer(1605051600000)
@@ -1100,56 +1138,38 @@ def day6():
     timeCheat = api_changeTimeServer(timeNow)
     dataReportConfig["TimeCheat"]=convertSecondstoDateTime(timeNow)
     #reload lobby
+    cheatGold(user[users]["id"],1000000)
     reloadLobby()
+    claimAll() 
+    closeAllEvent()
     #click btn play
     joinTable()
+    prog1=checkProgressCurrent()
     #cheat theo nhiem vu
     #add bot
     addBot()
     #Click knock
-    if clickKnock():
-        data1["Knock"]="Pass"
-    else:
-        data1["Knock"]="Fail"
+    clickKnock()
     #wait end game
     waitEndGame()
+    prog2=checkProgressCurrent()
     #check update progess
-    if checkUpdateProgessTable():
-        data1["Update"]="Pass"
+    if checkUpdateProgessTable(prog1,prog2):
+        dataReportConfig["Update"]="Pass"
     else:
-        data1["Update"]="Fail"
-    #waitplaygame
-    sleep(10)
-    #cheat theo nhiem vu
-    #Click knock
-    if clickKnock():
-        data1["Knock"]="Pass"
-    else:
-        data1["Knock"]="Fail"
+        dataReportConfig["Update"]="Fail"
     #chon thoat table
     clickOutTable()
     #wait end game
     waitEndGame()
-    #check update progess
-    if checkUpdateProgessTable():
-        data1["Update"]="Pass"
-    else:
-        data1["Update"]="Fail"
-       #check lobby
-    if CheckLobby():
-        data1["Leave"]="Pass"
-    else:
-        data1["Leave"]="Fail"
     #------------------------#
     #report
-    reportDay6(data1)
+    reportDay6(dataReportConfig)
     #------------------------#
-    #report
-    reportDay3(dataReportConfig)
-    #------------------------#
-    checkMission("day3")
-def day7(user,user1):
+#case9
+def day7(users,user1):
     resetDataReportConfig()
+    sleep(2)
     claimAll()
     closeAllEvent()
     #cheat time pass 1 ngay-> 30/11/2020 11:11:11 -> 1606709471000
@@ -1187,7 +1207,7 @@ def day7(user,user1):
     closeDealSpec1()
     #check auto show event
     #check gold init
-    goldInit=getGold(user[user]["id"])
+    goldInit=getGold(user[users]["id"])
     if CheckGUIEvent():
         dataReportConfig['GuiEvent']="Pass"
     else:
@@ -1202,7 +1222,7 @@ def day7(user,user1):
 #     closeEvent()
     clickClaim()
     #check update gold
-    goldAfter=getGold(user[user]["id"])
+    goldAfter=getGold(user[users]["id"])
     if checkUpdateGold(goldClaim,goldInit,goldAfter):
         dataReportConfig['UpdateGold']="Pass"
     else:
@@ -1223,7 +1243,8 @@ def day7(user,user1):
     #------------------------#
     #report
     reportDay7(dataReportConfig)
-def exchange1(day,user):
+#case10
+def exchange1(day,users):
     print(day)
     try:
         prog1=0
@@ -1237,7 +1258,7 @@ def exchange1(day,user):
         prog1=checkProgressCurrent()
 #         return 1
         closeEvent()
-        cheatGold(user[user]["id"],1000000) 
+        cheatGold(user[users]["id"],1000000) 
         #click btn play
         if joinTable():
             dataReportConfig["BtnPlay"]="Pass"
@@ -1288,15 +1309,19 @@ def exchange1(day,user):
         print("error exchange1")
     print(dataReportConfig)
     reportExchange1(dataReportConfig)
-def knock(day,user):
+#case11
+def knock(day,users):
     try:
+        resetDataReportConfig()
+        claimAll()
+        closeAllEvent()
         #join event
         eventWCOpen()
         #check progress
         prog1=checkProgressCurrent()
         closeEvent()
         #cheat gold du play
-        cheatGold(user[user]["id"],1000000)
+        cheatGold(user[users]["id"],1000000)
         #click btn play
         joinTable()
         #Check table
@@ -1328,15 +1353,19 @@ def knock(day,user):
         print("error knock")
     print(dataReportConfig)
     reportKnock(dataReportConfig)
-def collect(day,user):
+#case12
+def collect(day,users):
     try:
+        resetDataReportConfig()
+        claimAll()
+        closeAllEvent()
         #join event
         eventWCOpen()
         #check progress
         prog1=checkProgressCurrent()
         closeEvent()
         #cheat gold du play
-        cheatGold(user[user]["id"],1000000)
+        cheatGold(user[users]["id"],1000000)
         #click btn play
         joinTable()
         #cheat cheatPorkerSpecial
@@ -1364,7 +1393,8 @@ def collect(day,user):
         print("error collect")
     print(dataReportConfig)
     reportCollect(dataReportConfig)
-def claimGift(day,user):
+#case13
+def claimGift(day,users):
     # script content
     resetDataReportConfig()
     claimAll()
@@ -1372,9 +1402,9 @@ def claimGift(day,user):
     #back to loby
     CheckLobby()
     #check gold init
-    goldInit=getGold(user[user]["id"])
+    goldInit=getGold(user[users]["id"])
     #Cheat finished mission-----------------------
-    if cheatFinishedMision(user[user]["id"],1):
+    if cheatFinishedMision(user[users]["id"],1):
         dataReportConfig['CheatFM']="Pass"
     else:
         dataReportConfig['CheatFM']="Fail"
@@ -1398,7 +1428,7 @@ def claimGift(day,user):
     #exit GUI event
     closeEvent()
     #check update gold
-    goldAfter=getGold(user[user]["id"])
+    goldAfter=getGold(user[users]["id"])
     if checkUpdateGold(goldClaim,goldInit,goldAfter):
         dataReportConfig['GoldUpdate']="Pass"
     else:
@@ -1411,7 +1441,8 @@ def claimGift(day,user):
     #-------------End script----------------------------------#
     #-------------Report--------------------------------------#
     reportClaimGift(dataReportConfig)
-def noClaimGift(day,user):
+#case14
+def noClaimGift(day,users):
    #back to loby
     resetDataReportConfig()
     claimAll()
@@ -1419,9 +1450,9 @@ def noClaimGift(day,user):
     CheckLobby()
 #     poco("btnJoin")
     #check gold init
-    goldInit=getGold(user[user]["id"])
+    goldInit=getGold(user[users]["id"])
     #Cheat finished mission-----------------------
-    cheatFinishedMision(user[user]["id"],2)
+    cheatFinishedMision(user[users]["id"],2)
     #---------reload lobby------------------------------
     reloadLobby()
     claimAll()
@@ -1438,7 +1469,7 @@ def noClaimGift(day,user):
     #check gold claim
     goldClaim=challengePlay[challenge[day]["mission"]]["data"]["gold"]
     #check update gold
-    goldAfter=getGold(user[user]["id"])
+    goldAfter=getGold(user[users]["id"])
     if checkUpdateGold(goldClaim,goldInit,goldAfter):
         dataReportConfig['GoldUpdate']="Fail"
     else:
@@ -1447,13 +1478,14 @@ def noClaimGift(day,user):
     #-------------End script----------------------------------#
     #-------------Report--------------------------------------#
     reportNoClaimGift(dataReportConfig)
-def passClaimGift(day,user):
+#case15
+def passClaimGift(day,users):
     resetDataReportConfig()
     claimAll()
     closeAllEvent()
     # script content
     #Change acc 1
-    changeAcc(user[user]["user"],user[user]["pass"])
+    changeAcc(user[users]["user"],user[users]["pass"])
     claimAll()
     closeNotiVip()
     claimAll()
@@ -1479,7 +1511,7 @@ def passClaimGift(day,user):
     else:
         dataReportConfig['Tick']="Fail"
     #checkUpdate mission
-    if CheckMissionProgress(day):
+    if CheckMissionProgress(day+2):
         dataReportConfig["MissionNew"]="Pass"
     else:
         dataReportConfig["MissionNew"]="Fail"
@@ -1490,11 +1522,13 @@ def passClaimGift(day,user):
     #-------------End script----------------------------------#
     #-------------Report--------------------------------------#
     reportPassClaimGift(dataReportConfig)
+#case16
 def autoClaimGift(day):
     resetDataReportConfig()
     claimAll()
     closeNotiVip()
     claimAll()
+    closeDealSpec()
     closeDealSpec1()
     #Check auto show GUI event
     if CheckGUIEvent():
@@ -1527,13 +1561,14 @@ def autoClaimGift(day):
     #-------------End script----------------------------------#
     #-------------Report--------------------------------------#
     reportAutoClaim(dataReportConfig)
-def CheckChangeAcc(day,user):
+#case17
+def CheckChangeAcc(day,users):
      # script content
     #change acc
     resetDataReportConfig()
     claimAll()
     closeAllEvent()
-    changeAcc(user[user]["user"],user[user]["pass"])
+    changeAcc(user[users]["user"],user[users]["pass"])
     claimAll()
     closeAllEvent()
     #open Gui
@@ -1549,7 +1584,8 @@ def CheckChangeAcc(day,user):
     #-------------End script----------------------------------#
     #-------------Report--------------------------------------#
     reportChangeAcc(dataReportConfig)
-def missionPassDayInTable(day,user):
+#case18
+def missionPassDayInTable(day,users):
     resetDataReportConfig()
     claimAll()
     closeAllEvent()
@@ -1569,8 +1605,9 @@ def missionPassDayInTable(day,user):
     reloadLobby()
     claimAll()
     closeAllEvent()
-    cheatFinishedMision(user[user]["id"],day)
+    cheatFinishedMision(user[users]["id"],day)
     reloadLobby()
+    sleep(1)
     claimAll()
     closeAllEvent()
     #click btn play
@@ -1594,12 +1631,13 @@ def missionPassDayInTable(day,user):
     #------------------------#
     #report
     reportUpdateMissionTable(dataReportConfig)
-def missionPassDayOpenGui(day,user):
+#case19
+def missionPassDayOpenGui(day,users):
     resetDataReportConfig()
     to1=0
     to2=0
     #Cheat finished mission
-    cheatFinishedMision(user[user]["id"],day)
+    cheatFinishedMision(user[users]["id"],day)
     reloadLobby()
     claimAll()
     closeAllEvent()
@@ -1643,7 +1681,8 @@ def missionPassDayOpenGui(day,user):
     #report
     print(dataReportConfig)
     reportUpdateMissionLobby(dataReportConfig)
-def UpdateProgressMissionFull(day,user):
+#case20
+def UpdateProgressMissionFull(day,users):
     resetDataReportConfig()
     claimAll()
     closeAllEvent()
@@ -1652,7 +1691,7 @@ def UpdateProgressMissionFull(day,user):
       "UpdateAgain": "Fail",
     }
     #cheat gan hoan thanh nhiem vu
-    cheatNumMision(user[user]["id"],challengePlay[challenge[day]["mission"]]["data"]["totalX"]-1)
+    cheatNumMision(user[users]["id"],challengePlay[challenge[day]["mission"]]["data"]["totalX"]-1)
     reloadLobby()
     claimAll()
     closeAllEvent()
@@ -1675,7 +1714,7 @@ def UpdateProgressMissionFull(day,user):
     closeEvent()
     checkMission2(day)
     #check update progess
-    eventWCOpen()
+    touch(imageWC.imgCar)
     prog4=checkProgressCurrent()
     if checkUpdateProgessTable(prog3,prog4):
         dataReportConfig["UpdateAgain"]="Fail"
@@ -1684,20 +1723,30 @@ def UpdateProgressMissionFull(day,user):
     #------------------------#
     #report
     reportUpdateProgressMissionFull(dataReportConfig)
+#case21
 def checkDisconect():
-    killApp()
-    openApp()
-    sleep(15)
-    checkProgress()
-    clickOutTable()
-def GuiDeal(user):
+    try:
+        killApp()
+        openApp()
+        sleep(20)
+        poco = CocosJsPoco()  
+        clear()
+        poco = CocosJsPoco()
+        claimAll()
+        closeAllEvent()
+        joinTable()
+        checkProgress()
+        clickOutTable()
+    except:
+        print("fail")
+#case22
+def GuiDeal(users):
+    resetDataReportConfig()
+    sleep(5)
     claimAll()
     closeAllEvent()
-#     if  changeAcc(user["user1"]["user"],user["user1"]["pass"]):
-#         dataReportConfig['Login']="Fail"
-#     else:
-#         dataReportConfig['Login']="Pass"
-    reloadLobby()
+    changeAcc(user[users]["user"],user[users]["pass"])
+    claimAll()
     closeDealSpec()
     if  CheckGUIEvent() :
         dataReportConfig['GuiEvent']="Fail"
@@ -1709,9 +1758,9 @@ def GuiDeal(user):
         closeEvent()
     else:
         dataReportConfig['GuiEDeal']="Pass"
-    gold1=getGold(user[user]["id"])
+    gold1=getGold(user[users]["id"])
     clickGuiDeal()
-    cheatBuyDeal(user[user]["id"],1)
+    cheatBuyDeal(user[users]["id"],1)
     clickClaim()
     sleep(1)
     if checkDisableBtnBuy(1):
@@ -1719,7 +1768,7 @@ def GuiDeal(user):
     else:
         dataReportConfig['BtnBuyWC']="Fail"
     closeEvent()
-    gold2=getGold(user[user]["id"])
+    gold2=getGold(user[users]["id"])
     clickGuiDeal()
     goldConf=0
     if waitNoLimit(imageWC.imageOfferDeal,2):
@@ -1732,17 +1781,17 @@ def GuiDeal(user):
     else:
         dataReportConfig['GoldUpdate']="Fail"
     clickGuiDeal()
-    cheatBuyDeal(user[user]["id"],2)
+    cheatBuyDeal(user[users]["id"],2)
     sleep(1)
     clickClaim()
-    cheatBuyDeal(user[user]["id"],2)
+    cheatBuyDeal(user[users]["id"],2)
     sleep(1)
     clickClaim()
     sleep(1)
-    cheatBuyDeal(user[user]["id"],3)
+    cheatBuyDeal(user[users]["id"],3)
     sleep(1)
     clickClaim()
-    cheatBuyDeal(user[user]["id"],3)
+    cheatBuyDeal(user[users]["id"],3)
     sleep(1)
     clickClaim()
     if checkBtnDeal():
@@ -1751,12 +1800,13 @@ def GuiDeal(user):
         dataReportConfig['BtnDeal']="Pass"
     #report
     reportDeal(dataReportConfig)
-def endEvent(day,user):
+#case23
+def endEvent(day,users):
     #change Accout 1
     resetDataReportConfig()
     claimAll()
     closeAllEvent()
-    changeAcc(user[user]["user"],user[user]["pass"])
+    changeAcc(user[users]["user"],user[users]["pass"])
     claimAll()
     closeAllEvent()
     #Cheat time-------------#02/12/2020 23:59:00 -> 1606928340000
@@ -1776,11 +1826,12 @@ def endEvent(day,user):
     #End Cheatime---------------------------------------
     #---------reload lobby------------------------------
     reloadLobby()
+    sleep(2)
     claimAll()
     closeAllEvent()
     #---------end reload lobby--------------------------
     #check gold init
-    goldInit=getGold(user[user]["id"])
+    goldInit=getGold(user[users]["id"])
     sleep(1)
     #opent GUI event
     eventWCOpen()
@@ -1796,7 +1847,7 @@ def endEvent(day,user):
     else:
         dataReportConfig['GUIEvent']="Pass"
     #check gold
-    goldAfter=getGold(user[user]["id"])
+    goldAfter=getGold(user[users]["id"])
     if checkUpdateGold(goldClaim,goldInit,goldAfter):
         dataReportConfig['UpdateGold']="Fail"
     else:
@@ -1812,7 +1863,7 @@ def endEvent(day,user):
     #-------------Report--------------------------------------#
     reportEndEvent(dataReportConfig)
 #mission
-def win(day,user):
+def win(day,users):
     try:
         resetDataReportConfig()
 #         closeEvent()
@@ -1832,7 +1883,7 @@ def win(day,user):
             dataReportConfig["noPlay"]="Fail"
         closeEvent()
         #cheat gold du play
-        cheatGold(user[user]["id"],1000000)
+        cheatGold(user[users]["id"],1000000)
         reloadLoby2()
         #open event
         eventWCOpen()
@@ -1923,8 +1974,32 @@ def lose1():
         waitEndGame()
     except:
         print("error win")
-    #------------------#
+#full house
+def full1(day):
+    try:
+            claimAll()
+            closeAllEvent()
+            clear()
+            cheatGold(user["user1"]["id"],1000000)
+            reloadLoby2()
+            claimAll()
+            closeAllEvent()
+            #click btn play
+            joinTable()
+            #cheat cheatPorkerSpecial
+            CheatCard(cardCheat[challengePlay[challenge[day]["mission"]]["data"]["type"]]["card"], cardCheat[challengePlay[challenge[day]["mission"]]["data"]["type"]]["set"])
+            #add bot
+            addBot()
+            #Click knock
+            clickKnock()
+            clickOutTable()
+            #wait end game
+            waitEndGame2()
+    except:
+            print("error win")
+    #-- ----------------#
 #check
+#check button event
 def CheckBtnEvent():
     try:
 #         if waitNolimitPoco(poco("btnMain"),10):
@@ -1935,6 +2010,7 @@ def CheckBtnEvent():
     except:
         print("error btn event")
         return False
+#check noti cho event
 def CheckNotiEvent():
     try:
         if notiShow.attr("type")=="ImageView":
@@ -1946,6 +2022,7 @@ def CheckNotiEvent():
     except:
         print("check noti event no exists")
         return False
+#dem time
 def coutDownTime():
     cout=65
     while 1:
@@ -1966,6 +2043,7 @@ def coutDownTime():
                 print("Error coutdown time")
                 return 0
                 break
+#dem tiem trong ban
 def coutDownTimeIntable():
     cout=20
     while 1:
@@ -1979,6 +2057,7 @@ def coutDownTimeIntable():
             print("show")
             return True
             break
+#check nhiem vu tung ngay la nhiem vu gi
 def checkMission(day,user):
     if challenge[day]["mission"]=="win":
         return win(day,user)
@@ -1990,6 +2069,7 @@ def checkMission(day,user):
         return exchange1(day,user)
     if challenge[day]["mission"]=="collect":
         return collect(day,user)
+#check va thuc hien nhiem vu rut gon
 def checkMission2(day):
     if challenge[day]["mission"]=="win":
         return win1(day)
@@ -1999,6 +2079,9 @@ def checkMission2(day):
         return "knock"
     if challenge[day]["mission"]=="exchange1":
         return "exchange1"
+    if challenge[day]["mission"]=="full":
+        return full1(day)
+#check an btn deal khi mua het deal
 def checkDisableBtnDeal():
     try:
         if waitNolimitPoco(pocoTag.btnOfferEventTB,1):
@@ -2010,6 +2093,7 @@ def checkDisableBtnDeal():
     except:
         print("check CheckGUIDeal no exists")
         return True 
+#check an btn buy sau khi mua het goi
 def checkDisableBtnBuy(offer):
     try:
         if waitNolimitPoco(poco("lbPrice"+str(offer)),1):
@@ -2022,6 +2106,7 @@ def checkDisableBtnBuy(offer):
     except:
         print("check check purchased no exists")
         return False 
+#check thong bao khong du tien
 def checkNotiNoEnoughGold():
     try:
         if waitNolimitPoco(pocoTag.NOTIFICACIONES,5):
@@ -2034,6 +2119,7 @@ def checkNotiNoEnoughGold():
     except:
         print("error show enough gold")
         return False
+#check nhiem vu ngay
 def CheckMissionProgress(day):
     try:
         if CheckGUIEvent()==False:
@@ -2048,6 +2134,7 @@ def CheckMissionProgress(day):
     except:
         print("error checkUpdateProgess")
         return False
+#check tien do hien tai
 def checkProgressCurrent():
     try:
         poco = CocosJsPoco()
@@ -2066,6 +2153,7 @@ def checkProgressCurrent():
     except:
         print("error checkProgressCurrent")
         return False
+#check thanh progess
 def checkProgress():
     try:
         if waitNolimitPoco(pocoTag.lbProgress,5):
@@ -2077,6 +2165,7 @@ def checkProgress():
     except:
         print("error checkProgressCurrent")
         return False
+#check thanh progess trong ban choi
 def checkProgessTable():
     try:
         if waitNolimitPoco(pocoTag.btnMain,5):
@@ -2089,6 +2178,7 @@ def checkProgessTable():
     except:
         return 0 
         print("error Progess table")
+#check show thanh progess trong ban choi
 def checkShowProgessTable():
     try:
         if waitNoLimit(imageWC.imgProgessBarON,10):
@@ -2100,6 +2190,7 @@ def checkShowProgessTable():
     except:
         return False 
         print("error Progess table")
+#check update tien trinh
 def checkUpdateProgessTable(prg1,prg2):
     try:
         print(prg1)
@@ -2113,6 +2204,7 @@ def checkUpdateProgessTable(prg1,prg2):
     except:
         print("error checkUpdateProgessTable")
         return False
+#check gui event WC
 def CheckGUIEvent():
     try:
         if waitNolimitPoco(pocoTag.imgTruck,5):
@@ -2123,6 +2215,7 @@ def CheckGUIEvent():
     except:
         print("check CheckGUIEvent no exists")
         return False
+#check gui deal
 def CheckGUIDeal():
     try:
         if waitNoLimit(imageWC.imgDeal,5):
@@ -2133,6 +2226,7 @@ def CheckGUIDeal():
     except:
         print("check CheckGUIDeal no exists")
         return False
+#check btn deal
 def checkBtnDeal():
     try:
         if waitNolimitPoco(poco("btnOfferEventTB"),1):
@@ -2143,6 +2237,7 @@ def checkBtnDeal():
     except:
         print("check CheckGUIDeal no exists")
         return False
+#check show nhiem vu ngay nao
 def CheckLableDay():
     try:
         if waitNolimitPoco(pocoTag.lbDay1,1):
@@ -2197,6 +2292,7 @@ def CheckLableDay():
         clear()
     except:
         return False
+#check tocos hien co
 def checkTocos():
     try:
         if waitNolimitPoco(pocoTag.lbNumTacos,2):
@@ -2205,6 +2301,7 @@ def checkTocos():
             return tocos
     except:
         return False
+#check update tocos
 def checkTocosUpdate(to1,to2,to3):
     try:
         print(to1)
@@ -2219,6 +2316,7 @@ def checkTocosUpdate(to1,to2,to3):
     except:
         print("check checkTocosUpdate error" )
         return False 
+#check update gold
 def checkUpdateGold(gold1, gold2, gold3):
     try:
         print(gold1)
@@ -2226,17 +2324,20 @@ def checkUpdateGold(gold1, gold2, gold3):
         print(gold3)
         claim= float(gold1)
         update= gold3 - gold2
-        print(claim)
         print(update)
         if update == claim :
-            print("Gold update")
-            return True
+            if fortmatGold(gold3)==checkGold():
+                print("Gold update")
+                return True
+            else:
+                return False
         else:
             print("gold update false")
             return False
     except:
         print("Gold update error")
-        return False
+        return False 
+#check nhiem vu khong hoan thanh
 def checkMissedMission(day):
     try:
         mission="TBNodeDay"+str(day)
@@ -2246,6 +2347,7 @@ def checkMissedMission(day):
             return False
     except:
         return False
+#check nhiem vu hoan thanh
 def checkFinishMission(day):
     try:
         mission="TBNodeDay"+str(day)
@@ -2256,9 +2358,11 @@ def checkFinishMission(day):
     except:
         return False
 #action
+#mo event
 def eventWCOpen():
     try:
         poco = CocosJsPoco()
+        clear()
         if waitNolimitPoco(pocoTag.btnMain,5):
             pocoTag.btnMain.click()
             pocoTag.btnMain.invalidate()
@@ -2267,6 +2371,7 @@ def eventWCOpen():
     except:
         print("error event WC")
         return False
+#nhan qua hoan thanh nhiem vu
 def clickClaimMission():
     try:
         if waitNolimitPoco(pocoTag.btnJoin,1):
@@ -2277,6 +2382,7 @@ def clickClaimMission():
             return False
     except:
         return False
+#chon thuc hien nhiem vu trong GUI
 def joinMission():
     try:
         poco = CocosJsPoco()
@@ -2284,6 +2390,7 @@ def joinMission():
         return True
     except:
         return False
+#mo GUI deal
 def clickGuiDeal():
     try:
         if waitNolimitPoco(pocoTag.btnOfferEventTB,10):
@@ -2294,6 +2401,7 @@ def clickGuiDeal():
             return False
     except:
         return False
+#dong pop-up deal dac biet
 def closeDealSpec():
     try:
         if waitNoLimit(imageWC.imgEventSpec,2):
@@ -2304,6 +2412,7 @@ def closeDealSpec():
             return False
     except:
         return False
+#dong pop-up deal dac biet2
 def closeDealSpec1():
     try:
         if waitNoLimit(imageWC.imgDealSpec,2):
@@ -2313,6 +2422,7 @@ def closeDealSpec1():
             return False
     except:
         return False
+#dong pop-up show thuong vip
 def closeNotiVip():
     try:
         if waitNoLimit(imageWC.imgVipBag,1):
@@ -2322,7 +2432,6 @@ def closeNotiVip():
             return False
     except:
         return False
-#-------------------------------------------------------------------------------------#
 #18/12/2020: 00:00:00 /1608224400000
 #19/12/20210 00:00:00 /1608310800000
 #20/12/2020 00:00:00 /1608397200000
