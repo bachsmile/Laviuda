@@ -2518,7 +2518,7 @@ def check_update_gold(config):
 def log_in():
     pocoTag.btnSwitch.click()
     pocoTag.inputUser.click()
-    text("ngoctu52")
+    text("ngoctu74")
     pocoTag.inputPass.click()
     text("12345678")
     pocoTag.btnLogin.click()
@@ -2548,7 +2548,7 @@ def register():
     }
     pocoTag.btnSwitch.click()
     pocoTag.inputUser.click()
-    text("ngoctu52")
+    text("ngoctu74")
     pocoTag.inputPass.click()
     text("12345678")
     pocoTag.btnRegister.click()  
