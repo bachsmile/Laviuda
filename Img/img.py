@@ -44,6 +44,10 @@ class imageWC:
     imgGoldCheat1=Template(r"tpl1608102303058.png", record_pos=(0.184, 0.083), resolution=(2400, 1080))
     imgWin2= Template(r"tpl1610956013632.png", record_pos=(-0.016, -0.038), resolution=(2400, 1080))
 
+    imgEventSpec=Template(r"tpl1611116438960.png", record_pos=(-0.003, -0.004), resolution=(2400, 1080))
+    imgDealSpec=Template(r"tpl1611133566424.png", record_pos=(-0.022, 0.001), resolution=(2400, 1080))
+    imgVipBag=Template(r"tpl1611132990403.png", record_pos=(0.004, -0.014), resolution=(2400, 1080))
+    imageOfferDeal=Template(r"tpl1611561055433.png", record_pos=(-0.075, -0.092), resolution=(2400, 1080))
 
 class image_vip:
     list_item = Template(r"tpl1608003653170.png", record_pos=(-0.103, 0.124), resolution=(2340, 1079))
@@ -54,6 +58,7 @@ class image_vip:
     xonuoc = Template(r"tpl1608013651272.png", record_pos=(-0.029, 0.122), resolution=(2340, 1079))
     trung = Template(r"tpl1608013670433.png", record_pos=(0.042, 0.122), resolution=(2340, 1079))
     hoahong = Template(r"tpl1608013711710.png", record_pos=(-0.04, 0.123), resolution=(2340, 1079))
+    hoahong1 = Template(r"tpl1610432749141.png", record_pos=(0.114, 0.123), resolution=(2340, 1079))
     hoavang = Template(r"tpl1608013735462.png", record_pos=(0.033, 0.123), resolution=(2340, 1079))
     sungnuoc = Template(r"tpl1608013753862.png", record_pos=(0.106, 0.122), resolution=(2340, 1079))
     boom = Template(r"tpl1608087183486.png", record_pos=(-0.048, 0.122), resolution=(2340, 1079))
@@ -68,10 +73,11 @@ class image_vip:
     btn_vip = Template(r"tpl1607915160724.png", record_pos=(0.235, 0.045), resolution=(2340, 1079))
     btn_cancel = Template(r"tpl1607501575359.png", record_pos=(-0.066, 0.081), resolution=(2340, 1079))
     btn_ok = Template(r"tpl1607501814421.png", record_pos=(0.098, 0.081), resolution=(2340, 1079))
+    btn_ok_sp = Template(r"tpl1611731902604.png", record_pos=(0.017, 0.064), resolution=(2340, 1079))
+
     btn_yes = Template(r"tpl1608711034073.png", record_pos=(0.099, 0.069), resolution=(2340, 1079))
     btn_no = Template(r"tpl1608711053674.png", record_pos=(-0.066, 0.069), resolution=(2340, 1079))
-
-
+    pop_up_gold_support = Template(r"tpl1611730576492.png", record_pos=(0.016, 0.0), resolution=(2340, 1079))
     image_vip_silver = Template(r"tpl1607916065983.png", record_pos=(0.021, -0.028), resolution=(2340, 1079))
     image_vip_gold = Template(r"tpl1607916089476.png", record_pos=(0.163, -0.03), resolution=(2340, 1079))
     image_vip_dynamion = Template(r"tpl1607916128309.png", record_pos=(0.307, -0.029), resolution=(2340, 1079))
@@ -79,12 +85,14 @@ class image_vip:
 
     btn_giahan = Template(r"tpl1608196142533.png", record_pos=(0.016, 0.185), resolution=(2340, 1079))
     pop_up_giahan = Template(r"tpl1608199295143.png", record_pos=(0.011, -0.006), resolution=(2340, 1079))
+    btn_hethan = Template(r"tpl1611720932545.png", record_pos=(0.016, 0.186), resolution=(2340, 1079))
     icon_app = Template(r"tpl1608201973810.png", record_pos=(0.354, -0.842), resolution=(1079, 2340))
     icon_close = Template(r"tpl1608260634718.png", record_pos=(0.214, -0.107), resolution=(2340, 1079))
 
     back = Template(r"tpl1608001910288.png", record_pos=(0.468, -0.201), resolution=(2340, 1079))
-    close = Template(r"tpl1608004769423.png", record_pos=(0.262, -0.16), resolution=(2340, 1079))
-    outroom = Template(r"tpl1608105320117.png", record_pos=(0.45, -0.195), resolution=(2340, 1079))
+    outroom = Template(r"tpl1611718493315.png", record_pos=(0.449, -0.193), resolution=(2340, 1079))
+    close = Template(r"tpl1611741685261.png", record_pos=(0.258, -0.157), resolution=(2340, 1079))
+
     logo_non_vip = Template(r"tpl1609735915140.png", record_pos=(-0.421, 0.194), resolution=(2340, 1079))
     logo_vip_bac = Template(r"tpl1609740849861.png", record_pos=(-0.42, 0.183), resolution=(2340, 1079))
     logo_vip_vang = Template(r"tpl1609740925621.png", record_pos=(-0.422, 0.184), resolution=(2340, 1079))
@@ -112,5 +120,12 @@ class Daily_bonus:
     #acc_gg_ngoc= 
 #------------------------------------------DB------------------------------------------------#
 #---------------------------------------------End script--------------------------------------------------#
+class BT:
+    noti=Template(r"tpl1611905186121.png", record_pos=(-0.241, -0.102), resolution=(2400, 1080))
+    dealBT=Template(r"tpl1611907248297.png", record_pos=(0.015, 0.005), resolution=(2400, 1080))
+
+
+
+
 
 

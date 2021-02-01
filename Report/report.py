@@ -115,17 +115,15 @@ def reportCheckPackVip(data):
 data = {
     "Status" : "Fail"
 }
-#Case 3/4/5: Mua Vip
-def reportBuyVip(data):
+#Case 3: Mua Vip bac
+def reportBuyVip1(data):
     detail = {
         "Check_gold" : data["Check_gold"], 
-#         "Check_day"  : data["Check_day"],
         "Check_item" : data["Check_item"]
-#        "Check_low_vip" : data["Check_low_vip"],
     }
     report = """
     -----------------------------------------------------------------------------
-    Case3: Check mua vip
+    Case3: Check mua vip bac
     
     
             Check gold nhan duoc : {0}
@@ -146,10 +144,72 @@ def reportBuyVip(data):
 
 data = {
     "Check_gold" : "Fail",
-#     "Check_day"  : "Fail",
     "Check_item" : "Fail"
-#     "Check_low_vip" : "Fail",
-#     "Status" : "Fail"
+}
+#Case 4: Mua vip vang
+def reportBuyVip2(data):
+    detail = {
+        "Check_gold" : data["Check_gold"], 
+        "Check_item" : data["Check_item"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case4: Check mua vip vang
+    
+    
+            Check gold nhan duoc : {0}
+            Check item           : {1}
+                                    
+                                    
+                                    Time test: {2}
+                                    Reporter: VyHN
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log = report.format(detail["Check_gold"], detail["Check_item"], current_time)
+    f = open("logVip.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+
+data = {
+    "Check_gold" : "Fail",
+    "Check_item" : "Fail"
+}
+#Case 5: Mua vip kim cuong
+def reportBuyVip3(data):
+    detail = {
+        "Check_gold" : data["Check_gold"], 
+        "Check_item" : data["Check_item"],
+        "Check_low_vip" : data["Check_low_vip"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case5: Check mua vip kim cuong
+    
+    
+            Check gold nhan duoc : {0}
+            Check item           : {1}
+            check mua vip thap   : {2}
+                                    
+                                    
+                                    Time test: {3}
+                                    Reporter: VyHN
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log = report.format(detail["Check_gold"], detail["Check_item"], detail["Check_low_vip"], current_time)
+    f = open("logVip.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+
+data = {
+    "Check_gold" : "Fail",
+    "Check_item" : "Fail",
+    "Check_low_vip" : "Fail"
 }
 #Case 6: Mua gold trong shop
 def reportBuyGold(data):
@@ -297,30 +357,27 @@ data = {
 #Case 11: Check het han trong ban choi
 def reportCheckExpiredTable(data):
     detail = {
-        "Check_item"     : data["Check_item"],
-        "Status"         : data["Status"]
+        "Check_item"     : data["Check_item"]
     }
     report = """
     -----------------------------------------------------------------------------
     Case 11: Check het han vip trong ban choi
     
-            Check item  : {0}
-            Status check: {1}                                            
-                                    Time test: {2}
+            Check item  : {0}                                            
+                                    Time test: {1}
                                     Reporter: VyHN
     -----------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log = report.format(detail["Check_item"], detail["Status"], current_time)
+    log = report.format(detail["Check_item"], current_time)
     f = open("logVip.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
 
 data = {
-    "Check_item" : "Fail",
-    "Status" : "Fail"
+    "Check_item" : "Fail"
 }
 #Function WC:---------------------->
 #BeforEvent
@@ -413,7 +470,7 @@ def reportDay1(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log=report.format( detail["Tab"], detail["Mission"],current_time)
-    f = open("log.txt", 'w+')
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -506,7 +563,6 @@ def reportDay5(data):
     detail = {
       "TimeCheat": data["TimeCheat"],
       "Update":data["Update"],
-      "NoUpdate":data["NoUpdate"],
     }
     report = """
     -----------------------------------------------------------------------------------------------------------
@@ -517,16 +573,15 @@ def reportDay5(data):
             
             Show update progess:                    {1}
             
-            No Show update progess:                 {2}
             
             
-                                                                time test: {3}
+                                                                time test: {2}
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log=report.format(detail["TimeCheat"], detail["Update"], detail["NoUpdate"], current_time)
+    log=report.format(detail["TimeCheat"], detail["Update"], current_time)
     f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
@@ -536,41 +591,28 @@ def reportDay5(data):
 #Day6
 def reportDay6(data):
     detail = {
-      "CheatTime": data["CheatTime"],
       "TimeCheat": data["TimeCheat"],
-      "Reload": data["Reload"],
-      "OpenGUI":data["OpenGUI"],
-      "BtnPlay":data["BtnPlay"],
-      "CheatCard": data["CheatCard"],
-      "Update":data["Update"],
-      "Leave":data["Leave"],
+      "Update":data["Update"]
     }
     report = """
     -----------------------------------------------------------------------------------------------------------
     
     CASE: Test mission Day 6
     
-            Cheat time qua ngay:                    {0}    Time cheat:                          {1}
-            
-            Reload lobby:                           {2}    
-            
-            Open GUI event:                         {3}    Click btn play Join table:           {4}
-            
-            Cheat card Mission:                     {5}   
-            
-            Show update progess:                    {6}
-            
-            Leave table:                            {7}
+            Time cheat:                             {0}
+                      
+            Show update progess:                    {1}
             
             
-                                                                time test: {8}
+            
+                                                                time test: {2}
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     """
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-    log=report.format( detail["CheatTime"], detail["TimeCheat"], detail["Reload"], detail["OpenGUI"], detail["BtnPlay"], detail["CheatCard"], detail["Update"], detail["Leave"], current_time)
-    f = open("log.txt", 'w+')
+    log=report.format(detail["TimeCheat"], detail["Update"], current_time)
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -688,7 +730,7 @@ def reportAutoClaim(data):
     report = """
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Claim gift finished mission
+    CASE: AutoClaim gift finished mission
     
             Auto show GUI event:                    {0}     
                           
@@ -840,7 +882,7 @@ def reportUpdateProgressMissionFull(data):
     report = """
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Claim gift finished mission 
+    CASE: Update Progress Mission Full
             
             Update progress full:                                           {0}
             
@@ -906,7 +948,7 @@ def reportWin(data):
             
             khong du gold click btn play show noti khong du gold:             {0}
             
-            Du gold click btn play vào bàn:                                   {1}    
+            Du gold click btn play vao ban:                                   {1}    
             
             Auto Show progess bar:                                            {2}    
             
@@ -1032,7 +1074,6 @@ def reportEndEvent(data):
 def reportDeal(data):
     print(data)
     detail = {
-      "Login":data["Login"],
       "GuiEvent": data["GuiEvent"],
       "GuiEDeal": data["GuiEDeal"],
       "BtnBuyWC": data["BtnBuyWC"],

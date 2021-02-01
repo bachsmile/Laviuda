@@ -32,26 +32,43 @@ poco = CocosJsPoco()
 #------------------------------------------WC------------------------------------------------#
 # WC--------------------------->
 def WC():
-    beforEvent("user0")
-    afterEvent("user1")
-    day1("user1")
-    claimGift("day1","user1")
-    day2("user1")
-    noClaimGift("day2","user1")
-    CheckChangeAcc(1,"user2") #1 -> day 1
-    missionPassDayInTable(2,"user2")
-    autoClaimGift("day2")
-    day3("user2")
-    missionPassDayOpenGui(3,user2)
-    passClaimGift(2,"user1")
-    day4("user1")
-    UpdateProgressMissionFull("day4","user1")
+    #Check truoc su kien vai ngay 
+    beforEvent(configCase["beforEvent"]["account"])
+    #check truoc su kien trong thoi gian quang cao su kien
+    afterEvent(configCase["afterEvent"]["account"])
+    #thuc hien kiem tra nhiem vu ngay1
+    day1(configCase["day1"]["account"])
+    #check nhan qua hoan thanh nhiem vu
+    claimGift("day"+str(configCase["claimGift"]["day"]),configCase["claimGift"]["account"])
+    #thuc hien kiem tra nhiem vu ngay2
+    day2(configCase["day2"]["account"])
+    #check bam khong nhan qua
+    noClaimGift("day"+str(configCase["noClaimGift"]["day"]),configCase["noClaimGift"]["account"])
+    #check cap nhan nhiem vu khi thay doi tai khoang
+    CheckChangeAcc(configCase["CheckChangeAcc"]["day"]-1,configCase["CheckChangeAcc"]["account"]) #1 -> day 1    
+    #check cap nhat nhiem vu khi dang o trong ban choi qua ngay moi
+    missionPassDayInTable(configCase["missionPassDayInTable"]["day"],configCase["missionPassDayInTable"]["account"])
+    #qua ngay moi co qua hoan thanh nhiem vu chua nhan check auto nhan
+    autoClaimGift("day"+str(configCase["autoClaimGift"]["day"]))
+    #thuc hien kiem tra nhiem vu ngay3
+    day3(configCase["day3"]["account"])
+    #check update nhiem vu qua ngay moi khi dang mo GUI event
+    missionPassDayOpenGui(configCase["missionPassDayOpenGui"]["day"],configCase["missionPassDayOpenGui"]["account"])
+    #check nhan qua hoan thanh sau khi off
+    passClaimGift(configCase["passClaimGift"]["day"],configCase["passClaimGift"]["account"])
+    #thuc hien kiem tra nhiem vu ngay4
+    day4(configCase["day4"]["account"]) 
+    #check update tien trinh nhiem vu
+    UpdateProgressMissionFull("day"+str(configCase["UpdateProgressMissionFull"]["day"]),configCase["UpdateProgressMissionFull"]["account"])
 #     checkDisconect()
 #     day5()
-    GuiDeal("user2")
+    #check hoat dong GUI deal
+    GuiDeal(configCase["GuiDeal"]["account"]) #{*}
 #     day6()
-    day7("user1","user3")
-    endEvent("day7","user2")
+    #thuc hien kiem tra nhiem vu ngay7
+    day7(configCase["day7"]["account"],configCase["day7"]["account2"])
+    #check dong cac su kien sau khi ket thuc
+    endEvent("day"+str(configCase["endEvent"]["day"]-1),configCase["endEvent"]["account"])
 #------------------------------------------WC------------------------------------------------#
 # WC()
 #------------------------------------------VIP-----------------------------------------------#
@@ -67,52 +84,53 @@ def Vip():
     back_to_lobby()
     reportCheckPackVip(data)
     #Case 3: MUA VIP 1
-    checkLevelVip() #check level vip
     cheatTimeRemain(19202812, 0) #cheat non-vip
     reloadLobby()
-    time.sleep(1)
     back_to_lobby()
     check_buy_vip(19202812, "vip.pack_1") #mua vip 1
-#   back_to_lobby()
-#   check_item() #check item ngoai ban choi
     to_table()
     check_item() #check item trong ban choi
     back_to_lobby()
-    reportBuyVip(data)
+    reportBuyVip1(data)
     #Case 4: MUA VIP 2
     check_buy_vip(19202812, "vip.pack_2")
     to_table()
     check_item() #check item trong ban choi
     back_to_lobby()
-    reportBuyVip(data)
+    reportBuyVip2(data)
     #Case 5: Mua vip 3
     check_buy_vip(19202812, "vip.pack_3")
-    buy_vip_thap("btnBuyBroze") #check mua vip 1
-    reportBuyVip(data)
+    buy_vip_thap("btnBuySilver") #check mua vip 1
+    back_to_lobby()
+    reportBuyVip3(data)
     #Case 6: Mua gold trong shop
     check_buy_gold(19202812, "iap.pack_1")
     reportBuyGold(data)
     #Case 7: Check nhan gold support
     check_gold_support(19202812)
+    reloadLobby()
     reportReceivedGoldSupport(data)
     #Case 7.1: Check nhan gold support lần 2
     check_gold_support(19202812)
+    reloadLobby()
     reportReceivedGoldSupport(data)
+    cheatGold(19202812, 50000)
     #Case 8: Cheat qua ngay nhan gold tribute
     timeWC= {
-    "Y":2021,"M":1,"D":2,"h":12,"m":0,"s":0
+    "Y":2020,"M":11,"D":24,"h":12,"m":0,"s":0
     }
     api_changeTimeServer(convertDayTimeToMili(timeWC))
     reloadLobby()
     check_gold_tribute(19202812)
+    back_to_lobby()
     reportReceivedGoldTribute(data)
     #Case 9: Check show data vip theo account
-    changeAcc(account["user1"]["user"],account["user1"]["pass"])
-    changeAcc(account["user0"]["user"],account["user0"]["pass"])
+    #   changeAcc(account["user1"]["user"],account["user1"]["pass"])
+    #   changeAcc(account["user0"]["user"],account["user0"]["pass"])
     #Case 10: Check show pop-up gia han vip
     cheatTimeRemain(19202812, 1)
-    reloadLobby()
     checkMoGUIGH()
+    back_to_lobby()
     reportExpiredVip(data)
     #Case11: Check het han trong ban choi
     api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", [10])
@@ -124,8 +142,8 @@ def Vip():
     #Case12: Check het han mua vip
     checkMoGUIVip()
     check_buy_vip(19202812, "vip.pack_1")
-    reportBuyVip(data)
-# Vip()
+    reportBuyVip1(data)
+Vip()
 #------------------------------------------VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
 def DB():

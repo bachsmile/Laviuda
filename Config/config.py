@@ -7,80 +7,68 @@ from airtest.cli.parser import cli_setup
 from poco.drivers.cocosjs import CocosJsPoco
 import json
 poco = CocosJsPoco()
+#----------------------------------------------------WC----------------------------------------------------------------------#
 #config
-#id
-# user["user0"]["user"]
-user={
-    "user0":{
-        "id":"19400486",
-        "user":"user000",
-        "pass":123456      
-    },
-    "user1":{
-        "id":"19400458",
-        "user":"user001",
-        "pass":123456      
-    },
-    "user2":{
-        "id":'19400724',
-        "user":"user002",
-        "pass":123456       
-    },
-    "user3":{
-        "id":'19400738',
-        "user":"user003",
-        "pass":123456       
-    },
-     "user":{
-        "id":'19130219',
-        "user":"user",
-        "pass":123456       
-    },
-}
-
-timeWC={
-    "start":{"Y":2020,"M":12,"D":29,"h":7,"m":0,"s":0},
-    "end":{"Y":2021,"M":1,"D":5,"h":7,"m":0,"s":0}
-}
-# def timeBtnCheat(time,Y,M,D,h,m,s):
-#     TY=0+Y
-#     TM=0+M
-#     TD=0+D
-#     Th=0+h
-#     Tm=0+m
-#     Ts=0+s
-#     timeW="""
-# {0}:{1}:{2}
-# {3}/{4}/{5}
-# """
-#     timeWt=timeW.format(time['h']+Th, time['m']+Tm,time['s']+Ts,time['D']+TD,time['M']+TM,time['Y']+TY)
-#     return timeWt
-# print(timeBtnCheat(timeWC[ "start"],1,-11,-28,0,0,0))
+#doi ngay qua miliseconds
 def datetoMili(day):
     return day*86400000
+#doi gio qua miliseconds
 def housToMili(hous):
     return hous*3600000
+#doi phu qua miliseconds
 def minutetoMili(minute):
     return minute*60000
+#doi giay qua miliseconds
 def secToMili(sec):
     return sec*1000
+#doi daytime qua miliseconds
 def convertDayTimeToMili(time):
     dt = datetime(time['Y'],time['M'],time['D'],time['h'],time['m'],time['s'])
     milliseconds = int(round(dt.timestamp() * 1000))
     print(milliseconds)
     return milliseconds
-# print(convertDayTimeToMili(timeWC["start"]))
+#doi miliseconds sang daytime
 def convertSecondstoDateTime(milliseconds):
     seconds=milliseconds/1000
     timestamp = datetime.fromtimestamp(seconds)
     return timestamp
-# def convertSecondstoDateTime(milliseconds)
-#     seconds=milliseconds/1000
-#     timestamp = datetime.fromtimestamp(seconds)
-#     return timestamp
-# print(convertSecondstoDateTime)
+#Time Start end End WC
+timeWC={
+    "start":{"Y":2020,"M":12,"D":29,"h":7,"m":0,"s":0},
+    "end":{"Y":2021,"M":1,"D":5,"h":7,"m":0,"s":0}
+}
+#Account
+# user["user0"]["user"]
+user={
+    "user0":{
+        "id":"20536072",
+        "user":"zps000",
+        "pass":123456      
+    },
+    "user1":{
+        "id":"20536032",
+        "user":"zps001",
+        "pass":123456      
+    },
+    "user2":{
+        "id":'20536048',
+        "user":"zps002",
+        "pass":123456       
+    },
+    "user3":{
+        "id":'20536060',
+        "user":"zps003",
+        "pass":123456       
+    },
+     "user":{
+        "id":'20538919',
+        "user":"zpstest",
+        "pass":123456       
+    },
+}
+
 #Feature
-#chalenge
+#Config nhiem vu thuc hien trong cac ngay
 challenge={
     "day1":{
         "mission":"exchange1",
@@ -95,31 +83,116 @@ challenge={
         "mission":"win",
     },
      "day5":{
-         "mission":"win",       
+         "mission":"full",       
     },
      "day6":{
-         "mission":"final",    
+         "mission":"play",    
     },
      "day7":{
         "mission":"claim",
     }
 }
+# configCase["beforEvent"]["account"]
+# configCase["beforEvent"]["day"]
+# "day"+str(configCase["claimGift"]["day"])
+#config cac account su dung trong cac case test
+configCase={
+    "beforEvent":{
+        "day":0,
+        "account":"user0"
+    },
+     "afterEvent":{
+        "day":0,
+        "account":"user1"
+    },
+     "day1":{
+        "day":1,
+        "account":"user1"
+    },
+     "claimGift":{
+        "day":1,
+        "account":"user1"
+    },
+     "day2":{
+        "day":2,
+        "account":"user1"
+    },
+     "noClaimGift":{
+        "day":2,
+        "account":"user1"
+    },
+     "CheckChangeAcc":{
+        "day":2,
+        "account":"user2"
+    },
+     "missionPassDayInTable":{
+        "day":2,
+        "account":"user2"
+    },
+     "autoClaimGift":{
+        "day":2,
+        "account":"user2"
+    },
+    
+     "day3":{
+        "day":3,
+        "account":"user2"
+    },
+    
+     "missionPassDayOpenGui":{
+        "day":3,
+        "account":"user2"
+    },
+    
+     "passClaimGift":{
+        "day":2,
+        "account":"user1"
+    },
+    
+     "day4":{
+        "day":4,
+        "account":"user1"
+    },
+    
+     "UpdateProgressMissionFull":{
+        "day":4,
+        "account":"user1"
+    },
+     "GuiDeal":{
+        "day":4,
+        "account":"user1"
+    },
+     "day7":{
+        "day":7,
+        "account":"user1",
+        "account2":"user3"
+    },
+     "endEvent":{
+        "day":8,
+        "account":"user2"
+    },
+    
+}
+
+# print("day"+str(configCase["autoClaimGift"]["day"]))
+# print(configCase["passClaimGift"]["day"])
+#config infor cac nhiem vu
 challengePlay={
     "win":{
         "data":{
                 "detailMission":poco(text="Ganar "),
-                "totalX":4,
-                "tacos":4,
-                "gold":80000,
+                "totalX":3,
+                "tacos":3,
+                "gold":100000,
                 "type":"win"
                 },
     },
-    "final":{
+    "full":{
         "data":{
-            "detailMission":poco(text="Jugar "),
+            "detailMission":poco(text="Termina el juego con "),
             "totalX":4,
             "tacos":3,
-            "gold":120000
+            "gold":150000
         }    
     },
     "knock":{
@@ -149,7 +222,7 @@ challengePlay={
     },
     "claim":{
         "data":{
-            "gold":120000
+            "gold":15000
         } 
     },
     "play":{
@@ -161,7 +234,7 @@ challengePlay={
         },
     }
 }
-
+#cac bo bai can cheat vaf wildcard can cheat
 cardCheat={
     "wc":{
         "card":"2c",
@@ -173,19 +246,26 @@ cardCheat={
     },
     "lose":{
         "card":"2c",
-        "set":"3t,42b,7r,9b,10c"
+        "set":"3t,2b,7r,9b,qc"
+    },
+    "full":{
+        "card":"2c",
+        "set":"3t,3b,3r,ab,ac"
     },
 }
-#deal
+#deal config
 dealWCConfig={
     "offerWC1":{
-        "gold":16000000
+        "gold":16000000,
+        "gold1":6500000
     },
     "offerWC2":{
-        "gold":60000000
+        "gold":60000000,
+        "gold1":15000000
     },
-    "offerWC1":{
-        "gold":150000000
+    "offerWC3":{
+        "gold":150000000,
+        "gold1":30000000
     },
 }
 #dataReport
@@ -235,7 +315,8 @@ dataReportConfig = {
         "Befor":"Fail",
         "ShowBtnJoin":"Fail",
         "noPlay":"Fail",
-        "onPlay":"Fail"
+        "onPlay":"Fail",
+        "HideProgress":"Fail"
     }
 # convertDayTimeToMili(2020, 11, 26,6,59,0)   
 # print(challengePlay[challenge["day2"]["mission"]]["data"]["gold"])
@@ -250,40 +331,32 @@ vip_pack = {
         "id": 1,
         "price":50,
         "bonus": 0.3,
-        "dailyTribute":5,
+        "dailyTribute":5000000,
         "day":3
     },
     "vip.pack_2" : {
         "id": 2,
         "point":100,
         "bonus":0.5,
-        "dailyTribute":6,
+        "dailyTribute":6000000,
         "day":7
     },
     "vip.pack_3" : {
         "id": 3,
         "point":300,
         "bonus":1,
-        "dailyTribute":7,
+        "dailyTribute":7000000,
         "day":30
     }
 }
 
 pack_gold = {
-    "credit_card" : {
-            "id": 1,
-            "10MXN":1000000,
-            "15MXN":1500000,
-            "30MXN":3500000,
-            "40MXN":5000000
-    },
     "gg_play" : {
-            "id": 2,
-            "20MXN":2000000,
-            "50MXN":6500000,
-            "100MXN":15000000,
-            "200MXN":30000000,
-            "400MXN":60000000
+            "iap.pack_1":2000000,
+            "iap.pack_2":6500000,
+            "iap.pack_3":15000000,
+            "iap.pack_4":30000000,
+            "iap.pack_5":60000000
     } 
 }
 account = {
@@ -293,19 +366,11 @@ account = {
         "pass":123456      
     },
     "user1":{
-        "id":"19175089",
-        "user":"nguyenvy123",
+        "id":"20040460",
+        "user":"vyhn0908",
         "pass":123456      
     }
 }
 gold_support = 30000
-# convertDayTimeToMili(2020, 11, 26,6,59,0)   
-# print(challengePlay[challenge["day2"]["mission"]]["data"]["gold"])
-#----------------------------------------------------WC----------------------------------------------------------------------#
-
-
-
-
-
 
 

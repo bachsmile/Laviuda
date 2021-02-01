@@ -119,7 +119,7 @@ def clear():
     pocoTag.btnLeaveGame,
     pocoTag.btnHide ,
     pocoTag.btnMain,
-#     pocoTag.notiShow,
+    pocoTag.notiShow,
     pocoTag.NOTIFICACIONES,
     pocoTag.lbTime,
     pocoTag.btnCheat,

@@ -1,254 +1,4 @@
 
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Claim gift finished mission
-            
-            Auto show GUI event:                    Fail     
-                          
-            Auto claim :                            Fail    
-            
-            Tick claim gift:                        Pass
-            
-            Update mission new:                     Pass
-            
-            
-                                                                time test: 13:28:22
-                                                                Reporter: BachTX
-    ----------------------------------------------------------------------------------------------------------
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Fail    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:05:22
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Fail    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:06:26
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:07:21
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:12:00
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:12:30
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:23:55
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:25:33
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Fail    Nhiem vu Day 4 show:                 Fail
-            
-                                                                 time test: 14:26:52
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:27:39
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:28:32
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:29:38
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:33:33
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:35:11
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:35:56
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:44:16
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:46:36
-    
-            -------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Win
-            
-            khong du gold click btn play show noti khong du gold:             Fail
-            
-            Du gold click btn play vào bàn:                                   Fail    
-            
-            Auto Show progess bar:                                            Fail    
-            
-            Show update progess win:                                          Fail
-            
-            No update progess lose:                                           Fail
-            
-            
-                                                                time test: 14:46:51
-                                                                Reporter: BachTX
-    ----------------------------------------------------------------------------------------------------------
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:50:09
-    
-            -------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Win
-            
-            khong du gold click btn play show noti khong du gold:             Fail
-            
-            Du gold click btn play vào bàn:                                   Fail    
-            
-            Auto Show progess bar:                                            Fail    
-            
-            Show update progess win:                                          Fail
-            
-            No update progess lose:                                           Fail
-            
-            
-                                                                time test: 14:50:24
-                                                                Reporter: BachTX
-    ----------------------------------------------------------------------------------------------------------
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:52:22
-    
-            -------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Win
-            
-            khong du gold click btn play show noti khong du gold:             Pass
-            
-            Du gold click btn play vào bàn:                                   Fail    
-            
-            Auto Show progess bar:                                            Fail    
-            
-            Show update progess win:                                          Fail
-            
-            No update progess lose:                                           Fail
-            
-            
-                                                                time test: 14:52:38
-                                                                Reporter: BachTX
-    ----------------------------------------------------------------------------------------------------------
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:53:32
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 14:55:55
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 15:01:09
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
-            
-                                                                 time test: 15:01:41
-    
             -------------------------------------------------------------------------------------------
     
     CASE: Test mission Win
@@ -259,121 +9,280 @@
             
             Auto Show progess bar:                                            Pass    
             
-            Show update progess win:                                          Fail
+            Show update progess win:                                          Pass
             
             No update progess lose:                                           Fail
             
             
-                                                                time test: 15:02:10
+                                                                time test: 10:26:11
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------
+    Case 7: Check mua gold
+            Status check: Fail                                            
+                                    Time test: 14:34:49
+                                    Reporter: VyHN
+    -----------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------
+    Case 7: Check mua gold
+            Status check: Fail                                            
+                                    Time test: 14:35:42
+                                    Reporter: VyHN
+    -----------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Day 1
+    
+            Tab Day1 enable:                        Pass    Nhiem vu Day 1 show:                 Pass
+            
+                                                                 time test: 09:56:49
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Qua ngay khi dang trong ban
+            
+            Update nhiem vu ngay moi                Pass
+
+            
+            
+                                                                time test: 10:16:21
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Test mission Day 4
+    CASE: Test btn sau thoi gian show event
     
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
+            Time :                                  2020-12-29 06:59:30    Status cheat time 1p befor event: Pass
             
-                                                                 time test: 15:06:36
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
+            Click btn befor event show noti:        Fail
             
-                                                                 time test: 15:10:20
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
+            Wait coutdown:                          Fail
             
-                                                                 time test: 15:14:53
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
+            Click btn after event:                  Pass
             
-                                                                 time test: 15:19:05
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
+            Show btn join event:                    Pass
             
-                                                                 time test: 15:22:45
-    
-            -------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Win
+            Time:                                   2020-12-29 06:59:00    Status cheat time 1p befor event: Pass
             
-            khong du gold click btn play show noti khong du gold:             Fail
-            
-            Du gold click btn play vào bàn:                                   Fail    
-            
-            Auto Show progess bar:                                            Fail    
-            
-            Show update progess win:                                          Fail
-            
-            No update progess lose:                                           Fail
+            Show Progess:                           Pass
             
             
-                                                                time test: 15:23:18
+                                                                time test: 10:23:37
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Test mission Day 4
+    CASE: Test btn sau thoi gian show event
     
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
+            Time :                                  2020-12-29 06:59:30    Status cheat time 1p befor event: Pass
             
-                                                                 time test: 15:23:50
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Test mission Day 4
-    
-            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
+            Click btn befor event show noti:        Fail
             
-                                                                 time test: 15:25:44
-    
-    -----------------------------------------------------------------------------------------------------------
-    
-    CASE: Claim gift finished mission   
+            Wait coutdown:                          Fail
             
-            Cheat finished mission:                 Pass     
+            Click btn after event:                  Pass
             
-            Show GUI event                          Fail
-                    
-            Update gold :                           Pass   
+            Show btn join event:                    Pass
             
-            Update Tocos:                           Fail
+            Time:                                   2020-12-29 06:59:00    Status cheat time 1p befor event: Pass
+            
+            Show Progess:                           Pass
             
             
-                                                                time test: 09:43:56
+                                                                time test: 10:29:02
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     
     -----------------------------------------------------------------------------------------------------------
     
-    CASE: Claim gift finished mission   
+    CASE: Test btn sau thoi gian show event
+    
+            Time :                                  2020-12-29 06:59:30    Status cheat time 1p befor event: Pass
             
-            Cheat finished mission:                 Pass     
+            Click btn befor event show noti:        Fail
             
-            Show GUI event                          Pass
-                    
-            Update gold :                           Pass   
+            Wait coutdown:                          Fail
             
-            Update Tocos:                           Pass
+            Click btn after event:                  Pass
+            
+            Show btn join event:                    Pass
+            
+            Time:                                   2020-12-29 06:59:00    Status cheat time 1p befor event: Pass
+            
+            Show Progess:                           Pass
             
             
-                                                                time test: 09:48:17
+                                                                time test: 10:36:16
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Day 1
+    
+            Tab Day1 enable:                        Fail    Nhiem vu Day 1 show:                 Fail
+            
+                                                                 time test: 10:36:38
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test btn sau thoi gian show event
+    
+            Time :                                  2020-12-29 06:59:30    Status cheat time 1p befor event: Pass
+            
+            Click btn befor event show noti:        Fail
+            
+            Wait coutdown:                          Fail
+            
+            Click btn after event:                  Pass
+            
+            Show btn join event:                    Pass
+            
+            Time:                                   2020-12-29 06:59:00    Status cheat time 1p befor event: Pass
+            
+            Show Progess:                           Pass
+            
+            
+                                                                time test: 10:41:34
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Day 1
+    
+            Tab Day1 enable:                        Pass    Nhiem vu Day 1 show:                 Pass
+            
+                                                                 time test: 10:41:56
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test btn sau thoi gian show event
+    
+            Time :                                  2020-12-29 06:59:30    Status cheat time 1p befor event: Pass
+            
+            Click btn befor event show noti:        Fail
+            
+            Wait coutdown:                          Fail
+            
+            Click btn after event:                  Pass
+            
+            Show btn join event:                    Pass
+            
+            Time:                                   2020-12-29 06:59:20    Status cheat time 1p befor event: Pass
+            
+            Show Progess:                           Pass
+            
+            
+                                                                time test: 10:50:59
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Day 1
+    
+            Tab Day1 enable:                        Pass    Nhiem vu Day 1 show:                 Pass
+            
+                                                                 time test: 10:51:11
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Exchange1
+    
+            Click btn Play:                         Pass    
+            
+            Add bot:                                Pass
+            
+            Exchange1:                              Pass    
+            
+            Show update progess:                    Pass    
+            
+            Choose Leave table:                     Pass    
+            
+            No update progess bar at end game:      Pass    
+            
+            Leave table:                            Pass
+            
+            
+                                                                time test: 10:53:01
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Check change account
+            
+            Nhiem vu Day1 acc2 khong hoan thanh:    Fail
+            
+            
+            
+                                                                time test: 10:57:30
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Qua ngay khi dang trong ban
+            
+            Update nhiem vu ngay moi                Pass
+
+            
+            
+                                                                time test: 10:59:39
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Check change account
+            
+            Nhiem vu Day1 acc2 khong hoan thanh:    Pass
+            
+            
+            
+                                                                time test: 11:52:49
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Check change account
+            
+            Nhiem vu Day1 acc2 khong hoan thanh:    Pass
+            
+            
+            
+                                                                time test: 11:55:22
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Check change account
+            
+            Nhiem vu Day1 acc2 khong hoan thanh:    Pass
+            
+            
+            
+                                                                time test: 11:56:41
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Check change account
+            
+            Nhiem vu Day1 acc2 khong hoan thanh:    Pass
+            
+            
+            
+                                                                time test: 12:24:37
                                                                 Reporter: BachTX
     ----------------------------------------------------------------------------------------------------------
     
