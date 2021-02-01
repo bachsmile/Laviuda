@@ -75,7 +75,7 @@ def WC():
 def Vip():
     clearReport()
 #     #Case 1: OPEN VIP
-    changeAcc("vyhn0908","123456")
+#     changeAcc("vyhn0908","123456")
     open_vip()
     reportCheckOpenVip(data)
     #Case 2: OPEN VIP NHƯNG KHÔNG MUA
@@ -118,7 +118,7 @@ def Vip():
     cheatGold(20040460, 50000)
     #Case 8: Cheat qua ngay nhan gold tribute
     timeWC= {
-    "Y":2020,"M":12,"D":15,"h":12,"m":0,"s":0
+    "Y":2020,"M":11,"D":9,"h":12,"m":0,"s":0
     }
     api_changeTimeServer(convertDayTimeToMili(timeWC))
     reloadLobby()
@@ -143,8 +143,8 @@ def Vip():
     #Case12: Check het han mua vip
     checkMoGUIVip()
     check_buy_vip(20040460, "vip.pack_1")
-    reportBuyVip1(data)
-# Vip()
+    reportBuyVip1KHH(data)
+Vip()
 #------------------------------------------VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
 def DB():
@@ -233,6 +233,7 @@ def DB():
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
 #---------------------------------------------End Report-------------------------------------------------#
+
 
 
 

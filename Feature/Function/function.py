@@ -99,6 +99,7 @@ def fortmartTime(time):
 #cheat gold về 0
 def cheatGoldEmpty(gold):
     try:
+        clear()
         pocoTag.btnCheat.click()
         if waitNolimitPoco(pocoTag.pnGold,2):
             pocoTag.pnGold.click([0.6045215255512122, 0.41971168518066404])
@@ -475,6 +476,7 @@ def check_item3():
         print("Error")
 def to_table():
     try:
+        clear()
         pocoTag.btnPlay.click()
         pocoTag.btnCheat.click()
         pocoTag.btnAddBot.click()
