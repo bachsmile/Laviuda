@@ -218,6 +218,7 @@ def DB():
     claim_bonus_true(DailyBonus["day7"],s,userID)
     clear()
     #check an btn Daily bonus ở lobby khi đã nhận đủ 7 lần
+    print(s)
     checkCompleteBonus(s)
     time.sleep(3)
     checkIconDaily()
