@@ -2517,7 +2517,7 @@ def check_update_gold(config):
 def log_in():
     pocoTag.btnSwitch.click()
     pocoTag.inputUser.click()
-    text("ngoctu45")
+    text("ngoctu52")
     pocoTag.inputPass.click()
     text("12345678")
     pocoTag.btnLogin.click()
@@ -2547,7 +2547,7 @@ def register():
     }
     pocoTag.btnSwitch.click()
     pocoTag.inputUser.click()
-    text("ngoctu45")
+    text("ngoctu52")
     pocoTag.inputPass.click()
     text("12345678")
     pocoTag.btnRegister.click()  
@@ -2600,7 +2600,7 @@ def bonus_day_1(s):
         dataDaily["detail"]="Dont show GUI dayly bonus day 1"
     report_GUI_dailybonus(dataDaily)
     return s 
-def claim_bonus_true(config,s):
+def claim_bonus_true(config,s,user):
     dataDaily= {
         "status": "False",
         "detail": ""
@@ -2610,7 +2610,7 @@ def claim_bonus_true(config,s):
         print("Nhan bonus day success!")
         gold_befor= getGold(userID)
         pocoTag.btnClaim.click()
-        gold_after= getGold(userID)
+        gold_after= getGold(user)
         dataDaily["status"]="True"
         dataDaily["detail"]="Show GUI daily bonus True!"
         s+=1
@@ -2629,7 +2629,7 @@ def claim_bonus_true(config,s):
         dataDaily["detail"]="Dont show GUI daily bonus when enough 24h"
     report_GUI_dailybonus(dataDaily)
     return s
-def claim_bonus_false(config,s):
+def claim_bonus_false(config,s,user):
     dataDaily= {
         "status": "False",
         "detail": ""
@@ -2637,9 +2637,9 @@ def claim_bonus_false(config,s):
     time.sleep(3)
     if btn_claim_exit(pocoTag.btnClaim)==True:
         print("Nhan bonus day success!")
-        gold_befor= getGold(userID)
+        gold_befor= getGold(user)
         pocoTag.btnClaim.click()
-        gold_after= getGold(userID)
+        gold_after= getGold(user)
         dataDaily["status"]="False"
         dataDaily["detail"]="Show GUI daily bonus when not enough 24h!"
         s+=1
@@ -2689,7 +2689,7 @@ def playing_24h():
 def GUI_bonus_23h(s):
     api_changeTimeServer(convertDayTime(time_db[5]))
     reloadLobby()
-    s=claim_bonus_false(DailyBonus["day5"],s) 
+    s=claim_bonus_false(DailyBonus["day5"],s,userID) 
     pocoTag.btnDaily.click()
 def close_Gui_daily():
     if pocoTag.btnTomorrow.exists():
@@ -2708,7 +2708,7 @@ def checkCompleteBonus(s):
     i=9
     while s<7:
         api_changeTimeServer(convertDayTime(time_db[i]))
-        s=claim_bonus_true(DailyBonus["day7"],s)
+        s=claim_bonus_true(DailyBonus["day7"],s,userID)
         if i<11:
             i+=1
         else:
