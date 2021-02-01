@@ -12,6 +12,7 @@ import sys
 from airtest.core.api import *
 from airtest.cli.parser import cli_setup
 from poco.drivers.cocosjs import CocosJsPoco
+from poco.agent import PocoAgent
 #--------------End Import Lib------------------------------#
 #--------------Import FILE---------------------------------#
 # from Lavuavi.Config.Api import *
@@ -451,7 +452,7 @@ def check_item():
                     time.sleep(2)
                     touch(image_vip.btn_profile)
                 else:
-                    swipe(Template(r"tpl1610432749141.png", record_pos=(0.114, 0.123), resolution=(2340, 1079)), vector=[-0.1399, -0.0097])
+                    swipe(image_vip.hoahong1, vector=[-0.1399, -0.0097])
                     time.sleep(2)
                     touch(item)
             data["Check_item"] = "Pass"
@@ -465,7 +466,7 @@ def check_item3():
     try:
         touch(image_vip.btn_profile)
         if exists(image_vip.list_item):
-            swipe(Template(r"tpl1610432749141.png", record_pos=(0.114, 0.123), resolution=(2340, 1079)), vector=[-0.1399, -0.0097])
+            swipe(image_vip.hoahong1, vector=[-0.1399, -0.0097])
             time.sleep(2)
             touch(image_vip.boom)
         print("success")
@@ -473,7 +474,6 @@ def check_item3():
         print("Error")
 def to_table():
     try:
-        clear()
         pocoTag.btnPlay.click()
         pocoTag.btnCheat.click()
         pocoTag.btnAddBot.click()
@@ -485,6 +485,7 @@ def to_table():
         print("Khong thanh cong")
 def buy_vip_thap(pack):
     try:
+        pocoTag.btnVip.click()
         poco(pack).click()
         time.sleep(1)
         touch(image_vip.btn_ok)
@@ -524,8 +525,8 @@ def check_buy_vip(idU, pack):
         time.sleep(2)
         new_gold = getGold(idU)
         gold_in = new_gold - old_gold
-        gold_conf = vip_pack[pack]["dailyTribute"]
-        if gold_in == gold_conf:
+        gold_conf = vip_pack[pack]["dailyTribute"] 
+        if checkUpdateGold(gold_conf,old_gold,new_gold):
             data["Check_gold"] = "Pass"
             print("Success")
     except:
@@ -533,16 +534,17 @@ def check_buy_vip(idU, pack):
         print("Error")
 def check_gold_support(idU):
     cheatGoldEmpty(1)
+    time.sleep(2)
     reloadLobby()
     old_gold = getGold(idU)
     try:
-        if exists(image_vip.btn_ok):
-            image_vip.btn_ok
+        if exists(image_vip.pop_up_gold_support):
+            touch(image_vip.btn_ok_sp)
+            time.sleep(1)
             new_gold = getGold(idU)
-            print(new_gold)
             gold_in = new_gold - old_gold
             gold_conf = gold_support
-            if gold_in == gold_conf:
+            if checkUpdateGold(gold_conf,old_gold,new_gold):
                 data["Gold_support"] = "Pass"
                 data["Status"] = "Pass"
                 print("Nhan gold support thanh cong")
@@ -555,8 +557,8 @@ def check_gold_support(idU):
 def cheatBuyGold(idU, pack):
     try:
         cheat = api_postDoFunction(idU, "CHEAT_PAYMENT_IAP", [pack])
-        pocoTag.btnClaim.click()
         time.sleep(2)
+        pocoTag.btnClaim.click()
         print("Success")
     except:
         print("Error")
@@ -576,7 +578,7 @@ def check_buy_gold(idU, pack):
             gold_conf = gold_defaul*2
         else:
             gold_conf = gold_defaul
-        if gold_in == gold_conf:
+        if checkUpdateGold(gold_conf,old_gold,new_gold):
             data["Check_gold"] = "Pass"
             data["Status"] = "Pass"
             print("Success")
@@ -600,7 +602,7 @@ def check_gold_tribute(idU):
                 gold_conf = vip_pack["vip.pack_3"]["dailyTribute"]
             else:
                 gold_conf = 0
-            if gold_in == gold_conf:
+            if checkUpdateGold(gold_conf,old_gold,new_gold):
                 data["Gold_tribute"] = "Pass"
                 data["Status"] = "Pass"
                 print("Nhan duoc gold tribute")
@@ -1320,7 +1322,6 @@ def knock(day,users):
         #check progress
         prog1=checkProgressCurrent()
         closeEvent()
-        #cheat gold du play
         cheatGold(user[users]["id"],1000000)
         #click btn play
         joinTable()
@@ -2446,18 +2447,18 @@ def closeNotiVip():
 #27/12/2020 00:00:00 /1609002000000
 
 time_db=[
-{"Y":2020,"M":11,"D":4,"h":17,"m":50,"s":0},     #day1
-{"Y":2020,"M":11,"D":6,"h":0,"m":0,"s":0},     #logout-login 24h (day2)
-{"Y":2020,"M":11,"D":6,"h":23,"m":59,"s":50},  #lobby 24h (day3)
-{"Y":2020,"M":11,"D":7,"h":23,"m":0,"s":0},    #log out-login 23h
-{"Y":2020,"M":11,"D":8,"h":0,"m":0,"s":0},     #playing 24 (day4)
-{"Y":2020,"M":11,"D":8,"h":23,"m":0,"s":0},    #GUI daily 23h
-{"Y":2020,"M":11,"D":8,"h":23,"m":59,"s":50},  #GUI daily 24h
-{"Y":2020,"M":11,"D":9,"h":0,"m":0,"s":0},     #logout- login 24h
-{"Y":2020,"M":11,"D":10,"h":0,"m":0,"s":0},     #lobby 24h
-{"Y":2020,"M":11,"D":11,"h":0,"m":0,"s":0},
-{"Y":2020,"M":11,"D":12,"h":0,"m":0,"s":0},
-{"Y":2020,"M":11,"D":13,"h":0,"m":0,"s":0}
+{"Y":2020,"M":12,"D":17,"h":17,"m":50,"s":0},     #day1
+{"Y":2020,"M":12,"D":19,"h":0,"m":0,"s":0},     #logout-login 24h (day2)
+{"Y":2020,"M":12,"D":19,"h":23,"m":59,"s":50},  #lobby 24h (day3)
+{"Y":2020,"M":12,"D":20,"h":23,"m":0,"s":0},    #log out-login 23h
+{"Y":2020,"M":12,"D":21,"h":0,"m":0,"s":0},     #playing 24 (day4)
+{"Y":2020,"M":12,"D":21,"h":23,"m":0,"s":0},    #GUI daily 23h
+{"Y":2020,"M":12,"D":21,"h":23,"m":59,"s":50},  #GUI daily 24h
+{"Y":2020,"M":12,"D":23,"h":0,"m":0,"s":0},     #logout- login 24h
+{"Y":2020,"M":12,"D":24,"h":0,"m":0,"s":0},     #lobby 24h
+{"Y":2020,"M":12,"D":25,"h":0,"m":0,"s":0},
+{"Y":2020,"M":12,"D":26,"h":0,"m":0,"s":0},
+{"Y":2020,"M":12,"D":27,"h":0,"m":0,"s":0}
 ]
 def convertDayTime(time):
     dt = datetime(time['Y'],time['M'],time['D'],time['h'],time['m'],time['s'])
@@ -2496,7 +2497,7 @@ def gold_number():
 def get_user_id():
     touch(image_vip.btn_profile)
     time.sleep(4)
-    return pocoTag.ibID.get_text()  
+    return pocoTag.ibID.get_text()
 def close_info():
     time.sleep(1)
     pocoTag.btn_closeInfo.click()
@@ -2513,7 +2514,7 @@ def check_update_gold(config):
 def log_in():
     pocoTag.btnSwitch.click()
     pocoTag.inputUser.click()
-    text("ngoctu76")
+    text("ngoctu52")
     pocoTag.inputPass.click()
     text("12345678")
     pocoTag.btnLogin.click()
@@ -2543,7 +2544,7 @@ def register():
     }
     pocoTag.btnSwitch.click()
     pocoTag.inputUser.click()
-    text("ngoctu76")
+    text("ngoctu52")
     pocoTag.inputPass.click()
     text("12345678")
     pocoTag.btnRegister.click()  
@@ -2604,7 +2605,7 @@ def claim_bonus_true(config,s,user):
     time.sleep(3)
     if btn_claim_exit(pocoTag.btnClaim)==True:
         print("Nhan bonus day success!")
-        gold_befor= getGold(user)
+        gold_befor= getGold(userID)
         pocoTag.btnClaim.click()
         gold_after= getGold(user)
         dataDaily["status"]="True"
@@ -2736,10 +2737,6 @@ def complete_lobby_24h():
     report_GUI_dailybonus(dataDaily)
 #20. Log out-> Login lại sau 24h
 def complete_logout_login_24h():
-    dataDaily= {
-        "status": "False",
-        "detail": "",
-    }
     log_out()
     log_in() 
     time.sleep(3)
@@ -2802,7 +2799,4 @@ def tut():
         print("Tut fail")
     poco("btnTut5").click()
     claimAll()
-    closeAllEvent()    
-
-
-
+    closeAllEvent()        
