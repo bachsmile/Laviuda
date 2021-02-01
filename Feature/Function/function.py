@@ -665,7 +665,8 @@ def checkLevelVip():
     #------------------#
 #case1
 def beforEvent(users):
-    clearReport()
+#     clearReport()
+    resetDataReportConfig()
     claimAll()
     closeAllEvent()
     timeCheat = api_changeTimeServer(1605051600000)
@@ -2802,5 +2803,4 @@ def tut():
         print("Tut fail")
     poco("btnTut5").click()
     claimAll()
-    closeAllEvent()     
-
+    closeAllEvent()    
