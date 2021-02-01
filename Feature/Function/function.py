@@ -151,7 +151,6 @@ def reloadLobby():
             touch(image_vip.back)  
 #         touch(image_vip.back)    
         print('reload lobby')
-        clear()
         return True
     except:
         print('error reload lobby')
@@ -1323,7 +1322,6 @@ def knock(day,users):
         #check progress
         prog1=checkProgressCurrent()
         closeEvent()
-        #cheat gold du play=
         cheatGold(user[users]["id"],1000000)
         #click btn play
         joinTable()
@@ -2435,7 +2433,6 @@ def closeNotiVip():
             return False
     except:
         return False
-#-------------------------------------------------------------------------------------#
 #18/12/2020: 00:00:00 /1608224400000
 #19/12/20210 00:00:00 /1608310800000
 #20/12/2020 00:00:00 /1608397200000
@@ -2802,4 +2799,4 @@ def tut():
         print("Tut fail")
     poco("btnTut5").click()
     claimAll()
-    closeAllEvent()     
+    closeAllEvent()        
