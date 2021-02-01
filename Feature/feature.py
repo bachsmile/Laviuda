@@ -147,13 +147,14 @@ def Vip():
 #------------------------------------------VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
 def DB():
+    s=0
     #1. check có đang ở màn hình login ko
     api_changeTimeServer(convertDayTime(time_db[0]))
     check_login()
     #2. đăng kí thường
     register()     
     play_tutorial()
-    s=bonus_day_1(s)
+    s=bonus_day_1(0)
     check_lobby()
     clear()
     userID= get_user_id()
@@ -167,7 +168,7 @@ def DB():
     log_in()
     time.sleep(3)
     #5. Nhận bonus lần 2
-    s=claim_bonus_true(DailyBonus["day2"],s)
+    s=claim_bonus_true(DailyBonus["day2"],s,userID)
     #6. Check có đang ở lobby hay không
     check_lobby()
     clear()
@@ -176,27 +177,27 @@ def DB():
     time.sleep(1)
     reloadLobby()
     time.sleep(10)
-    s=claim_bonus_true(DailyBonus["day3"],s)
+    s=claim_bonus_true(DailyBonus["day3"],s,userID)
     clear()
     #10. Log out-> vào lại sau 23
     log_out()
     api_changeTimeServer(convertDayTime(time_db[3]))
     log_in()
-    s=claim_bonus_false(DailyBonus["day4"],s)
+    s=claim_bonus_false(DailyBonus["day4"],s,userID)
     clear()
     #11. Vao playinggame-> ra lại lobby
     #12. Vào playing game-> Chờ qua 24h rồi ra lại lobby( Ngày 4)
     playing_24h()
     #13. Click nhận bonus của ngày 4
     time.sleep(3)
-    s=claim_bonus_true(DailyBonus["day4"],s)
+    s=claim_bonus_true(DailyBonus["day4"],s,userID)
     clear()
     #14. Đứng chờ ở GUI daily bonus 23h
     GUI_bonus_23h(s)
     close_Gui_daily()
     #15. Tiếp tục đứng ở GUI daily bonus chờ thêm 1h( ngày 5)
     GUI_bonus_24h()
-    s=claim_bonus_true(DailyBonus["day5"],s)
+    s=claim_bonus_true(DailyBonus["day5"],s,userID)
     clear()
     close_Gui_daily()
     #16 Nhận bonus 5 lần-> Log out-> Login sau 24h nhưng không nhận bonus->Login lại sau 24h tiếp theo
@@ -208,12 +209,12 @@ def DB():
     #kill app
     #start app
     #17 Click nhận bonus của ngày 6
-    s=claim_bonus_true(DailyBonus["day6"],s)
+    s=claim_bonus_true(DailyBonus["day6"],s,userID)
     clear()
     # #18 Nhận bonus lần thứ 7
     api_changeTimeServer(convertDayTime(time_db[8]))
     reloadLobby()
-    claim_bonus_true(DailyBonus["day7"],s)
+    claim_bonus_true(DailyBonus["day7"],s,userID)
     clear()
     #check an btn Daily bonus ở lobby khi đã nhận đủ 7 lần
     checkCompleteBonus(s)
@@ -231,6 +232,7 @@ def DB():
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
 #---------------------------------------------End Report-------------------------------------------------#
+
 
 
 
