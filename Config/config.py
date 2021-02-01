@@ -402,4 +402,3 @@ account = {
 gold_support = 30000
 
 
-
