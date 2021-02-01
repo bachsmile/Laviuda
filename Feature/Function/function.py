@@ -90,6 +90,7 @@ def fortmartTime(time):
 #cheat
 def cheatGoldEmpty(gold):
     try:
+        clear()
         pocoTag.btnCheat.click()
         if waitNolimitPoco(pocoTag.pnGold,2):
             pocoTag.pnGold.click([0.6045215255512122, 0.41971168518066404])
@@ -440,6 +441,7 @@ def check_item3():
         print("Error")
 def to_table():
     try:
+        clear()
         pocoTag.btnPlay.click()
         pocoTag.btnCheat.click()
         pocoTag.btnAddBot.click()
@@ -2642,3 +2644,55 @@ def complete_logout_login_24h():
         dataDaily["detail"]="Login: Dont show GUI dayly bonus over day 7"
     report_GUI_dailybonus(dataDaily)
 # changeAcc(user["user2"]["user"],user["user2"]["pass"])
+def afterBT():
+    try:
+        timeBT={
+            "start":{"Y":2020,"M":11,"D":18,"h":13,"m":0,"s":0},
+            "end":{"Y":2021,"M":1,"D":5,"h":7,"m":0,"s":0}
+        }
+         #Cheat time-------------#02/12/2020 23:59:00 -> 1606928340000
+        timeCheat = api_changeTimeServer(1605051600000)
+    #     timeCheat = api_changeTimeServer(timeC["timeD0"]["mili"])
+        dayS = {
+            "Y": timeBT["start"]['Y'],
+            "M": timeBT["start"]['M'],
+            "D": timeBT["start"]['D'],
+            "h": timeBT["start"]['h'],
+            "m": timeBT["start"]['m'],
+            "s": timeBT["start"]['s']
+        }
+        timeNow=convertDayTimeToMili(dayS) -housToMili(1)+ minutetoMili(59)+secToMili(30)
+        timeCheat = api_changeTimeServer(timeNow)
+        reloadLobby()
+        sleep(2)
+        claimAll()
+        closeAllEvent()
+        eventWCOpen()                  
+        if waitNoLimit(BT.noti,10):
+            print("check noti event")
+        sleep(25)
+        eventWCOpen()
+        if waitNolimitPoco(poco("rewardContainer"),3):
+            print("Home BT")
+        else:
+            print("No home BT")
+    except:
+        print("no check noti event")
+def tut():
+#     eventWCOpen()
+    sleep(5)
+    for x in range(2):
+        poco.click([0.94378074490513, 0.875])
+        sleep(10)
+    sleep(2)
+    poco.click([0.9508081517919887, 0.109375])
+    if waitNoLimit(BT.dealBT,2):
+        print("Tut fail")
+    poco.click([0, 1])
+    if waitNolimitPoco(poco("sprChap1"),2):
+        print("Tut fail")
+    poco("btnTut5").click()
+    claimAll()
+    closeAllEvent()    
+
+
