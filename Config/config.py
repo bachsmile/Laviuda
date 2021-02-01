@@ -38,7 +38,34 @@ timeWC={
     "end":{"Y":2021,"M":1,"D":5,"h":7,"m":0,"s":0}
 }
 #Account
-# user["user0"]["user"]
+#user["user0"]["user"]
+user={
+    "user0":{
+        "id":"20609637",
+        "user":"zps100",
+        "pass":123456      
+    },
+    "user1":{
+        "id":"20609650",
+        "user":"zps101",
+        "pass":123456      
+    },
+    "user2":{
+        "id":'20609682',
+        "user":"zps102",
+        "pass":123456       
+    },
+    "user3":{
+        "id":'20609702',
+        "user":"zps103",
+        "pass":123456       
+    },
+     "user":{
+        "id":'20538919',
+        "user":"zpstest",
+        "pass":123456       
+    },
+}
 # user={
 #     "user0":{
 #         "id":"20609637",
@@ -400,6 +427,7 @@ account = {
     }
 }
 gold_support = 30000
+
 
 
 
