@@ -526,8 +526,8 @@ def check_buy_vip(idU, pack):
         time.sleep(2)
         new_gold = getGold(idU)
         gold_in = new_gold - old_gold
-        gold_conf = vip_pack[pack]["dailyTribute"]
-        if gold_in == gold_conf:
+        gold_conf = vip_pack[pack]["dailyTribute"] 
+        if checkUpdateGold(gold_conf,old_gold,new_gold):
             data["Check_gold"] = "Pass"
             print("Success")
     except:
@@ -545,7 +545,7 @@ def check_gold_support(idU):
             new_gold = getGold(idU)
             gold_in = new_gold - old_gold
             gold_conf = gold_support
-            if gold_in == gold_conf:
+            if checkUpdateGold(gold_conf,old_gold,new_gold):
                 data["Gold_support"] = "Pass"
                 data["Status"] = "Pass"
                 print("Nhan gold support thanh cong")
@@ -579,7 +579,7 @@ def check_buy_gold(idU, pack):
             gold_conf = gold_defaul*2
         else:
             gold_conf = gold_defaul
-        if gold_in == gold_conf:
+        if checkUpdateGold(gold_conf,old_gold,new_gold):
             data["Check_gold"] = "Pass"
             data["Status"] = "Pass"
             print("Success")
@@ -603,7 +603,7 @@ def check_gold_tribute(idU):
                 gold_conf = vip_pack["vip.pack_3"]["dailyTribute"]
             else:
                 gold_conf = 0
-            if gold_in == gold_conf:
+            if checkUpdateGold(gold_conf,old_gold,new_gold):
                 data["Gold_tribute"] = "Pass"
                 data["Status"] = "Pass"
                 print("Nhan duoc gold tribute")
@@ -2500,7 +2500,7 @@ def gold_number():
 def get_user_id():
     touch(image_vip.btn_profile)
     time.sleep(4)
-    return pocoTag.ibID.get_text()  
+    return pocoTag.ibID.get_text()
 def close_info():
     time.sleep(1)
     pocoTag.btn_closeInfo.click()

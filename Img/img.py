@@ -114,7 +114,7 @@ class Daily_bonus:
     acc_gg_chi= Template(r"tpl1608609498145.png", record_pos=(-0.179, -0.024), resolution=(1920, 1080))
     btn_out_tutorial= Template(r"tpl1610679130178.png", record_pos=(0.1, 0.083), resolution=(1920, 1080))
 
-    avatar_gg=touch(Template(r"tpl1611137751921.png", record_pos=(-0.44, 0.234), resolution=(1920, 1080)))
+    avatar_gg=Template(r"tpl1611137751921.png", record_pos=(-0.44, 0.234), resolution=(1920, 1080))
 
 
     #acc_gg_ngoc= 
@@ -123,6 +123,7 @@ class Daily_bonus:
 class BT:
     noti=Template(r"tpl1611905186121.png", record_pos=(-0.241, -0.102), resolution=(2400, 1080))
     dealBT=Template(r"tpl1611907248297.png", record_pos=(0.015, 0.005), resolution=(2400, 1080))
+
 
 
 
