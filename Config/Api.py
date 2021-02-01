@@ -185,9 +185,3 @@ def getModel(userId,modelName):
 # api_postDoFunction("19202812", "CHEAT_PAYMENT_VIP", ["vip.pack_1"])
 # api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", ["0"])
 
-
-
-
-
-
-

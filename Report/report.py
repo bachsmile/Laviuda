@@ -7,6 +7,7 @@ __desc__="""
 #--------------End Tile------------------------------------#
 #--------------Import LIB----------------------------------#
 from importlib import reload
+import datetime
 import json
 from airtest.core.api import *
 from airtest.cli.parser import cli_setup
@@ -1156,28 +1157,52 @@ def resetDataReportConfig():
             "onPlay":"Fail",
             "HideProgress":"Fail"
         }
-def reportdailybonus(data):
-    detail = {
-        "status": data["status"]
-    }   # các chi tiết cần in ra ở file log
-    report = """ 
+
+def report_Gold_dailybonus(dataDaily):
+    data_gold = {
+        "status" : dataDaily["status"],
+        "section": dataDaily["detail"]
+    }
+    content = """ 
     -----------------------------------------------------------------------------
     
-    CASE: TESR DAILY BOMUS
-    
-              Status:{0}
-            
-                                                                time test: {1}
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    {0}
+              Status:     {1}            
+              Time test:  {2}
+                                                                  Reporter: NgocNT7
     -----------------------------------------------------------------------------
     """
-    now = datetime.now()
-    current_time = now.strftime("%H:%M:%S") 
-    log=report.format(detail["status"],current_time)
+    time_test= datetime.now()
+    log=content.format(data_gold["section"],data_gold["status"],time_test)
     f = open("logDailyBonus.txt", 'a')
     f.write(log) 
-    print(type(log))
-    print(log)
-    f.close()    
+    f.close()  
+# dataDaily2={
+#     "showGui": "",
+#     "detail": ""
+# }
+def report_GUI_dailybonus(dataDaily):
+    data_gui = {
+        "showGui": dataDaily["status"],
+        "detail": dataDaily["detail"]
+    }
+    content="""
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   {0}
+    Detail:            {1}
+    Time test:         {2}
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------"""
+    time_test= datetime.now()
+    log=content.format(data_gui["showGui"],data_gui["detail"],time_test)
+    f = open("logDailyBonus.txt", 'a')
+    f.write(log) 
+    f.close() 
+def report_GUI_over_day7():
+    data_over
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------#
