@@ -2514,7 +2514,7 @@ def check_update_gold(config):
         print("Update gold true!")
     else:
         print("Update gold false!")
-def log_in():
+def log_in(UserN,passN):
     pocoTag.btnSwitch.click()
     pocoTag.inputUser.click()
     text("ngoctu45")
@@ -2542,9 +2542,6 @@ def log_in_FB():
     time.sleep(5)
 #2.2 Register_thường
 def register():
-    data= {
-        "status": "False"
-    }
     pocoTag.btnSwitch.click()
     pocoTag.inputUser.click()
     text("ngoctu45")
@@ -2802,4 +2799,9 @@ def tut():
         print("Tut fail")
     poco("btnTut5").click()
     claimAll()
+<<<<<<< Updated upstream
     closeAllEvent()     
+=======
+    closeAllEvent()     
+
+>>>>>>> Stashed changes

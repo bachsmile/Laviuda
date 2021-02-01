@@ -350,6 +350,7 @@ dataReportConfig = {
 # Daily bonus ------------------------------------------------------
 DailyBonus={"day1":20000, "day2":50000, "day3":80000, "day4":150000, "day5": 160000,
             "day6":250000, "day7":400000}
+UserAcc={}
 #x=DailyBonus["day6"]
 # x=DailyBonus["day3"]["bonus"]
 #---------------------------------------cofig feature Vip---------------------------------------------------#
@@ -399,5 +400,6 @@ account = {
     }
 }
 gold_support = 30000
+
 
 

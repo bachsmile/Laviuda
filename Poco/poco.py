@@ -49,7 +49,7 @@ class pocoTag:
     #btn event
     btnMain = poco("btnMain")
     #noti event
-    #notiShow = poco("<no-name>").offspring("layer_7")[0].child("<no-name>")[0]
+    notiShow = poco("<no-name>").offspring("layer_7")[0].child("<no-name>")[0]
     NOTIFICACIONES = poco(text="NOTIFICACIONES")
     #btn cheat
     lbTime = poco(name="lbTime")
@@ -176,6 +176,7 @@ def clear():
 #---------------------------------------------Report-----------------------------------------------------#
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
+
 
 
 
