@@ -32,31 +32,31 @@ poco = CocosJsPoco()
 #------------------------------------------WC------------------------------------------------#
 # WC--------------------------->
 def WC():
-    beforEvent()
-    afterEvent()
-    day1()
-    claimGift()
-    day2()
-    noClaimGift()
-    CheckChangeAcc()
-    missionPassDayInTable(2)
-    autoClaimGift()
-    day3()
-    missionPassDayOpenGui()
-    passClaimGift()
-    day4()
-#     UpdateProgressMissionFull()
+    beforEvent("user0")
+    afterEvent("user1")
+    day1("user1")
+    claimGift("day1","user1")
+    day2("user1")
+    noClaimGift("day2","user1")
+    CheckChangeAcc(1,"user2") #1 -> day 1
+    missionPassDayInTable(2,"user2")
+    autoClaimGift("day2")
+    day3("user2")
+    missionPassDayOpenGui(3,user2)
+    passClaimGift(2,"user1")
+    day4("user1")
+    UpdateProgressMissionFull("day4","user1")
 #     checkDisconect()
 #     day5()
-#     GuiDeal()
+    GuiDeal("user2")
 #     day6()
-#     day7()
-    endEvent()
+    day7("user1","user3")
+    endEvent("day7","user2")
 #------------------------------------------WC------------------------------------------------#
-
+# WC()
 #------------------------------------------VIP-----------------------------------------------#
 def Vip():
-    clearReport()
+    clearReportVip()
     #Case 1: OPEN VIP
     open_vip()
     reportCheckOpenVip(data)
@@ -64,105 +64,143 @@ def Vip():
     open_pack("btnBuyBroze")
     open_pack("btnBuySilver")
     open_pack("btnBuyGold")
+    back_to_lobby()
     reportCheckPackVip(data)
     #Case 3: MUA VIP 1
     checkLevelVip() #check level vip
-    api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", [0]) #cheat non-vip
-    check_buy_vip("vip.pack_1") #mua vip 1
+    cheatTimeRemain(19202812, 0) #cheat non-vip
+    reloadLobby()
+    time.sleep(1)
     back_to_lobby()
-    check_item() #check item ngoai ban choi
+    check_buy_vip(19202812, "vip.pack_1") #mua vip 1
+#   back_to_lobby()
+#   check_item() #check item ngoai ban choi
     to_table()
     check_item() #check item trong ban choi
+    back_to_lobby()
     reportBuyVip(data)
     #Case 4: MUA VIP 2
-    check_buy_vip("vip.pack_2")
+    check_buy_vip(19202812, "vip.pack_2")
+    to_table()
     check_item() #check item trong ban choi
+    back_to_lobby()
     reportBuyVip(data)
     #Case 5: Mua vip 3
-    check_buy_vip("vip.pack_3")
+    check_buy_vip(19202812, "vip.pack_3")
     buy_vip_thap("btnBuyBroze") #check mua vip 1
     reportBuyVip(data)
     #Case 6: Mua gold trong shop
-    check_buy_gold("19202812", "ipa.pack_1")
+    check_buy_gold(19202812, "iap.pack_1")
     reportBuyGold(data)
     #Case 7: Check nhan gold support
-    check_gold_support()
-    back_to_lobby()
+    check_gold_support(19202812)
+    reportReceivedGoldSupport(data)
+    #Case 7.1: Check nhan gold support lần 2
+    check_gold_support(19202812)
     reportReceivedGoldSupport(data)
     #Case 8: Cheat qua ngay nhan gold tribute
     timeWC= {
-    "Y":2021,"M":1,"D":13,"h":7,"m":0,"s":0
+    "Y":2021,"M":1,"D":2,"h":12,"m":0,"s":0
     }
     api_changeTimeServer(convertDayTimeToMili(timeWC))
     reloadLobby()
-    check_gold_tribute()
+    check_gold_tribute(19202812)
     reportReceivedGoldTribute(data)
     #Case 9: Check show data vip theo account
-    changeAcc(userN,passW)
-    #Case 10: Check gia han vip
-    cheatTimeRemain(UserID,day)
+    changeAcc(account["user1"]["user"],account["user1"]["pass"])
+    changeAcc(account["user0"]["user"],account["user0"]["pass"])
+    #Case 10: Check show pop-up gia han vip
+    cheatTimeRemain(19202812, 1)
     reloadLobby()
-    checkMoGUIVipGD()
-    killApp()
-    openApp()
-    checkMoGUIVipGD()
+    checkMoGUIGH()
     reportExpiredVip(data)
     #Case11: Check het han trong ban choi
-    api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", [60])
+    api_postDoFunction("19202812", "CHEAT_TIME_REMAIN_VIP", [10])
     to_table()
+    time.sleep(3)
     check_item()
+    back_lobby_from_table()
     reportCheckExpiredTable(data)
     #Case12: Check het han mua vip
-    checkMoGUIVipGD()
-    cheat_buy_vip("vip.pack_1")
+    checkMoGUIVip()
+    check_buy_vip(19202812, "vip.pack_1")
     reportBuyVip(data)
+# Vip()
 #------------------------------------------VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
 def DB():
     #1. check có đang ở màn hình login ko
+    api_changeTimeServer(convertDayTime(time_db[0]))
     check_login()
     #2. đăng kí thường
     register()     
-       #Play tutorial---------------------------------------
-    time.sleep(3)
-    bonus_day_1()
+    play_tutorial()
+    s=bonus_day_1(s)
     check_lobby()
-    # 3. Log out-> Log in sau 24h
+    clear()
+    userID= get_user_id()
+    time.sleep(3)
+    close_info()
+    # 3.Log out-> Log in sau 24h
     log_out()
     time.sleep(3)
-    api_changeTimeServer(1608624000000)
+    api_changeTimeServer(convertDayTime(time_db[1]))
     time.sleep(3)
-    log_in_FB()
+    log_in()
     time.sleep(3)
     #5. Nhận bonus lần 2
-    claim_bonus()
+    s=claim_bonus_true(DailyBonus["day2"],s)
     #6. Check có đang ở lobby hay không
     check_lobby()
-    #7.Kiểm tra có show GUI daily bonus khi dung o lobby cho nhan bonus,nhân bonus 
-    claim_bonus()
-    #9. Vao lại Gui daily bonus
-    into_gui_bonus()
-    #10. Log out-> vào lại sau 23h
-    Logout_login_23h()
+    clear()
+    #7.Kiểm tra có show GUI daily bonus khi dung o lobby cho nhan bonus,nhân bonus(day3)
+    api_changeTimeServer(convertDayTime(time_db[2]))
+    time.sleep(1)
+    reloadLobby()
+    time.sleep(10)
+    s=claim_bonus_true(DailyBonus["day3"],s)
+    clear()
+    #10. Log out-> vào lại sau 23
+    log_out()
+    api_changeTimeServer(convertDayTime(time_db[3]))
+    log_in()
+    s=claim_bonus_false(DailyBonus["day4"],s)
+    clear()
     #11. Vao playinggame-> ra lại lobby
-    playing_23h()
     #12. Vào playing game-> Chờ qua 24h rồi ra lại lobby( Ngày 4)
     playing_24h()
     #13. Click nhận bonus của ngày 4
-    claim_bonus()
+    time.sleep(3)
+    s=claim_bonus_true(DailyBonus["day4"],s)
+    clear()
     #14. Đứng chờ ở GUI daily bonus 23h
-    GUI_bonus_23h()
+    GUI_bonus_23h(s)
+    close_Gui_daily()
     #15. Tiếp tục đứng ở GUI daily bonus chờ thêm 1h( ngày 5)
-    api_changeTimeServer(1608969600000)
+    GUI_bonus_24h()
+    s=claim_bonus_true(DailyBonus["day5"],s)
+    clear()
+    close_Gui_daily()
     #16 Nhận bonus 5 lần-> Log out-> Login sau 24h nhưng không nhận bonus->Login lại sau 24h tiếp theo
-    claim_kill_login_24h()
+    time.sleep(2)
+    log_out()
+    api_changeTimeServer(convertDayTime(time_db[7]))
+    time.sleep(3)
+    log_in()
+    #kill app
+    #start app
     #17 Click nhận bonus của ngày 6
-    claim_bonus()
-    #18 Nhận bonus lần thứ 7
-    api_changeTimeServer(1609228800000)
-    claim_bonus()
+    s=claim_bonus_true(DailyBonus["day6"],s)
+    clear()
+    # #18 Nhận bonus lần thứ 7
+    api_changeTimeServer(convertDayTime(time_db[8]))
+    reloadLobby()
+    claim_bonus_true(DailyBonus["day7"],s)
+    clear()
     #check an btn Daily bonus ở lobby khi đã nhận đủ 7 lần
-    complete_icon_bonus_lobby()
+    checkCompleteBonus(s)
+    time.sleep(3)
+    checkIconDaily()
     #19. Ra lại lobby-> đứng ở lobby chờ sau 24
     complete_lobby_24h()
     #20. Log out-> Login lại sau 24h
@@ -174,7 +212,7 @@ def DB():
 #---------------------------------------------Report-----------------------------------------------------#
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
-
+#---------------------------------------------End Report-------------------------------------------------#
 
 
 

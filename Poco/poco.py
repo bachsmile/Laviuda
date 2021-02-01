@@ -28,10 +28,8 @@ poco = CocosJsPoco()
 #------------------------------------------End Poco------------------------------------------------------#
 #------------------------------------------script content------------------------------------------------#
 #------------------------------------------bien----------------------------------------------#
-x=0
 #------------------------------------------end bien------------------------------------------#
 #------------------------------------------WC------------------------------------------------#
-
 #------------------------------------------WC------------------------------------------------#
 class pocoTag:
     # changeacc
@@ -51,7 +49,7 @@ class pocoTag:
     #btn event
     btnMain = poco("btnMain")
     #noti event
-    notiShow = poco("<no-name>").offspring("layer_7")[0].child("<no-name>")[0]
+    #notiShow = poco("<no-name>").offspring("layer_7")[0].child("<no-name>")[0]
     NOTIFICACIONES = poco(text="NOTIFICACIONES")
     #btn cheat
     lbTime = poco(name="lbTime")
@@ -102,12 +100,73 @@ class pocoTag:
     btnFacebookNormal = poco("btnFacebookNormal")
     btnRegister = poco("btnRegister")
     btnDaily = poco("btnDaily")
-
     btnCallBack=poco("btnCallBack")
     btnSkip= poco("btnSkip")
     btnSelectTable=poco("btnSelectTable")
     pnGold = poco("pnGold")
-    btn_login= poco("btnLogin")
+    ibID= poco("lbID")
+    btn_closeInfo= poco("btnHide")
+def clear():
+    fruits =[
+    pocoTag.btnSwitch,
+    pocoTag.inputUser,
+    pocoTag.logo,
+    pocoTag.inputPass,
+    pocoTag.btnLogin,
+    pocoTag.btnSetting,
+    pocoTag.btnClose,
+    pocoTag.btnPlay,
+    pocoTag.btnLeaveGame,
+    pocoTag.btnHide ,
+    pocoTag.btnMain,
+#     pocoTag.notiShow,
+    pocoTag.NOTIFICACIONES,
+    pocoTag.lbTime,
+    pocoTag.btnCheat,
+    pocoTag.btnAddBot,
+    pocoTag.lbTimeServer,
+    pocoTag.btnSendCheatPlayer,
+    pocoTag.btnSendCustom,
+    pocoTag.btnTabCustom,
+    pocoTag.btnResetCustom,
+    pocoTag.pnPointEvent,
+    pocoTag.pnCaseId_1,
+    pocoTag.btnJoin,
+    pocoTag.btnClaim,
+    pocoTag.lbDayCurrent,
+    pocoTag.lbDay1,
+    pocoTag.lbDay2,
+    pocoTag.lbDay3,
+    pocoTag.lbDay4,
+    pocoTag.lbDay5,
+    pocoTag.lbDay6,
+    pocoTag.lbDay7,
+    pocoTag.lbNumTacos,
+    pocoTag.lbProgress,
+    pocoTag.lbGold,
+    pocoTag.btnOfferEventTB,
+    pocoTag.imgTruck,
+    pocoTag.btnPass,
+    pocoTag.btnKnock,
+    pocoTag.btnExchange1,
+    pocoTag.btnSwap,
+    pocoTag.btnExchange5,
+    pocoTag.bg_table,
+    pocoTag.btnVip,
+    pocoTag.iconSetting,
+    pocoTag.lobbyLayer2,
+    pocoTag.btnGuest,
+    pocoTag.btnTomorrow,
+    pocoTag.btnGooglePlus,
+    pocoTag.btnFacebookNormal,
+    pocoTag.btnRegister,
+    pocoTag.btnDaily,
+    pocoTag.btnCallBack,
+    pocoTag.btnSkip,
+    pocoTag.btnSelectTable,
+    pocoTag.pnGold]
+    for x in fruits:
+        x.invalidate()
 #------------------------------------------VIP-----------------------------------------------#
 #------------------------------------------VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
