@@ -80,7 +80,7 @@ def reportCheckOpenVip(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log=report.format(detail["Status"], current_time)
-    f = open("logVip.txt", 'a+')
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -108,7 +108,7 @@ def reportCheckPackVip(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log=report.format(detail["Status"], current_time)
-    f = open("logVip.txt", 'a+')
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -137,7 +137,7 @@ def reportBuyVip1(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log = report.format(detail["Check_gold"], detail["Check_item"], current_time)
-    f = open("logVip.txt", 'a+')
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -168,7 +168,7 @@ def reportBuyVip2(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log = report.format(detail["Check_gold"], detail["Check_item"], current_time)
-    f = open("logVip.txt", 'a+')
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -201,7 +201,7 @@ def reportBuyVip3(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log = report.format(detail["Check_gold"], detail["Check_item"], detail["Check_low_vip"], current_time)
-    f = open("logVip.txt", 'a+')
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -233,7 +233,7 @@ def reportBuyGold(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log = report.format(detail["Check_gold"], detail["Status"], current_time)
-    f = open("logVip.txt", 'a+')
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -262,7 +262,7 @@ def reportReceivedGoldSupport(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log = report.format(detail["Gold_support"], detail["Status"], current_time)
-    f = open("logVip.txt", 'a+')
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -290,7 +290,7 @@ def reportReceivedGoldTribute(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log = report.format(detail["Gold_tribute"], detail["Status"], current_time)
-    f = open("logVip.txt", 'a+')
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -344,7 +344,7 @@ def reportExpiredVip(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log = report.format(detail["Mo_GUI_Vip"], detail["Show_PopUp_GH"], detail["Status"], current_time)
-    f = open("logVip.txt", 'a+')
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -371,7 +371,7 @@ def reportCheckExpiredTable(data):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     log = report.format(detail["Check_item"], current_time)
-    f = open("logVip.txt", 'a+')
+    f = open("log.txt", 'a+')
     f.write(log)
     print(type(log))
     f.close()
@@ -1206,6 +1206,8 @@ def report_GUI_over_day7():
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------#
+
+
 
 
 
