@@ -2781,10 +2781,16 @@ def afterBT():
         eventWCOpen()                  
         if waitNoLimit(BT.noti,10):
             print("check noti event")
+        sleep(25)
+        eventWCOpen()
+        if waitNolimitPoco(poco("rewardContainer"),3):
+            print("Home BT")
+        else:
+            print("No home BT")
     except:
         print("no check noti event")
 def tut():
-    eventWCOpen()
+#     eventWCOpen()
     sleep(5)
     for x in range(2):
         poco.click([0.94378074490513, 0.875])
