@@ -33,33 +33,33 @@ poco = CocosJsPoco()
 # WC--------------------------->
 def WC():
     #Check truoc su kien vai ngay 
-    beforEvent(configCase["beforEvent"]["account"])
-    #check truoc su kien trong thoi gian quang cao su kien
-    afterEvent(configCase["afterEvent"]["account"])
-    #thuc hien kiem tra nhiem vu ngay1
-    day1(configCase["day1"]["account"])
-    #check nhan qua hoan thanh nhiem vu
-    claimGift("day"+str(configCase["claimGift"]["day"]),configCase["claimGift"]["account"])
-    #thuc hien kiem tra nhiem vu ngay2
-    day2(configCase["day2"]["account"])
-    #check bam khong nhan qua
-    noClaimGift("day"+str(configCase["noClaimGift"]["day"]),configCase["noClaimGift"]["account"])
-    #check cap nhan nhiem vu khi thay doi tai khoang
-    CheckChangeAcc(configCase["CheckChangeAcc"]["day"]-1,configCase["CheckChangeAcc"]["account"]) #1 -> day 1    
-    #check cap nhat nhiem vu khi dang o trong ban choi qua ngay moi
-    missionPassDayInTable(configCase["missionPassDayInTable"]["day"],configCase["missionPassDayInTable"]["account"])
-    #qua ngay moi co qua hoan thanh nhiem vu chua nhan check auto nhan
-    autoClaimGift("day"+str(configCase["autoClaimGift"]["day"]))
-    #thuc hien kiem tra nhiem vu ngay3
-    day3(configCase["day3"]["account"])
-    #check update nhiem vu qua ngay moi khi dang mo GUI event
-    missionPassDayOpenGui(configCase["missionPassDayOpenGui"]["day"],configCase["missionPassDayOpenGui"]["account"])
-    #check nhan qua hoan thanh sau khi off
-    passClaimGift(configCase["passClaimGift"]["day"],configCase["passClaimGift"]["account"])
-    #thuc hien kiem tra nhiem vu ngay4
-    day4(configCase["day4"]["account"]) 
-    #check update tien trinh nhiem vu
-    UpdateProgressMissionFull("day"+str(configCase["UpdateProgressMissionFull"]["day"]),configCase["UpdateProgressMissionFull"]["account"])
+#     beforEvent(configCase["beforEvent"]["account"])
+#     #check truoc su kien trong thoi gian quang cao su kien
+#     afterEvent(configCase["afterEvent"]["account"])
+#     #thuc hien kiem tra nhiem vu ngay1
+#     day1(configCase["day1"]["account"])
+#     #check nhan qua hoan thanh nhiem vu
+#     claimGift("day"+str(configCase["claimGift"]["day"]),configCase["claimGift"]["account"])
+#     #thuc hien kiem tra nhiem vu ngay2
+#     day2(configCase["day2"]["account"])
+#     #check bam khong nhan qua
+#     noClaimGift("day"+str(configCase["noClaimGift"]["day"]),configCase["noClaimGift"]["account"])
+#     #check cap nhan nhiem vu khi thay doi tai khoang
+#     CheckChangeAcc(configCase["CheckChangeAcc"]["day"]-1,configCase["CheckChangeAcc"]["account"]) #1 -> day 1    
+#     #check cap nhat nhiem vu khi dang o trong ban choi qua ngay moi
+#     missionPassDayInTable(configCase["missionPassDayInTable"]["day"],configCase["missionPassDayInTable"]["account"])
+#     #qua ngay moi co qua hoan thanh nhiem vu chua nhan check auto nhan
+#     autoClaimGift("day"+str(configCase["autoClaimGift"]["day"]))
+#     #thuc hien kiem tra nhiem vu ngay3
+#     day3(configCase["day3"]["account"])
+#     #check update nhiem vu qua ngay moi khi dang mo GUI event
+#     missionPassDayOpenGui(configCase["missionPassDayOpenGui"]["day"],configCase["missionPassDayOpenGui"]["account"])
+#     #check nhan qua hoan thanh sau khi off
+#     passClaimGift(configCase["passClaimGift"]["day"],configCase["passClaimGift"]["account"])
+#     #thuc hien kiem tra nhiem vu ngay4
+#     day4(configCase["day4"]["account"]) 
+#     #check update tien trinh nhiem vu
+#     UpdateProgressMissionFull("day"+str(configCase["UpdateProgressMissionFull"]["day"]),configCase["UpdateProgressMissionFull"]["account"])
 #     checkDisconect()
 #     day5()
     #check hoat dong GUI deal
