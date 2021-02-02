@@ -32,34 +32,34 @@ poco = CocosJsPoco()
 #------------------------------------------WC------------------------------------------------#
 # WC--------------------------->
 def WC():
-    #Check truoc su kien vai ngay 
-#     beforEvent(configCase["beforEvent"]["account"])
-#     #check truoc su kien trong thoi gian quang cao su kien
-#     afterEvent(configCase["afterEvent"]["account"])
-#     #thuc hien kiem tra nhiem vu ngay1
-#     day1(configCase["day1"]["account"])
-#     #check nhan qua hoan thanh nhiem vu
-#     claimGift("day"+str(configCase["claimGift"]["day"]),configCase["claimGift"]["account"])
-#     #thuc hien kiem tra nhiem vu ngay2
-#     day2(configCase["day2"]["account"])
-#     #check bam khong nhan qua
-#     noClaimGift("day"+str(configCase["noClaimGift"]["day"]),configCase["noClaimGift"]["account"])
-#     #check cap nhan nhiem vu khi thay doi tai khoang
-#     CheckChangeAcc(configCase["CheckChangeAcc"]["day"]-1,configCase["CheckChangeAcc"]["account"]) #1 -> day 1    
-#     #check cap nhat nhiem vu khi dang o trong ban choi qua ngay moi
-#     missionPassDayInTable(configCase["missionPassDayInTable"]["day"],configCase["missionPassDayInTable"]["account"])
-#     #qua ngay moi co qua hoan thanh nhiem vu chua nhan check auto nhan
-#     autoClaimGift("day"+str(configCase["autoClaimGift"]["day"]))
-#     #thuc hien kiem tra nhiem vu ngay3
-#     day3(configCase["day3"]["account"])
-#     #check update nhiem vu qua ngay moi khi dang mo GUI event
-#     missionPassDayOpenGui(configCase["missionPassDayOpenGui"]["day"],configCase["missionPassDayOpenGui"]["account"])
-#     #check nhan qua hoan thanh sau khi off
-#     passClaimGift(configCase["passClaimGift"]["day"],configCase["passClaimGift"]["account"])
-#     #thuc hien kiem tra nhiem vu ngay4
-#     day4(configCase["day4"]["account"]) 
-#     #check update tien trinh nhiem vu
-#     UpdateProgressMissionFull("day"+str(configCase["UpdateProgressMissionFull"]["day"]),configCase["UpdateProgressMissionFull"]["account"])
+#     Check truoc su kien vai ngay 
+    beforEvent(configCase["beforEvent"]["account"])
+    #check truoc su kien trong thoi gian quang cao su kien
+    afterEvent(configCase["afterEvent"]["account"])
+    #thuc hien kiem tra nhiem vu ngay1
+    day1(configCase["day1"]["account"])
+    #check nhan qua hoan thanh nhiem vu
+    claimGift("day"+str(configCase["claimGift"]["day"]),configCase["claimGift"]["account"])
+    #thuc hien kiem tra nhiem vu ngay2
+    day2(configCase["day2"]["account"])
+    #check bam khong nhan qua
+    noClaimGift("day"+str(configCase["noClaimGift"]["day"]),configCase["noClaimGift"]["account"])
+    #check cap nhan nhiem vu khi thay doi tai khoang
+    CheckChangeAcc(configCase["CheckChangeAcc"]["day"]-1,configCase["CheckChangeAcc"]["account"]) #1 -> day 1    
+    #check cap nhat nhiem vu khi dang o trong ban choi qua ngay moi
+    missionPassDayInTable(configCase["missionPassDayInTable"]["day"],configCase["missionPassDayInTable"]["account"])
+    #qua ngay moi co qua hoan thanh nhiem vu chua nhan check auto nhan
+    autoClaimGift("day"+str(configCase["autoClaimGift"]["day"]))
+    #thuc hien kiem tra nhiem vu ngay3
+    day3(configCase["day3"]["account"])
+    #check update nhiem vu qua ngay moi khi dang mo GUI event
+    missionPassDayOpenGui(configCase["missionPassDayOpenGui"]["day"],configCase["missionPassDayOpenGui"]["account"])
+    #check nhan qua hoan thanh sau khi off
+    passClaimGift(configCase["passClaimGift"]["day"],configCase["passClaimGift"]["account"])
+    #thuc hien kiem tra nhiem vu ngay4
+    day4(configCase["day4"]["account"]) 
+    #check update tien trinh nhiem vu
+    UpdateProgressMissionFull("day"+str(configCase["UpdateProgressMissionFull"]["day"]),configCase["UpdateProgressMissionFull"]["account"])
 #     checkDisconect()
 #     day5()
     #check hoat dong GUI deal
@@ -154,7 +154,7 @@ def DB():
     #2. đăng kí thường
     register()     
     play_tutorial()
-    s=bonus_day_1(0)
+    s=bonus_day_1(s)
     check_lobby()
     clear()
     userID= get_user_id()
@@ -200,12 +200,13 @@ def DB():
     s=claim_bonus_true(DailyBonus["day5"],s,userID)
     clear()
     close_Gui_daily()
-    #16 Nhận bonus 5 lần-> Log out-> Login sau 24h nhưng không nhận bonus->Login lại sau 24h tiếp theo
+    #16 Log out-> Login sau 24h nhưng không nhận bonus->Login lại sau 24h tiếp theo
     time.sleep(2)
     log_out()
     api_changeTimeServer(convertDayTime(time_db[7]))
     time.sleep(3)
     log_in()
+    time.sleep(3)
     #kill app
     #start app
     #17 Click nhận bonus của ngày 6
@@ -214,7 +215,8 @@ def DB():
     # #18 Nhận bonus lần thứ 7
     api_changeTimeServer(convertDayTime(time_db[8]))
     reloadLobby()
-    claim_bonus_true(DailyBonus["day7"],s,userID)
+    time.sleep(5)
+    s=claim_bonus_true(DailyBonus["day7"],s,userID)
     clear()
     #check an btn Daily bonus ở lobby khi đã nhận đủ 7 lần
     print(s)
@@ -224,7 +226,7 @@ def DB():
     #19. Ra lại lobby-> đứng ở lobby chờ sau 24
     complete_lobby_24h()
     #20. Log out-> Login lại sau 24h
-    complete_logout_login_24h()
+    #complete_logout_login_24h()
 
 #------------------------------------------DB-------------------------------------------
 #-----#
@@ -233,6 +235,7 @@ def DB():
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
 #---------------------------------------------End Report-------------------------------------------------#
+
 
 
 
