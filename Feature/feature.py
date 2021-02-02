@@ -154,7 +154,7 @@ def DB():
     #2. đăng kí thường
     register()     
     play_tutorial()
-    s=bonus_day_1(0)
+    s=bonus_day_1(s)
     check_lobby()
     clear()
     userID= get_user_id()
@@ -200,12 +200,13 @@ def DB():
     s=claim_bonus_true(DailyBonus["day5"],s,userID)
     clear()
     close_Gui_daily()
-    #16 Nhận bonus 5 lần-> Log out-> Login sau 24h nhưng không nhận bonus->Login lại sau 24h tiếp theo
+    #16 Log out-> Login sau 24h nhưng không nhận bonus->Login lại sau 24h tiếp theo
     time.sleep(2)
     log_out()
     api_changeTimeServer(convertDayTime(time_db[7]))
     time.sleep(3)
     log_in()
+    time.sleep(3)
     #kill app
     #start app
     #17 Click nhận bonus của ngày 6
@@ -214,7 +215,8 @@ def DB():
     # #18 Nhận bonus lần thứ 7
     api_changeTimeServer(convertDayTime(time_db[8]))
     reloadLobby()
-    claim_bonus_true(DailyBonus["day7"],s,userID)
+    time.sleep(5)
+    s=claim_bonus_true(DailyBonus["day7"],s,userID)
     clear()
     #check an btn Daily bonus ở lobby khi đã nhận đủ 7 lần
     print(s)
@@ -224,7 +226,7 @@ def DB():
     #19. Ra lại lobby-> đứng ở lobby chờ sau 24
     complete_lobby_24h()
     #20. Log out-> Login lại sau 24h
-    complete_logout_login_24h()
+    #complete_logout_login_24h()
 
 #------------------------------------------DB-------------------------------------------
 #-----#
