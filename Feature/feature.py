@@ -73,34 +73,38 @@ def WC():
 # WC()
 #------------------------------------------VIP-----------------------------------------------#
 def Vip():
-    clearReport()
+#     clearReport()
 #     #Case 1: OPEN VIP
-#     changeAcc("vyhn0908","123456")
-    open_vip()
-    reportCheckOpenVip(data)
-    #Case 2: OPEN VIP NHƯNG KHÔNG MUA
-    open_pack("btnBuyBroze")
-    open_pack("btnBuySilver")
-    open_pack("btnBuyGold")
-    back_to_lobby()
-    reportCheckPackVip(data)
-    #Case 3: MUA VIP 1
-    cheatTimeRemain(20040460, 0) #cheat non-vip
-    reloadLobby()
-    back_to_lobby()
-    check_buy_vip(20040460, "vip.pack_1") #mua vip 1
-    to_table()
-    check_item() #check item trong ban choi
-    back_to_lobby()
-    reportBuyVip1(data)
-    #Case 4: MUA VIP 2
-    check_buy_vip(20040460, "vip.pack_2")
-    to_table()
-    check_item() #check item trong ban choi
-    back_to_lobby()
-    reportBuyVip2(data)
+    changeAcc("vyhn0908","123456")
+#     open_vip()
+#     reportCheckOpenVip(data)
+#     #Case 2: OPEN VIP NHƯNG KHÔNG MUA
+#     open_pack("btnBuyBroze")
+#     open_pack("btnBuySilver")
+#     open_pack("btnBuyGold")
+#     back_to_lobby()
+#     reportCheckPackVip(data)
+#     #Case 3: MUA VIP 1
+#     cheatTimeRemain(20040460, 0) #cheat non-vip
+#     reloadLobby()
+#     back_to_lobby()
+#     check_buy_vip(20040460, "vip.pack_1") #mua vip 1
+#     to_table()
+#     check_item() #check item trong ban choi
+#     back_to_lobby()
+#     reportBuyVip1(data)
+#     #Case 4: MUA VIP 2
+#     check_buy_vip(20040460, "vip.pack_2")
+#     to_table()
+#     check_item() #check item trong ban choi
+#     back_to_lobby()
+#     reportBuyVip2(data)
     #Case 5: Mua vip 3
+    closeAllEvent()
     check_buy_vip(20040460, "vip.pack_3")
+    to_table()
+    check_item() #check item trong ban choi
+    back_to_lobby()
     buy_vip_thap("btnBuySilver") #check mua vip 1
     back_to_lobby()
     reportBuyVip3(data)
@@ -118,7 +122,7 @@ def Vip():
     cheatGold(20040460, 50000)
     #Case 8: Cheat qua ngay nhan gold tribute
     timeWC= {
-    "Y":2020,"M":11,"D":9,"h":12,"m":0,"s":0
+    "Y":2020,"M":11,"D":14,"h":12,"m":0,"s":0
     }
     api_changeTimeServer(convertDayTimeToMili(timeWC))
     reloadLobby()
@@ -129,21 +133,21 @@ def Vip():
     #   changeAcc(account["user1"]["user"],account["user1"]["pass"])
     #   changeAcc(account["user0"]["user"],account["user0"]["pass"])
     #Case 10: Check show pop-up gia han vip
-    cheatTimeRemain(20040460, 1)
-    checkMoGUIGH()
-    back_to_lobby()
-    reportExpiredVip(data)
-    #Case11: Check het han trong ban choi
-    api_postDoFunction(20040460, "CHEAT_TIME_REMAIN_VIP", [10])
-    to_table()
-    time.sleep(3)
-    check_item()
-    back_lobby_from_table()
-    reportCheckExpiredTable(data)
-    #Case12: Check het han mua vip
-    checkMoGUIVip()
-    check_buy_vip(20040460, "vip.pack_1")
-    reportBuyVip1KHH(data)
+#     cheatTimeRemain(20040460, 1)
+#     checkMoGUIGH()
+#     back_to_lobby()
+#     reportExpiredVip(data)
+#     #Case11: Check het han trong ban choi
+#     api_postDoFunction(20040460, "CHEAT_TIME_REMAIN_VIP", [10])
+#     to_table()
+#     time.sleep(3)
+#     check_item()
+#     back_lobby_from_table()
+#     reportCheckExpiredTable(data)
+#     #Case12: Check het han mua vip
+#     checkMoGUIVip()
+#     check_buy_vip(20040460, "vip.pack_1")
+#     reportBuyVip1KHH(data)
 #------------------------------------------VIP-----------------------------------------------#
 #------------------------------------------DB------------------------------------------------#
 def DB():
