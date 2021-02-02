@@ -1175,7 +1175,7 @@ def report_Gold_dailybonus(dataDaily):
     """
     time_test= datetime.now()
     log=content.format(data_gold["section"],data_gold["status"],time_test)
-    f = open("logDailyBonus.txt", 'a')
+    f = open("log.txt", 'a')
     f.write(log) 
     f.close()  
 # dataDaily2={
@@ -1198,7 +1198,7 @@ def report_GUI_dailybonus(dataDaily):
     ---------------------------------------------------------------------------------"""
     time_test= datetime.now()
     log=content.format(data_gui["showGui"],data_gui["detail"],time_test)
-    f = open("logDailyBonus.txt", 'a')
+    f = open("log.txt", 'a')
     f.write(log) 
     f.close() 
 def report_GUI_over_day7():

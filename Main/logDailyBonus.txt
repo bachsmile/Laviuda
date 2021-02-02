@@ -621,4 +621,612 @@
     Detail:            Lobby: Still show GUI dayly bonus over day 7
     Time test:         2021-02-01 14:19:41.848277
                                                                   Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold day 1 true
+              Status:     True            
+              Time test:  2021-02-01 15:11:11.351880
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold day 1 true
+    Time test:         2021-02-01 15:11:11.356869
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold true
+              Status:     True            
+              Time test:  2021-02-01 15:11:54.447178
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold true
+    Time test:         2021-02-01 15:11:54.452164
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold true
+              Status:     True            
+              Time test:  2021-02-01 15:12:18.593020
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold true
+    Time test:         2021-02-01 15:12:18.597014
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Dont show GUI daily bonus when not enough 24h!
+    Time test:         2021-02-01 15:12:38.264288
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold true
+              Status:     True            
+              Time test:  2021-02-01 15:13:00.147569
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold true
+    Time test:         2021-02-01 15:13:00.152573
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Dont show GUI daily bonus when not enough 24h!
+    Time test:         2021-02-01 15:13:10.120014
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold true
+              Status:     True            
+              Time test:  2021-02-01 15:13:34.391895
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold true
+    Time test:         2021-02-01 15:13:34.399902
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Dont show GUI daily bonus when enough 24h
+    Time test:         2021-02-01 15:13:59.021113
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Wrong config gold update
+              Status:     False            
+              Time test:  2021-02-01 15:14:10.458637
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Wrong config gold update
+    Time test:         2021-02-01 15:14:10.463651
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Dont show GUI daily bonus when enough 24h
+    Time test:         2021-02-01 15:14:15.987405
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Dont show GUI daily bonus when enough 24h
+    Time test:         2021-02-01 15:14:21.468985
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Dont show GUI daily bonus when enough 24h
+    Time test:         2021-02-01 15:14:26.905756
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Lobby: Still show GUI dayly bonus over day 7
+    Time test:         2021-02-01 15:14:37.107781
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold day 1 true
+              Status:     True            
+              Time test:  2021-02-01 15:16:22.908462
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold day 1 true
+    Time test:         2021-02-01 15:16:22.913448
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold true
+              Status:     True            
+              Time test:  2021-02-01 15:17:07.273572
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold true
+    Time test:         2021-02-01 15:17:07.277563
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold true
+              Status:     True            
+              Time test:  2021-02-01 15:17:29.890156
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold true
+    Time test:         2021-02-01 15:17:29.895172
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Dont show GUI daily bonus when not enough 24h!
+    Time test:         2021-02-01 15:17:49.491922
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold true
+              Status:     True            
+              Time test:  2021-02-01 15:18:11.559788
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold true
+    Time test:         2021-02-01 15:18:11.564754
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Dont show GUI daily bonus when not enough 24h!
+    Time test:         2021-02-01 15:18:21.483848
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold true
+              Status:     True            
+              Time test:  2021-02-01 15:18:45.571257
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold true
+    Time test:         2021-02-01 15:18:45.577270
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Dont show GUI daily bonus when enough 24h
+    Time test:         2021-02-01 15:19:10.287019
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Wrong config gold update
+              Status:     False            
+              Time test:  2021-02-01 15:19:21.654149
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Wrong config gold update
+    Time test:         2021-02-01 15:19:21.659144
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Dont show GUI daily bonus when enough 24h
+    Time test:         2021-02-01 15:19:27.199149
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Dont show GUI daily bonus when enough 24h
+    Time test:         2021-02-01 15:19:32.603633
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Dont show GUI daily bonus when enough 24h
+    Time test:         2021-02-01 15:19:38.033268
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Lobby: Dont show GUI dayly bonus over day 7
+    Time test:         2021-02-01 15:20:18.008218
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold day 1 true
+              Status:     True            
+              Time test:  2021-02-01 16:10:57.927240
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold day 1 true
+    Time test:         2021-02-01 16:10:57.931201
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold true
+              Status:     True            
+              Time test:  2021-02-01 16:11:41.259180
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold true
+    Time test:         2021-02-01 16:11:41.266128
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold true
+              Status:     True            
+              Time test:  2021-02-01 16:12:03.831527
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold true
+    Time test:         2021-02-01 16:12:03.836486
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Dont show GUI daily bonus when not enough 24h!
+    Time test:         2021-02-01 16:12:23.578421
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold true
+              Status:     True            
+              Time test:  2021-02-01 16:12:45.879304
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold true
+    Time test:         2021-02-01 16:12:45.884099
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Dont show GUI daily bonus when not enough 24h!
+    Time test:         2021-02-01 16:12:55.845941
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold true
+              Status:     True            
+              Time test:  2021-02-01 16:13:19.930652
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold true
+    Time test:         2021-02-01 16:13:19.935670
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Dont show GUI daily bonus when enough 24h
+    Time test:         2021-02-01 16:13:44.890144
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Wrong config gold update
+              Status:     False            
+              Time test:  2021-02-01 16:13:56.373941
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Wrong config gold update
+    Time test:         2021-02-01 16:13:56.377961
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Dont show GUI daily bonus when enough 24h
+    Time test:         2021-02-01 16:14:01.859050
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Dont show GUI daily bonus when enough 24h
+    Time test:         2021-02-01 16:14:07.301281
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Dont show GUI daily bonus when enough 24h
+    Time test:         2021-02-01 16:14:12.736035
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Lobby: Dont show GUI dayly bonus over day 7
+    Time test:         2021-02-01 16:14:18.701951
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold day 1 true
+              Status:     True            
+              Time test:  2021-02-01 17:11:34.464132
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold day 1 true
+    Time test:         2021-02-01 17:11:34.468120
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold true
+              Status:     True            
+              Time test:  2021-02-01 17:12:17.896041
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold true
+    Time test:         2021-02-01 17:12:17.900053
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold true
+              Status:     True            
+              Time test:  2021-02-01 17:12:40.692521
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold true
+    Time test:         2021-02-01 17:12:40.697485
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Dont show GUI daily bonus when not enough 24h!
+    Time test:         2021-02-01 17:13:00.434953
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold true
+              Status:     True            
+              Time test:  2021-02-01 17:13:22.617154
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold true
+    Time test:         2021-02-01 17:13:22.623165
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Dont show GUI daily bonus when not enough 24h!
+    Time test:         2021-02-01 17:13:32.629654
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Update gold true
+              Status:     True            
+              Time test:  2021-02-01 17:13:56.967475
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Update gold true
+    Time test:         2021-02-01 17:13:56.973435
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Dont show GUI daily bonus when enough 24h
+    Time test:         2021-02-01 17:14:24.859032
+                                                                  Reporter: NgocNT7
+    --------------------------------------------------------------------------------- 
+    -----------------------------------------------------------------------------
+    
+    CASE: TEST UPDATE GOLD DAILY BONUS
+              Section:    Wrong config gold update
+              Status:     False            
+              Time test:  2021-02-01 17:14:41.533932
+                                                                  Reporter: NgocNT7
+    -----------------------------------------------------------------------------
+    
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   False
+    Detail:            Wrong config gold update
+    Time test:         2021-02-01 17:14:41.539920
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI DAILY BONUS
+    
+    Status show GUI:   True
+    Detail:            Lobby: Dont show GUI dayly bonus over day 7
+    Time test:         2021-02-01 17:14:59.107896
+                                                                  Reporter: NgocNT7
     ---------------------------------------------------------------------------------
