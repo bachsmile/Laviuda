@@ -2806,13 +2806,5 @@ def tut():
         print("Tut fail")
     poco("btnTut5").click()
     claimAll()
-<<<<<<< HEAD
-    closeAllEvent()    
-
-
-
-# afterEvent(configCase["afterEvent"]["account"])
-=======
-    closeAllEvent()        
->>>>>>> aaf6a2ab132ac4d3a7334751095fa7cc813b9093
+    closeAllEvent()          
 
