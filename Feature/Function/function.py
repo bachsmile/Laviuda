@@ -223,8 +223,8 @@ def joinTable():
         sleep(2)
         clear()
         poco = CocosJsPoco()
-#         pocoTag.btnPlay.click()
-        pocoTag.btnSelectTable.click()
+        pocoTag.btnPlay.click()
+#         pocoTag.btnSelectTable.click()
         print("joinTable")
         return 1
     except:
@@ -1570,6 +1570,7 @@ def CheckChangeAcc(day,users):
     claimAll()
     closeAllEvent()
     changeAcc(user[users]["user"],user[users]["pass"])
+    sleep(3)
     claimAll()
     closeAllEvent()
     #open Gui
@@ -2805,4 +2806,5 @@ def tut():
         print("Tut fail")
     poco("btnTut5").click()
     claimAll()
-    closeAllEvent()        
+    closeAllEvent()          
+

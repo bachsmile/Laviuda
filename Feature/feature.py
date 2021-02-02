@@ -32,7 +32,7 @@ poco = CocosJsPoco()
 #------------------------------------------WC------------------------------------------------#
 # WC--------------------------->
 def WC():
-    #Check truoc su kien vai ngay 
+#     Check truoc su kien vai ngay 
     beforEvent(configCase["beforEvent"]["account"])
     #check truoc su kien trong thoi gian quang cao su kien
     afterEvent(configCase["afterEvent"]["account"])
@@ -235,6 +235,7 @@ def DB():
 #File report
 #---------------------------------------------End Report-------------------------------------------------#
 #---------------------------------------------End Report-------------------------------------------------#
+
 
 
 
