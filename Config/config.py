@@ -41,23 +41,23 @@ timeWC={
 #user["user0"]["user"]
 user={
     "user0":{
-        "id":"20609637",
-        "user":"zps100",
+        "id":"20638215",
+        "user":"member0",
         "pass":123456      
     },
     "user1":{
-        "id":"20609650",
-        "user":"zps101",
+        "id":"20638259",
+        "user":"member1",
         "pass":123456      
     },
     "user2":{
-        "id":'20609682',
-        "user":"zps102",
+        "id":'20638237',
+        "user":"member2",
         "pass":123456       
     },
     "user3":{
-        "id":'20609702',
-        "user":"zps103",
+        "id":'20638284',
+        "user":"member3",
         "pass":123456       
     },
      "user":{
@@ -66,61 +66,6 @@ user={
         "pass":123456       
     },
 }
-# user={
-#     "user0":{
-#         "id":"20609637",
-#         "user":"zps100",
-#         "pass":123456      
-#     },
-#     "user1":{
-#         "id":"20609650",
-#         "user":"zps101",
-#         "pass":123456      
-#     },
-#     "user2":{
-#         "id":'20609682',
-#         "user":"zps102",
-#         "pass":123456       
-#     },
-#     "user3":{
-#         "id":'20609702',
-#         "user":"zps103",
-#         "pass":123456       
-#     },
-#      "user":{
-#         "id":'20538919',
-#         "user":"zpstest",
-#         "pass":123456       
-#     },
-# }
-user={
-    "user0":{
-        "id":"20536072",
-        "user":"zps000",
-        "pass":123456      
-    },
-    "user1":{
-        "id":"20536032",
-        "user":"zps001",
-        "pass":123456      
-    },
-    "user2":{
-        "id":'20536048',
-        "user":"zps002",
-        "pass":123456       
-    },
-    "user3":{
-        "id":'20536060',
-        "user":"zps003",
-        "pass":123456       
-    },
-     "user":{
-        "id":'20538919',
-        "user":"zpstest",
-        "pass":123456       
-    },
-}
-
 #Feature
 #Config nhiem vu thuc hien trong cac ngay
 challenge={

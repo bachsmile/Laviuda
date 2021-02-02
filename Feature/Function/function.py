@@ -223,8 +223,8 @@ def joinTable():
         sleep(2)
         clear()
         poco = CocosJsPoco()
-#         pocoTag.btnPlay.click()
-        pocoTag.btnSelectTable.click()
+        pocoTag.btnPlay.click()
+#         pocoTag.btnSelectTable.click()
         print("joinTable")
         return 1
     except:
@@ -1570,6 +1570,7 @@ def CheckChangeAcc(day,users):
     claimAll()
     closeAllEvent()
     changeAcc(user[users]["user"],user[users]["pass"])
+    sleep(3)
     claimAll()
     closeAllEvent()
     #open Gui
@@ -2447,18 +2448,18 @@ def closeNotiVip():
 #27/12/2020 00:00:00 /1609002000000
 
 time_db=[
-{"Y":2020,"M":12,"D":17,"h":17,"m":50,"s":0},     #day1
-{"Y":2020,"M":12,"D":19,"h":0,"m":0,"s":0},     #logout-login 24h (day2)
-{"Y":2020,"M":12,"D":19,"h":23,"m":59,"s":50},  #lobby 24h (day3)
-{"Y":2020,"M":12,"D":20,"h":23,"m":0,"s":0},    #log out-login 23h
-{"Y":2020,"M":12,"D":21,"h":0,"m":0,"s":0},     #playing 24 (day4)
-{"Y":2020,"M":12,"D":21,"h":23,"m":0,"s":0},    #GUI daily 23h
-{"Y":2020,"M":12,"D":21,"h":23,"m":59,"s":50},  #GUI daily 24h
-{"Y":2020,"M":12,"D":23,"h":0,"m":0,"s":0},     #logout- login 24h
-{"Y":2020,"M":12,"D":24,"h":0,"m":0,"s":0},     #lobby 24h
-{"Y":2020,"M":12,"D":25,"h":0,"m":0,"s":0},
-{"Y":2020,"M":12,"D":26,"h":0,"m":0,"s":0},
-{"Y":2020,"M":12,"D":27,"h":0,"m":0,"s":0}
+{"Y":2020,"M":11,"D":4,"h":17,"m":50,"s":0}, 
+{"Y":2020,"M":11,"D":6,"h":0,"m":0,"s":0},
+{"Y":2020,"M":11,"D":6,"h":23,"m":59,"s":50},  
+{"Y":2020,"M":11,"D":7,"h":23,"m":0,"s":0},    
+{"Y":2020,"M":11,"D":8,"h":0,"m":0,"s":0},     
+{"Y":2020,"M":11,"D":8,"h":23,"m":0,"s":0},   
+{"Y":2020,"M":11,"D":8,"h":23,"m":59,"s":50}, 
+{"Y":2020,"M":11,"D":10,"h":0,"m":0,"s":0},    
+{"Y":2020,"M":11,"D":11,"h":0,"m":0,"s":0},   
+{"Y":2020,"M":11,"D":12,"h":0,"m":0,"s":0},
+{"Y":2020,"M":11,"D":13,"h":0,"m":0,"s":0},
+{"Y":2020,"M":11,"D":14,"h":0,"m":0,"s":0}
 ]
 def convertDayTime(time):
     dt = datetime(time['Y'],time['M'],time['D'],time['h'],time['m'],time['s'])
@@ -2502,19 +2503,10 @@ def close_info():
     time.sleep(1)
     pocoTag.btn_closeInfo.click()
     time.sleep(1)
-def check_update_gold(config):
-    user_id=get_user_id()
-    gold_befor= getGold(user_id)
-    pocoTag.btnClaim.click()
-    gold_after=getGold(user_id)
-    if config== gold_after - gold_befor:
-        print("Update gold true!")
-    else:
-        print("Update gold false!")
 def log_in():
     pocoTag.btnSwitch.click()
     pocoTag.inputUser.click()
-    text("ngoctu52")
+    text("ngoctu92")
     pocoTag.inputPass.click()
     text("12345678")
     pocoTag.btnLogin.click()
@@ -2544,7 +2536,7 @@ def register():
     }
     pocoTag.btnSwitch.click()
     pocoTag.inputUser.click()
-    text("ngoctu52")
+    text("ngoctu92")
     pocoTag.inputPass.click()
     text("12345678")
     pocoTag.btnRegister.click()  
@@ -2705,7 +2697,13 @@ def checkCompleteBonus(s):
     i=9
     while s<7:
         api_changeTimeServer(convertDayTime(time_db[i]))
-        s=claim_bonus_true(DailyBonus["day7"],s,userID)
+        clear()
+        time.sleep(4)
+        if btn_claim_exit(pocoTag.btnClaim)==True:
+            pocoTag.btnClaim.click()
+            s+=1
+        else:
+            print("Dont show")
         if i<11:
             i+=1
         else:
@@ -2726,7 +2724,10 @@ def complete_lobby_24h():
     }
     api_changeTimeServer(convertDayTime(time_db[11]))
     reloadLobby()
+    clear()
+    sleep(3)
     if btn_claim_exit(pocoTag.btnClaim)==True:
+        pocoTag.btnClaim.click()
         print("Show daily bonus GUI when has claimed 7 day")
         dataDaily["status"]="False"
         dataDaily["detail"]="Lobby: Still show GUI dayly bonus over day 7"
@@ -2737,10 +2738,16 @@ def complete_lobby_24h():
     report_GUI_dailybonus(dataDaily)
 #20. Log out-> Login lại sau 24h
 def complete_logout_login_24h():
+    dataDaily= {
+        "status": "False",
+        "detail": "",
+    }
+    clear()
     log_out()
     log_in() 
     time.sleep(3)
     if btn_claim_exit(pocoTag.btnClaim)==True:
+        pocoTag.btnClaim.click()
         print("Show daily bonus GUI when has claimed 7 day")
         dataDaily["status"]="False"
         dataDaily["detail"]="Login: Still show GUI dayly bonus over day 7"
@@ -2799,5 +2806,5 @@ def tut():
         print("Tut fail")
     poco("btnTut5").click()
     claimAll()
-    closeAllEvent()        
+    closeAllEvent()          
 
