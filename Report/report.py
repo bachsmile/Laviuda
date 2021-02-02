@@ -332,7 +332,7 @@ def reportExpiredVip(data):
     }
     report = """
     -----------------------------------------------------------------------------
-    Case 8: Check show pop-up gia han va mo GUI Vip
+    Case 9: Check show pop-up gia han va mo GUI Vip
     
             Check mo GUI Vip  : {0}
             Show pop-up gia han : {1}
@@ -354,14 +354,14 @@ data = {
     "Show_PopUp_GH" : "Fail",
     "Status" : "Fail"
 }
-#Case 11: Check het han trong ban choi
+#Case 10: Check het han trong ban choi
 def reportCheckExpiredTable(data):
     detail = {
         "Check_item"     : data["Check_item"]
     }
     report = """
     -----------------------------------------------------------------------------
-    Case 11: Check het han vip trong ban choi
+    Case 10: Check het han vip trong ban choi
     
             Check item  : {0}                                            
                                     Time test: {1}
@@ -377,6 +377,37 @@ def reportCheckExpiredTable(data):
     f.close()
 
 data = {
+    "Check_item" : "Fail"
+}
+#Case11: Mua vip khi hết hạn
+def reportBuyVip1KHH(data):
+    detail = {
+        "Check_gold" : data["Check_gold"], 
+        "Check_item" : data["Check_item"]
+    }
+    report = """
+    -----------------------------------------------------------------------------
+    Case11: Check mua vip bac sau khi het han
+    
+    
+            Check gold nhan duoc : {0}
+            Check item           : {1}
+                                    
+                                    
+                                    Time test: {2}
+                                    Reporter: VyHN
+    -----------------------------------------------------------------------------
+    """
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+    log = report.format(detail["Check_gold"], detail["Check_item"], current_time)
+    f = open("log.txt", 'a+')
+    f.write(log)
+    print(type(log))
+    f.close()
+
+data = {
+    "Check_gold" : "Fail",
     "Check_item" : "Fail"
 }
 #Function WC:---------------------->
@@ -1206,3 +1237,4 @@ def report_GUI_over_day7():
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------#
+
