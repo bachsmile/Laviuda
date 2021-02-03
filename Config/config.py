@@ -329,6 +329,7 @@ userID=''
 vip_pack = {
     "vip.pack_1" : {
         "id": 1,
+        "name": "vip.pack_1",
         "price":50,
         "bonus": 0.3,
         "dailyTribute":5000000,
@@ -336,6 +337,7 @@ vip_pack = {
     },
     "vip.pack_2" : {
         "id": 2,
+        "name": "vip.pack_2",
         "point":100,
         "bonus":0.5,
         "dailyTribute":6000000,
@@ -343,13 +345,13 @@ vip_pack = {
     },
     "vip.pack_3" : {
         "id": 3,
+        "name": "vip.pack_3",
         "point":300,
         "bonus":1,
         "dailyTribute":7000000,
         "day":30
     }
 }
-
 pack_gold = {
     "gg_play" : {
             "iap.pack_1":2000000,
@@ -372,6 +374,7 @@ account = {
     }
 }
 gold_support = 30000
+
 
 
 
