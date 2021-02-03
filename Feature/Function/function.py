@@ -1166,6 +1166,9 @@ def day6(users):
 def day7(users,user1):
     resetDataReportConfig()
     sleep(2)
+    closeEvent()
+    claimAll()
+    closeNotiVip()
     claimAll()
     closeAllEvent()
     #cheat time pass 1 ngay-> 30/11/2020 11:11:11 -> 1606709471000
@@ -1583,6 +1586,8 @@ def CheckChangeAcc(day,users):
 #case18
 def missionPassDayInTable(day,users):
     resetDataReportConfig()
+    sleep(2)
+    clear()
     claimAll()
     closeAllEvent()
     timeCheat = api_changeTimeServer(1605051600000)

@@ -1,0 +1,306 @@
+
+    -----------------------------------------------------------------------------
+    
+    CASE: Test btn truoc thoi gian show event
+    
+            Time :2020-12-28 17:00:00       Status cheat:Pass
+            
+            Khong show Button event:Pass
+                                                                time test: 10:01:07
+    
+    -----------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test btn sau thoi gian show event
+    
+            Time :                                  2020-12-29 06:59:30    Status cheat time 1p befor event: Pass
+            
+            Click btn befor event show noti:        Fail
+            
+            Wait coutdown:                          Fail
+            
+            Click btn after event:                  Pass
+            
+            Show btn join event:                    Pass
+            
+            Time:                                   2020-12-29 06:59:20    Status cheat time 1p befor event: Pass
+            
+            Show Progess:                           Pass
+            
+            
+                                                                time test: 10:03:03
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Day 1
+    
+            Tab Day1 enable:                        Pass    Nhiem vu Day 1 show:                 Pass
+            
+                                                                 time test: 10:03:16
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Exchange1
+    
+            Click btn Play:                         Pass    
+            
+            Add bot:                                Pass
+            
+            Exchange1:                              Pass    
+            
+            Show update progess:                    Pass    
+            
+            Choose Leave table:                     Pass    
+            
+            No update progess bar at end game:      Pass    
+            
+            Leave table:                            Pass
+            
+            
+                                                                time test: 10:05:17
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Claim gift finished mission   
+            
+            Cheat finished mission:                 Pass     
+            
+            Show GUI event                          Fail
+                    
+            Update gold :                           Pass   
+            
+            Update Tocos:                           Pass
+            
+            
+                                                                time test: 10:05:47
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Day 2
+    
+            Cheat time qua ngay:                    Pass    Time cheat:                          2020-12-30 07:00:00
+            
+            Reload lobby:                           Pass    
+            
+            Auto show GUI event:                    Fail    Auto show GUI deal:                  Fail
+            
+            Tab Day 2 enable:                       Pass    Nhiem vu Day 2 show:                 Pass
+                     
+                                                                    time test: 10:06:33
+
+    
+            ---------------------------------------------------------------------------------------
+    
+    CASE: Test mission Knock
+            
+            knock                                   Pass
+            
+            Show update progess:                    Pass
+            
+            
+            
+                                                                time test: 10:07:59
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Hoan thanh mission dong GUI khong nhan
+    
+            Khong nhan qua :                           Pass      
+            
+            
+            
+                                                                time test: 10:08:31
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Check change account
+            
+            Nhiem vu Day1 acc2 khong hoan thanh:    Pass
+            
+            
+            
+                                                                time test: 10:09:09
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Qua ngay khi dang trong ban
+            
+            Update nhiem vu ngay moi                Pass
+
+            
+            
+                                                                time test: 10:11:32
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: AutoClaim gift finished mission
+    
+            Auto show GUI event:                    Fail     
+                          
+            Show effect:                            Pass    
+            
+            Tick claim gift:                        Pass
+            
+            Update mission new:                     Pass
+            
+            
+                                                                time test: 10:12:04
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Day 3                           
+                                                                time test: 10:12:10
+                ------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Exchange1 
+            
+            Show update progess:                    Pass    
+            
+                                                                time test: 10:13:41
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Qua ngay khi dang mo gui event
+    
+            effect claim gift                       Pass
+            
+            Update nhiem vu ngay moi                Pass
+
+            
+            
+                                                                time test: 10:14:47
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Claim gift finished mission
+            
+            Auto show GUI event:                    Fail     
+                          
+            Auto claim :                            Pass    
+            
+            Tick claim gift:                        Pass
+            
+            Update mission new:                     Pass
+            
+            
+                                                                time test: 10:15:45
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Day 4
+    
+            Tab Day4 enable:                        Pass    Nhiem vu Day 4 show:                 Pass
+            
+                                                                 time test: 10:15:57
+    
+            -------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Win
+            
+            khong du gold click btn play show noti khong du gold:             Pass
+            
+            Du gold click btn play vao ban:                                   Pass    
+            
+            Auto Show progess bar:                                            Pass    
+            
+            Show update progess win:                                          Pass
+            
+            No update progess lose:                                           Pass
+            
+            
+                                                                time test: 10:18:50
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Update Progress Mission Full
+            
+            Update progress full:                                           Pass
+            
+            Again no update progress after full progress bar:               Pass                           
+            
+            
+            
+                                                                time test: 10:22:36
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Deal
+            
+            Khong show Gui event:                   Fail    
+            
+            Khong show Gui Deal:                    Pass
+            
+            Button buy disiable:                    Pass    
+            
+            Gold update:                            Pass    
+            
+            Button Deal hide:                       Pass    
+            
+           
+                                                                time test: 10:23:46
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission Day 7
+    
+            Time cheat:                             2021-01-04 06:59:20
+            
+            Hide progress bar:                      Fail    
+            
+            Auto show GUI event:                    Pass    
+            
+            Update gold :                           Pass    
+            
+            Change accout miss all day mission:     Pass  
+            
+            
+            
+                                                                time test: 10:25:37
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
+    -----------------------------------------------------------------------------------------------------------
+    
+    CASE: Test mission end event
+    
+            Auto close event:                        Pass    
+            
+            No claim gift:                           Pass
+            
+            Hide event:                              Pass 
+            
+                                                                time test: 10:27:19
+                                                                Reporter: BachTX
+    ----------------------------------------------------------------------------------------------------------
+    
