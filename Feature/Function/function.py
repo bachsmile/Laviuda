@@ -1161,7 +1161,6 @@ def day6(users):
     #------------------------#
     #report
     reportDay6(dataReportConfig)
-    #------------------------#
 #case9
 def day7(users,user1):
     resetDataReportConfig()
@@ -2445,7 +2444,6 @@ def closeNotiVip():
 #25/12/2020 00:00:00 /1608829200000
 #26/12/2020 00:00:00 /1608915600000
 #27/12/2020 00:00:00 /1609002000000
-
 time_db=[
 {"Y":2020,"M":11,"D":4,"h":17,"m":50,"s":0}, 
 {"Y":2020,"M":11,"D":6,"h":0,"m":0,"s":0},
@@ -2758,10 +2756,6 @@ def complete_logout_login_24h():
 # changeAcc(user["user2"]["user"],user["user2"]["pass"])
 def afterBT():
     try:
-        timeBT={
-            "start":{"Y":2020,"M":11,"D":18,"h":13,"m":0,"s":0},
-            "end":{"Y":2021,"M":1,"D":5,"h":7,"m":0,"s":0}
-        }
          #Cheat time-------------#02/12/2020 23:59:00 -> 1606928340000
         timeCheat = api_changeTimeServer(1605051600000)
     #     timeCheat = api_changeTimeServer(timeC["timeD0"]["mili"])
@@ -2779,6 +2773,7 @@ def afterBT():
         sleep(2)
         claimAll()
         closeAllEvent()
+#         if waitNolimitPoco(btnMain,10)
         eventWCOpen()                  
         if waitNoLimit(BT.noti,10):
             print("check noti event")
@@ -2805,7 +2800,6 @@ def tut():
         print("Tut fail")
     poco("btnTut5").click()
     claimAll()
-    closeAllEvent()          
-
+    closeAllEvent()  
 
 
