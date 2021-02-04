@@ -1232,8 +1232,44 @@ def report_GUI_dailybonus(dataDaily):
     f = open("log.txt", 'a')
     f.write(log) 
     f.close() 
-def report_GUI_over_day7():
-    data_over
+def report_GUI_over_day7(dataDaily):
+    data_gui = {
+        "showGui": dataDaily["status"],
+        "detail": dataDaily["detail"]
+    }
+    content="""
+    ---------------------------------------------------------------------------------
+    CASE: TEST SHOW GUI OVER DAYS 7
+    
+    Status show GUI:   {0}
+    Detail:            {1}
+    Time test:         {2}
+                                                                  Reporter: NgocNT7
+    ---------------------------------------------------------------------------------"""
+    time_test= datetime.now()
+    log=content.format(data_gui["showGui"],data_gui["detail"],time_test)
+    f = open("log.txt", 'a')
+    f.write(log) 
+    f.close() 
+def report_tutorial(dataDaily):
+        data_gui = {
+            "showGui": dataDaily["status"],
+            "detail": dataDaily["detail"]
+        }
+        content="""
+        ---------------------------------------------------------------------------------
+        CASE: TEST SHOW TUTORIAL AFTER RIGISTER
+
+        Status show GUI:   {0}
+        Detail:            {1}
+        Time test:         {2}
+                                                                      Reporter: NgocNT7
+        ---------------------------------------------------------------------------------"""
+        time_test= datetime.now()
+        log=content.format(data_gui["showGui"],data_gui["detail"],time_test)
+        f = open("log.txt", 'a')
+        f.write(log) 
+        f.close() 
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 #-------------------------------------------------------------------------------------#
