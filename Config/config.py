@@ -41,23 +41,23 @@ timeWC={
 #user["user0"]["user"]
 user={
     "user0":{
-        "id":"20638215",
-        "user":"member0",
+        "id":"20670255",
+        "user":"samsung0",
         "pass":123456      
     },
     "user1":{
-        "id":"20638259",
-        "user":"member1",
+        "id":"20670262",
+        "user":"samsung1",
         "pass":123456      
     },
     "user2":{
-        "id":'20638237',
-        "user":"member2",
+        "id":'20670273',
+        "user":"samsung2",
         "pass":123456       
     },
     "user3":{
-        "id":'20638284',
-        "user":"member3",
+        "id":'20670282',
+        "user":"samsung3",
         "pass":123456       
     },
      "user":{
@@ -344,6 +344,7 @@ login={"userN":"Ngoc022","passN":"12345678"}
 vip_pack = {
     "vip.pack_1" : {
         "id": 1,
+        "name": "vip.pack_1",
         "price":50,
         "bonus": 0.3,
         "dailyTribute":5000000,
@@ -351,6 +352,7 @@ vip_pack = {
     },
     "vip.pack_2" : {
         "id": 2,
+        "name": "vip.pack_2",
         "point":100,
         "bonus":0.5,
         "dailyTribute":6000000,
@@ -358,13 +360,13 @@ vip_pack = {
     },
     "vip.pack_3" : {
         "id": 3,
+        "name": "vip.pack_3",
         "point":300,
         "bonus":1,
         "dailyTribute":7000000,
         "day":30
     }
 }
-
 pack_gold = {
     "gg_play" : {
             "iap.pack_1":2000000,
@@ -388,7 +390,11 @@ account = {
 }
 gold_support = 30000
 
-
+#############BT######################################################
+timeBT={
+            "start":{"Y":2020,"M":11,"D":18,"h":13,"m":0,"s":0},
+            "end":{"Y":2021,"M":1,"D":5,"h":7,"m":0,"s":0}
+        }
 
 
 
